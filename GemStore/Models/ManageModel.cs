@@ -9,8 +9,9 @@ namespace GemStore.Models
     {
         public string Id { get; set; }
     }
-    public class Product
+    public class Products
     {
         public string Id { get; set; }
+        public string name { get; set; }
     }
 }
