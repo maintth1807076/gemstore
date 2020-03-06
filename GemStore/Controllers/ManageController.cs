@@ -6,10 +6,9 @@ using System.Web.Mvc;
 
 namespace GemStore.Controllers
 {
-    [Authorize(Roles = "Admin")]
-    public class AdminController : Controller
+    public class ManageController : Controller
     {
-        // GET: Admin
+        // GET: Manage
         public ActionResult Index()
         {
             return View();
