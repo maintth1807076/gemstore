@@ -127,17 +127,18 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BrandMstsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
-    <Compile Include="Data\GemStoreContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202003060219429_InitDatabase.cs" />
-    <Compile Include="Migrations\202003060219429_InitDatabase.Designer.cs">
-      <DependentUpon>202003060219429_InitDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\202003060331450_InitDatabase.cs" />
+    <Compile Include="Migrations\202003060331450_InitDatabase.Designer.cs">
+      <DependentUpon>202003060331450_InitDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\GemStoreContext.cs" />
     <Compile Include="Models\ManageDiamond.cs" />
     <Compile Include="Models\ManageModel.cs" />
     <Compile Include="Models\ManageStone.cs" />
@@ -188,6 +189,11 @@
     <Content Include="Views\Products\Details.cshtml" />
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\BrandMsts\Create.cshtml" />
+    <Content Include="Views\BrandMsts\Delete.cshtml" />
+    <Content Include="Views\BrandMsts\Details.cshtml" />
+    <Content Include="Views\BrandMsts\Edit.cshtml" />
+    <Content Include="Views\BrandMsts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -206,8 +212,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202003060219429_InitDatabase.resx">
-      <DependentUpon>202003060219429_InitDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003060331450_InitDatabase.resx">
+      <DependentUpon>202003060331450_InitDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

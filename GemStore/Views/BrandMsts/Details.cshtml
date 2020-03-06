@@ -1,0 +1,26 @@
+﻿@model GemStore.Models.BrandMst
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BrandMst</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BrandType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BrandType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BrandId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

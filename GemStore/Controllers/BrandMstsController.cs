@@ -10,107 +10,107 @@ using GemStore.Models;
 
 namespace GemStore.Controllers
 {
-    public class ProductsController : Controller
+    public class BrandMstsController : Controller
     {
         private GemStoreContext db = new GemStoreContext();
 
-        // GET: Products
+        // GET: BrandMsts
         public ActionResult Index()
         {
-            return View(db.Products.ToList());
+            return View(db.BrandMsts.ToList());
         }
 
-        // GET: Products/Details/5
+        // GET: BrandMsts/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Products products = db.Products.Find(id);
-            if (products == null)
+            BrandMst brandMst = db.BrandMsts.Find(id);
+            if (brandMst == null)
             {
                 return HttpNotFound();
             }
-            return View(products);
+            return View(brandMst);
         }
 
-        // GET: Products/Create
+        // GET: BrandMsts/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Products/Create
+        // POST: BrandMsts/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,name")] Products products)
+        public ActionResult Create([Bind(Include = "BrandId,BrandType")] BrandMst brandMst)
         {
             if (ModelState.IsValid)
             {
-                db.Products.Add(products);
+                db.BrandMsts.Add(brandMst);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(products);
+            return View(brandMst);
         }
 
-        // GET: Products/Edit/5
+        // GET: BrandMsts/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Products products = db.Products.Find(id);
-            if (products == null)
+            BrandMst brandMst = db.BrandMsts.Find(id);
+            if (brandMst == null)
             {
                 return HttpNotFound();
             }
-            return View(products);
+            return View(brandMst);
         }
 
-        // POST: Products/Edit/5
+        // POST: BrandMsts/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,name")] Products products)
+        public ActionResult Edit([Bind(Include = "BrandId,BrandType")] BrandMst brandMst)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(products).State = EntityState.Modified;
+                db.Entry(brandMst).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(products);
+            return View(brandMst);
         }
 
-        // GET: Products/Delete/5
+        // GET: BrandMsts/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Products products = db.Products.Find(id);
-            if (products == null)
+            BrandMst brandMst = db.BrandMsts.Find(id);
+            if (brandMst == null)
             {
                 return HttpNotFound();
             }
-            return View(products);
+            return View(brandMst);
         }
 
-        // POST: Products/Delete/5
+        // POST: BrandMsts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            Products products = db.Products.Find(id);
-            db.Products.Remove(products);
+            BrandMst brandMst = db.BrandMsts.Find(id);
+            db.BrandMsts.Remove(brandMst);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

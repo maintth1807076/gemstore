@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -13,6 +14,7 @@ namespace GemStore.Models
 
     public class BrandMst
     {
+        [Key]
         public string BrandId { get; set; }
         public string BrandType { get; set; }
     }

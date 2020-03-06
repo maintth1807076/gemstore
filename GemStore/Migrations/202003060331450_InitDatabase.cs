@@ -8,19 +8,19 @@ namespace GemStore.Migrations
         public override void Up()
         {
             CreateTable(
-                "dbo.Products",
+                "dbo.BrandMsts",
                 c => new
                     {
-                        Id = c.String(nullable: false, maxLength: 128),
-                        name = c.String(),
+                        BrandId = c.String(nullable: false, maxLength: 128),
+                        BrandType = c.String(),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.BrandId);
             
         }
         
         public override void Down()
         {
-            DropTable("dbo.Products");
+            DropTable("dbo.BrandMsts");
         }
     }
 }

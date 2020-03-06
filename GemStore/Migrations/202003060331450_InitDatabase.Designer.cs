@@ -13,7 +13,7 @@ namespace GemStore.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202003060219429_InitDatabase"; }
+            get { return "202003060331450_InitDatabase"; }
         }
         
         string IMigrationMetadata.Source
