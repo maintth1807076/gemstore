@@ -3,10 +3,19 @@ namespace GemStore.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CreateAppUser : DbMigration
+    public partial class ChangeModel : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.BrandMsts",
+                c => new
+                    {
+                        BrandId = c.String(nullable: false, maxLength: 128),
+                        BrandType = c.String(),
+                    })
+                .PrimaryKey(t => t.BrandId);
+            
             CreateTable(
                 "dbo.AspNetRoles",
                 c => new
@@ -104,6 +113,7 @@ namespace GemStore.Migrations
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.BrandMsts");
         }
     }
 }
