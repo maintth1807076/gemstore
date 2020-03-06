@@ -67,7 +67,15 @@ namespace GemStore.Models
 
     public class RegisterViewModel
     {
-        [Required]
+        public string UserFName { get; set; }
+        public string UserLName { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string MobileNumber { get; set; }
+        public string Dob { get; set; }
+        public string CurrentDate { get; set; }
+        
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
