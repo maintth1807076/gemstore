@@ -39,8 +39,6 @@ namespace GemStore.Models
         {
             return new GemStoreContext();
         }
-        public DbSet<Products> Products { get; set; }
-
         public DbSet<BrandMst> BrandMsts { get; set; }
     }
 }
