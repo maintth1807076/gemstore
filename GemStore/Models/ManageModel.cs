@@ -55,6 +55,12 @@ namespace GemStore.Models
         public int StoneAmt { get; set; }
     }
 
+    public class Products
+    {
+        public string Id { get; set; }
+        public string name { get; set; }
+
+
     
 
     public class UserRegMst
