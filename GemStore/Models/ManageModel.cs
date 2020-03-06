@@ -16,6 +16,7 @@ namespace GemStore.Models
         public string BrandId { get; set; }
         public string BrandType { get; set; }
     }
+
     public class CatMst
     {
         public string CatId { get; set; }
@@ -28,9 +29,9 @@ namespace GemStore.Models
         public string CertifyType { get; set; }
     }
 
-    
 
-    
+
+
 
     public class GoldKrt
     {
@@ -60,8 +61,8 @@ namespace GemStore.Models
         public string Id { get; set; }
         public string name { get; set; }
 
+    }
 
-    
 
     public class UserRegMst
     {
