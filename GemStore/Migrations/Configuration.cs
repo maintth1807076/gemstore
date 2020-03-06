@@ -1,4 +1,6 @@
 using GemStore.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace GemStore.Migrations
 {
@@ -28,6 +30,33 @@ namespace GemStore.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            var userManager = new UserManager<ApplicationUser>(
+                new UserStore<ApplicationUser>(context));
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            if (!roleManager.RoleExists("Admin"))
+            {
+                var role = new IdentityRole("Admin");
+                roleManager.Create(role);
+
+            }
+            if (!roleManager.RoleExists("User"))
+            {
+                var role = new IdentityRole("User");
+                roleManager.Create(role);
+
+            }
+            if (!context.Users.Any(u => u.UserName == "admin"))
+            {
+                var user = new ApplicationUser
+                {
+                    UserName = "admin",
+
+                    //SecurityStamp = Guid.NewGuid().ToString("D"),
+                    //PasswordHash = userManager.PasswordHasher.HashPassword("secret"),
+                };
+                userManager.Create(user, "password");
+                userManager.AddToRole(user.Id, "Admin");
+            }
         }
     }
 }

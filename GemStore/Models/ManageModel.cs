@@ -17,7 +17,7 @@ namespace GemStore.Models
         [Key]
         public string BrandId { get; set; }
         public string BrandType { get; set; }
-        public virtual ICollection<Item> Item { get; set; }
+        public virtual ICollection<ItemMst> ItemMsts { get; set; }
     }
 
     public class CatMst
@@ -65,6 +65,7 @@ namespace GemStore.Models
 
     public class Products
     {
+        [Key]
         public string Id { get; set; }
         public string name { get; set; }
 
@@ -86,8 +87,9 @@ namespace GemStore.Models
         public string Password { get; set; }
     }
 
-    public class Item
+    public class ItemMst
     {
+        [Key]
         public string Stype_Code { get; set; }
         public string Pairs { get; set; }
         public string Brand_ID { get; set; }

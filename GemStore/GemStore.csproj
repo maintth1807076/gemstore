@@ -159,6 +159,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BrandMstsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -170,6 +171,10 @@
     <Compile Include="Migrations\202003060548455_CreateAppUser.cs" />
     <Compile Include="Migrations\202003060548455_CreateAppUser.Designer.cs">
       <DependentUpon>202003060548455_CreateAppUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003061306064_ChangeProduct.cs" />
+    <Compile Include="Migrations\202003061306064_ChangeProduct.Designer.cs">
+      <DependentUpon>202003061306064_ChangeProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -232,6 +237,9 @@
     <Content Include="Views\BrandMsts\Index.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -256,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003060548455_CreateAppUser.resx">
       <DependentUpon>202003060548455_CreateAppUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003061306064_ChangeProduct.resx">
+      <DependentUpon>202003061306064_ChangeProduct.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
