@@ -17,18 +17,21 @@ namespace GemStore.Models
         [Key]
         public string BrandId { get; set; }
         public string BrandType { get; set; }
+        public virtual ICollection<Item> Item { get; set; }
     }
 
     public class CatMst
     {
         public string CatId { get; set; }
         public string CatName { get; set; }
+        public virtual ICollection<Item> Item { get; set; }
     }
 
     public class CertifyMst
     {
         public string CertifyId { get; set; }
         public string CertifyType { get; set; }
+        public virtual ICollection<Item> Item { get; set; }
     }
 
 
@@ -39,12 +42,14 @@ namespace GemStore.Models
     {
         public string GoldTypeId { get; set; }
         public string GoldCrt { get; set; }
+        public virtual ICollection<Item> Item { get; set; }
     }
 
     public class Prod
     {
         public string ProdId { get; set; }
         public string ProdType { get; set; }
+        public virtual ICollection<Item> Item { get; set; }
     }
 
     public class Stone
@@ -86,12 +91,17 @@ namespace GemStore.Models
         public string Stype_Code { get; set; }
         public string Pairs { get; set; }
         public string Brand_ID { get; set; }
+        public virtual BrandMst BrandMst { get; set; }
         public int Quantity { get; set; }
         public string Cat_ID { get; set; }
+        public virtual CatMst CatMst { get; set; }
         public string Prod_Quantity { get; set; }
         public string Certify_ID { get; set; }
+        public virtual CertifyMst CertifyMst { get; set; }
         public string Prod_ID { get; set; }
+        public virtual Prod Prod { get; set; }
         public string GoldType_ID { get; set; }
+        public virtual GoldKrt GoldKrt { get; set; }
         public string Gold_Wt { get; set; }
         public string Stone_Wt { get; set; }
         public string Net_Gold { get; set; }
