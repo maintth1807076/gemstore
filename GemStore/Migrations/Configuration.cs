@@ -1,3 +1,5 @@
+using GemStore.Models;
+
 namespace GemStore.Migrations
 {
     using System;
@@ -5,14 +7,14 @@ namespace GemStore.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<GemStore.Data.GemStoreContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<GemStoreContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(GemStore.Data.GemStoreContext context)
+        protected override void Seed(GemStoreContext context)
         {
             //  This method will be called after migrating to the latest version.
 
