@@ -182,6 +182,7 @@
     <Compile Include="Models\ManageDiamond.cs" />
     <Compile Include="Models\ManageModel.cs" />
     <Compile Include="Models\ManageStone.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
