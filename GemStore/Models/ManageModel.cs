@@ -6,12 +6,6 @@ using System.Web;
 
 namespace GemStore.Models
 {
-    public class AdminLoginMst
-    {
-        public string UserName { get; set; }
-        public string Password { get; set; }
-    }
-
     public class BrandMst
     {
         [Key]
@@ -24,32 +18,28 @@ namespace GemStore.Models
     {
         public string CatId { get; set; }
         public string CatName { get; set; }
-        public virtual ICollection<Item> Item { get; set; }
+        public virtual ICollection<ItemMst> ItemMsts { get; set; }
     }
 
     public class CertifyMst
     {
         public string CertifyId { get; set; }
         public string CertifyType { get; set; }
-        public virtual ICollection<Item> Item { get; set; }
+        public virtual ICollection<ItemMst> ItemMsts { get; set; }
     }
-
-
-
-
 
     public class GoldKrt
     {
         public string GoldTypeId { get; set; }
         public string GoldCrt { get; set; }
-        public virtual ICollection<Item> Item { get; set; }
+        public virtual ICollection<ItemMst> ItemMsts { get; set; }
     }
 
     public class Prod
     {
         public string ProdId { get; set; }
         public string ProdType { get; set; }
-        public virtual ICollection<Item> Item { get; set; }
+        public virtual ICollection<ItemMst> ItemMsts { get; set; }
     }
 
     public class Stone
@@ -61,30 +51,6 @@ namespace GemStore.Models
         public int StoneCrt { get; set; }
         public int StoneRate { get; set; }
         public int StoneAmt { get; set; }
-    }
-
-    public class Products
-    {
-        [Key]
-        public string Id { get; set; }
-        public string name { get; set; }
-
-    }
-
-
-    public class UserRegMst1
-    {
-        public string UserId { get; set; }
-        public string UserFName { get; set; }
-        public string UserLName { get; set; }
-        public string Address { get; set; }
-        public string City { get; set; }
-        public string State { get; set; }
-        public string MobileNumber { get; set; }
-        public string EmailId { get; set; }
-        public string Dob { get; set; }
-        public string CurrentDate { get; set; }
-        public string Password { get; set; }
     }
 
     public class ItemMst
