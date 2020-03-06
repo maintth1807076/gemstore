@@ -66,7 +66,7 @@ namespace GemStore.Models
     }
 
 
-    public class UserRegMst
+    public class UserRegMst1
     {
         public string UserId { get; set; }
         public string UserFName { get; set; }
