@@ -86,7 +86,7 @@ namespace GemStore.Models
         public string MobileNumber { get; set; }
         public string Dob { get; set; }
         public string CurrentDate { get; set; }
-        
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }

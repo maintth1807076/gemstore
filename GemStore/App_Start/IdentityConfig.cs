@@ -26,7 +26,7 @@ namespace GemStore
             MailMessage mail = new MailMessage();
 
             SmtpClient smtpServer = new SmtpClient("smtp.gmail.com");
-            smtpServer.Credentials = new System.Net.NetworkCredential("admin@gmail.com", "password");
+            smtpServer.Credentials = new System.Net.NetworkCredential("cocyeukin@gmail.com", "jdumwuaiwgjuvalc");
             smtpServer.Port = 587; // Gmail works on this port
             smtpServer.EnableSsl = true;
 
@@ -82,11 +82,11 @@ namespace GemStore
         {
             var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<GemStoreContext>()));
             // Configure validation logic for usernames
-            //manager.UserValidator = new UserValidator<ApplicationUser>(manager)
-            //{
-            //    AllowOnlyAlphanumericUserNames = false,
-            //    RequireUniqueEmail = true
-            //};
+            manager.UserValidator = new UserValidator<ApplicationUser>(manager)
+            {
+                AllowOnlyAlphanumericUserNames = false,
+                RequireUniqueEmail = true,
+            };
 
             //// Configure validation logic for passwords
             //manager.PasswordValidator = new PasswordValidator
