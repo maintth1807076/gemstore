@@ -8,13 +8,63 @@ namespace GemStore.Migrations
         public override void Up()
         {
             CreateTable(
-                "dbo.BrandMsts",
+                "dbo.BrandMst",
                 c => new
                     {
                         BrandId = c.String(nullable: false, maxLength: 128),
                         BrandType = c.String(),
                     })
                 .PrimaryKey(t => t.BrandId);
+
+            CreateTable(
+                "dbo.CatMsts",
+                c => new
+                    {
+                        CatId = c.String(nullable: false, maxLength: 128),
+                        CatName = c.String(),
+                    })
+                .PrimaryKey(t => t.CatId);
+
+            CreateTable(
+                "dbo.ProdMst",
+                c => new
+                    {
+                        ProdId = c.String(nullable: false, maxLength: 128),
+                        ProdType = c.String(),
+                    })
+                .PrimaryKey(t => t.ProdId);
+            CreateTable(
+                "dbo.GoldKrt",
+                c => new
+                    {
+                        GoldTypeId = c.String(nullable: false, maxLength: 128),
+                        GoldCrt = c.String(),
+                    })
+                .PrimaryKey(t => t.GoldTypeId);
+            CreateTable(
+                "dbo.CertifyMst",
+                c => new
+                    {
+                        CertifyId = c.String(nullable: false, maxLength: 128),
+                        CertifyType = c.String(),
+                    })
+                .PrimaryKey(t => t.CertifyId);
+            CreateTable(
+                "dbo.JewelTypeMst",
+                c => new
+                    {
+                        JewelleryId = c.String(nullable: false, maxLength: 128),
+                        JewelleryType = c.String(),
+                    })
+                .PrimaryKey(t => t.JewelleryId);
+            CreateTable(
+                "dbo.StoneQltyMst",
+                c => new
+                    {
+                        StoneQltyID = c.String(nullable: false, maxLength: 128),
+                        StoneQlty = c.String(),
+                    })
+                .PrimaryKey(t => t.StoneQltyID);
             
             CreateTable(
                 "dbo.AspNetRoles",
