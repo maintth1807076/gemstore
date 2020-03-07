@@ -41,10 +41,12 @@ namespace GemStore.Models
         }
         public DbSet<BrandMst> BrandMsts { get; set; }
         public DbSet<CatMst> CatMsts { get; set; }
-        public DbSet<GoldKrt> GoldKrt { get; set; }
-        public DbSet<ProdMst> ProdMst { get; set; }
-        public DbSet<CertifyMst> CertifyMst { get; set; }
-        public DbSet<JewelTypeMst> JewelTypeMst { get; set; }
-        public DbSet<StoneQltyMst> StoneQltyMst { get; set; }
+        public DbSet<GoldKrt> GoldKrts { get; set; }
+        public DbSet<ProdMst> ProdMsts { get; set; }
+        public DbSet<CertifyMst> CertifyMsts { get; set; }
+        public DbSet<JewelTypeMst> JewelTypeMsts { get; set; }
+        public DbSet<StoneQltyMst> StoneQltyMsts { get; set; }
+        public DbSet<DimQltyMst> DimQltyMsts { get; set; }
+        public DbSet<DimQltySubMst> DimQltySubMsts { get; set; }
     }
 }

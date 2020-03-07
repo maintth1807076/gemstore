@@ -11,7 +11,7 @@ namespace GemStore.Migrations
 
     internal sealed class Configuration : DbMigrationsConfiguration<GemStoreContext>
     {
-        private readonly object BrandMsts;
+        //private readonly object BrandMsts;
 
         public Configuration()
         {
@@ -67,23 +67,23 @@ namespace GemStore.Migrations
                 new CatMst() { CatId = "3", CatName = "c", },
                 new CatMst() { CatId = "4", CatName = "d", }
             );
-            context.ProdMst.AddOrUpdate(x => x.ProdId,
+            context.ProdMsts.AddOrUpdate(x => x.ProdId,
                 new ProdMst() { ProdId = "5", ProdType= "e", },
                 new ProdMst() { ProdId = "6", ProdType= "f", }
             );
-            context.CertifyMst.AddOrUpdate(x => x.CertifyId,
+            context.CertifyMsts.AddOrUpdate(x => x.CertifyId,
                 new CertifyMst() { CertifyId = "7", CertifyType = "g", },
                 new CertifyMst() { CertifyId = "8", CertifyType = "h", }
             );
-            context.GoldKrt.AddOrUpdate(x => x.GoldTypeId,
+            context.GoldKrts.AddOrUpdate(x => x.GoldTypeId,
                 new GoldKrt() { GoldTypeId = "9", GoldCrt = "i", },
                 new GoldKrt() { GoldTypeId = "10", GoldCrt = "k", }
             );
-            context.JewelTypeMst.AddOrUpdate(x => x.JewelleryId,
+            context.JewelTypeMsts.AddOrUpdate(x => x.JewelleryId,
                 new JewelTypeMst() { JewelleryId = "11", JewelleryType =  "e", },
                 new JewelTypeMst() { JewelleryId = "12", JewelleryType =  "a", }
             );
-            context.StoneQltyMst.AddOrUpdate(x => x.StoneQltyID,
+            context.StoneQltyMsts.AddOrUpdate(x => x.StoneQltyID,
                 new StoneQltyMst() { StoneQltyID = "13", StoneQlty = "x", },
                 new StoneQltyMst() { StoneQltyID = "14", StoneQlty = "z", }
             );
