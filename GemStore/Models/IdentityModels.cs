@@ -40,5 +40,11 @@ namespace GemStore.Models
             return new GemStoreContext();
         }
         public DbSet<BrandMst> BrandMsts { get; set; }
+        public DbSet<CatMst> CatMsts { get; set; }
+        public DbSet<GoldKrt> GoldKrt { get; set; }
+        public DbSet<ProdMst> ProdMst { get; set; }
+        public DbSet<CertifyMst> CertifyMst { get; set; }
+        public DbSet<JewelTypeMst> JewelTypeMst { get; set; }
+        public DbSet<StoneQltyMst> StoneQltyMst { get; set; }
     }
 }
