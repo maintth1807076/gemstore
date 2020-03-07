@@ -169,9 +169,11 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\FilterItemModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ItemMst.cs" />
     <Compile Include="Models\ManageDiamond.cs" />
-    <Compile Include="Models\ManageModel.cs" />
+    <Compile Include="Models\ManageGold.cs" />
     <Compile Include="Models\ManageStone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -2007,7 +2009,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Shared\LayoutAdmin.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\BrandMsts\Create.cshtml" />
     <Content Include="Views\BrandMsts\Delete.cshtml" />
     <Content Include="Views\BrandMsts\Details.cshtml" />

@@ -1,5 +1,7 @@
 ﻿@model IEnumerable<GemStore.Models.BrandMst>
-
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
 @{
     ViewBag.Title = "Index";
 }
@@ -17,18 +19,19 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.BrandType)
-        </td>
-        <td>
-            @Html.ActionLink("Edit ", "Edit", new { id = item.BrandId }, new { @class = "fas fa-edit" }) |
-            @Html.ActionLink("Details ", "Details", new { id = item.BrandId }, new { @class = "fas fa-search-plus" }) |
-            @Html.ActionLink("Delete ", "Delete", new { id = item.BrandId }, new { @class = "fas fa-trash-alt delete" })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BrandType)
+            </td>
+            <td>
+                @Html.ActionLink("Edit ", "Edit", new { id = item.BrandId }, new { @class = "fas fa-edit" }) |
+                @Html.ActionLink("Details ", "Details", new { id = item.BrandId }, new { @class = "fas fa-search-plus" }) |
+                @Html.ActionLink("Delete ", "Delete", new { id = item.BrandId }, new { @class = "fas fa-trash-alt delete" })
+            </td>
+        </tr>
+    }
 
 </table>
 
