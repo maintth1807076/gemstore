@@ -59,33 +59,33 @@ namespace GemStore.Migrations
                 userManager.Create(user, "password");
                 userManager.AddToRole(user.Id, "Admin");
             }
-            context.BrandMsts.AddOrUpdate( x => x.BrandId,
-                new BrandMst() { BrandId = "1" , BrandType= "a" , },
-                new BrandMst() { BrandId = "2" , BrandType= "b" , }
+            context.BrandMsts.AddOrUpdate(x => x.BrandId,
+                new BrandMst() { BrandId = "1", BrandType = "Graff", },
+                new BrandMst() { BrandId = "2", BrandType = "Buccellatib", }
             );
             context.CatMsts.AddOrUpdate(x => x.CatId,
-                new CatMst() { CatId = "3", CatName = "c", },
-                new CatMst() { CatId = "4", CatName = "d", }
+                new CatMst() { CatId = "3", CatName = "Jewelry", },
+                new CatMst() { CatId = "4", CatName = "Gemstones", }
             );
             context.ProdMsts.AddOrUpdate(x => x.ProdId,
-                new ProdMst() { ProdId = "5", ProdType= "e", },
-                new ProdMst() { ProdId = "6", ProdType= "f", }
+                new ProdMst() { ProdId = "5", ProdType = "Diamond", },
+                new ProdMst() { ProdId = "6", ProdType = "Stone", }
             );
             context.CertifyMsts.AddOrUpdate(x => x.CertifyId,
-                new CertifyMst() { CertifyId = "7", CertifyType = "g", },
-                new CertifyMst() { CertifyId = "8", CertifyType = "h", }
+                new CertifyMst() { CertifyId = "7", CertifyType = "IGI", },
+                new CertifyMst() { CertifyId = "8", CertifyType = "AGSL", }
             );
             context.GoldKrts.AddOrUpdate(x => x.GoldTypeId,
-                new GoldKrt() { GoldTypeId = "9", GoldCrt = "i", },
-                new GoldKrt() { GoldTypeId = "10", GoldCrt = "k", }
+                new GoldKrt() { GoldTypeId = "9", GoldCrt = "18 CRT", },
+                new GoldKrt() { GoldTypeId = "10", GoldCrt = "10 CRT", }
             );
             context.JewelTypeMsts.AddOrUpdate(x => x.JewelleryId,
-                new JewelTypeMst() { JewelleryId = "11", JewelleryType =  "e", },
-                new JewelTypeMst() { JewelleryId = "12", JewelleryType =  "a", }
+                new JewelTypeMst() { JewelleryId = "11", JewelleryType = "Rings", },
+                new JewelTypeMst() { JewelleryId = "12", JewelleryType = "Earring", }
             );
             context.StoneQltyMsts.AddOrUpdate(x => x.StoneQltyID,
-                new StoneQltyMst() { StoneQltyID = "13", StoneQlty = "x", },
-                new StoneQltyMst() { StoneQltyID = "14", StoneQlty = "z", }
+                new StoneQltyMst() { StoneQltyID = "13", StoneQlty = "Ruby", },
+                new StoneQltyMst() { StoneQltyID = "14", StoneQlty = "Garnet", }
             );
         }   
     }
