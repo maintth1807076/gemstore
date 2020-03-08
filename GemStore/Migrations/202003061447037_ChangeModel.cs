@@ -17,7 +17,7 @@ namespace GemStore.Migrations
                 .PrimaryKey(t => t.BrandId);
 
             CreateTable(
-                "dbo.CatMsts",
+                "dbo.CatMst",
                 c => new
                     {
                         CatId = c.String(nullable: false, maxLength: 128),
