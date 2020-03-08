@@ -26,5 +26,10 @@ namespace GemStore.Controllers
 
             return View();
         }
+        public ActionResult View()
+        {
+            ViewBag.Message = "Your application description page.";
+            return View();
+        }
     }
 }
