@@ -65,7 +65,33 @@ namespace GemStore.Migrations
                         StoneQlty = c.String(),
                     })
                 .PrimaryKey(t => t.StoneQltyID);
-            
+             CreateTable(
+                "dbo.ItemMst",
+                c => new
+                    {
+                        Stype_Code = c.String(),
+                        Pairs = c.Int(),
+                        BrandId = c.String(),
+                        Quantity = c.String(),
+                        CatId = c.String(),
+                        ProdQuantity = c.String(),
+                        CertifyId = c.String(),
+                        ProdId = c.String(),
+                        GoldTypeId = c.String(),
+                        GoldWt = c.String(),
+                        StoneWt = c.String(),
+                        NetGold = c.String(),
+                        WstgPer = c.String(),
+                        TotGrossWt = c.String(),
+                        GoldRateGoldAmt = c.String(),
+                        GoldAmt = c.String(),
+                        GoldMaking = c.String(),
+                        StoneMaking = c.String(),
+                        OtherMaking = c.String(),
+                        TotMaking = c.String(),
+                        MRP = c.String(),
+                })
+                .PrimaryKey(t => t.Stype_Code);           
             CreateTable(
                 "dbo.AspNetRoles",
                 c => new

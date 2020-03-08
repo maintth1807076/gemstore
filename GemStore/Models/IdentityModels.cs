@@ -46,5 +46,6 @@ namespace GemStore.Models
         public DbSet<CertifyMst> CertifyMst { get; set; }
         public DbSet<JewelTypeMst> JewelTypeMst { get; set; }
         public DbSet<StoneQltyMst> StoneQltyMst { get; set; }
+        public DbSet<ItemMst> ItemMst { get; set; }
     }
 }
