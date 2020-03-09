@@ -30,23 +30,4 @@ namespace GemStore.Models
             return userIdentity;
         }
     }
-    public class GemStoreContext : IdentityDbContext<ApplicationUser>
-    {
-        public GemStoreContext() : base("name=GemStoreContext", throwIfV1Schema: false)
-        {
-        }
-        public static GemStoreContext Create()
-        {
-            return new GemStoreContext();
-        }
-        public DbSet<BrandMst> BrandMsts { get; set; }
-        public DbSet<CatMst> CatMsts { get; set; }
-        public DbSet<GoldKrt> GoldKrts { get; set; }
-        public DbSet<ProdMst> ProdMsts { get; set; }
-        public DbSet<CertifyMst> CertifyMsts { get; set; }
-        public DbSet<JewelTypeMst> JewelTypeMsts { get; set; }
-        public DbSet<StoneQltyMst> StoneQltyMsts { get; set; }
-        public DbSet<DimQltyMst> DimQltyMsts { get; set; }
-        public DbSet<DimQltySubMst> DimQltySubMsts { get; set; }
-    }
 }

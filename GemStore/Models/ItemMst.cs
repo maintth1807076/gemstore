@@ -9,7 +9,7 @@ namespace GemStore.Models
     public class ItemMst
     {
         [Key]
-        public string Stype_Code { get; set; }
+        public string StyleCode { get; set; }
         [Required]
         public int Pairs { get; set; }
         public string BrandId { get; set; }

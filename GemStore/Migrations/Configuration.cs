@@ -87,6 +87,10 @@ namespace GemStore.Migrations
                 new StoneQltyMst() { StoneQltyID = "13", StoneQlty = "Ruby", },
                 new StoneQltyMst() { StoneQltyID = "14", StoneQlty = "Garnet", }
             );
+            context.ItemMsts.AddOrUpdate(x => x.StyleCode,
+                new ItemMst() { StyleCode = "CEH017", BrandId = "1", Pairs = 1, Quantity = 5, CatId = "3", ProdId = "5", MRP = 110, },
+                new ItemMst() { StyleCode = "DOCQF1B", BrandId = "2", Pairs = 1, Quantity = 10, CatId = "4", ProdId = "5", GoldTypeId = "9", GoldWt = 4.06, MRP = 35, }
+            );	            
         }   
     }
 }
