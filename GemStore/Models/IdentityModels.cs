@@ -30,6 +30,7 @@ namespace GemStore.Models
             return userIdentity;
         }
     }
+<<<<<<< HEAD
     public class GemStoreContext : IdentityDbContext<ApplicationUser>
     {
         public GemStoreContext() : base("name=GemStoreContext", throwIfV1Schema: false)
@@ -48,4 +49,6 @@ namespace GemStore.Models
         public DbSet<StoneQltyMst> StoneQltyMst { get; set; }
         public DbSet<ItemMst> ItemMst { get; set; }
     }
+=======
+>>>>>>> baaf21a5cee2ca97b469c9f8b90396ee9ad675a1
 }

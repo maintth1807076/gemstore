@@ -1,0 +1,164 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div class="row m-2" id="load-more-new-product">
+    <div class="col-xl-3 col-sm-4 col-12 mb-5">
+        <div class="card">
+            <div class="fuild">
+                <div class="img-cart">
+                    <a href="/product/17">
+                        <div style="  width: 100%; height: 300px;  background-size: cover; background-image:url('https://res.cloudinary.com/dkzqu5nh2/image/upload/v1568234336/Nendoroid-product7-img1.jpg')"></div>
+                    </a>
+
+                </div>
+                <div class="card-body">
+                    <h4 class="card-text name">Nendoroid 682 Anime Naruto Shippuden Uzumaki Naruto PVC Figure New In Box</h4>
+                    <h3 class="card-text ">
+                        <pre> <b> 200,000 VNĐ</b></pre>
+                    </h3>
+                    <a class="add-cart" href="javascript:void(0)" data-id="17" data-price="200000" data-name="Nendoroid 682 Anime Naruto Shippuden Uzumaki Naruto PVC Figure New In Box" data-thumbnail="https://res.cloudinary.com/dkzqu5nh2/image/upload/v1568234336/Nendoroid-product7-img1.jpg">
+                        Mua
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-sm-4 col-12 mb-5">
+        <div class="card">
+            <div class="fuild">
+                <div class="img-cart">
+                    <a href="/product/20">
+                        <div style="  width: 100%; height: 300px;  background-size: cover; background-image:url('https://res.cloudinary.com/dkzqu5nh2/image/upload/v1568235275/Nendoroid-product10-img1.jpg')"></div>
+                    </a>
+
+                </div>
+                <div class="card-body">
+                    <h4 class="card-text name">Good Smile Company Nendoroid That Time I Got Reincarnated as a Slime Rimuru</h4>
+                    <h3 class="card-text ">
+                        <pre> <b> 769,000 VNĐ</b></pre>
+                    </h3>
+                    <a class="add-cart" href="javascript:void(0)" data-id="20" data-price="769000" data-name="Good Smile Company Nendoroid That Time I Got Reincarnated as a Slime Rimuru" data-thumbnail="https://res.cloudinary.com/dkzqu5nh2/image/upload/v1568235275/Nendoroid-product10-img1.jpg">
+                        Mua
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-sm-4 col-12 mb-5">
+        <div class="card">
+            <div class="fuild">
+                <div class="img-cart">
+                    <a href="/product/19">
+                        <div style="  width: 100%; height: 300px;  background-size: cover; background-image:url('https://res.cloudinary.com/dkzqu5nh2/image/upload/v1568235110/Nendoroid-product9-img1.jpg')"></div>
+                    </a>
+
+                </div>
+                <div class="card-body">
+                    <h4 class="card-text name">Nendoroid 908 Houkai 3rd: Sakura Yae Heretic Miko Figure Figurine New No Box</h4>
+                    <h3 class="card-text ">
+                        <pre> <b> 450,000 VNĐ</b></pre>
+                    </h3>
+                    <a class="add-cart" href="javascript:void(0)" data-id="19" data-price="450000" data-name="Nendoroid 908 Houkai 3rd: Sakura Yae Heretic Miko Figure Figurine New No Box" data-thumbnail="https://res.cloudinary.com/dkzqu5nh2/image/upload/v1568235110/Nendoroid-product9-img1.jpg">
+                        Mua
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-sm-4 col-12 mb-5">
+        <div class="card">
+            <div class="fuild">
+                <div class="img-cart">
+                    <a href="/product/40">
+                        <div style="  width: 100%; height: 300px;  background-size: cover; background-image:url('https://res.cloudinary.com/dkzqu5nh2/image/upload/v1568273112/Revoltech-product10-img1.jpg')"></div>
+                    </a>
+
+                </div>
+                <div class="card-body">
+                    <h4 class="card-text name">KAIYODO REVOLTECH Figure Complex Movie Revo Series No.010 Zootopia Nick Wilde</h4>
+                    <h3 class="card-text ">
+                        <pre> <b> 900,000 VNĐ</b></pre>
+                    </h3>
+                    <a class="add-cart" href="javascript:void(0)" data-id="40" data-price="900000" data-name="KAIYODO REVOLTECH Figure Complex Movie Revo Series No.010 Zootopia Nick Wilde" data-thumbnail="https://res.cloudinary.com/dkzqu5nh2/image/upload/v1568273112/Revoltech-product10-img1.jpg">
+                        Mua
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<button id="pay">Thanh toan</button>
+@section scripts
+{
+    <script type="text/javascript">
+        $(document).on('click', '.add-cart', function () {
+            var shoppingCart = {};
+            if (localStorage.getItem('shopping-cart') !== null) {
+                shoppingCart = JSON.parse(localStorage.getItem('shopping-cart'));
+            }
+            var id = $(this).attr('data-id');
+            var price = $(this).attr('data-price');
+            var name = $(this).attr('data-name');
+            var thumbnail = $(this).attr('data-thumbnail');
+            var cartItem = {
+                'id': id,
+                'name': name,
+                'price': price,
+                'thumbnail': thumbnail,
+                'quantity': 1
+            };
+            if (shoppingCart[id] != null) {
+                var existCartItem = shoppingCart[id];
+                cartItem = existCartItem;
+                cartItem.quantity++;
+            }
+            shoppingCart[id] = cartItem;
+            localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
+        });
+
+        $('#pay').click(function () {
+            var id = $(this).attr("id").replace("delete-", "");
+            if (confirm("Are you sure want to delete this student?")) {
+                var token = $('input[name="__RequestVerificationToken"]').val();;
+                $.ajax({
+                    url: "/Cart/Create",
+                    type: "POST",
+                    data: {
+                        __RequestVerificationToken: token,
+                        'cart': JSON.parse(localStorage.getItem('shopping-cart'))
+                    },
+                    success: function (data) {
+                        alert("Delete success!");
+                    },
+                    error: function (error) {
+                        alert("Action fails! Please try again!");
+                    }
+                });
+            }
+            return false;
+        });
+        //$('.btn-delete-student').click(function () {
+        //    var id = $(this).attr("id").replace("delete-", "");
+        //    if (confirm("Are you sure want to delete this student?")) {
+        //        var token = $('input[name="__RequestVerificationToken"]').val();;
+        //        $.ajax({
+        //            url: "/Students/Delete/" + id,
+        //            type: "POST",
+        //            data: {
+        //                __RequestVerificationToken: token
+        //            },
+        //            success: function (data) {
+        //                alert("Delete success!");
+        //                window.location.reload();
+        //            },
+        //            error: function (error) {
+        //                alert("Action fails! Please try again!");
+        //            }
+        //        });
+        //    }
+        //    return false;
+        //});
+    </script>
+}

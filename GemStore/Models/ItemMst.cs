@@ -9,7 +9,7 @@ namespace GemStore.Models
     public class ItemMst
     {
         [Key]
-        public string Stype_Code { get; set; }
+        public string StyleCode { get; set; }
         [Required]
         public int Pairs { get; set; }
         public string BrandId { get; set; }
@@ -23,6 +23,8 @@ namespace GemStore.Models
         public virtual CertifyMst CertifyMst { get; set; }
         public string ProdId { get; set; }
         public virtual ProdMst ProdMst { get; set; }
+        public string JewelleryId { get; set; }
+        public virtual JewelTypeMst JewelTypeMst { get; set; }
         public string GoldTypeId { get; set; }
         public virtual GoldKrt GoldKrt { get; set; }
         public double GoldWt { get; set; }

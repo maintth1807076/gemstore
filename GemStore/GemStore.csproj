@@ -171,24 +171,28 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BrandMstsController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202003061447037_ChangeModel.cs" />
-    <Compile Include="Migrations\202003061447037_ChangeModel.Designer.cs">
-      <DependentUpon>202003061447037_ChangeModel.cs</DependentUpon>
+    <Compile Include="Migrations\202003090456516_InitDatabase.cs" />
+    <Compile Include="Migrations\202003090456516_InitDatabase.Designer.cs">
+      <DependentUpon>202003090456516_InitDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\FilterItemModels.cs" />
+    <Compile Include="Models\GemStoreContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ItemMst.cs" />
     <Compile Include="Models\ManageDiamond.cs" />
     <Compile Include="Models\ManageGold.cs" />
     <Compile Include="Models\ManageStone.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -2050,6 +2054,7 @@
     <Content Include="Views\Account\SendCode.cshtml" />
     <Content Include="Views\Account\VerifyCode.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2068,8 +2073,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202003061447037_ChangeModel.resx">
-      <DependentUpon>202003061447037_ChangeModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003090456516_InitDatabase.resx">
+      <DependentUpon>202003090456516_InitDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

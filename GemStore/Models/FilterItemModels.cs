@@ -41,5 +41,6 @@ namespace GemStore.Models
         [Key]
         public string JewelleryId { get; set; }
         public string JewelleryType { get; set; }
+        public virtual ICollection<ItemMst> ItemMsts { get; set; }
     }
 }
