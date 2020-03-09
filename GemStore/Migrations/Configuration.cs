@@ -68,8 +68,8 @@ namespace GemStore.Migrations
                 new CatMst() { CatId = "4", CatName = "Gémtones", }
             );
             context.ProdMst.AddOrUpdate(x => x.ProdId,
-                new ProdMst() { ProdId = "5", ProdType= "Diamond", },
-                new ProdMst() { ProdId = "6", ProdType= "Stone", }
+                new ProdMst() { ProdId = "5", ProdType= "Rings", }, 
+                new ProdMst() { ProdId = "6", ProdType= "Earring", }
             );
             context.CertifyMst.AddOrUpdate(x => x.CertifyId,
                 new CertifyMst() { CertifyId = "7", CertifyType = "IGI", },
@@ -80,12 +80,16 @@ namespace GemStore.Migrations
                 new GoldKrt() { GoldTypeId = "10", GoldCrt = "10 CRT", }
             );
             context.JewelTypeMst.AddOrUpdate(x => x.JewelleryId,
-                new JewelTypeMst() { JewelleryId = "11", JewelleryType = "Rings", },
-                new JewelTypeMst() { JewelleryId = "12", JewelleryType = "Earring", }
+                new JewelTypeMst() { JewelleryId = "11", JewelleryType = "Diamond", },
+                new JewelTypeMst() { JewelleryId = "12", JewelleryType = "Stone", }
             );
             context.StoneQltyMst.AddOrUpdate(x => x.StoneQltyID,
                 new StoneQltyMst() { StoneQltyID = "13", StoneQlty = "Ruby", },
                 new StoneQltyMst() { StoneQltyID = "14", StoneQlty = "Garnet", }
+            );
+            context.ItemMst.AddOrUpdate(x => x.Stype_Code,
+                new ItemMst() { Stype_Code = "CEH017", BrandId = "1", Quantity = 5, CatId = "7", ProdId = "5", MRP = 110, },
+                new ItemMst() { Stype_Code = "DOCQF1B", BrandId = "2", Quantity = 10, CatId = "8", ProdId = "5", GoldTypeId ="9", GoldWt = 4.06, MRP = 35, },
             );
         }   
     }
