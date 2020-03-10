@@ -19,8 +19,17 @@ namespace GemStore.Models
         [Key]
         public string CatId { get; set; }
         public string CatName { get; set; }
+        public string CatThumbnail { get; set; }
         public virtual ICollection<ItemMst> ItemMsts { get; set; }
     }
+    //public class CatSubMst
+    //{
+    //    [Key]
+    //    public string CatSubId { get; set; }
+    //    public string Description { get; set; }
+    //    public string Thumbnail { get; set; }
+        
+    //}
     public class ProdMst
     {
         [Key]
@@ -33,6 +42,7 @@ namespace GemStore.Models
         [Key]
         public string CertifyId { get; set; }
         public string CertifyType { get; set; }
+        public string Description { get; set; }
         public virtual ICollection<ItemMst> ItemMsts { get; set; }
     }
 

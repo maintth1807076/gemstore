@@ -37,7 +37,10 @@ namespace GemStore.Models
         public double OtherMaking { get; set; }
         public double TotMaking { get; set; }
         public double MRP { get; set; }
+        public string Thumbnails { get; set; }
+        public string JewelleryId { get; set; }
         public virtual DimMst DimMst { get; set; }
         public virtual StoneMst StoneMst { get; set; }
+        public virtual JewelTypeMst JewelTypeMst { get; set; }
     }
 }
