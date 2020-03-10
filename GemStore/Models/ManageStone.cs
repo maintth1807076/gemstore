@@ -27,5 +27,6 @@ namespace GemStore.Models
         [Key]
         public string StoneQltyID { get; set; }
         public string StoneQlty { get; set; }
+        public string Description { get; set; }
     }
 }

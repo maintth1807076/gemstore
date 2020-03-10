@@ -25,10 +25,12 @@ namespace GemStore
         {
             MailMessage mail = new MailMessage();
 
-            SmtpClient smtpServer = new SmtpClient("smtp.gmail.com");
-            smtpServer.Credentials = new System.Net.NetworkCredential("cocyeukin@gmail.com", "jdumwuaiwgjuvalc");
-            smtpServer.Port = 587; // Gmail works on this port
-            smtpServer.EnableSsl = true;
+            var smtpServer = new SmtpClient("smtp.gmail.com")
+            {
+                Credentials = new System.Net.NetworkCredential("cocyeukin@gmail.com", "jdumwuaiwgjuvalc"),
+                Port = 587, // Gmail works on this port
+                EnableSsl = true
+            };
 
             mail.From = new MailAddress("gemstore@gmail.com");
             mail.To.Add(message.Destination);

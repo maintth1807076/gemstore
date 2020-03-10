@@ -1,7 +1,5 @@
 ﻿@model GemStore.Models.BrandMst
-@{
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
-}
+
 @{
     ViewBag.Title = "Delete";
 }
@@ -23,8 +21,7 @@
 
     </dl>
 
-    @using (Html.BeginForm())
-    {
+    @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
@@ -33,10 +30,3 @@
         </div>
     }
 </div>
-<script>
-    $(document).ready(function () {
-        $(".delete").click(function () {
-            alert("Are you sure you delete it?")
-        })
-    })
-</script>

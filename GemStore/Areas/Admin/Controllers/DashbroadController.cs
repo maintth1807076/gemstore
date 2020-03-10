@@ -4,12 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace GemStore.Controllers
+namespace GemStore.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin")]
-    public class AdminController : Controller
+    public class DashbroadController : Controller
     {
-        // GET: Admin
+        // GET: Admin/Dashbroad
         public ActionResult Index()
         {
             return View();

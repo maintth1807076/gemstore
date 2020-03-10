@@ -168,9 +168,11 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\BrandMstsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DashbroadController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProdMstsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\BrandMstsController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -180,6 +182,14 @@
     <Compile Include="Migrations\202003090456516_InitDatabase.cs" />
     <Compile Include="Migrations\202003090456516_InitDatabase.Designer.cs">
       <DependentUpon>202003090456516_InitDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003091338523_ChangeCat.cs" />
+    <Compile Include="Migrations\202003091338523_ChangeCat.Designer.cs">
+      <DependentUpon>202003091338523_ChangeCat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003100043022_ChangeItem.cs" />
+    <Compile Include="Migrations\202003100043022_ChangeItem.Designer.cs">
+      <DependentUpon>202003100043022_ChangeItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -2000,6 +2010,20 @@
     <Content Include="Content\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="Content\vendor\jquery\jquery.min.map" />
     <Content Include="Content\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Dashbroad\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\BrandMsts\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\BrandMsts\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\BrandMsts\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\BrandMsts\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\BrandMsts\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProdMsts\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ProdMsts\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ProdMsts\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ProdMsts\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ProdMsts\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2026,13 +2050,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
-    <Content Include="Views\BrandMsts\Create.cshtml" />
-    <Content Include="Views\BrandMsts\Delete.cshtml" />
-    <Content Include="Views\BrandMsts\Details.cshtml" />
-    <Content Include="Views\BrandMsts\Edit.cshtml" />
-    <Content Include="Views\BrandMsts\Index.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
@@ -2058,6 +2075,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -2075,6 +2093,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202003090456516_InitDatabase.resx">
       <DependentUpon>202003090456516_InitDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003091338523_ChangeCat.resx">
+      <DependentUpon>202003091338523_ChangeCat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003100043022_ChangeItem.resx">
+      <DependentUpon>202003100043022_ChangeItem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

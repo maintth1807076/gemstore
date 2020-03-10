@@ -61,36 +61,69 @@ namespace GemStore.Migrations
             }
             context.BrandMsts.AddOrUpdate(x => x.BrandId,
                 new BrandMst() { BrandId = "1", BrandType = "Graff", },
-                new BrandMst() { BrandId = "2", BrandType = "Buccellatib", }
+                new BrandMst() { BrandId = "2", BrandType = "Buccellatib", },
+                new BrandMst() { BrandId = "3", BrandType = "Chopard", },
+                new BrandMst() { BrandId = "4", BrandType = "Buccellatib", }
             );
             context.CatMsts.AddOrUpdate(x => x.CatId,
-                new CatMst() { CatId = "3", CatName = "Jewelry", },
-                new CatMst() { CatId = "4", CatName = "Gemstones", }
+                new CatMst() { CatId = "1", CatName = "Jewelry", },
+                new CatMst() { CatId = "2", CatName = "Gemstones", },
+                new CatMst() { CatId = "3", CatName = "Wedding Ring", }
             );
             context.ProdMsts.AddOrUpdate(x => x.ProdId,
-                new ProdMst() { ProdId = "5", ProdType = "Diamond", },
-                new ProdMst() { ProdId = "6", ProdType = "Stone", }
-            );
+                new ProdMst() { ProdId = "1", ProdType = "Shop By Type", },
+                new ProdMst() { ProdId = "2", ProdType = "Featured Shop", },
+                new ProdMst() { ProdId = "3", ProdType = "Trending Styles", }
+            ); ;
             context.CertifyMsts.AddOrUpdate(x => x.CertifyId,
-                new CertifyMst() { CertifyId = "7", CertifyType = "IGI", },
-                new CertifyMst() { CertifyId = "8", CertifyType = "AGSL", }
+                new CertifyMst() { CertifyId = "1", CertifyType = "IGI", },
+                new CertifyMst() { CertifyId = "2", CertifyType = "AGSL", },
+                new CertifyMst() { CertifyId = "3", CertifyType = "GIA", },
+                new CertifyMst() { CertifyId = "4", CertifyType = "IGI", },
+                new CertifyMst() { CertifyId = "5", CertifyType = "HRD", }
             );
             context.GoldKrts.AddOrUpdate(x => x.GoldTypeId,
-                new GoldKrt() { GoldTypeId = "9", GoldCrt = "18 CRT", },
-                new GoldKrt() { GoldTypeId = "10", GoldCrt = "10 CRT", }
+                new GoldKrt() { GoldTypeId = "1", GoldCrt = "18 CRT", },
+                new GoldKrt() { GoldTypeId = "2", GoldCrt = "10 CRT", },
+                new GoldKrt() { GoldTypeId = "3", GoldCrt = "14 CRT", },
+                new GoldKrt() { GoldTypeId = "4", GoldCrt = "22 CRT", }
             );
             context.JewelTypeMsts.AddOrUpdate(x => x.JewelleryId,
-                new JewelTypeMst() { JewelleryId = "11", JewelleryType = "Rings", },
-                new JewelTypeMst() { JewelleryId = "12", JewelleryType = "Earring", }
+                new JewelTypeMst() { JewelleryId = "1", JewelleryType = "Diamond", },
+                new JewelTypeMst() { JewelleryId = "2", JewelleryType = "Necklace", },
+                new JewelTypeMst() { JewelleryId = "3", JewelleryType = "Earring", },
+                new JewelTypeMst() { JewelleryId = "4", JewelleryType = "Necklace", },
+                new JewelTypeMst() { JewelleryId = "5", JewelleryType = "Watches", },
+                new JewelTypeMst() { JewelleryId = "6", JewelleryType = "Rings", },
+                new JewelTypeMst() { JewelleryId = "7", JewelleryType = "Bracelet", },
+                new JewelTypeMst() { JewelleryId = "8", JewelleryType = "Sping Trends", },
+                new JewelTypeMst() { JewelleryId = "9", JewelleryType = "Animal Jewelry", },
+                new JewelTypeMst() { JewelleryId = "10", JewelleryType = "New Jewelry", }
             );
             context.StoneQltyMsts.AddOrUpdate(x => x.StoneQltyID,
-                new StoneQltyMst() { StoneQltyID = "13", StoneQlty = "Ruby", },
-                new StoneQltyMst() { StoneQltyID = "14", StoneQlty = "Garnet", }
+                new StoneQltyMst() { StoneQltyID = "1", StoneQlty = "Ruby", },
+                new StoneQltyMst() { StoneQltyID = "2", StoneQlty = "Garnet", },
+                new StoneQltyMst() { StoneQltyID = "3", StoneQlty = "Sapphire", },
+                new StoneQltyMst() { StoneQltyID = "4", StoneQlty = "Topaz", },
+                new StoneQltyMst() { StoneQltyID = "5", StoneQlty = "Grandidierite ", },
+                new StoneQltyMst() { StoneQltyID = "6", StoneQlty = "Garnet", },
+                new StoneQltyMst() { StoneQltyID = "7", StoneQlty = "Opal", },
+                new StoneQltyMst() { StoneQltyID = "8", StoneQlty = "Emerald", }
             );
             context.ItemMsts.AddOrUpdate(x => x.StyleCode,
-                new ItemMst() { StyleCode = "CEH017", BrandId = "1", Pairs = 1, Quantity = 5, CatId = "3", ProdId = "5", MRP = 110, },
-                new ItemMst() { StyleCode = "DOCQF1B", BrandId = "2", Pairs = 1, Quantity = 10, CatId = "4", ProdId = "5", GoldTypeId = "9", GoldWt = 4.06, MRP = 35, }
-            );	            
+                new ItemMst() { StyleCode = "1", BrandId = "1", Pairs = 1, Quantity = 5, CatId = "1", ProdId = "1", JewelleryId = "2", MRP = 110, },
+                new ItemMst() { StyleCode = "2", BrandId = "2", Pairs = 1, Quantity = 10, CatId = "2", ProdId = "1", JewelleryId = "3", GoldTypeId = "1", GoldWt = 4.06, MRP = 35, },
+                new ItemMst() { StyleCode = "3", BrandId = "3", Pairs = 1, Quantity = 3, CatId = "1", ProdId = "2", JewelleryId = "4", MRP = 150, },
+                new ItemMst() { StyleCode = "4", BrandId = "4", Pairs = 1, Quantity = 3, CatId = "1", ProdId = "1", JewelleryId = "5", MRP = 150, },
+                new ItemMst() { StyleCode = "5", BrandId = "2", Pairs = 1, Quantity = 20, CatId = "1", ProdId = "3", JewelleryId = "7", MRP = 250, },
+                new ItemMst() { StyleCode = "6", BrandId = "1", Pairs = 1, Quantity = 16, CatId = "1", ProdId = "2", JewelleryId = "10", MRP = 35, }
+            );
+            context.StoneMsts.AddOrUpdate(x => x.StyleCode,
+                new StoneMst() { StyleCode = "1", StoneQltyID = "3", StonePcs = 1, StoneCrt = 6, StoneRate = 35 },
+                new StoneMst() { StyleCode = "2", StoneQltyID = "3", StonePcs = 1, StoneCrt = 2, StoneRate = 22 },
+                new StoneMst() { StyleCode = "3", StoneQltyID = "6", StonePcs = 1, StoneCrt = 1, StoneRate = 38 },
+                new StoneMst() { StyleCode = "4", StoneQltyID = "6", StonePcs = 1, StoneCrt = 1, StoneRate = 49 }
+            );
         }   
     }
 }
