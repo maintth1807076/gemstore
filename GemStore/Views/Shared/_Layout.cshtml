@@ -147,146 +147,553 @@
             </div>
         </div>
     </div><!--End Header Area-->
-<!--End Main Menu Area-->
-    @RenderBody()
-    <!-- HOME SLIDER -->
-    <div class="slider-wrap home-1-slider">
-        <div id="mainSlider" class="nivoSlider slider-image">
-            <img src="~/user/img/slider/1.jpg" alt="main slider" title="#htmlcaption1" />
-            <img src="~/user/img/slider/2.jpg" alt="main slider" title="#htmlcaption2" />
-        </div>
-        <div id="htmlcaption1" class="nivo-html-caption slider-caption-1">
-            <div class="slider-progress"></div>
-            <div class="slide1-text slide-text">
-                <div class="middle-text">
-                    <div class="cap-title wow slideInRight" data-wow-duration=".9s" data-wow-delay="0s">
-                        <h1>Exclusive Jewelry</h1>
+    <div class="menu-area">
+        <!--Start Main Menu Area-->
+        <div class="container">
+            <div class="row">
+                <div class="clo-md-12">
+                    <div class="main-menu hidden-sm hidden-xs">
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="index.html" class="active">Home</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="index.html">Home 1</a></li>
+                                        <li><a href="index-2.html">Home 2</a></li>
+                                        <li><a href="index-3.html">Home 3</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Pages</a>
+                                    <div class="mega-menu mega-menu-page">
+                                        <div class="column-1 column">
+                                            <ul>
+                                                <li><a href="about-us.html">About US</a></li>
+                                                <li><a href="blog.html">Blog</a></li>
+                                                <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
+                                                <li><a href="blog-right-sidebar.html">Blog right sidebar</a></li>
+                                                <li><a href="blog-details.html">Blog details</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="column-2 column">
+                                            <ul>
+                                                <li><a href="cart.html">Cart</a></li>
+                                                <li><a href="checkout.html">Checkout</a></li>
+                                                <li><a href="coming-soon.html">Coming soon</a></li>
+                                                <li><a href="contact.html">Contact</a></li>
+                                                <li><a href="contact-2.html">Contact 2</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="column-3 column">
+                                            <ul>
+                                                <li><a href="faq.html">FAQ</a></li>
+                                                <li><a href="login.html">Login</a></li>
+                                                <li><a href="portfolio.html">Portfolio 3 column</a></li>
+                                                <li><a href="portfolio-2.html">Portfolio 4 column</a></li>
+                                                <li><a href="404.html">404</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="column-4 column">
+                                            <ul>
+                                                <li><a href="shop.html">Shop</a></li>
+                                                <li><a href="shop-list.html">Shop list</a></li>
+                                                <li><a href="shop-left-sidebar.html">Shop left sidebar</a></li>
+                                                <li><a href="shop-right-sidebar.html">Shop right sidebar</a></li>
+                                                <li><a href="product-details.html">Product details</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="shop.html">Shop</a>
+                                    <div class="mega-menu mega-menu-1">
+                                        <div class="column-1 column">
+                                            <ul>
+                                                <li><a href="shop-list.html">rings</a></li>
+                                                <li><a href="shop-left-sidebar.html">diamond ring</a></li>
+                                                <li><a href="shop-right-sidebar.html">gold ring</a></li>
+                                                <li><a href="shop-list.html">sliver ring</a></li>
+                                                <li><a href="shop-left-sidebar.html">Platinum ring</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="column-2 column">
+                                            <ul>
+                                                <li><a href="shop-list.html">Bracelets</a></li>
+                                                <li><a href="shop-left-sidebar.html">diamond Bracelets</a></li>
+                                                <li><a href="shop-right-sidebar.html">gold Bracelets</a></li>
+                                                <li><a href="shop-left-sidebar.html">sliver Bracelets</a></li>
+                                                <li><a href="shop-right-sidebar.html">Platinum Bracelets</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="column-3 column">
+                                            <ul>
+                                                <li><a href="shop-list.html">lecklaces</a></li>
+                                                <li><a href="shop-right-sidebar.html">diamond lecklaces</a></li>
+                                                <li><a href="shop-left-sidebar.html">gold lecklaces</a></li>
+                                                <li><a href="shop-right-sidebar.html">sliver lecklaces</a></li>
+                                                <li><a href="shop-left-sidebar.html">Platinum lecklaces</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="column-4 column">
+                                            <a href="#"><img src="~/user/img/product/10.jpg" alt=""></a>
+
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="shop.html">New Arrivals</a>
+                                    <div class="mega-menu mega-menu-1">
+                                        <div class="column-1 column">
+                                            <ul>
+                                                <li><a href="shop-list.html">rings</a></li>
+                                                <li><a href="shop-left-sidebar.html">diamond ring</a></li>
+                                                <li><a href="shop-right-sidebar.html">gold ring</a></li>
+                                                <li><a href="shop-list.html">sliver ring</a></li>
+                                                <li><a href="shop-left-sidebar.html">Platinum ring</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="column-2 column">
+                                            <ul>
+                                                <li><a href="shop-list.html">Bracelets</a></li>
+                                                <li><a href="shop-left-sidebar.html">diamond Bracelets</a></li>
+                                                <li><a href="shop-right-sidebar.html">gold Bracelets</a></li>
+                                                <li><a href="shop-left-sidebar.html">sliver Bracelets</a></li>
+                                                <li><a href="shop-right-sidebar.html">Platinum Bracelets</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="column-3 column">
+                                            <ul>
+                                                <li><a href="shop-list.html">lecklaces</a></li>
+                                                <li><a href="shop-right-sidebar.html">diamond lecklaces</a></li>
+                                                <li><a href="shop-left-sidebar.html">gold lecklaces</a></li>
+                                                <li><a href="shop-right-sidebar.html">sliver lecklaces</a></li>
+                                                <li><a href="shop-left-sidebar.html">Platinum lecklaces</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="column-4 column">
+                                            <ul>
+                                                <li><a href="shop-right-sidebar.html">earrings</a></li>
+                                                <li><a href="shop-list.html">diamond earrings</a></li>
+                                                <li><a href="shop-left-sidebar.html">gold earrings</a></li>
+                                                <li><a href="shop-list.html">sliver earrings</a></li>
+                                                <li><a href="shop-left-sidebar.html">Platinum earrings</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="portfolio.html">Portfolio</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="portfolio.html">Portfolio 3 column</a></li>
+                                        <li><a href="portfolio-2.html">Portfolio 4 column</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="blog.html">Blog</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="blog.html">Blog Page</a></li>
+                                        <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
+                                        <li><a href="blog-right-sidebar.html">Blog right sidebar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="about-us.html">About Us</a></li>
+                                <li>
+                                    <a href="contact.html">Contact</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="contact.html">Contact 1</a></li>
+                                        <li><a href="contact-2.html">Contact 2</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
-                    <div class="cap-dec wow slideInRight" data-wow-duration="1.3s" data-wow-delay="0s">
-                        <h2>to express personality</h2>
-                    </div>
-                    <div class="cap-readmore wow fadeInUpBig" data-wow-duration="1.5s" data-wow-delay="0s">
-                        <a href="#">Shop Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="htmlcaption2" class="nivo-html-caption slider-caption-2">
-            <div class="slider-progress"></div>
-            <div class="slide2-text slide-text">
-                <div class="middle-text">
-                    <div class="cap-title wow bounceInDown" data-wow-duration=".9s" data-wow-delay="0s">
-                        <h1>Exclusive Jewelry</h1>
-                    </div>
-                    <div class="cap-dec wow bounceInRight" data-wow-duration="1.5s" data-wow-delay="0s">
-                        <h2>to express personality</h2>
-                    </div>
-                    <div class="cap-readmore wow bounceInUp" data-wow-duration="1.3s" data-wow-delay=".5s">
-                        <a href="#">Shop Now</a>
+                    <div class="mobile-menu hidden-md hidden-lg mean-container">
+                        <div class="mean-bar">
+                            <a href="#nav" class="meanmenu-reveal" style="background:;color:;right:0;left:auto;"><span></span><span></span><span></span></a><nav class="mean-nav">
+                                <ul style="display: none;">
+                                    <li>
+                                        <a href="index.html" class="active">Home</a>
+                                        <ul style="display: none;">
+                                            <li><a href="index.html">Home 1</a></li>
+                                            <li><a href="index-2.html">Home 2</a></li>
+                                            <li><a href="index-3.html">Home 3</a></li>
+                                        </ul>
+                                        <a class="mean-expand" href="#" style="font-size: 18px">+</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Pages</a>
+                                        <ul style="display: none;">
+                                            <li><a href="about-us.html">About US</a></li>
+                                            <li><a href="blog.html">Blog</a></li>
+                                            <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
+                                            <li><a href="blog-right-sidebar.html">Blog right sidebar</a></li>
+                                            <li><a href="blog-details.html">Blog details</a></li>
+                                            <li><a href="cart.html">Cart</a></li>
+                                            <li><a href="checkout.html">Checkout</a></li>
+                                            <li><a href="coming-soon.html">Coming soon</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="contact-2.html">Contact 2</a></li>
+                                            <li><a href="faq.html">FAQ</a></li>
+                                            <li><a href="login.html">Login</a></li>
+                                            <li><a href="portfolio.html">Portfolio 3 column</a></li>
+                                            <li><a href="portfolio-2.html">Portfolio 4 column</a></li>
+                                            <li><a href="404.html">404</a></li>
+                                            <li><a href="shop.html">Shop</a></li>
+                                            <li><a href="shop-list.html">Shop list</a></li>
+                                            <li><a href="shop-left-sidebar.html">Shop left sidebar</a></li>
+                                            <li><a href="shop-right-sidebar.html">Shop right sidebar</a></li>
+                                            <li><a href="product-details.html">Product details</a></li>
+                                        </ul>
+                                        <a class="mean-expand" href="#" style="font-size: 18px">+</a>
+                                    </li>
+                                    <li>
+                                        <a href="shop.html">Shop</a>
+                                        <ul style="display: none;">
+                                            <li>
+                                                <a href="shop-list.html">rings</a>
+                                                <ul style="display: none;">
+                                                    <li><a href="shop-left-sidebar.html">diamond ring</a></li>
+                                                    <li><a href="shop-right-sidebar.html">gold ring</a></li>
+                                                    <li><a href="shop-list.html">sliver ring</a></li>
+                                                    <li><a href="shop-left-sidebar.html">Platinum ring</a></li>
+                                                </ul>
+                                                <a class="mean-expand" href="#" style="font-size: 18px">+</a>
+                                            </li>
+                                            <li>
+                                                <a href="shop-list.html">Bracelets</a>
+                                                <ul style="display: none;">
+                                                    <li><a href="shop-left-sidebar.html">diamond Bracelets</a></li>
+                                                    <li><a href="shop-right-sidebar.html">gold Bracelets</a></li>
+                                                    <li><a href="shop-left-sidebar.html">sliver Bracelets</a></li>
+                                                    <li><a href="shop-right-sidebar.html">Platinum Bracelets</a></li>
+                                                </ul>
+                                                <a class="mean-expand" href="#" style="font-size: 18px">+</a>
+                                            </li>
+                                            <li>
+                                                <a href="shop-list.html">lecklaces</a>
+                                                <ul style="display: none;">
+                                                    <li><a href="shop-right-sidebar.html">diamond lecklaces</a></li>
+                                                    <li><a href="shop-left-sidebar.html">gold lecklaces</a></li>
+                                                    <li><a href="shop-right-sidebar.html">sliver lecklaces</a></li>
+                                                    <li><a href="shop-left-sidebar.html">Platinum lecklaces</a></li>
+                                                </ul>
+                                                <a class="mean-expand" href="#" style="font-size: 18px">+</a>
+                                            </li>
+                                        </ul>
+                                        <a class="mean-expand" href="#" style="font-size: 18px">+</a>
+                                    </li>
+                                    <li>
+                                        <a href="shop.html">New Arrivals</a>
+                                        <ul style="display: none;">
+                                            <li>
+                                                <a href="shop-list.html">rings</a>
+                                                <ul style="display: none;">
+                                                    <li><a href="shop-left-sidebar.html">diamond ring</a></li>
+                                                    <li><a href="shop-right-sidebar.html">gold ring</a></li>
+                                                    <li><a href="shop-list.html">sliver ring</a></li>
+                                                    <li><a href="shop-left-sidebar.html">Platinum ring</a></li>
+                                                </ul>
+                                                <a class="mean-expand" href="#" style="font-size: 18px">+</a>
+                                            </li>
+                                            <li>
+                                                <a href="shop-list.html">Bracelets</a>
+                                                <ul style="display: none;">
+                                                    <li><a href="shop-left-sidebar.html">diamond Bracelets</a></li>
+                                                    <li><a href="shop-right-sidebar.html">gold Bracelets</a></li>
+                                                    <li><a href="shop-left-sidebar.html">sliver Bracelets</a></li>
+                                                    <li><a href="shop-right-sidebar.html">Platinum Bracelets</a></li>
+                                                </ul>
+                                                <a class="mean-expand" href="#" style="font-size: 18px">+</a>
+                                            </li>
+                                            <li>
+                                                <a href="shop-list.html">lecklaces</a>
+                                                <ul style="display: none;">
+                                                    <li><a href="shop-right-sidebar.html">diamond lecklaces</a></li>
+                                                    <li><a href="shop-left-sidebar.html">gold lecklaces</a></li>
+                                                    <li><a href="shop-right-sidebar.html">sliver lecklaces</a></li>
+                                                    <li><a href="shop-left-sidebar.html">Platinum lecklaces</a></li>
+                                                </ul>
+                                                <a class="mean-expand" href="#" style="font-size: 18px">+</a>
+                                            </li>
+                                            <li>
+                                                <a href="shop-right-sidebar.html">earrings</a>
+                                                <ul style="display: none;">
+                                                    <li><a href="shop-right-sidebar.html">diamond lecklaces</a></li>
+                                                    <li><a href="shop-left-sidebar.html">gold earrings</a></li>
+                                                    <li><a href="shop-list.html">sliver earrings</a></li>
+                                                    <li><a href="shop-left-sidebar.html">Platinum earrings</a></li>
+                                                </ul>
+                                                <a class="mean-expand" href="#" style="font-size: 18px">+</a>
+                                            </li>
+                                        </ul>
+                                        <a class="mean-expand" href="#" style="font-size: 18px">+</a>
+                                    </li>
+                                    <li>
+                                        <a href="portfolio.html">Portfolio</a>
+                                        <ul style="display: none;">
+                                            <li><a href="portfolio.html">Portfolio 3 column</a></li>
+                                            <li><a href="portfolio-2.html">Portfolio 4 column</a></li>
+                                        </ul>
+                                        <a class="mean-expand" href="#" style="font-size: 18px">+</a>
+                                    </li>
+                                    <li>
+                                        <a href="blog.html">Blog</a>
+                                        <ul style="display: none;">
+                                            <li><a href="blog.html">Blog 1</a></li>
+                                            <li><a href="blog-left-sidebar.html">Blog 2</a></li>
+                                            <li><a href="blog-right-sidebar.html">Blog 3</a></li>
+                                        </ul>
+                                        <a class="mean-expand" href="#" style="font-size: 18px">+</a>
+                                    </li>
+                                    <li><a href="about-us.html">About Us</a></li>
+                                    <li>
+                                        <a href="contact.html">Contact</a>
+                                        <ul style="display: none;">
+                                            <li><a href="contact.html">Contact 1</a></li>
+                                            <li class="mean-last"><a href="contact-2.html">Contact 2</a></li>
+                                        </ul>
+                                        <a class="mean-expand" href="#" style="font-size: 18px">+</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="mean-push"></div><nav style="display: none;">
+                            <ul>
+                                <li>
+                                    <a href="index.html" class="active">Home</a>
+                                    <ul>
+                                        <li><a href="index.html">Home 1</a></li>
+                                        <li><a href="index-2.html">Home 2</a></li>
+                                        <li><a href="index-3.html">Home 3</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Pages</a>
+                                    <ul>
+                                        <li><a href="about-us.html">About US</a></li>
+                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
+                                        <li><a href="blog-right-sidebar.html">Blog right sidebar</a></li>
+                                        <li><a href="blog-details.html">Blog details</a></li>
+                                        <li><a href="cart.html">Cart</a></li>
+                                        <li><a href="checkout.html">Checkout</a></li>
+                                        <li><a href="coming-soon.html">Coming soon</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="contact-2.html">Contact 2</a></li>
+                                        <li><a href="faq.html">FAQ</a></li>
+                                        <li><a href="login.html">Login</a></li>
+                                        <li><a href="portfolio.html">Portfolio 3 column</a></li>
+                                        <li><a href="portfolio-2.html">Portfolio 4 column</a></li>
+                                        <li><a href="404.html">404</a></li>
+                                        <li><a href="shop.html">Shop</a></li>
+                                        <li><a href="shop-list.html">Shop list</a></li>
+                                        <li><a href="shop-left-sidebar.html">Shop left sidebar</a></li>
+                                        <li><a href="shop-right-sidebar.html">Shop right sidebar</a></li>
+                                        <li><a href="product-details.html">Product details</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="shop.html">Shop</a>
+                                    <ul>
+                                        <li>
+                                            <a href="shop-list.html">rings</a>
+                                            <ul>
+                                                <li><a href="shop-left-sidebar.html">diamond ring</a></li>
+                                                <li><a href="shop-right-sidebar.html">gold ring</a></li>
+                                                <li><a href="shop-list.html">sliver ring</a></li>
+                                                <li><a href="shop-left-sidebar.html">Platinum ring</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="shop-list.html">Bracelets</a>
+                                            <ul>
+                                                <li><a href="shop-left-sidebar.html">diamond Bracelets</a></li>
+                                                <li><a href="shop-right-sidebar.html">gold Bracelets</a></li>
+                                                <li><a href="shop-left-sidebar.html">sliver Bracelets</a></li>
+                                                <li><a href="shop-right-sidebar.html">Platinum Bracelets</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="shop-list.html">lecklaces</a>
+                                            <ul>
+                                                <li><a href="shop-right-sidebar.html">diamond lecklaces</a></li>
+                                                <li><a href="shop-left-sidebar.html">gold lecklaces</a></li>
+                                                <li><a href="shop-right-sidebar.html">sliver lecklaces</a></li>
+                                                <li><a href="shop-left-sidebar.html">Platinum lecklaces</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="shop.html">New Arrivals</a>
+                                    <ul>
+                                        <li>
+                                            <a href="shop-list.html">rings</a>
+                                            <ul>
+                                                <li><a href="shop-left-sidebar.html">diamond ring</a></li>
+                                                <li><a href="shop-right-sidebar.html">gold ring</a></li>
+                                                <li><a href="shop-list.html">sliver ring</a></li>
+                                                <li><a href="shop-left-sidebar.html">Platinum ring</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="shop-list.html">Bracelets</a>
+                                            <ul>
+                                                <li><a href="shop-left-sidebar.html">diamond Bracelets</a></li>
+                                                <li><a href="shop-right-sidebar.html">gold Bracelets</a></li>
+                                                <li><a href="shop-left-sidebar.html">sliver Bracelets</a></li>
+                                                <li><a href="shop-right-sidebar.html">Platinum Bracelets</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="shop-list.html">lecklaces</a>
+                                            <ul>
+                                                <li><a href="shop-right-sidebar.html">diamond lecklaces</a></li>
+                                                <li><a href="shop-left-sidebar.html">gold lecklaces</a></li>
+                                                <li><a href="shop-right-sidebar.html">sliver lecklaces</a></li>
+                                                <li><a href="shop-left-sidebar.html">Platinum lecklaces</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="shop-right-sidebar.html">earrings</a>
+                                            <ul>
+                                                <li><a href="shop-right-sidebar.html">diamond lecklaces</a></li>
+                                                <li><a href="shop-left-sidebar.html">gold earrings</a></li>
+                                                <li><a href="shop-list.html">sliver earrings</a></li>
+                                                <li><a href="shop-left-sidebar.html">Platinum earrings</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="portfolio.html">Portfolio</a>
+                                    <ul>
+                                        <li><a href="portfolio.html">Portfolio 3 column</a></li>
+                                        <li><a href="portfolio-2.html">Portfolio 4 column</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="blog.html">Blog</a>
+                                    <ul>
+                                        <li><a href="blog.html">Blog 1</a></li>
+                                        <li><a href="blog-left-sidebar.html">Blog 2</a></li>
+                                        <li><a href="blog-right-sidebar.html">Blog 3</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="about-us.html">About Us</a></li>
+                                <li>
+                                    <a href="contact.html">Contact</a>
+                                    <ul>
+                                        <li><a href="contact.html">Contact 1</a></li>
+                                        <li><a href="contact-2.html">Contact 2</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- HOME SLIDER -->
-   <!--End Featured Product Area-->
-  
+    <!--End Main Menu Area-->
+    @RenderBody()
+    `
 
-    <div class="footer-top-area fix">
-        <!--Start Footer top area-->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-md-3">
-                    <div class="footer-about">
-                        <div class="image">
-                            <img src="~/user/img/header/logo.png" alt="">
-                            <h3>online jewelry store</h3>
-                        </div>
-                        <p>perspiciatis unde omnis iste natus error sit voluptatem accm doloremque antium, totam rem aperiam, eaque ipsa perspiciatis unde omnis iste</p>
+<div class="footer-top-area fix">
+    <!--Start Footer top area-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-3">
+                <div class="footer-about">
+                    <div class="image">
+                        <img src="~/user/img/header/logo.png" alt="">
+                        <h3>online jewelry store</h3>
                     </div>
-                    <div class="footer-contact">
-                        <div class="single-contact">
-                            <div class="icon">
-                                <i class="fa fa-map-marker"></i>
-                            </div>
-                            <div class="details">
-                                <p>Main town, Anystreen</p>
-                                <p>C/A 1254 New Yourk</p>
-                            </div>
-                        </div>
-                        <div class="single-contact">
-                            <div class="icon">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <div class="details">
-                                <p>+012  456  456  456</p>
-                                <p>+012  356  897  222</p>
-                            </div>
-                        </div>
-                        <div class="single-contact">
-                            <div class="icon">
-                                <i class="fa fa-dribbble"></i>
-                            </div>
-                            <div class="details">
-                                <a href="#">info@olongker.com</a>
-                                <a href="#">www.olongker.com</a>
-                            </div>
-                        </div>
-                    </div>
+                    <p>perspiciatis unde omnis iste natus error sit voluptatem accm doloremque antium, totam rem aperiam, eaque ipsa perspiciatis unde omnis iste</p>
                 </div>
-                <div class="col-sm-6 col-md-3">
-                    <div class="footer-quick-link footer-links">
-                        <h2>QUICK LINK</h2>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="shop.html">Shop</a></li>
-                            <li><a href="shop-left-sidebar.html">New Arrivals</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="portfolio-1.html">Portfolio</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="#">Shortcodes</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                    <div class="row">
-                        <div class="col-sm-8 footer-support footer-links">
-                            <h2>OUR SUPPORT</h2>
-                            <ul>
-                                <li><a href="#">Site Map</a></li>
-                                <li><a href="#">privacy Policy</a></li>
-                                <li><a href="#">Your Account</a></li>
-                                <li><a href="#">Term &amp; Conditions</a></li>
-                                <li><a href="#">Advance Search</a></li>
-                                <li><a href="faq.html">Help &amp; FAQs</a></li>
-                                <li><a href="#">Gift Voucher</a></li>
-                                <li><a href="contact-2.html">Contact Us</a></li>
-                            </ul>
+                <div class="footer-contact">
+                    <div class="single-contact">
+                        <div class="icon">
+                            <i class="fa fa-map-marker"></i>
                         </div>
-                        <div class="col-sm-4 footer-account footer-links">
-                            <h2>my Account</h2>
-                            <ul>
-                                <li><a href="#">my Account</a></li>
-                                <li><a href="#">order History</a></li>
-                                <li><a href="#">Returns</a></li>
-                                <li><a href="#">Specials</a></li>
-                            </ul>
+                        <div class="details">
+                            <p>Main town, Anystreen</p>
+                            <p>C/A 1254 New Yourk</p>
                         </div>
                     </div>
-                    <div class="footer-newslater fix">
-                        <div class="wrap fix">
-                            <h3>NEWS LETTER ! </h3>
-                            <form action="#">
-                                <input type="email" placeholder="Your E-mail...">
-                                <button class="submit">SUBSCRIBE</button>
-                            </form>
+                    <div class="single-contact">
+                        <div class="icon">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="details">
+                            <p>+012  456  456  456</p>
+                            <p>+012  356  897  222</p>
+                        </div>
+                    </div>
+                    <div class="single-contact">
+                        <div class="icon">
+                            <i class="fa fa-dribbble"></i>
+                        </div>
+                        <div class="details">
+                            <a href="#">info@olongker.com</a>
+                            <a href="#">www.olongker.com</a>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="footer-quick-link footer-links">
+                    <h2>QUICK LINK</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="shop-left-sidebar.html">New Arrivals</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio-1.html">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#">Shortcodes</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="row">
+                    <div class="col-sm-8 footer-support footer-links">
+                        <h2>OUR SUPPORT</h2>
+                        <ul>
+                            <li><a href="#">Site Map</a></li>
+                            <li><a href="#">privacy Policy</a></li>
+                            <li><a href="#">Your Account</a></li>
+                            <li><a href="#">Term &amp; Conditions</a></li>
+                            <li><a href="#">Advance Search</a></li>
+                            <li><a href="faq.html">Help &amp; FAQs</a></li>
+                            <li><a href="#">Gift Voucher</a></li>
+                            <li><a href="contact-2.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 footer-account footer-links">
+                        <h2>my Account</h2>
+                        <ul>
+                            <li><a href="#">my Account</a></li>
+                            <li><a href="#">order History</a></li>
+                            <li><a href="#">Returns</a></li>
+                            <li><a href="#">Specials</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-newslater fix">
+                    <div class="wrap fix">
+                        <h3>NEWS LETTER ! </h3>
+                        <form action="#">
+                            <input type="email" placeholder="Your E-mail...">
+                            <button class="submit">SUBSCRIBE</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div><!--Start Footer top area-->
+    </div>
+</div>
     <div class="footer-area fix">
         <!--Start Footer Area-->
         <div class="container">
