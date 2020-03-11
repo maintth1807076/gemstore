@@ -33,7 +33,10 @@
             @Html.DisplayNameFor(model => model.ProdMst.ProdType)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.StoneMst.StoneQltyID)
+            @Html.DisplayNameFor(model => model.StoneMst.StoneQltyId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Pairs)
@@ -81,6 +84,9 @@
             @Html.DisplayNameFor(model => model.MRP)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.SalePrice)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Thumbnails)
         </th>
         <th></th>
@@ -110,7 +116,10 @@
             @Html.DisplayFor(modelItem => item.ProdMst.ProdType)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.StoneMst.StoneQltyID)
+            @Html.DisplayFor(modelItem => item.StoneMst.StoneQltyId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Pairs)
@@ -156,6 +165,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.MRP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalePrice)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Thumbnails)

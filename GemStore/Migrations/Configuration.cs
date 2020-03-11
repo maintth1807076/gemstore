@@ -112,19 +112,10 @@ namespace GemStore.Migrations
             );
             context.ItemMsts.AddOrUpdate(x => x.StyleCode,
                 new ItemMst() {StyleCode = "ANH458", Name = "Green Onyx Rhodium Over Sterling Silver Dangle Earrings 6.50ctw", MRP = 59.99, SalePrice = 50.99, Thumbnails = "https://images.jtv.com/jewelry/JTV-ANH458-1-thumb.jpg, https://images.jtv.com/jewelry/JTV-ANH458-2-thumb.jpg, https://images.jtv.com/jewelry/JTV-ANH458-3-thumb.jpg", Pairs = 1, Quantity = 20, BrandId = "1", CatId = "1", ProdId = "1", GoldTypeId = "1", JewelleryId = "1", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2},
-                new ItemMst() { StyleCode = "1", BrandId = "1", Pairs = 1, Quantity = 5, CatId = "1", ProdId = "1", JewelleryId = "2", MRP = 110, },
-                new ItemMst() { StyleCode = "2", BrandId = "2", Pairs = 1, Quantity = 10, CatId = "2", ProdId = "1", JewelleryId = "3", GoldTypeId = "1", GoldWt = 4.06, MRP = 35, },
-                new ItemMst() { StyleCode = "3", BrandId = "3", Pairs = 1, Quantity = 3, CatId = "1", ProdId = "2", JewelleryId = "4", MRP = 150, },
-                new ItemMst() { StyleCode = "4", BrandId = "4", Pairs = 1, Quantity = 3, CatId = "1", ProdId = "1", JewelleryId = "5", MRP = 150, },
-                new ItemMst() { StyleCode = "5", BrandId = "2", Pairs = 1, Quantity = 20, CatId = "1", ProdId = "3", JewelleryId = "7", MRP = 250, },
-                new ItemMst() { StyleCode = "6", BrandId = "1", Pairs = 1, Quantity = 16, CatId = "1", ProdId = "2", JewelleryId = "10", MRP = 35, }
+                new ItemMst() {StyleCode = "NCH024", Name = "Green Chrome Diopside Rhodium Over Silver Set of 2 Rings 2.11ctw", MRP = 81.99, SalePrice = 69.69, Thumbnails = "https://images.jtv.com/jewelry/JTV-NCH024-1-thumb.jpg, https://images.jtv.com/jewelry/JTV-NCH024-2-thumb.jpg, https://images.jtv.com/jewelry/JTV-NCH024-3-thumb.jpg", Pairs = 1, Quantity = 20, BrandId = "1", CatId = "1", ProdId = "1", GoldTypeId = "1", JewelleryId = "1", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2}
             );
             context.StoneMsts.AddOrUpdate(x => x.StyleCode,
-                new StoneMst() {StyleCode = "ANH458", StoneQltyId = "1", StonePcs = 1, StoneCrt = 6, StoneRate = 35 },
-                new StoneMst() { StyleCode = "1", StoneQltyId = "3", StonePcs = 1, StoneCrt = 6, StoneRate = 35 },
-                new StoneMst() { StyleCode = "2", StoneQltyId = "3", StonePcs = 1, StoneCrt = 2, StoneRate = 22 },
-                new StoneMst() { StyleCode = "3", StoneQltyId = "6", StonePcs = 1, StoneCrt = 1, StoneRate = 38 },
-                new StoneMst() { StyleCode = "4", StoneQltyId = "6", StonePcs = 1, StoneCrt = 1, StoneRate = 49 }
+                new StoneMst() {StyleCode = "ANH458", StoneQltyId = "1", StonePcs = 1, StoneCrt = 6, StoneRate = 35 }
             );
         }   
     }

@@ -183,25 +183,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202003090456516_InitDatabase.cs" />
-    <Compile Include="Migrations\202003090456516_InitDatabase.Designer.cs">
-      <DependentUpon>202003090456516_InitDatabase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003091338523_ChangeCat.cs" />
-    <Compile Include="Migrations\202003091338523_ChangeCat.Designer.cs">
-      <DependentUpon>202003091338523_ChangeCat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003100043022_ChangeItem.cs" />
-    <Compile Include="Migrations\202003100043022_ChangeItem.Designer.cs">
-      <DependentUpon>202003100043022_ChangeItem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003110344230_ChangeItem2.cs" />
-    <Compile Include="Migrations\202003110344230_ChangeItem2.Designer.cs">
-      <DependentUpon>202003110344230_ChangeItem2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003110406092_ChangeItem3.cs" />
-    <Compile Include="Migrations\202003110406092_ChangeItem3.Designer.cs">
-      <DependentUpon>202003110406092_ChangeItem3.cs</DependentUpon>
+    <Compile Include="Migrations\202003110459304_InitDatabase.cs" />
+    <Compile Include="Migrations\202003110459304_InitDatabase.Designer.cs">
+      <DependentUpon>202003110459304_InitDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -2185,6 +2169,8 @@
     <Content Include="Views\Account\VerifyCode.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Home\Shop.cshtml" />
+    <Content Include="Views\Home\Shop_list.cshtml" />
     <Content Include="Views\Cart\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -2205,20 +2191,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202003090456516_InitDatabase.resx">
-      <DependentUpon>202003090456516_InitDatabase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003091338523_ChangeCat.resx">
-      <DependentUpon>202003091338523_ChangeCat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003100043022_ChangeItem.resx">
-      <DependentUpon>202003100043022_ChangeItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003110344230_ChangeItem2.resx">
-      <DependentUpon>202003110344230_ChangeItem2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003110406092_ChangeItem3.resx">
-      <DependentUpon>202003110406092_ChangeItem3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003110459304_InitDatabase.resx">
+      <DependentUpon>202003110459304_InitDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
