@@ -11,7 +11,9 @@
             <div class="product-item fix">
                 <div class="product-img-hover">
                     <!-- Product image -->
-                    <a href="product-details.html" class="pro-image fix"><img src="@item.Thumbnails.Split(',')[0]" alt="product" /></a>
+                    <a href="product-details.html" class="pro-image fix">
+                        <div style="background-image: url(@item.Thumbnails.Split(',')[0]); width: 270px; height: 246px; background-size: contain; background-position: center"></div>
+                    </a>
                     <!-- Product action Btn -->
                     <div class="product-action-btn">
                         <a class="quick-view" href="@Url.Action("ProductDetails", "Cart", new { id=item.StyleCode})"><i class="fa fa-search"></i></a>
@@ -78,7 +80,9 @@
         <div class="product-item fix">
             <div class="product-img-hover">
                 <!-- Product image -->
-                <a href="product-details.html" class="pro-image fix"><img src="~/Content/user/img/product/2.jpg" alt="product" /></a>
+                <a href="product-details.html" class="pro-image fix">
+                    <div style="background-image: url('https://images.jtv.com/jewelry/JTV-NCH024-2-medium.jpg'); width: 270px; height: 246px; background-size: contain; background-position: center"></div>
+                </a>
                 <!-- Product action Btn -->
                 <div class="product-action-btn">
                     <a class="quick-view" href="#"><i class="fa fa-search"></i></a>
@@ -258,7 +262,8 @@
     </div>
 </div>
 <hr />
-<div class="mx-auto ml-md-0 mr-md-auto" style="max-width: 250px; ">
+<div class="mx-auto ml-md-0 mr-md-auto" style="        max-width: 250px;
+">
     <button type="button" class="upload-image-btn" id="upload_widget" style="overflow: hidden; width: 60% ">
         <img id="preview"
              class="img-thumbnail" alt="Chọn ảnh" />
@@ -271,7 +276,10 @@
             <div class="fuild">
                 <div class="img-cart">
                     <a href="/product/17">
-                        <div style="  width: 100%; height: 300px;  background-size: cover; background-image:url('https://res.cloudinary.com/dkzqu5nh2/image/upload/v1568234336/Nendoroid-product7-img1.jpg')"></div>
+                        <div style="        width: 100%;
+        height: 300px;
+        background-size: cover;
+        background-image: url('https://res.cloudinary.com/dkzqu5nh2/image/upload/v1568234336/Nendoroid-product7-img1.jpg')"></div>
                     </a>
 
                 </div>

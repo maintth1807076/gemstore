@@ -262,6 +262,22 @@
     <Content Include="Content\user\img\offer\offer-2.jpg" />
     <Content Include="Content\user\img\offer\offer-3.jpg" />
     <Content Include="Content\user\img\offer\offer-4.jpg" />
+    <Content Include="Content\user\img\portfolio\portfolio-1.jpg" />
+    <Content Include="Content\user\img\portfolio\portfolio-10.jpg" />
+    <Content Include="Content\user\img\portfolio\portfolio-11.jpg" />
+    <Content Include="Content\user\img\portfolio\portfolio-12.jpg" />
+    <Content Include="Content\user\img\portfolio\portfolio-2.jpg" />
+    <Content Include="Content\user\img\portfolio\portfolio-3.jpg" />
+    <Content Include="Content\user\img\portfolio\portfolio-4.jpg" />
+    <Content Include="Content\user\img\portfolio\portfolio-5.jpg" />
+    <Content Include="Content\user\img\portfolio\portfolio-6.jpg" />
+    <Content Include="Content\user\img\portfolio\portfolio-7.jpg" />
+    <Content Include="Content\user\img\portfolio\portfolio-8.jpg" />
+    <Content Include="Content\user\img\portfolio\portfolio-9.jpg" />
+    <Content Include="Content\user\img\single-product\1.jpg" />
+    <Content Include="Content\user\img\single-product\2.jpg" />
+    <Content Include="Content\user\img\single-product\3.jpg" />
+    <Content Include="Content\user\img\single-product\4.jpg" />
     <Content Include="Content\user\img\product\1.jpg" />
     <Content Include="Content\user\img\product\10.jpg" />
     <Content Include="Content\user\img\product\2.jpg" />
@@ -271,6 +287,10 @@
     <Content Include="Content\user\img\product\7.jpg" />
     <Content Include="Content\user\img\product\8.jpg" />
     <Content Include="Content\user\img\product\9.jpg" />
+    <Content Include="Content\user\img\single-product\thumb-1.jpg" />
+    <Content Include="Content\user\img\single-product\thumb-2.jpg" />
+    <Content Include="Content\user\img\single-product\thumb-3.jpg" />
+    <Content Include="Content\user\img\single-product\thumb-4.jpg" />
     <Content Include="Content\user\img\slider\1.jpg" />
     <Content Include="Content\user\img\slider\2 %281%29.jpg" />
     <Content Include="Content\user\img\slider\2.jpg" />
@@ -2191,6 +2211,9 @@
     <Content Include="Views\Home\Shop_list.cshtml" />
     <Content Include="Views\Cart\Test.cshtml" />
     <Content Include="Views\Cart\ProductDetails.cshtml" />
+    <Content Include="Views\Home\Blog.cshtml" />
+    <Content Include="Views\Home\Portfolio.cshtml" />
+    <Content Include="Views\Home\Product_detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
