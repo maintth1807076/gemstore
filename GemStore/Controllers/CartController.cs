@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
@@ -18,6 +19,19 @@ namespace GemStore.Controllers
         {
             var itemMsts = db.ItemMsts.ToList();
             return View(itemMsts);
+        }
+        public ActionResult ProductDetails(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ItemMst itemMst = db.ItemMsts.Find(id);
+            if (itemMst == null)
+            {
+                return HttpNotFound();
+            }
+            return View(itemMst);
         }
         [HttpPost, ActionName("Create")]
         [ValidateAntiForgeryToken]

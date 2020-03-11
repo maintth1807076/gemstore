@@ -175,7 +175,10 @@
     <Compile Include="Areas\Admin\Controllers\DimQltyMstsController.cs" />
     <Compile Include="Areas\Admin\Controllers\DimQltySubMstsController.cs" />
     <Compile Include="Areas\Admin\Controllers\GoldKrtsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ItemMstsController.cs" />
     <Compile Include="Areas\Admin\Controllers\JewelTypeMstsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProdMstsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\StoneQltyMstsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -2121,6 +2124,21 @@
     <Content Include="Content\user\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\user\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\user\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\Admin\Views\ProdMsts\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ProdMsts\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ProdMsts\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ProdMsts\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ProdMsts\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\StoneQltyMsts\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\StoneQltyMsts\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\StoneQltyMsts\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\StoneQltyMsts\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\StoneQltyMsts\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ItemMsts\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ItemMsts\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ItemMsts\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ItemMsts\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ItemMsts\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2172,6 +2190,7 @@
     <Content Include="Views\Home\Shop.cshtml" />
     <Content Include="Views\Home\Shop_list.cshtml" />
     <Content Include="Views\Cart\Test.cshtml" />
+    <Content Include="Views\Cart\ProductDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
