@@ -3,6 +3,13 @@
 }
 
 <h2>Index</h2>
+<div class="mx-auto ml-md-0 mr-md-auto" style="max-width: 250px; ">
+    <button type="button" class="upload-image-btn" id="upload_widget" style="overflow: hidden; width: 60% ">
+        <img id="preview"
+             class="img-thumbnail" alt="Chọn ảnh" />
+    </button>
+</div>
+<hr />
 <div class="row m-2" id="load-more-new-product">
     <div class="col-xl-3 col-sm-4 col-12 mb-5">
         <div class="card">
@@ -139,26 +146,26 @@
             }
             return false;
         });
-        //$('.btn-delete-student').click(function () {
-        //    var id = $(this).attr("id").replace("delete-", "");
-        //    if (confirm("Are you sure want to delete this student?")) {
-        //        var token = $('input[name="__RequestVerificationToken"]').val();;
-        //        $.ajax({
-        //            url: "/Students/Delete/" + id,
-        //            type: "POST",
-        //            data: {
-        //                __RequestVerificationToken: token
-        //            },
-        //            success: function (data) {
-        //                alert("Delete success!");
-        //                window.location.reload();
-        //            },
-        //            error: function (error) {
-        //                alert("Action fails! Please try again!");
-        //            }
-        //        });
-        //    }
-        //    return false;
-        //});
+            //$('.btn-delete-student').click(function () {
+            //    var id = $(this).attr("id").replace("delete-", "");
+            //    if (confirm("Are you sure want to delete this student?")) {
+            //        var token = $('input[name="__RequestVerificationToken"]').val();;
+            //        $.ajax({
+            //            url: "/Students/Delete/" + id,
+            //            type: "POST",
+            //            data: {
+            //                __RequestVerificationToken: token
+            //            },
+            //            success: function (data) {
+            //                alert("Delete success!");
+            //                window.location.reload();
+            //            },
+            //            error: function (error) {
+            //                alert("Action fails! Please try again!");
+            //            }
+            //        });
+            //    }
+            //    return false;
+            //});
     </script>
 }
