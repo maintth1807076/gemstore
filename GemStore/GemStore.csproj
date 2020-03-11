@@ -171,14 +171,15 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BrandMstsController.cs" />
+    <Compile Include="Controllers\CatMstsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202003071646092_ChangeModel.cs" />
-    <Compile Include="Migrations\202003071646092_ChangeModel.Designer.cs">
-      <DependentUpon>202003071646092_ChangeModel.cs</DependentUpon>
+    <Compile Include="Migrations\202003110534103_ChangeModel.cs" />
+    <Compile Include="Migrations\202003110534103_ChangeModel.Designer.cs">
+      <DependentUpon>202003110534103_ChangeModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -2050,6 +2051,11 @@
     <Content Include="Views\Account\SendCode.cshtml" />
     <Content Include="Views\Account\VerifyCode.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\CatMsts\Delete.cshtml" />
+    <Content Include="Views\CatMsts\Details.cshtml" />
+    <Content Include="Views\CatMsts\Edit.cshtml" />
+    <Content Include="Views\CatMsts\Index.cshtml" />
+    <Content Include="Views\CatMsts\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2068,8 +2074,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202003071646092_ChangeModel.resx">
-      <DependentUpon>202003071646092_ChangeModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003110534103_ChangeModel.resx">
+      <DependentUpon>202003110534103_ChangeModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -11,8 +11,21 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<div>
+    <input type="text" id="inputData" name="name" value="" />
+</div>
+<br />
+<div>
+    <input type="number" id="x" name="name" value="" />
+    <input type="number" name="name" value="" />
+    <button id="onClick">Click</button>
+</div>
+<br />
+<table class="table" id="myTable">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BrandId)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.BrandType)
         </th>
@@ -21,7 +34,10 @@
 
     @foreach (var item in Model)
     {
-        <tr>
+        <tr id="newId">
+            <td id="myId">
+                @Html.DisplayFor(modelItem => item.BrandId)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.BrandType)
             </td>
@@ -34,6 +50,38 @@
     }
 
 </table>
+
+
+
+<script>
+    $(document).ready(function () {
+        $("#inputData").on("keyup", function () {
+            var value = $(this).val().toLocaleLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            })
+        })
+
+        /* var data = [$("#newId td").text()];
+         console.log(data);*/
+
+
+
+        for (var i = 0; i < $("#newId #myId").length; i++) {
+            /* var array = [];
+             var abc = $("#newId td").text();
+             array.add(abc[i])*/
+            $("#onClick").click(function () {
+                var array = [];
+                var abc = $("#newId td").text();
+                array.push(abc)
+                /* var x = parseInt($("#x").val()) + 0;*/
+                console.log(array)
+            })
+        }
+
+    });
+</script>
 
 
 

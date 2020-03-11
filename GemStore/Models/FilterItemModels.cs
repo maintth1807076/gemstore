@@ -19,6 +19,7 @@ namespace GemStore.Models
         [Key]
         public string CatId { get; set; }
         public string CatName { get; set; }
+        public string CatThumbnail { get; set; }
         public virtual ICollection<ItemMst> ItemMsts { get; set; }
     }
     public class ProdMst
