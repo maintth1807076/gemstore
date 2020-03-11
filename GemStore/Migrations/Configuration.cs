@@ -86,9 +86,11 @@ namespace GemStore.Migrations
                 new GoldKrt() { GoldTypeId = "1", GoldCrt = "18 CRT", },
                 new GoldKrt() { GoldTypeId = "2", GoldCrt = "10 CRT", },
                 new GoldKrt() { GoldTypeId = "3", GoldCrt = "14 CRT", },
-                new GoldKrt() { GoldTypeId = "4", GoldCrt = "22 CRT", }
+                new GoldKrt() { GoldTypeId = "4", GoldCrt = "22 CRT", },
+                new GoldKrt() { GoldTypeId = "5", GoldCrt = "16 CRT", }
             );
             context.JewelTypeMsts.AddOrUpdate(x => x.JewelleryId,
+                // shop by type
                 new JewelTypeMst() { JewelleryId = "1", JewelleryType = "Diamond", },
                 new JewelTypeMst() { JewelleryId = "2", JewelleryType = "Necklace", },
                 new JewelTypeMst() { JewelleryId = "3", JewelleryType = "Earring", },
@@ -96,9 +98,18 @@ namespace GemStore.Migrations
                 new JewelTypeMst() { JewelleryId = "5", JewelleryType = "Watches", },
                 new JewelTypeMst() { JewelleryId = "6", JewelleryType = "Rings", },
                 new JewelTypeMst() { JewelleryId = "7", JewelleryType = "Bracelet", },
+                // trending style
                 new JewelTypeMst() { JewelleryId = "8", JewelleryType = "Sping Trends", },
                 new JewelTypeMst() { JewelleryId = "9", JewelleryType = "Animal Jewelry", },
-                new JewelTypeMst() { JewelleryId = "10", JewelleryType = "New Jewelry", }
+                new JewelTypeMst() { JewelleryId = "10", JewelleryType = "Chain Necklace", },
+                new JewelTypeMst() { JewelleryId = "11", JewelleryType = "Heart Jewelry", },
+                new JewelTypeMst() { JewelleryId = "12", JewelleryType = "Hoop Earrings", },
+                new JewelTypeMst() { JewelleryId = "13", JewelleryType = "Floral Jewelry", },
+                // feature shop
+                new JewelTypeMst() { JewelleryId = "14", JewelleryType = "New Jewelry", },
+                new JewelTypeMst() { JewelleryId = "15", JewelleryType = "Fashion Jewelry", },
+                new JewelTypeMst() { JewelleryId = "16", JewelleryType = "Resort Jewelry", },
+                new JewelTypeMst() { JewelleryId = "17", JewelleryType = "Birthstone Jewelry", },
             );
             context.StoneQltyMsts.AddOrUpdate(x => x.StoneQltyId,
                 new StoneQltyMst() { StoneQltyId = "1", StoneQlty = "Ruby", },
