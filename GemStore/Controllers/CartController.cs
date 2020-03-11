@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
 using GemStore.Models;
 
 namespace GemStore.Controllers
@@ -13,7 +16,8 @@ namespace GemStore.Controllers
         // GET: Cart
         public ActionResult Index()
         {
-            return View();
+            var itemMsts = db.ItemMsts.ToList();
+            return View(itemMsts);
         }
         [HttpPost, ActionName("Create")]
         [ValidateAntiForgeryToken]

@@ -1,8 +1,171 @@
-﻿@{
+﻿@model IEnumerable<GemStore.Models.ItemMst>
+@{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BrandMst.BrandType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CatMst.CatName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CertifyMst.CertifyType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DimMst.DimQltyId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoldKrt.GoldCrt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JewelTypeMst.JewelleryType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProdMst.ProdType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StoneMst.StoneQltyID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pairs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProdQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoldWt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StoneWt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NetGold)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WstgPer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotGrossWt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoldRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoldAmt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoldMaking)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StoneMaking)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherMaking)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotMaking)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MRP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Thumbnails)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BrandMst.BrandType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CatMst.CatName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CertifyMst.CertifyType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DimMst.DimQltyId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GoldKrt.GoldCrt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JewelTypeMst.JewelleryType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProdMst.ProdType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StoneMst.StoneQltyID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pairs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProdQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GoldWt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StoneWt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NetGold)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WstgPer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotGrossWt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GoldRate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GoldAmt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GoldMaking)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StoneMaking)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OtherMaking)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotMaking)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MRP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Thumbnails)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.StyleCode }) |
+                @Html.ActionLink("Details", "Details", new { id = item.StyleCode }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.StyleCode })
+            </td>
+        </tr>
+    }
+
+</table>
+<hr />
 <div class="mx-auto ml-md-0 mr-md-auto" style="max-width: 250px; ">
     <button type="button" class="upload-image-btn" id="upload_widget" style="overflow: hidden; width: 60% ">
         <img id="preview"

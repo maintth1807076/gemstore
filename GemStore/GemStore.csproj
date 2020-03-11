@@ -176,7 +176,6 @@
     <Compile Include="Areas\Admin\Controllers\DimQltySubMstsController.cs" />
     <Compile Include="Areas\Admin\Controllers\GoldKrtsController.cs" />
     <Compile Include="Areas\Admin\Controllers\JewelTypeMstsController.cs" />
-    <Compile Include="Areas\Admin\Controllers\StoneQltyMstsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -195,6 +194,14 @@
     <Compile Include="Migrations\202003100043022_ChangeItem.cs" />
     <Compile Include="Migrations\202003100043022_ChangeItem.Designer.cs">
       <DependentUpon>202003100043022_ChangeItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003110344230_ChangeItem2.cs" />
+    <Compile Include="Migrations\202003110344230_ChangeItem2.Designer.cs">
+      <DependentUpon>202003110344230_ChangeItem2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003110406092_ChangeItem3.cs" />
+    <Compile Include="Migrations\202003110406092_ChangeItem3.Designer.cs">
+      <DependentUpon>202003110406092_ChangeItem3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -2096,11 +2103,6 @@
     <Content Include="Areas\Admin\Views\BrandMsts\Details.cshtml" />
     <Content Include="Areas\Admin\Views\BrandMsts\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\BrandMsts\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\ProdMsts\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\ProdMsts\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\ProdMsts\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\ProdMsts\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\ProdMsts\Index.cshtml" />
     <Content Include="Areas\Admin\Views\GoldKrts\Create.cshtml" />
     <Content Include="Areas\Admin\Views\GoldKrts\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\GoldKrts\Details.cshtml" />
@@ -2116,11 +2118,6 @@
     <Content Include="Areas\Admin\Views\JewelTypeMsts\Details.cshtml" />
     <Content Include="Areas\Admin\Views\JewelTypeMsts\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\JewelTypeMsts\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\StoneQltyMsts\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\StoneQltyMsts\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\StoneQltyMsts\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\StoneQltyMsts\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\StoneQltyMsts\Index.cshtml" />
     <Content Include="Areas\Admin\Views\DimQltyMsts\Create.cshtml" />
     <Content Include="Areas\Admin\Views\DimQltyMsts\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\DimQltyMsts\Details.cshtml" />
@@ -2188,6 +2185,7 @@
     <Content Include="Views\Account\VerifyCode.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Cart\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2215,6 +2213,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003100043022_ChangeItem.resx">
       <DependentUpon>202003100043022_ChangeItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003110344230_ChangeItem2.resx">
+      <DependentUpon>202003110344230_ChangeItem2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003110406092_ChangeItem3.resx">
+      <DependentUpon>202003110406092_ChangeItem3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
