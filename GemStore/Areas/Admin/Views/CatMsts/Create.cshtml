@@ -7,10 +7,10 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>CatMst</h4>
         <hr />
@@ -32,10 +32,17 @@
         </div>
 
         <div class="form-group">
+            <div class="col-md-10">
+                <input type="file" name="file" class="cloudinary_fileupload" multiple>
+                <div class="gallery"></div>
+                <div id="image"></div>
+            </div>
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(model => model.CatThumbnail, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CatThumbnail, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CatThumbnail, "", new { @class = "text-danger" })
+                <input type="text" name="CatThumbnail" id="CatThumbnail" />
             </div>
         </div>
 
@@ -54,3 +61,33 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+<script>
+    $(document).ready(function () {
+        const cloudName = 'dt4q05shz';
+        const unsignedUploadPreset = 'lo2vdc6g';
+
+        $.cloudinary.config({
+            cloud_name: cloudName
+        });
+
+        $('.cloudinary_fileupload').unsigned_cloudinary_upload(unsignedUploadPreset, {
+            cloud_name: cloudName,
+            tags: 'browser_uploads'
+        }, {
+            multiple: true
+        }).bind('cloudinarydone', function (e, data) {
+            var image = $.cloudinary.image(
+                data.result.public_id, {
+                secure: true,
+                width: 150,
+                crop: 'scale'
+            });
+            $('.gallery').prepend(image);
+            var x = data.result.public_id;
+            
+           /* console.log("https://res.cloudinary.com/dt4q05shz/image/upload/v1583943665/" + x + ".jpg")*/
+            /*$("#addLi").append("<li>" + "<input type="text" name="CatThumbnail" id="CatThumbnail"/>" + "</li>")*/
+            $("#CatThumbnail").val("https://res.cloudinary.com/dt4q05shz/image/upload/v1583943665/" + x + ".jpg");
+        });
+    })
+</script>
