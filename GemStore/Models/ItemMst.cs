@@ -10,6 +10,7 @@ namespace GemStore.Models
     {
         [Key]
         public string StyleCode { get; set; }
+        public string Name { get; set; }
         [Required]
         public int Pairs { get; set; }
         public string BrandId { get; set; }
@@ -37,6 +38,7 @@ namespace GemStore.Models
         public double OtherMaking { get; set; }
         public double TotMaking { get; set; }
         public double MRP { get; set; }
+        public double SalePrice { get; set; }
         public string Thumbnails { get; set; }
         public string JewelleryId { get; set; }
         public virtual DimMst DimMst { get; set; }

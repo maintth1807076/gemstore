@@ -13,7 +13,7 @@ namespace GemStore.Models
         [ForeignKey("ItemMst")]
         public string StyleCode { get; set; }
         [ForeignKey("StoneQltyMst")]
-        public string StoneQltyID { get; set; }
+        public string StoneQltyId { get; set; }
         public double StoneGm { get; set; }
         public double StonePcs { get; set; }
         public double StoneCrt { get; set; }
@@ -25,7 +25,7 @@ namespace GemStore.Models
     public class StoneQltyMst
     {
         [Key]
-        public string StoneQltyID { get; set; }
+        public string StoneQltyId { get; set; }
         public string StoneQlty { get; set; }
         public string Description { get; set; }
     }
