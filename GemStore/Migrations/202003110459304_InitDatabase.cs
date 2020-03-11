@@ -21,6 +21,7 @@ namespace GemStore.Migrations
                 c => new
                     {
                         StyleCode = c.String(nullable: false, maxLength: 128),
+                        Name = c.String(),
                         Pairs = c.Int(nullable: false),
                         BrandId = c.String(maxLength: 128),
                         Quantity = c.Int(nullable: false),
@@ -41,18 +42,23 @@ namespace GemStore.Migrations
                         OtherMaking = c.Double(nullable: false),
                         TotMaking = c.Double(nullable: false),
                         MRP = c.Double(nullable: false),
+                        SalePrice = c.Double(nullable: false),
+                        Thumbnails = c.String(),
+                        JewelleryId = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.StyleCode)
                 .ForeignKey("dbo.BrandMsts", t => t.BrandId)
                 .ForeignKey("dbo.CatMsts", t => t.CatId)
                 .ForeignKey("dbo.CertifyMsts", t => t.CertifyId)
                 .ForeignKey("dbo.GoldKrts", t => t.GoldTypeId)
+                .ForeignKey("dbo.JewelTypeMsts", t => t.JewelleryId)
                 .ForeignKey("dbo.ProdMsts", t => t.ProdId)
                 .Index(t => t.BrandId)
                 .Index(t => t.CatId)
                 .Index(t => t.CertifyId)
                 .Index(t => t.ProdId)
-                .Index(t => t.GoldTypeId);
+                .Index(t => t.GoldTypeId)
+                .Index(t => t.JewelleryId);
             
             CreateTable(
                 "dbo.CatMsts",
@@ -60,6 +66,7 @@ namespace GemStore.Migrations
                     {
                         CatId = c.String(nullable: false, maxLength: 128),
                         CatName = c.String(),
+                        CatThumbnail = c.String(),
                     })
                 .PrimaryKey(t => t.CatId);
             
@@ -69,6 +76,7 @@ namespace GemStore.Migrations
                     {
                         CertifyId = c.String(nullable: false, maxLength: 128),
                         CertifyType = c.String(),
+                        Description = c.String(),
                     })
                 .PrimaryKey(t => t.CertifyId);
             
@@ -122,6 +130,15 @@ namespace GemStore.Migrations
                 .PrimaryKey(t => t.GoldTypeId);
             
             CreateTable(
+                "dbo.JewelTypeMsts",
+                c => new
+                    {
+                        JewelleryId = c.String(nullable: false, maxLength: 128),
+                        JewelleryType = c.String(),
+                    })
+                .PrimaryKey(t => t.JewelleryId);
+            
+            CreateTable(
                 "dbo.ProdMsts",
                 c => new
                     {
@@ -135,7 +152,7 @@ namespace GemStore.Migrations
                 c => new
                     {
                         StyleCode = c.String(nullable: false, maxLength: 128),
-                        StoneQltyID = c.String(maxLength: 128),
+                        StoneQltyId = c.String(maxLength: 128),
                         StoneGm = c.Double(nullable: false),
                         StonePcs = c.Double(nullable: false),
                         StoneCrt = c.Double(nullable: false),
@@ -144,27 +161,19 @@ namespace GemStore.Migrations
                     })
                 .PrimaryKey(t => t.StyleCode)
                 .ForeignKey("dbo.ItemMsts", t => t.StyleCode)
-                .ForeignKey("dbo.StoneQltyMsts", t => t.StoneQltyID)
+                .ForeignKey("dbo.StoneQltyMsts", t => t.StoneQltyId)
                 .Index(t => t.StyleCode)
-                .Index(t => t.StoneQltyID);
+                .Index(t => t.StoneQltyId);
             
             CreateTable(
                 "dbo.StoneQltyMsts",
                 c => new
                     {
-                        StoneQltyID = c.String(nullable: false, maxLength: 128),
+                        StoneQltyId = c.String(nullable: false, maxLength: 128),
                         StoneQlty = c.String(),
+                        Description = c.String(),
                     })
-                .PrimaryKey(t => t.StoneQltyID);
-            
-            CreateTable(
-                "dbo.JewelTypeMsts",
-                c => new
-                    {
-                        JewelleryId = c.String(nullable: false, maxLength: 128),
-                        JewelleryType = c.String(),
-                    })
-                .PrimaryKey(t => t.JewelleryId);
+                .PrimaryKey(t => t.StoneQltyId);
             
             CreateTable(
                 "dbo.OrderDetails",
@@ -287,9 +296,10 @@ namespace GemStore.Migrations
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
             DropForeignKey("dbo.OrderDetails", "OrderId", "dbo.Orders");
             DropForeignKey("dbo.OrderDetails", "StyleCode", "dbo.ItemMsts");
-            DropForeignKey("dbo.StoneMsts", "StoneQltyID", "dbo.StoneQltyMsts");
+            DropForeignKey("dbo.StoneMsts", "StoneQltyId", "dbo.StoneQltyMsts");
             DropForeignKey("dbo.StoneMsts", "StyleCode", "dbo.ItemMsts");
             DropForeignKey("dbo.ItemMsts", "ProdId", "dbo.ProdMsts");
+            DropForeignKey("dbo.ItemMsts", "JewelleryId", "dbo.JewelTypeMsts");
             DropForeignKey("dbo.ItemMsts", "GoldTypeId", "dbo.GoldKrts");
             DropForeignKey("dbo.DimMsts", "StyleCode", "dbo.ItemMsts");
             DropForeignKey("dbo.DimMsts", "DimSubTypeId", "dbo.DimQltySubMsts");
@@ -305,11 +315,12 @@ namespace GemStore.Migrations
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
             DropIndex("dbo.OrderDetails", new[] { "OrderId" });
             DropIndex("dbo.OrderDetails", new[] { "StyleCode" });
-            DropIndex("dbo.StoneMsts", new[] { "StoneQltyID" });
+            DropIndex("dbo.StoneMsts", new[] { "StoneQltyId" });
             DropIndex("dbo.StoneMsts", new[] { "StyleCode" });
             DropIndex("dbo.DimMsts", new[] { "DimSubTypeId" });
             DropIndex("dbo.DimMsts", new[] { "DimQltyId" });
             DropIndex("dbo.DimMsts", new[] { "StyleCode" });
+            DropIndex("dbo.ItemMsts", new[] { "JewelleryId" });
             DropIndex("dbo.ItemMsts", new[] { "GoldTypeId" });
             DropIndex("dbo.ItemMsts", new[] { "ProdId" });
             DropIndex("dbo.ItemMsts", new[] { "CertifyId" });
@@ -322,10 +333,10 @@ namespace GemStore.Migrations
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.Orders");
             DropTable("dbo.OrderDetails");
-            DropTable("dbo.JewelTypeMsts");
             DropTable("dbo.StoneQltyMsts");
             DropTable("dbo.StoneMsts");
             DropTable("dbo.ProdMsts");
+            DropTable("dbo.JewelTypeMsts");
             DropTable("dbo.GoldKrts");
             DropTable("dbo.DimQltySubMsts");
             DropTable("dbo.DimQltyMsts");
