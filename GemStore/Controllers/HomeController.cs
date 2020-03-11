@@ -52,5 +52,13 @@ namespace GemStore.Controllers
 
             return View();
         }
+        public ActionResult Product_detail()
+        {
+            ViewBag.Message = "Your  product_detail page.";
+
+            return View();
+        }
+
+       
     }
 }
