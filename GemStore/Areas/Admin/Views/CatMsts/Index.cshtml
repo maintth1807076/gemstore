@@ -9,31 +9,60 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CatName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CatThumbnail)
-        </th>
-        <th></th>
-    </tr>
+<div class="container-fluid">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CatName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CatThumbnail)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CatId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CatId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CatId })
-        </td>
-    </tr>
-}
+    <!-- Page Heading -->
 
-</table>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CatName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CatThumbnail)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CatName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CatThumbnail)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CatName)
+                                </td>
+                                <td class="text-center">
+                                    <img src="@Html.DisplayFor(modelItem => item.CatThumbnail)" width="100px" />
+                                </td>
+                                <td>
+                                    <a href="/Admin/CatMsts/Edit/@item.CatId"><i class="fas fa-pen-fancy"></i></a> |
+                                    <a href="/Admin/Details/Edit/@item.CatId"><i class="fas fa-search-plus"></i></a> |
+                                    <a href="/Admin/Delete/Edit/@item.CatId"><i class="fas fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
