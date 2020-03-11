@@ -26,5 +26,31 @@ namespace GemStore.Controllers
 
             return View();
         }
+        public ActionResult Shop()
+        {
+            ViewBag.Message = "Your shop page.";
+
+            return View();
+
+            
+        }
+        public ActionResult Shop_list()
+        {
+            ViewBag.Message = "Your shop list page.";
+
+            return View();
+        }
+        public ActionResult Blog()
+        {
+            ViewBag.Message = "Your blog page.";
+
+            return View();
+        }
+        public ActionResult Portfolio()
+        {
+            ViewBag.Message = "Your portfolio page.";
+
+            return View();
+        }
     }
 }
