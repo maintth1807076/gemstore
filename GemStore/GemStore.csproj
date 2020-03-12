@@ -192,6 +192,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\FilterItemModels.cs" />
     <Compile Include="Models\GemStoreContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
