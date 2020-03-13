@@ -105,7 +105,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" id="getValue" class="btn btn-default" />
             </div>
         </div>
     </div>
@@ -125,10 +125,14 @@
         }, {
             multiple: true
         }).bind('cloudinarydone', function (e, data) {
-            var x = data.result.public_id;
-            $("#saveImageUrl").click(function () {
-                $("#CatThumbnail").val("https://res.cloudinary.com/dt4q05shz/image/upload/v1584071214/" + x + ".jpg");
-            })
+            var x = data.result.url;
+            var abc = $("#CatThumbnail").val();
+            if (abc.trim().length != 0) {
+                abc += ",";
+            }
+            abc += x;
+            $("#CatThumbnail").val(abc);
+            sessionStorage.setItem('img',abc)
         });
         //
     })
