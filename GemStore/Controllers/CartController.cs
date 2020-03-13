@@ -16,6 +16,22 @@ namespace GemStore.Controllers
     public class CartController : Controller
     {
         private GemStoreContext db = new GemStoreContext();
+        public ActionResult Test01(string name)
+        {
+            //Thread.Sleep(2000);  
+            return PartialView(db.ItemMsts.Where(i => i.Name.Contains(name)).ToList());
+        }
+
+        //GET: AllSchools  
+        /// <summary>  
+        /// List all schools from DataSource  
+        /// </summary>  
+        /// <returns></returns>  
+        public ActionResult Test02()
+        {
+            //Thread.Sleep(2000);  
+            return PartialView("Test01",db.ItemMsts.Where(i => i.Name.Contains("name")).ToList());
+        }
         // GET: Cart
         public ActionResult Index()
         {

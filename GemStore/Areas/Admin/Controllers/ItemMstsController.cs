@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -49,24 +50,24 @@ namespace GemStore.Areas.Admin.Controllers
             ViewBag.BrandId = new SelectList(db.BrandMsts, "BrandId", "BrandType");
             ViewBag.CatId = new SelectList(db.CatMsts, "CatId", "CatName");
             ViewBag.CertifyId = new SelectList(db.CertifyMsts, "CertifyId", "CertifyType");
-            ViewBag.StyleCode = new SelectList(db.DimMsts, "StyleCode", "DimQltyId");
             ViewBag.GoldTypeId = new SelectList(db.GoldKrts, "GoldTypeId", "GoldCrt");
             ViewBag.JewelleryId = new SelectList(db.JewelTypeMsts, "JewelleryId", "JewelleryType");
             ViewBag.ProdId = new SelectList(db.ProdMsts, "ProdId", "ProdType");
-            ViewBag.StyleCode = new SelectList(db.StoneMsts, "StyleCode", "StoneQltyId");
             ViewBag.StoneQltyId = new SelectList(db.StoneQltyMsts, "StoneQltyId", "StoneQlty");
             ViewBag.DimQltyId = new SelectList(db.DimQltyMsts, "DimQltyId", "DimQlty");
             ViewBag.DimSubTypeId = new SelectList(db.DimQltySubMsts, "DimSubTypeId", "DimQlty");
             return View();
         }
-
         // POST: Admin/ItemMsts/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "StyleCode,Name,Pairs,BrandId,Quantity,CatId,ProdQuantity,CertifyId,ProdId,GoldTypeId,GoldWt,StoneWt,NetGold,WstgPer,TotGrossWt,GoldRate,GoldAmt,GoldMaking,StoneMaking,OtherMaking,TotMaking,MRP,SalePrice,Thumbnails,JewelleryId")] ItemMst itemMst)
+        public ActionResult Create( ItemMst itemMst, string StoneQltyId, string DimQltyId, string DimSubTypeId)
         {
+            itemMst.StoneMst.StoneQltyId = StoneQltyId;
+            itemMst.DimMst.DimQltyId = DimQltyId;
+            itemMst.DimMst.DimSubTypeId = DimSubTypeId;
             if (ModelState.IsValid)
             {
                 db.ItemMsts.Add(itemMst);
@@ -77,11 +78,10 @@ namespace GemStore.Areas.Admin.Controllers
             ViewBag.BrandId = new SelectList(db.BrandMsts, "BrandId", "BrandType", itemMst.BrandId);
             ViewBag.CatId = new SelectList(db.CatMsts, "CatId", "CatName", itemMst.CatId);
             ViewBag.CertifyId = new SelectList(db.CertifyMsts, "CertifyId", "CertifyType", itemMst.CertifyId);
-            ViewBag.StyleCode = new SelectList(db.DimMsts, "StyleCode", "DimQltyId", itemMst.StyleCode);
             ViewBag.GoldTypeId = new SelectList(db.GoldKrts, "GoldTypeId", "GoldCrt", itemMst.GoldTypeId);
             ViewBag.JewelleryId = new SelectList(db.JewelTypeMsts, "JewelleryId", "JewelleryType", itemMst.JewelleryId);
             ViewBag.ProdId = new SelectList(db.ProdMsts, "ProdId", "ProdType", itemMst.ProdId);
-            ViewBag.StyleCode = new SelectList(db.StoneMsts, "StyleCode", "StoneQltyId", itemMst.StyleCode);
+            //ViewBag.StyleCode = new SelectList(db.StoneMsts, "StyleCode", "StoneQltyId", itemMst.StyleCode);
             return View(itemMst);
         }
 

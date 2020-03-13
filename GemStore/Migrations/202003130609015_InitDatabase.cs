@@ -12,7 +12,7 @@ namespace GemStore.Migrations
                 c => new
                     {
                         BrandId = c.String(nullable: false, maxLength: 128),
-                        BrandType = c.String(),
+                        BrandType = c.String(nullable: false, maxLength: 50),
                     })
                 .PrimaryKey(t => t.BrandId);
             
