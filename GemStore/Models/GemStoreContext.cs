@@ -30,5 +30,7 @@ namespace GemStore.Models
         public DbSet<DimMst> DimMsts { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
+
+        public System.Data.Entity.DbSet<GemStore.Models.ItemViewModel> ItemViewModels { get; set; }
     }
 }
