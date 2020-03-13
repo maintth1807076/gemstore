@@ -190,6 +190,10 @@
     <Compile Include="Migrations\202003110459304_InitDatabase.Designer.cs">
       <DependentUpon>202003110459304_InitDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003130153190_ChangeBrand.cs" />
+    <Compile Include="Migrations\202003130153190_ChangeBrand.Designer.cs">
+      <DependentUpon>202003130153190_ChangeBrand.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CartItem.cs" />
@@ -197,6 +201,7 @@
     <Compile Include="Models\GemStoreContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ItemMst.cs" />
+    <Compile Include="Models\ItemViewModel.cs" />
     <Compile Include="Models\ManageDiamond.cs" />
     <Compile Include="Models\ManageGold.cs" />
     <Compile Include="Models\ManageStone.cs" />
@@ -2168,6 +2173,10 @@
     <Content Include="Areas\Admin\Views\ItemMsts\Details.cshtml" />
     <Content Include="Areas\Admin\Views\ItemMsts\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\ItemMsts\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ItemMsts\Test.cshtml" />
+    <Content Include="Areas\Admin\Views\ItemMsts\T1.cshtml" />
+    <Content Include="Areas\Admin\Views\ItemMsts\T2.cshtml" />
+    <Content Include="Areas\Admin\Views\ItemMsts\_StoneMstViewPartial.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2244,6 +2253,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202003110459304_InitDatabase.resx">
       <DependentUpon>202003110459304_InitDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003130153190_ChangeBrand.resx">
+      <DependentUpon>202003130153190_ChangeBrand.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

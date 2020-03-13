@@ -14,6 +14,13 @@ namespace GemStore.Areas.Admin.Controllers
     {
         private GemStoreContext db = new GemStoreContext();
 
+        public ActionResult Test()
+        {
+            ViewBag.StoneQltyId = new SelectList(db.StoneQltyMsts, "StoneQltyId", "StoneQlty");
+            ViewBag.DimQltyId = new SelectList(db.DimQltyMsts, "DimQltyId", "DimQlty");
+            ViewBag.DimSubTypeId = new SelectList(db.DimQltySubMsts, "DimSubTypeId", "DimQlty");
+            return View();
+        }
         // GET: Admin/ItemMsts
         public ActionResult Index()
         {
@@ -47,6 +54,9 @@ namespace GemStore.Areas.Admin.Controllers
             ViewBag.JewelleryId = new SelectList(db.JewelTypeMsts, "JewelleryId", "JewelleryType");
             ViewBag.ProdId = new SelectList(db.ProdMsts, "ProdId", "ProdType");
             ViewBag.StyleCode = new SelectList(db.StoneMsts, "StyleCode", "StoneQltyId");
+            ViewBag.StoneQltyId = new SelectList(db.StoneQltyMsts, "StoneQltyId", "StoneQlty");
+            ViewBag.DimQltyId = new SelectList(db.DimQltyMsts, "DimQltyId", "DimQlty");
+            ViewBag.DimSubTypeId = new SelectList(db.DimQltySubMsts, "DimSubTypeId", "DimQlty");
             return View();
         }
 
