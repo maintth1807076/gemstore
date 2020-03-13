@@ -46,11 +46,11 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td>
+                                <td class="text-center">
                                     @Html.DisplayFor(modelItem => item.CatName)
                                 </td>
                                 <td class="text-center">
-                                    <img src="@Html.DisplayFor(modelItem => item.CatThumbnail)" width="100px" />
+                                    <div id="img"></div>
                                 </td>
                                 <td>
                                     <a href="/Admin/CatMsts/Edit/@item.CatId"><i class="fas fa-pen-fancy"></i></a> |
@@ -66,3 +66,12 @@
     </div>
 
 </div>
+<script>
+    $(document).ready(function () {
+        var a = sessionStorage.getItem('img');
+        var b = a.split(',');
+        for (var i = 0; i <= b.length; i++) {
+            $("#img").append("<img src='" + b[i] + "' width='100px'>");
+        }
+    })
+</script>
