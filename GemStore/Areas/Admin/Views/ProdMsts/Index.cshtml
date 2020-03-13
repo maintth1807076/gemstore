@@ -4,30 +4,40 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-dark">PRODUCTS</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ProdType)
+                        </th>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ProdType)
-        </th>
-        <th></th>
-    </tr>
+                        <th></th>
+                    </tr>
+                </thead>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProdType)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ProdId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ProdId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ProdId })
-        </td>
-    </tr>
-}
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ProdType)
+                            </td>
 
-</table>
+                            <td>
+                                <a href="/Admin/CatMsts/Edit/@item.ProdId"><i class="fas fa-pen-fancy"></i></a> |
+                                <a href="/Admin/CatMsts/Details/@item.ProdId"><i class="fas fa-search-plus"></i></a> |
+                                <a href="/Admin/CatMsts/Delete/@item.ProdId"><i class="fas fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
