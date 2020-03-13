@@ -48,6 +48,7 @@ namespace GemStore.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "StoneQltyId,StoneQlty,Description")] StoneQltyMst stoneQltyMst)
         {
+            stoneQltyMst.StoneQltyId = "stone" + Guid.NewGuid().ToString().GetHashCode().ToString("x");
             if (ModelState.IsValid)
             {
                 db.StoneQltyMsts.Add(stoneQltyMst);
