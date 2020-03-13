@@ -49,8 +49,26 @@
                                 <td class="text-center">
                                     @Html.DisplayFor(modelItem => item.CatName)
                                 </td>
-                                <td class="text-center">
-                                    <div id="img"></div>
+                                <td style="width:400px">
+                                    @{
+                                        if (item.CatThumbnail == null)
+                                        {
+                                            <div>
+                                                @item.CatThumbnail
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            string actionList = item.CatThumbnail;
+                                            string[] aListItems = actionList.Split(',');
+                                            foreach (string abcd in aListItems)
+                                            {
+                                <span style="border-radius:50px;margin:5px">
+                                    <img style="border-radius:20px" src="@abcd" width="100px" />
+                                </span>
+                                            }
+                                        }
+                                    }
                                 </td>
                                 <td>
                                     <a href="/Admin/CatMsts/Edit/@item.CatId"><i class="fas fa-pen-fancy"></i></a> |
@@ -66,12 +84,3 @@
     </div>
 
 </div>
-<script>
-    $(document).ready(function () {
-        var a = sessionStorage.getItem('img');
-        var b = a.split(',');
-        for (var i = 0; i <= b.length; i++) {
-            $("#img").append("<img src='" + b[i] + "' width='100px'>");
-        }
-    })
-</script>
