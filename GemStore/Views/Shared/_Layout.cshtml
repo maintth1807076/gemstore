@@ -5,7 +5,7 @@
     <title>Olongkar | Home Page 1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Fav Icon -->
-    <link id="favicon" rel="icon" type="image/png" href="img/favicon.ico" />
+    <link id="favicon" rel="icon" type="image/png" href="~/Content/user/img/favicon" />
     <!-- Google Font Raleway -->
     <link href='https://fonts.googleapis.com/css?family=Raleway:200,300,500,400,600,700,800' rel='stylesheet' type='text/css'>
     <!-- Google Font Dancing Script -->
@@ -101,7 +101,7 @@
                     <div class="logo text-center">
                         <a href="index.html">
                             <img src="~/Content/user/img/header/logo.png" alt="" />
-                            <h4>online jewelry store</h4>
+                            
                         </a>
                     </div>
                 </div>
@@ -637,6 +637,22 @@
     <script>
         new WOW().init();
     </script>
+   <script>
+       var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }
+	</script>
     <!-- Main JS -->
     <script type="text/javascript" src="~/Content/user/js/main.js"></script>
     @RenderSection("scripts", false)

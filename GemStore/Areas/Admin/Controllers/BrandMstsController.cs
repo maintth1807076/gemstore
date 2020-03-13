@@ -13,7 +13,10 @@ namespace GemStore.Areas.Admin.Controllers
     public class BrandMstsController : Controller
     {
         private GemStoreContext db = new GemStoreContext();
-
+        public JsonResult IsBrandExist(string BrandType)
+        {
+            return Json(!db.BrandMsts.Any(x => x.BrandType == BrandType), JsonRequestBehavior.AllowGet);
+        }
         // GET: Admin/BrandMsts
         public ActionResult Index()
         {

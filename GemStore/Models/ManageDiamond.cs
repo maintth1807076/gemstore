@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -16,10 +17,15 @@ namespace GemStore.Models
         public string DimQltyId { get; set; }
         [ForeignKey("DimQltySubMst")]
         public string DimSubTypeId { get; set; }
+        [DisplayName("Carat Of Diamond")]
         public double DimCrt { get; set; }
+        [DisplayName("Carat Of Diamond")]
         public double DimPcs { get; set; }
+        [DisplayName("Weight Of Each Diamond(Grams)")]
         public double DimGm { get; set; }
+        [DisplayName("Size Of Each Diamond")]
         public double DimSize { get; set; }
+        [DisplayName("Rate Of Each Diamond")]
         public double DimRate { get; set; }
         public double DimAmt { get; set; }
         public virtual ItemMst ItemMst { get; set; }

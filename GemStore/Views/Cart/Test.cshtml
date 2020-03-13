@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GemStore.Models.ItemMst>
+﻿@model IEnumerable<GemStore.Models.Order>
 
 @{
     ViewBag.Title = "Test";
@@ -9,7 +9,19 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+@foreach (var item in Model)
+{
+    <li>@item.OrderId</li>
+    <li>@item.TotalPrice</li>
+                     foreach (var i in @item.OrderDetails)
+                     {
+        <p>@i.ItemMst.Name</p>
+        <p>@i.UnitPrice</p>
+        <p>@i.Quantity</p>
+                     }
+                     
+}
+@*<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.BrandMst.BrandType)
@@ -180,4 +192,4 @@
     </tr>
 }
 
-</table>
+</table>*@

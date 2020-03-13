@@ -190,12 +190,18 @@
     <Compile Include="Migrations\202003110459304_InitDatabase.Designer.cs">
       <DependentUpon>202003110459304_InitDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003130153190_ChangeBrand.cs" />
+    <Compile Include="Migrations\202003130153190_ChangeBrand.Designer.cs">
+      <DependentUpon>202003130153190_ChangeBrand.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\FilterItemModels.cs" />
     <Compile Include="Models\GemStoreContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ItemMst.cs" />
+    <Compile Include="Models\ItemViewModel.cs" />
     <Compile Include="Models\ManageDiamond.cs" />
     <Compile Include="Models\ManageGold.cs" />
     <Compile Include="Models\ManageStone.cs" />
@@ -239,6 +245,7 @@
     <Content Include="Content\user\img\blog\blog-3.jpg" />
     <Content Include="Content\user\img\blog\blog-4.jpg" />
     <Content Include="Content\user\img\blog\magic.jpg" />
+    <Content Include="Content\user\img\bottom-arrow.png" />
     <Content Include="Content\user\img\brand\brand-1.png" />
     <Content Include="Content\user\img\brand\brand-2.png" />
     <Content Include="Content\user\img\brand\brand-3.png" />
@@ -246,6 +253,7 @@
     <Content Include="Content\user\img\brand\brand-5.png" />
     <Content Include="Content\user\img\cart-1.jpg" />
     <Content Include="Content\user\img\cart-2.jpg" />
+    <Content Include="Content\user\img\contact-less.jpg" />
     <Content Include="Content\user\img\featured\1.jpg" />
     <Content Include="Content\user\img\featured\2.jpg" />
     <Content Include="Content\user\img\featured\3.jpg" />
@@ -256,7 +264,10 @@
     <Content Include="Content\user\img\footer\paypal.jpg" />
     <Content Include="Content\user\img\footer\visa.jpg" />
     <Content Include="Content\user\img\header\logo.png" />
+    <Content Include="Content\user\img\hot.png" />
     <Content Include="Content\user\img\magic.jpg" />
+    <Content Include="Content\user\img\map-marker.png" />
+    <Content Include="Content\user\img\new.png" />
     <Content Include="Content\user\img\offer\banner-bg-2.jpg" />
     <Content Include="Content\user\img\offer\banner-bg.jpg" />
     <Content Include="Content\user\img\offer\offer-1.jpg" />
@@ -275,6 +286,8 @@
     <Content Include="Content\user\img\portfolio\portfolio-7.jpg" />
     <Content Include="Content\user\img\portfolio\portfolio-8.jpg" />
     <Content Include="Content\user\img\portfolio\portfolio-9.jpg" />
+    <Content Include="Content\user\img\shop-add-1.jpg" />
+    <Content Include="Content\user\img\shop-add-2.jpg" />
     <Content Include="Content\user\img\single-product\1.jpg" />
     <Content Include="Content\user\img\single-product\2.jpg" />
     <Content Include="Content\user\img\single-product\3.jpg" />
@@ -297,6 +310,7 @@
     <Content Include="Content\user\img\slider\2.jpg" />
     <Content Include="Content\user\img\testimonial\testimonial-bg.jpg" />
     <Content Include="Content\user\img\testimonial\testimonial.jpg" />
+    <Content Include="Content\user\img\title-bg.jpg" />
     <Content Include="Content\user\js\bootstrap.min.js" />
     <Content Include="Content\user\js\gmaps.min.js" />
     <Content Include="Content\user\js\jquery-2.1.4.min.js" />
@@ -2160,6 +2174,10 @@
     <Content Include="Areas\Admin\Views\ItemMsts\Details.cshtml" />
     <Content Include="Areas\Admin\Views\ItemMsts\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\ItemMsts\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ItemMsts\Test.cshtml" />
+    <Content Include="Areas\Admin\Views\ItemMsts\T1.cshtml" />
+    <Content Include="Areas\Admin\Views\ItemMsts\T2.cshtml" />
+    <Content Include="Areas\Admin\Views\ItemMsts\_StoneMstViewPartial.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2236,6 +2254,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202003110459304_InitDatabase.resx">
       <DependentUpon>202003110459304_InitDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003130153190_ChangeBrand.resx">
+      <DependentUpon>202003130153190_ChangeBrand.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

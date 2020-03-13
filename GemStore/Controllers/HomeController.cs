@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using GemStore.Models;
 
 namespace GemStore.Controllers
 {
     public class HomeController : Controller
     {
+        private GemStoreContext db = new GemStoreContext();
         public ActionResult Index()
         {
             return View();
@@ -30,7 +32,7 @@ namespace GemStore.Controllers
         {
             ViewBag.Message = "Your shop page.";
 
-            return View();
+            return View(db.ItemMsts.ToList());
 
             
         }
