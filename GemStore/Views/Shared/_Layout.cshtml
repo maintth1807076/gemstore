@@ -101,7 +101,7 @@
                     <div class="logo text-center">
                         <a href="index.html">
                             <img src="~/Content/user/img/header/logo.png" alt="" />
-                            
+
                         </a>
                     </div>
                 </div>
@@ -439,7 +439,7 @@
         </div>
     </div><!--End Main Menu Area-->
     @RenderBody()
-   
+
     <div class="brand-area section fix">
         <!--Start Brand Area-->
         <div class="container">
@@ -637,24 +637,25 @@
     <script>
         new WOW().init();
     </script>
-   <script>
-       var dropdown = document.getElementsByClassName("dropdown-btn");
-    var i;
+    <script>
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
 
-    for (i = 0; i < dropdown.length; i++) {
-        dropdown[i].addEventListener("click", function () {
-            this.classList.toggle("active");
-            var dropdownContent = this.nextElementSibling;
-            if (dropdownContent.style.display === "block") {
-                dropdownContent.style.display = "none";
-            } else {
-                dropdownContent.style.display = "block";
-            }
-        });
-    }
-	</script>
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
     <!-- Main JS -->
     <script type="text/javascript" src="~/Content/user/js/main.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
     @RenderSection("scripts", false)
 </body>
 

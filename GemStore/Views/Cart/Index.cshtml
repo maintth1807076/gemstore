@@ -2,8 +2,26 @@
 @{
     ViewBag.Title = "Index";
 }
-
+<div id="UpdateContentDiv">
+    @*Div to update content after Ajax Call*@
+</div>
+@Ajax.ActionLink(
+    "List All Schools", // <-- Text to display
+    "Test01",// <-- Action/Method Name
+    new {name = "stone"},//<!-- Controller Name
+    new AjaxOptions
+    {
+        UpdateTargetId = "UpdateContentDiv", // <-- DOM element ID to update
+        InsertionMode = InsertionMode.Replace, // <-- Replace the content of DOM element
+        HttpMethod = "GET", // <-- HTTP method
+        LoadingElementId = "divLoading", //Id of Loading GIF Image
+        //OnBegin = "onAjaxBegin", //OnBegin JS Function
+        //OnComplete = "onAjaxComplete" //OnComplete JS Function
+    },
+    new { @class = "btn btn-primary" } //-- Class
+    )
 <h2>Index</h2>
+<hr />
 <div class="shop-products">
     @foreach (var item in Model)
     {
@@ -89,26 +107,26 @@
                 }
             });
         });
-            //$('.btn-delete-student').click(function () {
-            //    var id = $(this).attr("id").replace("delete-", "");
-            //    if (confirm("Are you sure want to delete this student?")) {
-            //        var token = $('input[name="__RequestVerificationToken"]').val();;
-            //        $.ajax({
-            //            url: "/Students/Delete/" + id,
-            //            type: "POST",
-            //            data: {
-            //                __RequestVerificationToken: token
-            //            },
-            //            success: function (data) {
-            //                alert("Delete success!");
-            //                window.location.reload();
-            //            },
-            //            error: function (error) {
-            //                alert("Action fails! Please try again!");
-            //            }
-            //        });
-            //    }
-            //    return false;
-            //});
+                //$('.btn-delete-student').click(function () {
+                //    var id = $(this).attr("id").replace("delete-", "");
+                //    if (confirm("Are you sure want to delete this student?")) {
+                //        var token = $('input[name="__RequestVerificationToken"]').val();;
+                //        $.ajax({
+                //            url: "/Students/Delete/" + id,
+                //            type: "POST",
+                //            data: {
+                //                __RequestVerificationToken: token
+                //            },
+                //            success: function (data) {
+                //                alert("Delete success!");
+                //                window.location.reload();
+                //            },
+                //            error: function (error) {
+                //                alert("Action fails! Please try again!");
+                //            }
+                //        });
+                //    }
+                //    return false;
+                //});
     </script>
 }
