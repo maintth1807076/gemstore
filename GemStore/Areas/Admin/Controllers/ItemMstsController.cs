@@ -15,13 +15,6 @@ namespace GemStore.Areas.Admin.Controllers
     {
         private GemStoreContext db = new GemStoreContext();
 
-        public ActionResult Test()
-        {
-            ViewBag.StoneQltyId = new SelectList(db.StoneQltyMsts, "StoneQltyId", "StoneQlty");
-            ViewBag.DimQltyId = new SelectList(db.DimQltyMsts, "DimQltyId", "DimQlty");
-            ViewBag.DimSubTypeId = new SelectList(db.DimQltySubMsts, "DimSubTypeId", "DimQlty");
-            return View();
-        }
         // GET: Admin/ItemMsts
         public ActionResult Index()
         {
@@ -63,8 +56,9 @@ namespace GemStore.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create( ItemMst itemMst, string StoneQltyId, string DimQltyId, string DimSubTypeId)
+        public ActionResult Create([Bind(Include = "StyleCode,Name,Pairs,BrandId,Quantity,CatId,ProdQuantity,CertifyId,ProdId,GoldTypeId,GoldWt,StoneWt,NetGold,WstgPer,TotGrossWt,GoldRate,GoldAmt,GoldMaking,StoneMaking,OtherMaking,TotMaking,MRP,SalePrice,Thumbnails,JewelleryId")] ItemMst itemMst, string StoneQltyId, string DimQltyId, string DimSubTypeId)
         {
+            itemMst.StyleCode = "item" + Guid.NewGuid().ToString().GetHashCode().ToString("x");
             itemMst.StoneMst.StoneQltyId = StoneQltyId;
             itemMst.DimMst.DimQltyId = DimQltyId;
             itemMst.DimMst.DimSubTypeId = DimSubTypeId;

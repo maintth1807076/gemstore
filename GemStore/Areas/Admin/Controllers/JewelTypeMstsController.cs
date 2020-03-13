@@ -48,6 +48,7 @@ namespace GemStore.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "JewelleryId,JewelleryType")] JewelTypeMst jewelTypeMst)
         {
+            jewelTypeMst.JewelleryId = "jewel" + Guid.NewGuid().ToString().GetHashCode().ToString("x");
             if (ModelState.IsValid)
             {
                 db.JewelTypeMsts.Add(jewelTypeMst);

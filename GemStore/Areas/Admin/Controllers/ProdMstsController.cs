@@ -48,6 +48,7 @@ namespace GemStore.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ProdId,ProdType")] ProdMst prodMst)
         {
+            prodMst.ProdId = "pro" + Guid.NewGuid().ToString().GetHashCode().ToString("x");
             if (ModelState.IsValid)
             {
                 db.ProdMsts.Add(prodMst);

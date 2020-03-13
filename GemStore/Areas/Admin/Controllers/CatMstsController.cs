@@ -46,8 +46,9 @@ namespace GemStore.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CatId,CatName,CatThumbnail")] CatMst catMst)
+        public ActionResult Create([Bind(Include = "CatName,CatId,CatThumbnail")] CatMst catMst)
         {
+            catMst.CatId = "cat" + Guid.NewGuid().ToString().GetHashCode().ToString("x");
             if (ModelState.IsValid)
             {
                 db.CatMsts.Add(catMst);

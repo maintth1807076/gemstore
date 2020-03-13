@@ -48,6 +48,7 @@ namespace GemStore.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "GoldTypeId,GoldCrt")] GoldKrt goldKrt)
         {
+            goldKrt.GoldTypeId = "gold" + Guid.NewGuid().ToString().GetHashCode().ToString("x");
             if (ModelState.IsValid)
             {
                 db.GoldKrts.Add(goldKrt);
