@@ -4,201 +4,191 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
-
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>CatMst</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.CatId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CatId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CatId, "", new { @class = "text-danger" })
-            </div>
+<div class="form-horizontal col-md-6 " style="margin-left: 25%;">
+    <div class="card shadow mb-5">
+        <div class="card-header py-7">
+            <h6 class="m-0 font-weight-bold text-dark" style="text-align: center"> CREATE BRAND</h6>
         </div>
+        <div class="card-body">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.CatName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CatName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CatName, "", new { @class = "text-danger" })
+            <div class=" row form-group">
+                @Html.LabelFor(model => model.CatName, htmlAttributes: new { @class = "control-label col-md-3 pt-2" })
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.CatName, new { htmlAttributes = new { @class = "form-control col-md-10" } })
+                    @Html.ValidationMessageFor(model => model.CatName, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
+            <div class=" row form-group">
+                @Html.LabelFor(model => model.CatThumbnail, htmlAttributes: new { @class = "control-label col-md-2 pt-2" })
+                <div class="col-md-7">
+                    <input type="text" name="CatThumbnail" id="CatThumbnail" class="form-control  text-box single-line" style="width:100%" />
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">
+                        <i class="fas fa-image"></i>
+                    </button>
 
-        <div class="form-group">
-            <div class="col-md-10">
-                <div class="row">
-                    <div class="col-6">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                            Chọn 1 ảnh
-                        </button>
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form runat="server">
-                                            <input type="file" id="imgInp" name="file" class="cloudinary_fileupload">
-                                            <img id="blah" src="#" alt="your image" />
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary" id="saveImageUrl">Save changes</button>
-                                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Choose image</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Chon anh-->
-                    <div class="col-6">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
-                            Chọn nhiều ảnh
-                        </button>
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="field" align="left">
-                                            <input type="file" id="files" name="file" class="cloudinary_fileupload" multiple>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
-                                    </div>
+                                <div class="modal-body">
+                                    <form runat="server">
+                                        <input type="file" id="imgInp" name="file" class="cloudinary_fileupload">
+                                        <img id="blah" src="#" alt="your image" />
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" id="saveImageUrl">Save changes</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+         
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.CatThumbnail, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <input type="text" name="CatThumbnail" id="CatThumbnail" class="" />
+
+            <hr />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-warning" style="float: right;" />
+                </div>
             </div>
         </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" id="getValue" class="btn btn-default" />
-            </div>
         </div>
     </div>
-}
+        }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", "CatMstsController", new { @class = "btn btn-outline-warning" })
 </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
-<script>
-    $(document).ready(function () {
-        $('.cloudinary_fileupload').unsigned_cloudinary_upload('wm4mhhyw', {
-            cloud_name: 'bach19',
-        }, {
-            multiple: true
-        }).bind('cloudinarydone', function (e, data) {
-            var x = data.result.url;
-            var abc = $("#CatThumbnail").val();
-            if (abc.trim().length != 0) {
-                abc += ",";
-            }
-            abc += x;
-            $("#CatThumbnail").val(abc);
-            sessionStorage.setItem('img',abc)
-        });
-        //
-    })
-</script>
+        @*<div class="col-6">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
+                Chọn nhiều ảnh
+            </button>*@
 
-<script>
-    $(document).ready(function () {
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('#blah').attr('src', e.target.result);
-                    $('#blah').width("100px");
-                }
-                reader.readAsDataURL(input.files[0]);
-            }
-            $('#blah').click(function () {
-                $('#blah').attr('src', '');
-            })
+            <!-- Modal -->
+            @*<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="field" align="left">
+                                <input type="file" id="files" name="file" class="cloudinary_fileupload" multiple>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
         }
+        <script>
+            $(document).ready(function () {
+                $('.cloudinary_fileupload').unsigned_cloudinary_upload('wm4mhhyw', {
+                    cloud_name: 'bach19',
+                }, {
+                    multiple: true
+                }).bind('cloudinarydone', function (e, data) {
+                    var x = data.result.url;
+                    var abc = $("#CatThumbnail").val();
+                    if (abc.trim().length != 0) {
+                        abc += ",";
+                    }
+                    abc += x;
+                    $("#CatThumbnail").val(abc);
+                    sessionStorage.setItem('img', abc)
+                });
+                //
+            })
+        </script>
 
-        $("#imgInp").change(function () {
-            readURL(this);
-        });
-    });
-</script>
+        <script>
+            $(document).ready(function () {
+                function readURL(input) {
+                    if (input.files && input.files[0]) {
+                        var reader = new FileReader();
 
-<script>
-    $(document).ready(function () {
-        if (window.File && window.FileList && window.FileReader) {
-            $("#files").on("change", function (e) {
-                var files = e.target.files,
-                    filesLength = files.length;
-                for (var i = 0; i < filesLength; i++) {
-                    var f = files[i]
-                    var fileReader = new FileReader();
-                    fileReader.onload = (function (e) {
-                        var file = e.target;
-                        /*  $("<span class=\"pip\">" +
-                            "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
-                            "<br/><span class=\"remove\">Remove image</span>" +
-                            "</span>").insertAfter("#files");
-                          $(".remove").click(function(){
-                            $(this).parent(".pip").remove();
-                          });*/
+                        reader.onload = function (e) {
+                            $('#blah').attr('src', e.target.result);
+                            $('#blah').width("100px");
+                        }
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                    $('#blah').click(function () {
+                        $('#blah').attr('src', '');
+                    })
+                }
 
-                        // Old code here
-                        $("<img></img>", {
-                            class: "imageThumb",
-                            src: e.target.result,
-                            width: "200px",
-                            title: file.name + " | Click to remove"
-                        }).insertAfter("#files").click(function () { $(this).remove(); });
+                $("#imgInp").change(function () {
+                    readURL(this);
+                });
+            });
+        </script>
 
+        <script>
+            $(document).ready(function () {
+                if (window.File && window.FileList && window.FileReader) {
+                    $("#files").on("change", function (e) {
+                        var files = e.target.files,
+                            filesLength = files.length;
+                        for (var i = 0; i < filesLength; i++) {
+                            var f = files[i]
+                            var fileReader = new FileReader();
+                            fileReader.onload = (function (e) {
+                                var file = e.target;
+                                /*  $("<span class=\"pip\">" +
+                                    "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
+                                    "<br/><span class=\"remove\">Remove image</span>" +
+                                    "</span>").insertAfter("#files");
+                                  $(".remove").click(function(){
+                                    $(this).parent(".pip").remove();
+                                  });*/
+
+                                // Old code here
+                                $("<img></img>", {
+                                    class: "imageThumb",
+                                    src: e.target.result,
+                                    width: "200px",
+                                    title: file.name + " | Click to remove"
+                                }).insertAfter("#files").click(function () { $(this).remove(); });
+
+                            });
+                            fileReader.readAsDataURL(f);
+                        }
                     });
-                    fileReader.readAsDataURL(f);
+                } else {
+                    alert("Your browser doesn't support to File API")
                 }
             });
-        } else {
-            alert("Your browser doesn't support to File API")
-        }
-    });
-</script>
+        </script>
 
-<!--.bind('cloudinarydone', function (e, data) {
+        <!--.bind('cloudinarydone', function (e, data) {
             var image = $.cloudinary.image(
                 data.result.public_id, {
                 secure: true,
