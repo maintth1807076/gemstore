@@ -13,7 +13,8 @@ namespace GemStore.Migrations
                     {
                         BrandId = c.String(nullable: false, maxLength: 128),
                         BrandType = c.String(nullable: false, maxLength: 50),
-                    })
+                    BrandThumbnail = c.String(),
+                })
                 .PrimaryKey(t => t.BrandId);
             
             CreateTable(
