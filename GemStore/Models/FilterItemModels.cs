@@ -18,6 +18,8 @@ namespace GemStore.Models
         [Required]
         [Remote("IsBrandExist", "BrandMsts", ErrorMessage = "Brand Type already exits")]
         public string BrandType { get; set; }
+        [DisplayName("Image")]
+        public string BrandThumbnail { get; set; }
         public virtual ICollection<ItemMst> ItemMsts { get; set; }
     }
 
