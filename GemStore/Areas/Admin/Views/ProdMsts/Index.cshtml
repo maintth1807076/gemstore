@@ -21,7 +21,9 @@
                         <th>
                             @Html.DisplayNameFor(model => model.ProdType)
                         </th>
-
+                        <th>
+                            @Html.DisplayNameFor(model => model.ProdThumbnail)
+                        </th>
                         <th></th>
                     </tr>
                 </thead>
@@ -29,17 +31,37 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ProdType)
-                            </td>
-
-                            <td>
-                                <a href="/Admin/CatMsts/Edit/@item.ProdId"><i class="fas fa-pen-fancy"></i></a> |
-                                <a href="/Admin/CatMsts/Details/@item.ProdId"><i class="fas fa-search-plus"></i></a> |
-                                <a href="/Admin/CatMsts/Delete/@item.ProdId"><i class="fas fa-trash-alt"></i></a>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProdType)
+                        </td>
+                        <td style="width:400px">
+                            @{
+                                if (item.ProdThumbnail == null)
+                                {
+                                    <div>
+                                        @item.ProdThumbnail
+                                    </div>
+                                }
+                                else
+                                {
+                                    string actionList = item.ProdThumbnail;
+                                    string[] aListItems = actionList.Split(',');
+                                    foreach (string abcd in aListItems)
+                                    {
+                                        <span style="border-radius:50px;margin:5px">
+                                            <img style="border-radius:20px" src="@abcd" width="100px" />
+                                        </span>
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            <a href="/Admin/CatMsts/Edit/@item.ProdId"><i class="fas fa-pen-fancy"></i></a> |
+                            <a href="/Admin/CatMsts/Details/@item.ProdId"><i class="fas fa-search-plus"></i></a> |
+                            <a href="/Admin/CatMsts/Delete/@item.ProdId"><i class="fas fa-trash-alt"></i></a>
+                        </td>
+                    </tr>
                     }
                 </tbody>
             </table>

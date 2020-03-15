@@ -23,6 +23,9 @@
                             @Html.DisplayNameFor(model => model.StoneQlty)
                         </th>
                         <th>
+                            @Html.DisplayNameFor(model => model.StoneThumbnail)
+                        </th>
+                        <th>
                             @Html.DisplayNameFor(model => model.Description)
                         </th>
 
@@ -36,6 +39,27 @@
                     <tr>
                         <td>
                             @Html.DisplayFor(modelItem => item.StoneQlty)
+                        </td>
+                        <td style="width:400px">
+                            @{
+                                if (item.StoneThumbnail == null)
+                                {
+                                    <div>
+                                        @item.StoneThumbnail
+                                    </div>
+                                }
+                                else
+                                {
+                                    string actionList = item.StoneThumbnail;
+                                    string[] aListItems = actionList.Split(',');
+                                    foreach (string abcd in aListItems)
+                                    {
+                                        <span style="border-radius:50px;margin:5px">
+                                            <img style="border-radius:20px" src="@abcd" width="100px" />
+                                        </span>
+                                    }
+                                }
+                            }
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Description)

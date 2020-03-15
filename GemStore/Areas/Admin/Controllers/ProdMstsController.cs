@@ -46,7 +46,7 @@ namespace GemStore.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProdId,ProdType")] ProdMst prodMst)
+        public ActionResult Create([Bind(Include = "ProdId,ProdType,ProdThumbnail")] ProdMst prodMst)
         {
             prodMst.ProdId = "pro" + Guid.NewGuid().ToString().GetHashCode().ToString("x");
             if (ModelState.IsValid)

@@ -46,7 +46,7 @@ namespace GemStore.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "StoneQltyId,StoneQlty,Description")] StoneQltyMst stoneQltyMst)
+        public ActionResult Create([Bind(Include = "StoneQltyId,StoneQlty,Description,StoneThumbnail")] StoneQltyMst stoneQltyMst)
         {
             stoneQltyMst.StoneQltyId = "stone" + Guid.NewGuid().ToString().GetHashCode().ToString("x");
             if (ModelState.IsValid)

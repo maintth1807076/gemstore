@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -27,6 +28,8 @@ namespace GemStore.Models
         [Key]
         public string StoneQltyId { get; set; }
         public string StoneQlty { get; set; }
+        [DisplayName("Image")]
+        public string StoneThumbnail { get; set; }
         public string Description { get; set; }
     }
 }

@@ -38,6 +38,8 @@ namespace GemStore.Models
         [Key]
         public string DimQltyId { get; set; }
         public string DimQlty { get; set; }
+        [DisplayName("Image")]
+        public string DimThumbnail { get; set; }
     }
 
     public class DimQltySubMst
@@ -45,6 +47,8 @@ namespace GemStore.Models
         [Key]
         public string DimSubTypeId { get; set; }
         public string DimQlty { get; set; }
+        [DisplayName("Image")]
+        public string DimSubThumbnail { get; set; }
     }
     public class DimInfoMst
     {
