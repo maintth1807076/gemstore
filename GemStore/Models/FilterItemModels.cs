@@ -47,6 +47,8 @@ namespace GemStore.Models
         public string ProdId { get; set; }
         [DisplayName("Product Type")]
         public string ProdType { get; set; }
+        [DisplayName("Image")]
+        public string ProdThumbnail { get; set; }
         public virtual ICollection<ItemMst> ItemMsts { get; set; }
     }
     public class CertifyMst
@@ -65,5 +67,7 @@ namespace GemStore.Models
         public string JewelleryId { get; set; }
         [DisplayName("Jewellery Type")]
         public string JewelleryType { get; set; }
+        [DisplayName("Image")]
+        public string JewelThumbnail { get; set; }
     }
 }

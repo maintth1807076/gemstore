@@ -5,9 +5,9 @@
 }
 
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+    <p>
+        @Html.ActionLink("Create new", "Create", "CatMstsController", new { @class = "btn btn-warning" })
+    </p>
 <div class="container-fluid">
 
     <!-- Page Heading -->
@@ -30,17 +30,7 @@
                             <th></th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>
-                                @Html.DisplayNameFor(model => model.CatName)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.CatThumbnail)
-                            </th>
-                            <th></th>
-                        </tr>
-                    </tfoot>
+                   
                     <tbody>
                         @foreach (var item in Model)
                         {

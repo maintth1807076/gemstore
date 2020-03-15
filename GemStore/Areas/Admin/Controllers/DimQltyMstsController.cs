@@ -46,7 +46,7 @@ namespace GemStore.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DimQltyId, DimQlty")] DimQltyMst dimQltyMst)
+        public ActionResult Create([Bind(Include = "DimQltyId, DimQlty,DimThumbnail")] DimQltyMst dimQltyMst)
         {
             dimQltyMst.DimQltyId = "dimq" + Guid.NewGuid().ToString().GetHashCode().ToString("x");
             if (ModelState.IsValid)

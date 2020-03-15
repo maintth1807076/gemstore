@@ -24,7 +24,41 @@
                         @Html.ValidationMessageFor(model => model.DimQlty, "", new { @class = "text-danger" })
                     </div>
                 </div>
+                <div class=" row form-group">
+                    @Html.LabelFor(model => model.DimThumbnail, htmlAttributes: new { @class = "control-label col-md-3 pt-2" })
+                    <div class="col-md-6">
+                        <input type="text" name="DimThumbnail" id="DimThumbnail" class="form-control  text-box single-line" style="width:100%" />
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#DimModal">
+                            <i class="fas fa-image"></i>
+                        </button>
 
+                        <!-- Modal -->
+                        <div class="modal fade" id="DimModal" tabindex="-1" role="dialog" aria-labelledby="DimModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="DimModalLabel">Choose image</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form runat="server">
+                                            <input type="file" id="imgDim" name="file" class="cloudinary_fileupload">
+                                            <img id="blah4" src="#" alt="your image" />
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary" id="saveImageUrl1">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <hr />
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
@@ -32,18 +66,96 @@
                     </div>
                 </div>
             </div>
-          
+
         </div>
-        
-    
+
+
     </div>
-           
-    }
+
+}
 
 <div>
     @Html.ActionLink("Back to List", "Index", "DimQltyMstsController", new { @class = "btn btn-outline-warning" })
 </div>
-
-            @section Scripts {
-                @Scripts.Render("~/bundles/jqueryval")
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script>
+    $(document).ready(function () {
+        $('.cloudinary_fileupload').unsigned_cloudinary_upload('wm4mhhyw', {
+            cloud_name: 'bach19',
+        }, {
+            multiple: true
+        }).bind('cloudinarydone', function (e, data) {
+            var x = data.result.url;
+            var abc = $("#DimThumbnail").val();
+            if (abc.trim().length != 0) {
+                abc += ",";
             }
+            abc += x;
+            $("#DimThumbnail").val(abc);
+            sessionStorage.setItem('img', abc)
+        });
+        //
+    })
+</script>
+
+<script>
+    $(document).ready(function () {
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah4').attr('src', e.target.result);
+                    $('#blah4').width("100px");
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+            $('#blah4').click(function () {
+                $('#blah4').attr('src', '');
+            })
+        }
+
+        $("#imgDim").change(function () {
+            readURL(this);
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        if (window.File && window.FileList && window.FileReader) {
+            $("#files").on("change", function (e) {
+                var files = e.target.files,
+                    filesLength = files.length;
+                for (var i = 0; i < filesLength; i++) {
+                    var f = files[i]
+                    var fileReader = new FileReader();
+                    fileReader.onload = (function (e) {
+                        var file = e.target;
+                        /*  $("<span class=\"pip\">" +
+                            "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
+                            "<br/><span class=\"remove\">Remove image</span>" +
+                            "</span>").insertAfter("#files");
+                          $(".remove").click(function(){
+                            $(this).parent(".pip").remove();
+                          });*/
+
+                        // Old code here
+                        $("<img></img>", {
+                            class: "imageThumb",
+                            src: e.target.result,
+                            width: "200px",
+                            title: file.name + " | Click to remove"
+                        }).insertAfter("#files").click(function () { $(this).remove(); });
+
+                    });
+                    fileReader.readAsDataURL(f);
+                }
+            });
+        } else {
+            alert("Your browser doesn't support to File API")
+        }
+    });
+</script>
