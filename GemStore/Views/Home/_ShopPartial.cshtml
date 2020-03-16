@@ -1,0 +1,39 @@
+﻿@model IEnumerable<GemStore.Models.ItemMst>
+
+@foreach (var item in Model)
+{
+    <div class="col-sm-4 col-md-3 fix">
+        <div class="product-item fix">
+            <div class="product-img-hover">
+                <!-- Product image -->
+                <a href="product-details.html" class="pro-image fix">
+                    <div style="background-image: url(@item.Thumbnails.Split(',')[0]); width: 270px; height: 246px; background-size: contain; background-position: center"></div>
+                </a>
+                <!-- Product action Btn -->
+                <div class="product-action-btn">
+                    <a class="quick-view" href="@Url.Action("ProductDetails", "Cart", new { id=item.StyleCode})"><i class="fa fa-search"></i></a>
+                    <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
+                    <a class="add-cart" href="javascript:void(0)" data-id="@item.StyleCode" data-price="@item.SalePrice" data-name="@item.Name" data-thumbnail="@item.Thumbnails.Split(',')[0]"><i class="fa fa-shopping-cart"></i></a>
+                </div>
+            </div>
+            <div class="pro-name-price-ratting">
+                <!-- Product Name -->
+                <div class="pro-name">
+                    <a href="product-details.html">@item.Name</a>
+                </div>
+                <!-- Product Ratting -->
+                <div class="pro-ratting">
+                    <i class="on fa fa-star"></i>
+                    <i class="on fa fa-star"></i>
+                    <i class="on fa fa-star"></i>
+                    <i class="on fa fa-star"></i>
+                    <i class="on fa fa-star-half-o"></i>
+                </div>
+                <!-- Product Price -->
+                <div class="pro-price fix">
+                    <p><span class="old">$@item.MRP</span><span class="new">$@item.SalePrice</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+}
