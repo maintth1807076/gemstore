@@ -60,7 +60,19 @@ namespace GemStore.Controllers
 
             return View();
         }
+        public ActionResult Cart()
+        {
+            ViewBag.Message = "Your  cart  page.";
 
-       
+            return View();
+        }
+        public ActionResult Checkout()
+        {
+            ViewBag.Message = "Your  checkout  page.";
+
+            return View();
+        }
+
+
     }
 }
