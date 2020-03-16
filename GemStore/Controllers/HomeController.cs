@@ -31,9 +31,10 @@ namespace GemStore.Controllers
         }
         public ActionResult Shop()
         {
-            ViewBag.Message = "Your shop page.";
             ViewBag.BrandMsts = db.BrandMsts.ToList();
             ViewBag.CatMsts = db.CatMsts.ToList();
+            ViewBag.ProdMsts = db.ProdMsts.ToList();
+            ViewBag.JewelTypeMsts = db.JewelTypeMsts.ToList();
             ViewBag.BrandId = new SelectList(db.BrandMsts, "BrandId", "BrandType");
             ViewBag.CatId = new SelectList(db.CatMsts, "CatId", "CatName");
             ViewBag.CertifyId = new SelectList(db.CertifyMsts, "CertifyId", "CertifyType");
@@ -47,18 +48,50 @@ namespace GemStore.Controllers
 
             
         }
-        public ActionResult FilterShop(string[] BrandIds)
+        public ActionResult FilterShop(string[] BrandIds, string[] CatIds, string[] ProdIds, string[] JewelIds)
         {
-            List<ItemMst> itemMsts = new List<ItemMst>();
+            var itemMsts = db.ItemMsts.ToList();
+            var itemsTemp = new List<ItemMst>();
             if (BrandIds != null)
             {
                 foreach (var brandId in BrandIds)
                 {
                     var list = db.ItemMsts.Where(x => x.BrandId == brandId).ToList();
-                    itemMsts.AddRange(list);
+                    itemsTemp.AddRange(list);
                 }
+                itemMsts = itemMsts.Intersect(itemsTemp).ToList();
+                itemsTemp.Clear();
             }
-            
+            if (CatIds != null)
+            {
+                foreach (var catId in CatIds)
+                {
+                    var list = db.ItemMsts.Where(x => x.CatId == catId).ToList();
+                    itemsTemp.AddRange(list);
+                }
+                itemMsts = itemMsts.Intersect(itemsTemp).ToList();
+                itemsTemp.Clear();
+            }
+            if (ProdIds != null)
+            {
+                foreach (var prodId in ProdIds)
+                {
+                    var list = db.ItemMsts.Where(x => x.ProdId == prodId).ToList();
+                    itemsTemp.AddRange(list);
+                }
+                itemMsts = itemMsts.Intersect(itemsTemp).ToList();
+                itemsTemp.Clear();
+            }
+            if (JewelIds != null)
+            {
+                foreach (var jewelId in JewelIds)
+                {
+                    var list = db.ItemMsts.Where(x => x.JewelleryId == jewelId).ToList();
+                    itemsTemp.AddRange(list);
+                }
+                itemMsts = itemMsts.Intersect(itemsTemp).ToList();
+                itemsTemp.Clear();
+            }
             return PartialView("_ShopPartial", itemMsts);
         }
         public ActionResult Shop_list()

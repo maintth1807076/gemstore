@@ -13,11 +13,12 @@
 <div class="shop-product-area section fix">
     <div class="container">
         <div class="row">
+            @using (Ajax.BeginForm("FilterShop", "Home", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "shop-products" }))
+            {
             <div class="col-md-3">
                 <div class="shop-sidebar fix">
                     <!-- single-sidebar start -->
                     <div class="sin-shop-sidebar">
-                        @Html.DropDownList("BrandId", null, new { })
                         <div class="panel-group" id="checkout-progress">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
@@ -26,15 +27,10 @@
                                 <div id="checkout-method" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                                     <div class="panel-body">
                                         <ul>
-                                            @using (Ajax.BeginForm("FilterShop", "Home", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "shop-products" }))
+                                            @foreach (var brand in ViewBag.BrandMsts)
                                             {
-
-                                                foreach (var brand in ViewBag.BrandMsts)
-                                                {
-                                                    <li><a href="javascript:void(0)"><input type="checkbox" value="@brand.BrandId" name="BrandIds[]" onchange = "$(this.form).submit();"/>@brand.BrandType</a></li>
-                                                }
+                                            <li><a href="javascript:void(0)"><input type="checkbox" value="@brand.BrandId" name="BrandIds[]" onchange="$(this.form).submit();" />@brand.BrandType</a></li>
                                             }
-
                                         </ul>
                                     </div>
                                 </div>
@@ -48,7 +44,7 @@
                                         <ul>
                                             @foreach (var cat in ViewBag.CatMsts)
                                             {
-                                                <li><a href="../Shared/index.html"><input type="checkbox" value="@cat.CatId" name="" />@cat.CatName</a></li>
+                                                <li><a href="javascript:void(0)"><input type="checkbox" value="@cat.CatId" name="CatIds[]" onchange="$(this.form).submit();"/>@cat.CatName</a></li>
                                             }
                                         </ul>
                                     </div>
@@ -56,21 +52,31 @@
                             </div>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#checkout-progress" href="#shipping-info" aria-expanded="false"><span>3</span>SHIPPING INFORMATION</a>
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#checkout-progress" href="#shipping-info" aria-expanded="false"><span>3</span>Product Type</a>
                                 </div>
                                 <div id="shipping-info" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                                     <div class="panel-body">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco aboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepte.</p>
+                                        <ul>
+                                            @foreach (var prod in ViewBag.ProdMsts)
+                                            {
+                                                <li><a href="javascript:void(0)"><input type="checkbox" value="@prod.ProdId" name="ProdIds[]" onchange="$(this.form).submit();" />@prod.ProdType</a></li>
+                                            }
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#checkout-progress" href="#shipping-method" aria-expanded="false"><span>4</span>SHIPPING METHOD</a>
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#checkout-progress" href="#shipping-method" aria-expanded="false">Jewellery Type</a>
                                 </div>
                                 <div id="shipping-method" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                                     <div class="panel-body">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco aboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepte.</p>
+                                        <ul>
+                                            @foreach (var jewel in ViewBag.JewelTypeMsts)
+                                            {
+                                                <li><a href="javascript:void(0)"><input type="checkbox" value="@jewel.JewelleryId" name="JewelIds[]" onchange="$(this.form).submit();" />@jewel.JewelleryType</a></li>
+                                            }
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -99,6 +105,7 @@
                     <!-- single-sidebar end -->
                 </div>
             </div>
+            }
             <div class="col-md-9">
                 <div class="row">
                     <!-- Shop Tool Bar -->
