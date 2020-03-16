@@ -16,21 +16,32 @@ namespace GemStore.Controllers
     public class CartController : Controller
     {
         private GemStoreContext db = new GemStoreContext();
-        public ActionResult Test01(string name)
+        public ActionResult getDepartment(string StyleCode)
         {
-            //Thread.Sleep(2000);  
-            return PartialView(db.ItemMsts.Where(i => i.Name.Contains(name)).ToList());
+            return Json(db.StoneMsts.Where(x=>x.StyleCode == StyleCode).Select(x => new
+            {
+                StyleCode = x.StyleCode,
+            }).ToList(), JsonRequestBehavior.AllowGet);
         }
-
-        //GET: AllSchools  
-        /// <summary>  
-        /// List all schools from DataSource  
-        /// </summary>  
-        /// <returns></returns>  
-        public ActionResult Test02()
+        public ActionResult TestPaypal()
         {
-            //Thread.Sleep(2000);  
-            return PartialView("Test01",db.ItemMsts.Where(i => i.Name.Contains("name")).ToList());
+            
+            return View();
+        }
+        public ActionResult Test01()
+        {
+            ViewBag.Item = new SelectList(db.ItemMsts, "StyleCode", "Name");
+            ViewBag.Stone = new SelectList(db.StoneMsts, "StyleCode", "StyleCode");
+            return View();
+        }
+        
+        public ActionResult Test02(string StyleCode)
+        {
+            Debug.WriteLine(StyleCode);
+            var list = db.StoneMsts.Where(x => x.StyleCode == StyleCode);
+            ViewBag.Stone = new SelectList(list, "StyleCode", "StyleCode");
+            ViewBag.T = StyleCode;
+            return PartialView();
         }
         // GET: Cart
         public ActionResult Index()

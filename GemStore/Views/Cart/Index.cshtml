@@ -2,26 +2,7 @@
 @{
     ViewBag.Title = "Index";
 }
-<div id="UpdateContentDiv">
-    @*Div to update content after Ajax Call*@
-</div>
-@Ajax.ActionLink(
-    "List All Schools", // <-- Text to display
-    "Test01",// <-- Action/Method Name
-    new {name = "stone"},//<!-- Controller Name
-    new AjaxOptions
-    {
-        UpdateTargetId = "UpdateContentDiv", // <-- DOM element ID to update
-        InsertionMode = InsertionMode.Replace, // <-- Replace the content of DOM element
-        HttpMethod = "GET", // <-- HTTP method
-        LoadingElementId = "divLoading", //Id of Loading GIF Image
-        //OnBegin = "onAjaxBegin", //OnBegin JS Function
-        //OnComplete = "onAjaxComplete" //OnComplete JS Function
-    },
-    new { @class = "btn btn-primary" } //-- Class
-    )
-<h2>Index</h2>
-<hr />
+
 <div class="shop-products">
     @foreach (var item in Model)
     {
