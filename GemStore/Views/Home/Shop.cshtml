@@ -17,28 +17,40 @@
                 <div class="shop-sidebar fix">
                     <!-- single-sidebar start -->
                     <div class="sin-shop-sidebar">
+                        @Html.DropDownList("BrandId", null, new { })
                         <div class="panel-group" id="checkout-progress">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#checkout-progress" href="#checkout-method" aria-expanded="false">CHECKOUT METHOD</a>
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#checkout-progress" href="#checkout-method" aria-expanded="false">Brand</a>
                                 </div>
                                 <div id="checkout-method" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                                     <div class="panel-body">
                                         <ul>
-                                            <li><a href="../Shared/index.html">Home 1</a></li>
-                                            <li><a href="../Shared/index-2.html">Home 2</a></li>
-                                            <li><a href="../Shared/index-3.html">Home 3</a></li>
+                                            @using (Ajax.BeginForm("FilterShop", "Home", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "shop-products" }))
+                                            {
+
+                                                foreach (var brand in ViewBag.BrandMsts)
+                                                {
+                                                    <li><a href="javascript:void(0)"><input type="checkbox" value="@brand.BrandId" name="BrandIds[]" onchange = "$(this.form).submit();"/>@brand.BrandType</a></li>
+                                                }
+                                            }
+
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#checkout-progress" href="#bill-info" aria-expanded="false"><span>2</span>BILLING INFORMATION</a>
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#checkout-progress" href="#bill-info" aria-expanded="false">Category</a>
                                 </div>
                                 <div id="bill-info" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                                     <div class="panel-body">
-
+                                        <ul>
+                                            @foreach (var cat in ViewBag.CatMsts)
+                                            {
+                                                <li><a href="../Shared/index.html"><input type="checkbox" value="@cat.CatId" name="" />@cat.CatName</a></li>
+                                            }
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -85,58 +97,6 @@
                         </div>
                     </div>
                     <!-- single-sidebar end -->
-                    <!-- single-sidebar start -->
-                    <div class="sin-shop-sidebar shop-add">
-                        <a href="#"><img src="~/Content/user/img/shop-add-1.jpg" alt=""></a>
-                    </div>
-                    <!-- single-sidebar end -->
-                    <!-- single-sidebar start -->
-                    <div class="sin-shop-sidebar shop-brands">
-                        <h2>Brands</h2>
-                        <ul>
-                            <li><a href="#">Da Vonna<span>(25)</span></a></li>
-                            <li><a href="#">Glitzly Rocks<span>(20)</span></a></li>
-                            <li><a href="#">Hira Jewelrs<span>(35)</span></a></li>
-                            <li><a href="#">Diamond World<span>(65)</span></a></li>
-                            <li><a href="#">Apon Jewelrs<span>(35)</span></a></li>
-                            <li><a href="#">Grameen Jewelrs<span>(25)</span></a></li>
-                            <li><a href="#">Devs Jewelry<span>(85)</span></a></li>
-                            <li><a href="#">Sanonda Jewelrs<span>(15)</span></a></li>
-                        </ul>
-                    </div>
-                    <!-- single-sidebar end -->
-                    <!-- single-sidebar start -->
-                    <div class="sin-shop-sidebar product-price-range">
-                        <h2>Price</h2>
-                        <div class="slider-range-container">
-                            <div id="slider-range"></div>
-                            <p>
-                                <input type="text" id="price-amount" readonly>
-                            </p>
-                        </div>
-                    </div>
-                    <!-- single-sidebar end -->
-                    <!-- single-sidebar start -->
-                    <div class="sin-shop-sidebar shop-add">
-                        <a href="#"><img src="~/Content/user/img/shop-add-2.jpg" alt=""></a>
-                    </div>
-                    <!-- single-sidebar end -->
-                    <!-- single-sidebar start -->
-                    <div class="sin-shop-sidebar shop-tags">
-                        <h2>Tags</h2>
-                        <ul>
-                            <li><a href="#">JEWELRY</a></li>
-                            <li><a href="#">Rings</a></li>
-                            <li><a href="#">EARRINGS</a></li>
-                            <li><a href="#">BRACELETS</a></li>
-                            <li><a href="#">Necklaces</a></li>
-                            <li><a href="#">Locket</a></li>
-                            <li><a href="#">Jewelry Sets</a></li>
-                            <li><a href="#">Churi</a></li>
-                            <li><a href="#">Watch</a></li>
-                        </ul>
-                    </div>
-                    <!-- single-sidebar end -->
                 </div>
             </div>
             <div class="col-md-9">
@@ -169,44 +129,8 @@
                             <span>Showing 1 - 12 of 16 items</span>
                         </div>
                     </div>
-                    <div class="shop-products">
-                        @foreach (var item in Model)
-                        {
-                            <div class="col-sm-4 col-md-3 fix">
-                                <div class="product-item fix">
-                                    <div class="product-img-hover">
-                                        <!-- Product image -->
-                                        <a href="product-details.html" class="pro-image fix">
-                                            <div style="background-image: url(@item.Thumbnails.Split(',')[0]); width: 270px; height: 246px; background-size: contain; background-position: center"></div>
-                                        </a>
-                                        <!-- Product action Btn -->
-                                        <div class="product-action-btn">
-                                            <a class="quick-view" href="@Url.Action("ProductDetails", "Cart", new { id=item.StyleCode})"><i class="fa fa-search"></i></a>
-                                            <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
-                                            <a class="add-cart" href="javascript:void(0)" data-id="@item.StyleCode" data-price="@item.SalePrice" data-name="@item.Name" data-thumbnail="@item.Thumbnails.Split(',')[0]"><i class="fa fa-shopping-cart"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="pro-name-price-ratting">
-                                        <!-- Product Name -->
-                                        <div class="pro-name">
-                                            <a href="product-details.html">@item.Name</a>
-                                        </div>
-                                        <!-- Product Ratting -->
-                                        <div class="pro-ratting">
-                                            <i class="on fa fa-star"></i>
-                                            <i class="on fa fa-star"></i>
-                                            <i class="on fa fa-star"></i>
-                                            <i class="on fa fa-star"></i>
-                                            <i class="on fa fa-star-half-o"></i>
-                                        </div>
-                                        <!-- Product Price -->
-                                        <div class="pro-price fix">
-                                            <p><span class="old">$@item.MRP</span><span class="new">$@item.SalePrice</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        }
+                    <div id="shop-products" class="shop-products">
+                        @Html.Partial("_ShopPartial", Model)
                     </div>
                     <div class="shop-products">
                         <!-- Single Product -->
@@ -256,3 +180,13 @@
         </div>
     </div>
 </div><!-- Shop Product Area End -->
+@*@section scripts
+    {
+            <script type="text/javascript">
+                $('input[name="BrandIds[]"]').change(function () {
+                    console.log($(this).val());
+                $(this.form).submit();
+
+            });
+            </script>
+        }*@

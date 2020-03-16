@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -31,10 +32,34 @@ namespace GemStore.Controllers
         public ActionResult Shop()
         {
             ViewBag.Message = "Your shop page.";
-
+            ViewBag.BrandMsts = db.BrandMsts.ToList();
+            ViewBag.CatMsts = db.CatMsts.ToList();
+            ViewBag.BrandId = new SelectList(db.BrandMsts, "BrandId", "BrandType");
+            ViewBag.CatId = new SelectList(db.CatMsts, "CatId", "CatName");
+            ViewBag.CertifyId = new SelectList(db.CertifyMsts, "CertifyId", "CertifyType");
+            ViewBag.GoldTypeId = new SelectList(db.GoldKrts, "GoldTypeId", "GoldCrt");
+            ViewBag.JewelleryId = new SelectList(db.JewelTypeMsts, "JewelleryId", "JewelleryType");
+            ViewBag.ProdId = new SelectList(db.ProdMsts, "ProdId", "ProdType");
+            ViewData["StoneMst.StoneQltyId"] = new SelectList(db.StoneQltyMsts, "StoneQltyId", "StoneQlty");
+            ViewData["DimMst.DimQltyId"] = new SelectList(db.DimQltyMsts, "DimQltyId", "DimQlty");
+            ViewData["DimMst.DimSubTypeId"] = new SelectList(db.DimQltySubMsts, "DimSubTypeId", "DimQlty");
             return View(db.ItemMsts.ToList());
 
             
+        }
+        public ActionResult FilterShop(string[] BrandIds)
+        {
+            List<ItemMst> itemMsts = new List<ItemMst>();
+            if (BrandIds != null)
+            {
+                foreach (var brandId in BrandIds)
+                {
+                    var list = db.ItemMsts.Where(x => x.BrandId == brandId).ToList();
+                    itemMsts.AddRange(list);
+                }
+            }
+            
+            return PartialView("_ShopPartial", itemMsts);
         }
         public ActionResult Shop_list()
         {
