@@ -79,7 +79,7 @@ namespace GemStore.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "GoldTypeId,GoldCrt")] GoldKrt goldKrt)
+        public ActionResult Edit([Bind(Include = "GoldTypeId,GoldCrt,GoldThumbnail")] GoldKrt goldKrt)
         {
             if (ModelState.IsValid)
             {

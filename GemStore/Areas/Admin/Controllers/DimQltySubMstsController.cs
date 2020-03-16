@@ -79,7 +79,7 @@ namespace GemStore.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DimSubTypeId,DimQlty")] DimQltySubMst dimQltySubMst)
+        public ActionResult Edit([Bind(Include = "DimSubTypeId,DimQlty,DimSubThumbnail")] DimQltySubMst dimQltySubMst)
         {
             if (ModelState.IsValid)
             {
