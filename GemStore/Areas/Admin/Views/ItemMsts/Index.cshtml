@@ -4,180 +4,84 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create new", "Create",null, new { @class = "btn btn-warning" })
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.BrandMst.BrandType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CatMst.CatName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CertifyMst.CertifyType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DimMst.DimQltyId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GoldKrt.GoldCrt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.JewelTypeMst.JewelleryType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ProdMst.ProdType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StoneMst.StoneQltyId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pairs)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Quantity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ProdQuantity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GoldWt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StoneWt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NetGold)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.WstgPer)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TotGrossWt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GoldRate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GoldAmt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GoldMaking)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StoneMaking)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OtherMaking)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TotMaking)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MRP)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SalePrice)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Thumbnails)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.BrandMst.BrandType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CatMst.CatName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CertifyMst.CertifyType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DimMst.DimQltyId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GoldKrt.GoldCrt)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.JewelTypeMst.JewelleryType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProdMst.ProdType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StoneMst.StoneQltyId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pairs)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Quantity)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProdQuantity)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GoldWt)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StoneWt)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NetGold)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.WstgPer)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TotGrossWt)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GoldRate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GoldAmt)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GoldMaking)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StoneMaking)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OtherMaking)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TotMaking)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MRP)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SalePrice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Thumbnails)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.StyleCode }) |
-            @Html.ActionLink("Details", "Details", new { id=item.StyleCode }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.StyleCode })
-        </td>
-    </tr>
-}
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Thumbnails)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MRP)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SalePrice)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
 
-</table>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Thumbnails)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MRP)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SalePrice)
+                        </td>
+
+                        <td style="width:400px">
+                            @{
+                                if (item.Thumbnails == null)
+                                {
+                                    <div>
+                                        @item.Thumbnails
+                                    </div>
+                                }
+                                else
+                                {
+                                    string actionList = item.Thumbnails;
+                                    string[] aListItems = actionList.Split(',');
+                                    foreach (string abcd in aListItems)
+                                    {
+                                        <span style="border-radius:50px;margin:5px">
+                                            <img style="border-radius:20px" src="@abcd" width="100px" />
+                                        </span>
+                                    }
+                                }
+                            }
+                        </td>
+                        <td>
+                            <a href="/Admin/CatMsts/Edit/@item.StyleCode"><i class="fas fa-pen-fancy"></i></a> |
+                            <a href="/Admin/CatMsts/Details/@item.StyleCode"><i class="fas fa-search-plus"></i></a> |
+                            <a href="/Admin/CatMsts/Delete/@item.StyleCode"><i class="fas fa-trash-alt"></i></a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
