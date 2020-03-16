@@ -1,0 +1,37 @@
+﻿
+@model GemStore.Models.ItemMst
+@{
+    var selectlist = ViewBag.Item as SelectList;
+}
+@*@using (Ajax.BeginForm("Test02", "Cart", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "result", InsertionMode = InsertionMode.Replace }))
+    {
+        @Html.DropDownListFor(x => Model.StyleCode, selectlist, new { })
+        <input type="submit" value="submit"/>
+    }*@
+@Html.DropDownListFor(x => Model.StyleCode, selectlist, new { })
+<div id="result">@Html.DropDownList("Stone", null, new { })</div>
+@section scripts
+{
+    <script type="text/javascript">
+        $('#StyleCode').change(function () {
+            $.ajax({
+                type: "POST",
+                url: "/Cart/getDepartment",
+                data: {
+                    StyleCode : $(this).val()
+                },
+                success: function (data) {
+                    var s = '<select class="form-control" name="">';
+                    for (var i = 0; i < data.length; i++) {
+                        s += '<option value="' + data[i].StyleCOde + '">' + data[i].StyleCode + '</option>';
+                    }
+                    s += '</select>';
+                    $("#result").html(s);
+                }
+            });
+
+
+        });
+    </script>
+}
+

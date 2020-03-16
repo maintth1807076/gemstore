@@ -34,30 +34,31 @@
                         <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#BrandModal">
                             <i class="fas fa-image"></i>
                         </button>
-
+                        <input type="file" id="imgBrand" name="file" class="cloudinary_fileupload">
+                        <img id="blah1" src="#" alt="your image" />
                         <!-- Modal -->
-                        <div class="modal fade" id="BrandModal" tabindex="-1" role="dialog" aria-labelledby="BrandModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="BrandModalLabel">Choose image</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form runat="server">
-                                            <input type="file" id="imgBrand" name="file" class="cloudinary_fileupload">
-                                            <img id="blah1" src="#" alt="your image" />
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary" id="saveImageUrl1">Save changes</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @*<div class="modal fade" id="BrandModal" tabindex="-1" role="dialog" aria-labelledby="BrandModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="BrandModalLabel">Choose image</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form runat="server">
+                            <input type="file" id="imgBrand" name="file" class="cloudinary_fileupload">
+                            <img id="blah1" src="#" alt="your image" />
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="saveImageUrl1">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>*@
                     </div>
                 </div>
 

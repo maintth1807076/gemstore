@@ -190,6 +190,10 @@
     <Compile Include="Migrations\202003130609015_InitDatabase.Designer.cs">
       <DependentUpon>202003130609015_InitDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003151314383_ChangeModel.cs" />
+    <Compile Include="Migrations\202003151314383_ChangeModel.Designer.cs">
+      <DependentUpon>202003151314383_ChangeModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CartItem.cs" />
@@ -2228,6 +2232,9 @@
     <Content Include="Views\Home\Portfolio.cshtml" />
     <Content Include="Views\Home\Product_detail.cshtml" />
     <Content Include="Views\Cart\Test01.cshtml" />
+    <Content Include="Views\Cart\Test02.cshtml" />
+    <Content Include="Views\Cart\Test4.cshtml" />
+    <Content Include="Views\Cart\TestPaypal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2249,6 +2256,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202003130609015_InitDatabase.resx">
       <DependentUpon>202003130609015_InitDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003151314383_ChangeModel.resx">
+      <DependentUpon>202003151314383_ChangeModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
