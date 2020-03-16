@@ -46,9 +46,9 @@ namespace GemStore.Areas.Admin.Controllers
             ViewBag.GoldTypeId = new SelectList(db.GoldKrts, "GoldTypeId", "GoldCrt");
             ViewBag.JewelleryId = new SelectList(db.JewelTypeMsts, "JewelleryId", "JewelleryType");
             ViewBag.ProdId = new SelectList(db.ProdMsts, "ProdId", "ProdType");
-            ViewBag.StoneQltyId = new SelectList(db.StoneQltyMsts, "StoneQltyId", "StoneQlty");
-            ViewBag.DimQltyId = new SelectList(db.DimQltyMsts, "DimQltyId", "DimQlty");
-            ViewBag.DimSubTypeId = new SelectList(db.DimQltySubMsts, "DimSubTypeId", "DimQlty");
+            ViewData["StoneMst.StoneQltyId"] = new SelectList(db.StoneQltyMsts, "StoneQltyId", "StoneQlty");
+            ViewData["DimMst.DimQltyId"] = new SelectList(db.DimQltyMsts, "DimQltyId", "DimQlty");
+            ViewData["DimMst.DimSubTypeId"] = new SelectList(db.DimQltySubMsts, "DimSubTypeId", "DimQlty");
             return View();
         }
         // POST: Admin/ItemMsts/Create
@@ -56,12 +56,12 @@ namespace GemStore.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "StyleCode,Name,Pairs,BrandId,Quantity,CatId,ProdQuantity,CertifyId,ProdId,GoldTypeId,GoldWt,StoneWt,NetGold,WstgPer,TotGrossWt,GoldRate,GoldAmt,GoldMaking,StoneMaking,OtherMaking,TotMaking,MRP,SalePrice,Thumbnails,JewelleryId")] ItemMst itemMst, string StoneQltyId, string DimQltyId, string DimSubTypeId)
+        public ActionResult Create( ItemMst itemMst, string StoneQltyId, string DimQltyId, string DimSubTypeId)
         {
             itemMst.StyleCode = "item" + Guid.NewGuid().ToString().GetHashCode().ToString("x");
-            itemMst.StoneMst.StoneQltyId = StoneQltyId;
-            itemMst.DimMst.DimQltyId = DimQltyId;
-            itemMst.DimMst.DimSubTypeId = DimSubTypeId;
+            //itemMst.StoneMst.StoneQltyId = StoneQltyId;
+            //itemMst.DimMst.DimQltyId = DimQltyId;
+            //itemMst.DimMst.DimSubTypeId = DimSubTypeId;
             if (ModelState.IsValid)
             {
                 db.ItemMsts.Add(itemMst);
@@ -107,7 +107,7 @@ namespace GemStore.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "StyleCode,Name,Pairs,BrandId,Quantity,CatId,ProdQuantity,CertifyId,ProdId,GoldTypeId,GoldWt,StoneWt,NetGold,WstgPer,TotGrossWt,GoldRate,GoldAmt,GoldMaking,StoneMaking,OtherMaking,TotMaking,MRP,SalePrice,Thumbnails,JewelleryId")] ItemMst itemMst)
+        public ActionResult Edit( ItemMst itemMst)
         {
             if (ModelState.IsValid)
             {
