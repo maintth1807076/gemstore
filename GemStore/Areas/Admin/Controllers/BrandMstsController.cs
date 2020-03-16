@@ -49,7 +49,7 @@ namespace GemStore.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BrandId, BrandType, BrandThumbnail")] BrandMst brandMst)
+        public ActionResult Create([Bind(Include = "BrandId, BrandType,BrandThumbnail")] BrandMst brandMst)
         {
             brandMst.BrandId = "brand" + Guid.NewGuid().ToString().GetHashCode().ToString("x");
             if (ModelState.IsValid)
@@ -82,7 +82,7 @@ namespace GemStore.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BrandId,BrandType")] BrandMst brandMst)
+        public ActionResult Edit([Bind(Include = "BrandId,BrandType,BrandThumbnail")] BrandMst brandMst)
         {
             if (ModelState.IsValid)
             {

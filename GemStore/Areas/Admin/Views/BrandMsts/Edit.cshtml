@@ -4,34 +4,154 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>BrandMst</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.BrandId)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.BrandType, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.BrandType, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.BrandType, "", new { @class = "text-danger" })
+    <div class="form-horizontal col-md-6 " style="margin-left: 25%;">
+        <div class="card shadow mb-5">
+            <div class="card-header py-7">
+                <h6 class="m-0 font-weight-bold text-dark" style="text-align: center"> EXIT BRAND</h6>
             </div>
-        </div>
+            <div class="card-body">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.BrandId)
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <div class=" row form-group">
+                    @Html.LabelFor(model => model.BrandType, htmlAttributes: new { @class = "control-label col-md-2 pt-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.BrandType, new { htmlAttributes = new { @class = "form-control col-md-10" } })
+                        @Html.ValidationMessageFor(model => model.BrandType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class=" row form-group">
+                    @Html.LabelFor(model => model.BrandThumbnail, htmlAttributes: new { @class = "control-label col-md-2 pt-2" })
+                    <div class="col-md-7">
+                        <input type="text" name="BrandThumbnail" id="BrandThumbnail" class="form-control  text-box single-line" style="width:100%" />
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#BrandModal">
+                            <i class="fas fa-image"></i>
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="BrandModal" tabindex="-1" role="dialog" aria-labelledby="BrandModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="BrandModalLabel">Choose image</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form runat="server">
+                                            <input type="file" id="imgBrand" name="file" class="cloudinary_fileupload">
+                                            <img id="blah1" src="#" alt="your image" />
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary" id="saveImageUrl1">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-warning" style="float: right;" />
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-outline-warning" })
 </div>
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script>
+    $(document).ready(function () {
+        $('.cloudinary_fileupload').unsigned_cloudinary_upload('wm4mhhyw', {
+            cloud_name: 'bach19',
+        }, {
+            multiple: true
+        }).bind('cloudinarydone', function (e, data) {
+            var x = data.result.url;
+            var abc = $("#BrandThumbnail").val();
+            if (abc.trim().length != 0) {
+                abc += ",";
+            }
+            abc += x;
+            $("#BrandThumbnail").val(abc);
+            sessionStorage.setItem('img', abc)
+        });
+        //
+    })
+</script>
+
+<script>
+    $(document).ready(function () {
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah1').attr('src', e.target.result);
+                    $('#blah1').width("100px");
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+            $('#blah1').click(function () {
+                $('#blah1').attr('src', '');
+            })
+        }
+
+        $("#imgBrand").change(function () {
+            readURL(this);
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        if (window.File && window.FileList && window.FileReader) {
+            $("#files").on("change", function (e) {
+                var files = e.target.files,
+                    filesLength = files.length;
+                for (var i = 0; i < filesLength; i++) {
+                    var f = files[i]
+                    var fileReader = new FileReader();
+                    fileReader.onload = (function (e) {
+                        var file = e.target;
+                        /*  $("<span class=\"pip\">" +
+                            "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
+                            "<br/><span class=\"remove\">Remove image</span>" +
+                            "</span>").insertAfter("#files");
+                          $(".remove").click(function(){
+                            $(this).parent(".pip").remove();
+                          });*/
+
+                        // Old code here
+                        $("<img></img>", {
+                            class: "imageThumb",
+                            src: e.target.result,
+                            width: "200px",
+                            title: file.name + " | Click to remove"
+                        }).insertAfter("#files").click(function () { $(this).remove(); });
+
+                    });
+                    fileReader.readAsDataURL(f);
+                }
+            });
+        } else {
+            alert("Your browser doesn't support to File API")
+        }
+    });
+</script>
