@@ -85,6 +85,12 @@
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -219,6 +225,7 @@
     <Content Include="Content\js\sb-admin-2.js" />
     <Content Include="Content\js\sb-admin-2.min.js" />
     <Content Include="Content\main.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\user\css\animate.min.css" />
     <Content Include="Content\user\css\bootstrap.min.css" />
     <Content Include="Content\user\css\font-awesome.min.css" />
@@ -2222,12 +2229,14 @@
     <Content Include="Views\Cart\ProductDetails.cshtml" />
     <Content Include="Views\Home\Blog.cshtml" />
     <Content Include="Views\Home\Portfolio.cshtml" />
-    <Content Include="Views\Home\Product_detail.cshtml" />
+    <Content Include="Views\Home\ProductDetail.cshtml" />
     <Content Include="Views\Cart\Test01.cshtml" />
     <Content Include="Views\Cart\Test02.cshtml" />
     <Content Include="Views\Cart\Test4.cshtml" />
     <Content Include="Views\Cart\TestPaypal.cshtml" />
     <Content Include="Views\Home\_ShopPartial.cshtml" />
+    <Content Include="Views\Home\Cart.cshtml" />
+    <Content Include="Views\Home\Checkout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

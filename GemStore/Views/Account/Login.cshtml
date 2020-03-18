@@ -11,7 +11,7 @@
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
-               
+
                 <div class="card shadow mb-5 " style="width: 50%;margin-left: 25%;border: black 1px solid;border-radius: 5px; margin-top:20px;">
                     <div class="card-header py-7" style="background-color: orange;height: 50px;">
                         <h3 class="m-0 font-weight-bold text-dark" style="text-align: center; color:white;">Login</h3>
@@ -49,23 +49,22 @@
                         <p>
                             @Html.ActionLink("Register as a new user", "Register")
                         </p>
-                        </div>
                     </div>
-                        @* Enable this once you have account confirmation enabled for password reset functionality
+                </div>
+                @* Enable this once you have account confirmation enabled for password reset functionality
                     <p>
                         @Html.ActionLink("Forgot your password?", "ForgotPassword")
                     </p>*@
-                        }
-            </section>
+            }
+        </section>
     </div>
     @*<div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-        </section>
-    </div>*@
+            <section id="socialLoginForm">
+                @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+            </section>
+        </div>*@
 </div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
-

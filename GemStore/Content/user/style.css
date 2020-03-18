@@ -1721,24 +1721,36 @@ img {
   float: left;
   margin: 0 5px;
 }
-.pagination ul li a, .pagination ul li span {
+.pagination li a, .pagination li span {
   background: #fff none repeat scroll 0 0;
   color: #e09e25;
-  display: block;
+  /*display: block;
   font-weight: 600;
   height: 30px;
   line-height: 30px;
-  width: 30px;
+  width: 30px;*/
 }
 .pagination ul li a i {
   font-size: 24px;
   line-height: 30px;
 }
-.pagination ul li span{}
-.pagination ul li.active{}
-.pagination ul li.active span, .pagination ul li a:hover {
-  background: #e09e25 none repeat scroll 0 0;
-  color: #fff;
+.pagination .action a {
+    border-color: #e09e25;
+}
+.pagination .active a {
+    background: #e09e25 none repeat scroll 0 0;
+    color: #fff;
+}
+.pagination .active a:hover {
+    background: #e09e25 none repeat scroll 0 0;
+    color: #fff;
+    border-color: #e09e25;
+}
+
+.pagination .active a, .pagination li a:hover {
+    background: #e09e25 none repeat scroll 0 0;
+    color: #fff;
+    border-color: #e09e25;
 }
 /*-----------------------
 	6. Shop List Page

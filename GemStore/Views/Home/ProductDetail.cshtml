@@ -1,6 +1,6 @@
-﻿
+﻿@model GemStore.Models.ItemMst
 @{
-    ViewBag.Title = "Product_detail";
+    ViewBag.Title = "ProductDetail";
 }
 
 <div class="page-title fix">
@@ -17,6 +17,16 @@
                 <div class="details-pro-tab">
                     <!-- Tab panes -->
                     <div class="tab-content details-pro-tab-content">
+                        @foreach (var url in Model.Thumbnails.Split())
+                        {
+                            <div class="tab-pane fade in active" id="image-1">
+                                <div class="simpleLens-big-image-container">
+                                    <a class="simpleLens-lens-image" data-lens-image="@url">
+                                        <img src="@url" alt="" class="simpleLens-big-image">
+                                    </a>
+                                </div>
+                            </div>
+                        }
                         <div class="tab-pane fade in active" id="image-1">
                             <div class="simpleLens-big-image-container">
                                 <a class="simpleLens-lens-image" data-lens-image="/Content/user/img/single-product/1.jpg">
@@ -59,7 +69,7 @@
             <div class="col-sm-6">
                 <div class="shop-details">
                     <!-- Product Name -->
-                    <h2>PRODUCT NAME DEMO</h2>
+                    <h2>@Model.Name</h2>
                     <!-- Product Ratting -->
                     <div class="pro-ratting">
                         <i class="on fa fa-star"></i>
@@ -68,7 +78,7 @@
                         <i class="on fa fa-star"></i>
                         <i class="on fa fa-star-half-o"></i>
                     </div>
-                    <h3><span>$165</span>$150</h3>
+                    <h3><span>$@Model.MRP</span>$@Model.SalePrice</h3>
                     <h4>10 Reviews</h4>
                     <h5>Availability - <span>In Stock</span></h5>
                     <h6>QUICK OVERVIEW</h6>
