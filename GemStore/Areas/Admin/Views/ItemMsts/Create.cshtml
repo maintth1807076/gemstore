@@ -55,7 +55,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                        <button type="button" class="btn btn-primary" id="saveImage">Save changes</button>
                                     </div>
                                 </div>
                             </div>
@@ -413,7 +413,10 @@
             $("#Thumbnail").val(abc);
             sessionStorage.setItem('img', abc)
         });
-        //
+
+         $("#saveImage").click(function () {
+            $('#exampleModal1').modal('hide');
+        })
     })
 </script>
 

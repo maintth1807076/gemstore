@@ -3,7 +3,7 @@ namespace GemStore.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitDatabase : DbMigration
+    public partial class inintDatabase : DbMigration
     {
         public override void Up()
         {
@@ -13,8 +13,8 @@ namespace GemStore.Migrations
                     {
                         BrandId = c.String(nullable: false, maxLength: 128),
                         BrandType = c.String(nullable: false, maxLength: 50),
-                    BrandThumbnail = c.String(),
-                })
+                        BrandThumbnail = c.String(),
+                    })
                 .PrimaryKey(t => t.BrandId);
             
             CreateTable(
@@ -109,8 +109,8 @@ namespace GemStore.Migrations
                     {
                         DimQltyId = c.String(nullable: false, maxLength: 128),
                         DimQlty = c.String(),
-                    DimThumbnail = c.String(),
-                })
+                        DimThumbnail = c.String(),
+                    })
                 .PrimaryKey(t => t.DimQltyId);
             
             CreateTable(
@@ -119,8 +119,8 @@ namespace GemStore.Migrations
                     {
                         DimSubTypeId = c.String(nullable: false, maxLength: 128),
                         DimQlty = c.String(),
-                    DimSubThumbnail = c.String(),
-                })
+                        DimSubThumbnail = c.String(),
+                    })
                 .PrimaryKey(t => t.DimSubTypeId);
             
             CreateTable(
@@ -129,8 +129,8 @@ namespace GemStore.Migrations
                     {
                         GoldTypeId = c.String(nullable: false, maxLength: 128),
                         GoldCrt = c.String(),
-                    GoldThumbnail = c.String(),
-                })
+                        GoldThumbnail = c.String(),
+                    })
                 .PrimaryKey(t => t.GoldTypeId);
             
             CreateTable(
@@ -139,8 +139,8 @@ namespace GemStore.Migrations
                     {
                         JewelleryId = c.String(nullable: false, maxLength: 128),
                         JewelleryType = c.String(),
-                    JewelThumbnail = c.String(),
-                })
+                        JewelThumbnail = c.String(),
+                    })
                 .PrimaryKey(t => t.JewelleryId);
             
             CreateTable(
@@ -149,8 +149,8 @@ namespace GemStore.Migrations
                     {
                         ProdId = c.String(nullable: false, maxLength: 128),
                         ProdType = c.String(),
-                    ProdThumbnail = c.String(),
-                })
+                        ProdThumbnail = c.String(),
+                    })
                 .PrimaryKey(t => t.ProdId);
             
             CreateTable(
@@ -177,9 +177,9 @@ namespace GemStore.Migrations
                     {
                         StoneQltyId = c.String(nullable: false, maxLength: 128),
                         StoneQlty = c.String(),
+                        StoneThumbnail = c.String(),
                         Description = c.String(),
-                    StoneThumbnail = c.String(),
-                })
+                    })
                 .PrimaryKey(t => t.StoneQltyId);
             
             CreateTable(

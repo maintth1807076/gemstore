@@ -186,13 +186,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202003130609015_InitDatabase.cs" />
-    <Compile Include="Migrations\202003130609015_InitDatabase.Designer.cs">
-      <DependentUpon>202003130609015_InitDatabase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003151314383_ChangeModel.cs" />
-    <Compile Include="Migrations\202003151314383_ChangeModel.Designer.cs">
-      <DependentUpon>202003151314383_ChangeModel.cs</DependentUpon>
+    <Compile Include="Migrations\202003160926570_inintDatabase.cs" />
+    <Compile Include="Migrations\202003160926570_inintDatabase.Designer.cs">
+      <DependentUpon>202003160926570_inintDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -2254,11 +2250,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202003130609015_InitDatabase.resx">
-      <DependentUpon>202003130609015_InitDatabase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003151314383_ChangeModel.resx">
-      <DependentUpon>202003151314383_ChangeModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003160926570_inintDatabase.resx">
+      <DependentUpon>202003160926570_inintDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

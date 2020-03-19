@@ -7,13 +7,13 @@ namespace GemStore.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ChangeModel : IMigrationMetadata
+    public sealed partial class inintDatabase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangeModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(inintDatabase));
         
         string IMigrationMetadata.Id
         {
-            get { return "202003151314383_ChangeModel"; }
+            get { return "202003160926570_inintDatabase"; }
         }
         
         string IMigrationMetadata.Source

@@ -4,200 +4,244 @@
     ViewBag.Title = "Create";
 }
 
-
+<link href="~/Content/bach.css" rel="stylesheet" />
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal col-md-6 " style="margin-left: 25%;">
-    <div class="card shadow mb-5">
-        <div class="card-header py-7">
-            <h6 class="m-0 font-weight-bold text-dark" style="text-align: center"> CREATE BRAND</h6>
-        </div>
-        <div class="card-body">
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-            <div class=" row form-group">
-                @Html.LabelFor(model => model.CatName, htmlAttributes: new { @class = "control-label col-md-3 pt-2" })
-                <div class="col-md-9">
-                    @Html.EditorFor(model => model.CatName, new { htmlAttributes = new { @class = "form-control col-md-10" } })
-                    @Html.ValidationMessageFor(model => model.CatName, "", new { @class = "text-danger" })
-                </div>
+    <div class="form-horizontal col-md-6 " style="margin-left: 25%;">
+        <div class="card shadow mb-5">
+            <div class="card-header py-7">
+                <h6 class="m-0 font-weight-bold text-dark" style="text-align: center"> CREATE BRAND</h6>
             </div>
-            <div class=" row form-group">
-                @Html.LabelFor(model => model.CatThumbnail, htmlAttributes: new { @class = "control-label col-md-2 pt-2" })
-                <div class="col-md-7">
-                    <input type="text" name="CatThumbnail" id="CatThumbnail" class="form-control  text-box single-line" style="width:100%" />
-                </div>
-                <div class="col-md-2">
-                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">
-                        <i class="fas fa-image"></i>
-                    </button>
+            <div class="card-body">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Choose image</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
+                <div class=" row form-group">
+                    @Html.LabelFor(model => model.CatName, htmlAttributes: new { @class = "control-label col-md-3 pt-2" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.CatName, new { htmlAttributes = new { @class = "form-control col-md-10" } })
+                        @Html.ValidationMessageFor(model => model.CatName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class=" row form-group">
+                    @Html.LabelFor(model => model.CatThumbnail, htmlAttributes: new { @class = "control-label col-md-3 pt-2" })
+                    <div class="col-md-9">
+                        <input type="text" name="CatThumbnail" id="CatThumbnail" class="form-control  text-box single-line" style="width:100%" />
+                    </div>
+                </div>
+                <div class=" row form-group">
+                    <div class="col-md-3"></div>
+                        <div class="co-md-9">
+                            <form runat="server">
+                                <input type="file" id="imgInp" name="file" class="cloudinary_fileupload">
+                                <br />
+                                <br />
+                                <div style="border-radius:5px;border:solid black 2px;border-style: dashed">
+                                    <img id="blah" src="https://lh3.googleusercontent.com/proxy/3Ul5D40s4oxh9U7KiCs6N3BJqTTJOkcaoJVh72sNJNyBS8RBEJubM5sOhvQXS0VzwCCI_XjaDRjsim2Khh0MXZ6GiA40Flo_HXEd8ZwZ3U-l" alt="your image" />
                                 </div>
-                                <div class="modal-body">
-                                    <form runat="server">
-                                        <input type="file" id="imgInp" name="file" class="cloudinary_fileupload">
-                                        <img id="blah" src="#" alt="your image" />
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary" id="saveImageUrl">Save changes</button>
-                                </div>
-                            </div>
+                            </form>
                         </div>
+                </div>
+                <hr />
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-warning" style="float: right;" />
                     </div>
                 </div>
             </div>
-         
-
-
-            <hr />
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-warning" style="float: right;" />
-                </div>
-            </div>
-        </div>
         </div>
     </div>
-        }
+}
 
 <div>
-    @Html.ActionLink("Back to List", "Index",null, new { @class = "btn btn-outline-warning" })
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-outline-warning" })
 </div>
 
-        @*<div class="col-6">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
-                Chọn nhiều ảnh
-            </button>*@
+@*<div class="col-6">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
+        Chọn nhiều ảnh
+    </button>*@
 
-            <!-- Modal -->
-            @*<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+<!-- Modal -->
+@*<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="field" align="left">
+                            <input type="file" id="files" name="file" class="cloudinary_fileupload" multiple>
                         </div>
-                        <div class="modal-body">
-                            <div class="field" align="left">
-                                <input type="file" id="files" name="file" class="cloudinary_fileupload" multiple>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
                 </div>
             </div>
-        </div>*@
-        @section Scripts {
-            @Scripts.Render("~/bundles/jqueryval")
-        }
-        <script>
-            $(document).ready(function () {
-                $('.cloudinary_fileupload').unsigned_cloudinary_upload('wm4mhhyw', {
-                    cloud_name: 'bach19',
-                }, {
-                    multiple: true
-                }).bind('cloudinarydone', function (e, data) {
-                    var x = data.result.url;
-                    var abc = $("#CatThumbnail").val();
-                    if (abc.trim().length != 0) {
-                        abc += ",";
-                    }
-                    abc += x;
-                    $("#CatThumbnail").val(abc);
-                    sessionStorage.setItem('img', abc)
-                });
-                //
+        </div>
+    </div>*@
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script>
+    $(document).ready(function () {
+        $('.cloudinary_fileupload').unsigned_cloudinary_upload('wm4mhhyw', {
+            cloud_name: 'bach19',
+        }, {
+            multiple: true
+        }).bind('cloudinarydone', function (e, data) {
+            var x = data.result.url;
+            var abc = $("#CatThumbnail").val();
+            if (abc.trim().length != 0) {
+                abc += ",";
+            }
+            abc += x;
+            $("#CatThumbnail").val(abc);
+            sessionStorage.setItem('img', abc)
+        });
+        //
+    })
+</script>
+
+<script>
+    $(document).ready(function () {
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah').attr('src', e.target.result);
+                    $('#blah').width("300px");
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+            $('#blah').click(function () {
+                $('#blah').attr('src', '');
             })
-        </script>
+        }
 
-        <script>
-            $(document).ready(function () {
-                function readURL(input) {
-                    if (input.files && input.files[0]) {
-                        var reader = new FileReader();
+        $("#imgInp").change(function () {
+            readURL(this);
+        });
 
-                        reader.onload = function (e) {
-                            $('#blah').attr('src', e.target.result);
-                            $('#blah').width("100px");
-                        }
-                        reader.readAsDataURL(input.files[0]);
-                    }
-                    $('#blah').click(function () {
-                        $('#blah').attr('src', '');
-                    })
-                }
+        $("#saveImageUrl").click(function () {
+            $('#exampleModal').modal('hide');
+        })
+    });
+</script>
 
-                $("#imgInp").change(function () {
-                    readURL(this);
-                });
-            });
-        </script>
+<script>
+    $(document).ready(function () {
+        if (window.File && window.FileList && window.FileReader) {
+            $("#files").on("change", function (e) {
+                var files = e.target.files,
+                    filesLength = files.length;
+                for (var i = 0; i < filesLength; i++) {
+                    var f = files[i]
+                    var fileReader = new FileReader();
+                    fileReader.onload = (function (e) {
+                        var file = e.target;
+                        /*  $("<span class=\"pip\">" +
+                            "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
+                            "<br/><span class=\"remove\">Remove image</span>" +
+                            "</span>").insertAfter("#files");
+                          $(".remove").click(function(){
+                            $(this).parent(".pip").remove();
+                          });*/
 
-        <script>
-            $(document).ready(function () {
-                if (window.File && window.FileList && window.FileReader) {
-                    $("#files").on("change", function (e) {
-                        var files = e.target.files,
-                            filesLength = files.length;
-                        for (var i = 0; i < filesLength; i++) {
-                            var f = files[i]
-                            var fileReader = new FileReader();
-                            fileReader.onload = (function (e) {
-                                var file = e.target;
-                                /*  $("<span class=\"pip\">" +
-                                    "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
-                                    "<br/><span class=\"remove\">Remove image</span>" +
-                                    "</span>").insertAfter("#files");
-                                  $(".remove").click(function(){
-                                    $(this).parent(".pip").remove();
-                                  });*/
+                        // Old code here
+                        $("<img></img>", {
+                            class: "imageThumb",
+                            src: e.target.result,
+                            width: "200px",
+                            title: file.name + " | Click to remove"
+                        }).insertAfter("#files").click(function () { $(this).remove(); });
 
-                                // Old code here
-                                $("<img></img>", {
-                                    class: "imageThumb",
-                                    src: e.target.result,
-                                    width: "200px",
-                                    title: file.name + " | Click to remove"
-                                }).insertAfter("#files").click(function () { $(this).remove(); });
-
-                            });
-                            fileReader.readAsDataURL(f);
-                        }
                     });
-                } else {
-                    alert("Your browser doesn't support to File API")
+                    fileReader.readAsDataURL(f);
                 }
             });
-        </script>
+        } else {
+            alert("Your browser doesn't support to File API")
+        }
 
-        <!--.bind('cloudinarydone', function (e, data) {
-            var image = $.cloudinary.image(
-                data.result.public_id, {
-                secure: true,
-                width: 150,
-                crop: 'scale'
+        $(document).on('click', '#close-preview', function () {
+            $('.image-preview').popover('hide');
+            // Hover befor close the preview
+            $('.image-preview').hover(
+                function () {
+                    $('.image-preview').popover('show');
+                },
+                function () {
+                    $('.image-preview').popover('hide');
+                }
+            );
+        });
+
+        $(function () {
+            // Create the close button
+            var closebtn = $('<button/>', {
+                type: "button",
+                text: 'x',
+                id: 'close-preview',
+                style: 'font-size: initial;',
             });
-            $('.gallery').prepend(image);
-            var x = data.result.public_id;
-            console.log("https://res.cloudinary.com/dt4q05shz/image/upload/v1583943665/" + x + ".jpg")
-            /*$("#addLi").append("<li>" + "<input type="text" name="CatThumbnail" id="CatThumbnail"/>" + "</li>")*/
-            $("#CatThumbnail").val("https://res.cloudinary.com/dt4q05shz/image/upload/v1583943665/" + x + ".jpg");
-        })-->
+            closebtn.attr("class", "close pull-right");
+            // Set the popover default content
+            $('.image-preview').popover({
+                trigger: 'manual',
+                html: true,
+                title: "<strong>Preview</strong>" + $(closebtn)[0].outerHTML,
+                content: "There's no image",
+                placement: 'bottom'
+            });
+            // Clear event
+            $('.image-preview-clear').click(function () {
+                $('.image-preview').attr("data-content", "").popover('hide');
+                $('.image-preview-filename').val("");
+                $('.image-preview-clear').hide();
+                $('.image-preview-input input:file').val("");
+                $(".image-preview-input-title").text("Browse");
+            });
+            // Create the preview image
+            $(".image-preview-input input:file").change(function () {
+                var img = $('<img/>', {
+                    id: 'dynamic',
+                    width: 250,
+                    height: 200
+                });
+                var file = this.files[0];
+                var reader = new FileReader();
+                // Set preview image into the popover data-content
+                reader.onload = function (e) {
+                    $(".image-preview-input-title").text("Change");
+                    $(".image-preview-clear").show();
+                    $(".image-preview-filename").val(file.name);
+                    img.attr('src', e.target.result);
+                    $(".image-preview").attr("data-content", $(img)[0].outerHTML).popover("show");
+                }
+                reader.readAsDataURL(file);
+            });
+        });
+    });
+</script>
+
+<!--.bind('cloudinarydone', function (e, data) {
+    var image = $.cloudinary.image(
+        data.result.public_id, {
+        secure: true,
+        width: 150,
+        crop: 'scale'
+    });
+    $('.gallery').prepend(image);
+    var x = data.result.public_id;
+    console.log("https://res.cloudinary.com/dt4q05shz/image/upload/v1583943665/" + x + ".jpg")
+    /*$("#addLi").append("<li>" + "<input type="text" name="CatThumbnail" id="CatThumbnail"/>" + "</li>")*/
+    $("#CatThumbnail").val("https://res.cloudinary.com/dt4q05shz/image/upload/v1583943665/" + x + ".jpg");
+})-->
