@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using GemStore.Models;
+using Newtonsoft.Json;
+using PagedList;
 
 namespace GemStore.Controllers
 {
@@ -30,11 +34,81 @@ namespace GemStore.Controllers
         }
         public ActionResult Shop()
         {
-            ViewBag.Message = "Your shop page.";
-
-            return View(db.ItemMsts.ToList());
+            ViewBag.BrandMsts = db.BrandMsts.ToList();
+            ViewBag.CatMsts = db.CatMsts.ToList();
+            ViewBag.ProdMsts = db.ProdMsts.ToList();
+            ViewBag.JewelTypeMsts = db.JewelTypeMsts.ToList();
+            ViewBag.BrandId = new SelectList(db.BrandMsts, "BrandId", "BrandType");
+            ViewBag.CatId = new SelectList(db.CatMsts, "CatId", "CatName");
+            ViewBag.CertifyId = new SelectList(db.CertifyMsts, "CertifyId", "CertifyType");
+            ViewBag.GoldTypeId = new SelectList(db.GoldKrts, "GoldTypeId", "GoldCrt");
+            ViewBag.JewelleryId = new SelectList(db.JewelTypeMsts, "JewelleryId", "JewelleryType");
+            ViewBag.ProdId = new SelectList(db.ProdMsts, "ProdId", "ProdType");
+            ViewData["StoneMst.StoneQltyId"] = new SelectList(db.StoneQltyMsts, "StoneQltyId", "StoneQlty");
+            ViewData["DimMst.DimQltyId"] = new SelectList(db.DimQltyMsts, "DimQltyId", "DimQlty");
+            ViewData["DimMst.DimSubTypeId"] = new SelectList(db.DimQltySubMsts, "DimSubTypeId", "DimQlty");
+            return View(db.ItemMsts.ToList().ToPagedList(1, 3));
 
             
+        }
+        public ActionResult FilterShop(string[] BrandIds, string[] CatIds, string[] ProdIds, string[] JewelIds, int? pageSize, int? page)
+        {
+            ViewBag.CurrentBrandIds = BrandIds;
+            ViewBag.CurrentCatIds = CatIds;
+            ViewBag.CurrentProdIds = ProdIds;
+            ViewBag.CurrentJewelIds = JewelIds;
+            var itemMsts = db.ItemMsts.ToList();
+            var itemsTemp = new List<ItemMst>();
+            if (BrandIds != null)
+            {
+                foreach (var brandId in BrandIds)
+                {
+                    var list = db.ItemMsts.Where(x => x.BrandId == brandId).ToList();
+                    itemsTemp.AddRange(list);
+                }
+                itemMsts = itemMsts.Intersect(itemsTemp).ToList();
+                itemsTemp.Clear();
+            }
+            if (CatIds != null)
+            {
+                foreach (var catId in CatIds)
+                {
+                    var list = db.ItemMsts.Where(x => x.CatId == catId).ToList();
+                    itemsTemp.AddRange(list);
+                }
+                itemMsts = itemMsts.Intersect(itemsTemp).ToList();
+                itemsTemp.Clear();
+            }
+            if (ProdIds != null)
+            {
+                foreach (var prodId in ProdIds)
+                {
+                    var list = db.ItemMsts.Where(x => x.ProdId == prodId).ToList();
+                    itemsTemp.AddRange(list);
+                }
+                itemMsts = itemMsts.Intersect(itemsTemp).ToList();
+                itemsTemp.Clear();
+            }
+            if (JewelIds != null)
+            {
+                foreach (var jewelId in JewelIds)
+                {
+                    var list = db.ItemMsts.Where(x => x.JewelleryId == jewelId).ToList();
+                    itemsTemp.AddRange(list);
+                }
+                itemMsts = itemMsts.Intersect(itemsTemp).ToList();
+                itemsTemp.Clear();
+            }
+
+            if (page == null)
+            {
+                page = 1;
+            }
+            if (pageSize == null)
+            {
+                pageSize = 3;
+            }
+            return PartialView("_ShopPartial", itemMsts.ToPagedList((int)page, (int)pageSize));
         }
         public ActionResult Shop_list()
         {
@@ -54,11 +128,18 @@ namespace GemStore.Controllers
 
             return View();
         }
-        public ActionResult Product_detail()
+        public ActionResult ProductDetail(string id)
         {
-            ViewBag.Message = "Your  product_detail page.";
-
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ItemMst itemMst = db.ItemMsts.Find(id);
+            if (itemMst == null)
+            {
+                return HttpNotFound();
+            }
+            return View(itemMst);
         }
         public ActionResult Cart()
         {

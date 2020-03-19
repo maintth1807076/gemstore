@@ -1,0 +1,135 @@
+﻿@model PagedList.IPagedList<GemStore.Models.ItemMst>
+@using PagedList.Mvc;
+@{
+    var parameters = new RouteValueDictionary();
+    if (ViewBag.CurrentBrandIds != null)
+    {
+
+        for (var i = 0; i < ViewBag.CurrentBrandIds.Length; ++i)
+        {
+            parameters.Add($"BrandIds[{i}]", ViewBag.CurrentBrandIds[i]);
+        }
+    }
+    if (ViewBag.CurrentCatIds != null)
+    {
+
+        for (var i = 0; i < ViewBag.CurrentCatIds.Length; ++i)
+        {
+            parameters.Add($"CatIds[{i}]", ViewBag.CurrentCatIds[i]);
+        }
+    }
+    if (ViewBag.CurrentProdIds != null)
+    {
+
+        for (var i = 0; i < ViewBag.CurrentProdIds.Length; ++i)
+        {
+            parameters.Add($"ProdIds[{i}]", ViewBag.CurrentProdIds[i]);
+        }
+    }
+    if (ViewBag.CurrentJewelIds != null)
+    {
+
+        for (var i = 0; i < ViewBag.CurrentJewelIds.Length; ++i)
+        {
+            parameters.Add($"JewelIds[{i}]", ViewBag.CurrentJewelIds[i]);
+        }
+    }
+}
+@using (Ajax.BeginForm("AddCart", "Cart", null, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "cart-modal" }, new { id = "formAddCart" }))
+{
+    <input type="text" name="productId" class="hidden" />
+    <input type="number" name="quantity" class="hidden" />
+    <div id="grid-view">
+
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 fix">
+                <div class="product-item fix">
+                    <div class="product-img-hover">
+                        <!-- Product image -->
+                        <a href="@Url.Action("ProductDetail", new {id = item.StyleCode})" class="pro-image fix">
+                            <div style="background-image: url(@item.Thumbnails.Split(',')[0]); width: 270px; height: 246px; background-size: contain; background-position: center"></div>
+                        </a>
+                        <!-- Product action Btn -->
+                        <div class="product-action-btn">
+                            <a class="quick-view" href="@Url.Action("ProductDetail", new {id = item.StyleCode})"><i class="fa fa-search"></i></a>
+                            <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
+                            <a class="add-cart" href="javascript:void(0)" data-id="@item.StyleCode" data-price="@item.SalePrice" data-name="@item.Name" data-thumbnail="@item.Thumbnails.Split(',')[0]"><i class="fa fa-shopping-cart"></i></a>
+                        </div>
+                    </div>
+                    <div class="pro-name-price-ratting">
+                        <!-- Product Name -->
+                        <div class="pro-name">
+                            <a href="product-details.html">@item.Name</a>
+                        </div>
+                        <!-- Product Ratting -->
+                        <div class="pro-ratting">
+                            <i class="on fa fa-star"></i>
+                            <i class="on fa fa-star"></i>
+                            <i class="on fa fa-star"></i>
+                            <i class="on fa fa-star"></i>
+                            <i class="on fa fa-star-half-o"></i>
+                        </div>
+                        <!-- Product Price -->
+                        <div class="pro-price fix">
+                            <p><span class="old">$@item.MRP</span><span class="new">$@item.SalePrice</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div id="list-view" style="display: none;">
+        @foreach (var item in Model)
+        {
+            <div class="single-list-product col-sm-12">
+                <div class="list-pro-image">
+                    <a href="@Url.Action("ProductDetail", new { id=item.StyleCode})">
+                        <img src="@item.Thumbnails.Split(',')[0]" alt="" />
+                    </a>
+                </div>
+                <div class="list-pro-des fix">
+                    <a class="pro-name" href="@Url.Action("ProductDetail", new { id=item.StyleCode})">@item.Name</a>
+                    <div class="pro-ratting">
+                        <i class="fa fa-star on"></i>
+                        <i class="fa fa-star on"></i>
+                        <i class="fa fa-star on"></i>
+                        <i class="fa fa-star on"></i>
+                        <i class="fa fa-star-half-o on"></i>
+                    </div>
+                    <h4 class="list-pro-price"><span class="new">$@item.SalePrice</span><span class="old">$@item.MRP</span></h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua magna aliqua consectetur adicing elit, sed do eiusmod tempor incididunt ut labore magna aliqua consectetur adicing elit, sed do eiusmod tempor incunt ut labore magna aliqua consectetur adicing elit.</p>
+                    <div class="list-actions-btn">
+                        <a class="quick-view" href="@Url.Action("ProductDetail", new { id=item.StyleCode})"><i class="fa fa-search"></i></a>
+                        <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
+                        <a class="add-cart" href="javascript:void(0)" data-id="@item.StyleCode" data-price="@item.SalePrice" data-name="@item.Name" data-thumbnail="@item.Thumbnails.Split(',')[0]"><i class="fa fa-shopping-cart"></i></a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+<div class="col-sm-12 fix">
+    @Html.PagedListPager(Model, page => Url.Action("FilterShop", "Home", new RouteValueDictionary(parameters)
+    {
+        {"page", page }
+    }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions()
+    {
+        HttpMethod = "POST",
+        UpdateTargetId = "shop-products"
+    }))
+</div>
+<script type="text/javascript">
+    $( document ).ready(function() {
+        $(".add-cart").click(function () {
+            $('input[name="productId"]').val($(this).attr('data-id'));
+            $('input[name="quantity"]').val(1);
+            console.log($('input[name="productId"]').val());
+            console.log($('input[name="quantity"]').val());
+            $('#formAddCart').submit();
+        });
+    });
+</script>
+
+
+
