@@ -18,7 +18,10 @@ namespace GemStore.Models
             }
             return this._totalPrice;
         }
-
+        public void SetTotalPrice(double totalPrice)
+        {
+            this._totalPrice = totalPrice;
+        }
         public Dictionary<string, CartItem> GetCartItems()
         {
             return _cartItems;
@@ -45,8 +48,21 @@ namespace GemStore.Models
                 Quantity = quantity,
                 Thumbnail = product.Thumbnails.Split(',')[0]
             };
-            // đưa cart item tương ứng với sản phẩm (ở trên) vào danh sách.
             _cartItems.Add(cartItem.Id, cartItem);
+        }
+        public void UpdateCart(ItemMst product, int quantity)
+        {
+            if (_cartItems.ContainsKey(product.StyleCode))
+            {
+                var item = _cartItems[product.StyleCode];
+                item.Quantity = quantity;
+                _cartItems[product.StyleCode] = item;
+            }
+        }
+
+        public void RemoveFromCart(string productId)
+        {
+            _cartItems.Remove(productId);
         }
     }
 }

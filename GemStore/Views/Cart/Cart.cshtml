@@ -1,0 +1,141 @@
+﻿@model GemStore.Models.ShoppingCart
+
+@{
+    ViewBag.Title = "Cart";
+}
+<div class="page-title fix">
+    <!--Start Title-->
+    <div class="overlay section">
+        <h2>Cart</h2>
+    </div>
+</div><!--End Title-->
+<section class="cart-page page fix">
+    <!--Start Cart Area-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="table-responsive">
+                    <table class="table cart-table" id="cart-table">
+                        <thead class="table-title">
+                            <tr>
+                                <th class="produ">PRODUCT</th>
+                                <th class="namedes">PRODUCT NAME &amp; DESCRIPTION</th>
+                                <th class="unit">UNIT PRICE</th>
+                                <th class="quantity">QUANTITY</th>
+                                <th class="valu">VALUE</th>
+                                <th class="acti">ACTION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @using (Ajax.BeginForm("UpdateCart", "Cart", null, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "show-cart" }, null))
+                            {
+                                foreach (var cartItem in Model.GetCartItems().Values)
+                                {
+                                    <tr class="table-info" data-id="@cartItem.Id" data-price="@cartItem.UnitPrice" data-name="@cartItem.Name" data-thumbnail="@cartItem.Thumbnail">
+                                        <td class="produ">
+                                            <a href="#"><img alt="" src="@cartItem.Thumbnail"></a>
+                                        </td>
+                                        <td class="namedes">
+                                            <h2><a href="#">@cartItem.Name</a></h2>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                        </td>
+                                        <td class="unit">
+                                            <h5>$@cartItem.UnitPrice</h5>
+                                        </td>
+                                        <td class="quantity">
+                                            <div class="cart-plus-minus">
+                                                <input type="text" value="@cartItem.Quantity" name="quantity" class="cart-plus-minus-box">
+                                            </div>
+                                        </td>
+                                        <td class="valu">
+                                            <h5>$@(cartItem.UnitPrice * cartItem.Quantity)</h5>
+                                        </td>
+                                        <td class="acti">
+                                            <a href="#"><i class="fa fa-trash-o"></i></a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-7">
+                <div class="coupon">
+                    <a href="/Home/Shop">Continue Shopping</a>
+                    <h3>DISCOUNT COUPON CODE</h3>
+                    <input type="text" placeholder="DISCOUNT COUPON CODE HERE..." />
+                    <a href="#">Apply Coupon</a>
+                    <p><span>NOTE :</span> Shipping and Taxes are estimated and updated during checkout based on your billing and shipping information.</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-5">
+                <div class="proceed fix">
+                    <a href="/Cart/DeleteCart">CLEAR SHOPPING CART</a>
+                    @using (Ajax.BeginForm("UpdateCart", "Cart", null, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "cart-modal" }, new { id = "formUpdateCart" }))
+                    {
+                        <input type="text" name="cartItems" class="hidden" />
+                        <input type="number" name="totalPrice" class="hidden" />
+                        <a href="javascript:void(0)" id="btn-update-cart">UPDATE SHOPPING CART</a>
+                    }
+                    <div class="total">
+                        <h5>Sub Total <span>$@Model.GetTotalPrice()</span></h5>
+                        <h6>Grand Total <span>$@Model.GetTotalPrice()</span></h6>
+                    </div>
+                    <a id="procedto" href="/Home/Checkout">PROCEED TO CHECK OUT</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--End Cart Area-->
+@section Scripts {
+    <script type="text/javascript">
+        $(".cart-plus-minus").prepend('<div class="dec qtybutton">-</div>');
+        $(".cart-plus-minus").append('<div class="inc qtybutton">+</div>');
+        $(".qtybutton").on("click", function() {
+            var $button = $(this);
+            var price = $(this).closest('tr').attr('data-price');
+            var valu = $(this).closest('tr').find('.valu h5');
+            var oldValue = $button.parent().find("input").val();
+            if ($button.text() == "+") {
+                if (oldValue < 4) {
+                    var newVal = parseFloat(oldValue) + 1;
+                } else {
+                    newVal = 4;
+                }
+            } else {
+                // Don't allow decrementing below zero
+                if (oldValue > 1) {
+                    var newVal = parseFloat(oldValue) - 1;
+                } else {
+                    newVal = 1;
+                }
+            }
+            $button.parent().find("input").val(newVal);
+            var valu = price * newVal;
+                $(this).closest('tr').find('.valu h5').text("$" + valu);
+        });	
+        $("#btn-update-cart").on("click", function () {
+            var cartItems = new Object();
+            var totalPrice = 0;
+            $("#cart-table tbody tr").each(function () {
+                var cartItem = {};
+                var key = $(this).attr('data-id');
+                var price = $(this).attr('data-price');
+                var quantity = $(this).find("input").val();
+                cartItem.Id = key;
+                cartItem.Name = $(this).attr('data-name');
+                cartItem.Thumbnail = $(this).attr('data-thumbnail');
+                cartItem.UnitPrice = price;
+                cartItem.Quantity = quantity;
+                cartItems[key] = cartItem;
+                totalPrice += price * quantity;
+            });
+            $('input[name="cartItems"]').val(JSON.stringify(cartItems));
+            $('input[name="totalPrice"]').val(totalPrice);
+            $(".total h5 span").text("$" + totalPrice);
+            $(".total h6 span").text("$" + totalPrice);
+            $('#formUpdateCart').submit();
+        });
+    </script>
+}

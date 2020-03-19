@@ -183,11 +183,9 @@
 @section scripts
 {
     <script type="text/javascript">
-        $(".add-cart").click(function () {
+        $(".add-cart").on("click", function() {
             $('input[name="productId"]').val($(this).attr('data-id'));
             $('input[name="quantity"]').val(1);
-            console.log($('input[name="productId"]').val());
-            console.log($('input[name="quantity"]').val());
             $('#formAddCart').submit();
         });
     </script>

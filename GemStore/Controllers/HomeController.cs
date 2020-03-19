@@ -38,15 +38,6 @@ namespace GemStore.Controllers
             ViewBag.CatMsts = db.CatMsts.ToList();
             ViewBag.ProdMsts = db.ProdMsts.ToList();
             ViewBag.JewelTypeMsts = db.JewelTypeMsts.ToList();
-            ViewBag.BrandId = new SelectList(db.BrandMsts, "BrandId", "BrandType");
-            ViewBag.CatId = new SelectList(db.CatMsts, "CatId", "CatName");
-            ViewBag.CertifyId = new SelectList(db.CertifyMsts, "CertifyId", "CertifyType");
-            ViewBag.GoldTypeId = new SelectList(db.GoldKrts, "GoldTypeId", "GoldCrt");
-            ViewBag.JewelleryId = new SelectList(db.JewelTypeMsts, "JewelleryId", "JewelleryType");
-            ViewBag.ProdId = new SelectList(db.ProdMsts, "ProdId", "ProdType");
-            ViewData["StoneMst.StoneQltyId"] = new SelectList(db.StoneQltyMsts, "StoneQltyId", "StoneQlty");
-            ViewData["DimMst.DimQltyId"] = new SelectList(db.DimQltyMsts, "DimQltyId", "DimQlty");
-            ViewData["DimMst.DimSubTypeId"] = new SelectList(db.DimQltySubMsts, "DimSubTypeId", "DimQlty");
             return View(db.ItemMsts.ToList().ToPagedList(1, 3));
 
             
@@ -140,12 +131,6 @@ namespace GemStore.Controllers
                 return HttpNotFound();
             }
             return View(itemMst);
-        }
-        public ActionResult Cart()
-        {
-            ViewBag.Message = "Your  cart  page.";
-
-            return View();
         }
         public ActionResult Checkout()
         {

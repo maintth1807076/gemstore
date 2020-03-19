@@ -120,12 +120,10 @@
     }))
 </div>
 <script type="text/javascript">
-    $( document ).ready(function() {
+    $(document).ready(function() {
         $(".add-cart").click(function () {
             $('input[name="productId"]').val($(this).attr('data-id'));
             $('input[name="quantity"]').val(1);
-            console.log($('input[name="productId"]').val());
-            console.log($('input[name="quantity"]').val());
             $('#formAddCart').submit();
         });
     });
