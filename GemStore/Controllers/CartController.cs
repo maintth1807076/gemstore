@@ -16,6 +16,44 @@ namespace GemStore.Controllers
     public class CartController : Controller
     {
         private GemStoreContext db = new GemStoreContext();
+        private static string SHOPPING_CART_NAME = "shoppingCart";
+        private void ClearCart()
+        {
+            Session.Remove(SHOPPING_CART_NAME);
+        }
+        private void SaveShoppingCart(ShoppingCart shoppingCart)
+        {
+            Session[SHOPPING_CART_NAME] = shoppingCart;
+        }
+        public ShoppingCart LoadShoppingCart()
+        {
+            if (!(Session[SHOPPING_CART_NAME] is ShoppingCart sc))
+            {
+                sc = new ShoppingCart();
+            }
+            return sc;
+        }
+        public ActionResult AddCart(string productId, int quantity)
+        {
+            // Check số lượng có hợp lệ không?
+            if (quantity <= 0)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Invalid Quantity");
+            }
+            // Check sản phẩm có hợp lệ không?
+            var product = db.ItemMsts.Find(productId);
+            if (product == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.NotFound, "Product's' not found");
+            }
+            // Lấy thông tin shopping cart từ session.
+            var sc = LoadShoppingCart();
+            // Thêm sản phẩm vào shopping cart.
+            sc.AddCart(product, quantity);
+            // lưu thông tin cart vào session.
+            SaveShoppingCart(sc);
+            return PartialView("_ModalCartPartial", LoadShoppingCart());
+        }
         public ActionResult getDepartment(string StyleCode)
         {
             return Json(db.StoneMsts.Where(x=>x.StyleCode == StyleCode).Select(x => new
