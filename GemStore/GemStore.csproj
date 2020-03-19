@@ -206,6 +206,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderDetail.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -2234,9 +2235,10 @@
     <Content Include="Views\Cart\Test02.cshtml" />
     <Content Include="Views\Cart\Test4.cshtml" />
     <Content Include="Views\Cart\TestPaypal.cshtml" />
-    <Content Include="Views\Home\_ShopPartial.cshtml" />
     <Content Include="Views\Home\Cart.cshtml" />
     <Content Include="Views\Home\Checkout.cshtml" />
+    <Content Include="Views\Cart\_ModalCartPartial.cshtml" />
+    <Content Include="Views\Home\_ShopPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

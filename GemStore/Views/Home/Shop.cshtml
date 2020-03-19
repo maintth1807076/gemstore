@@ -2,6 +2,39 @@
 @using PagedList.Mvc;
 @{
     ViewBag.Title = "Shop";
+    var parameters = new RouteValueDictionary();
+    if (ViewBag.CurrentBrandIds != null)
+    {
+
+        for (var i = 0; i < ViewBag.CurrentBrandIds.Length; ++i)
+        {
+            parameters.Add($"BrandIds[{i}]", ViewBag.CurrentBrandIds[i]);
+        }
+    }
+    if (ViewBag.CurrentCatIds != null)
+    {
+
+        for (var i = 0; i < ViewBag.CurrentCatIds.Length; ++i)
+        {
+            parameters.Add($"CatIds[{i}]", ViewBag.CurrentCatIds[i]);
+        }
+    }
+    if (ViewBag.CurrentProdIds != null)
+    {
+
+        for (var i = 0; i < ViewBag.CurrentProdIds.Length; ++i)
+        {
+            parameters.Add($"ProdIds[{i}]", ViewBag.CurrentProdIds[i]);
+        }
+    }
+    if (ViewBag.CurrentJewelIds != null)
+    {
+
+        for (var i = 0; i < ViewBag.CurrentJewelIds.Length; ++i)
+        {
+            parameters.Add($"JewelIds[{i}]", ViewBag.CurrentJewelIds[i]);
+        }
+    }
 }
 
 <div class="page-title fix">
@@ -14,7 +47,7 @@
 <div class="shop-product-area section fix">
     <div class="container">
         <div class="row">
-            @using (Ajax.BeginForm("FilterShop", "Home", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "shop-products" }))
+            @using (Ajax.BeginForm("FilterShop", "Home",null, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "shop-products" }, new {id = "formFilterItem"}))
             {
                 <div class="col-md-3">
                     <div class="shop-sidebar fix">
@@ -53,7 +86,7 @@
                                 </div>
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <a class="collapsed" data-toggle="collapse" data-parent="#checkout-progress" href="#shipping-info" aria-expanded="false"><span>3</span>Product Type</a>
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#checkout-progress" href="#shipping-info" aria-expanded="false">Product Type</a>
                                     </div>
                                     <div id="shipping-info" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                                         <div class="panel-body">
@@ -139,19 +172,23 @@
                     </div>
                     <div id="shop-products" class="shop-products">
                         @Html.Partial("_ShopPartial", Model)
+
                     </div>
+                    
                 </div>
             </div>
         </div>
     </div>
 </div><!-- Shop Product Area End -->
-@*@section scripts
-    {
-            <script type="text/javascript">
-                $('input[name="BrandIds[]"]').change(function () {
-                    console.log($(this).val());
-                $(this.form).submit();
-
-            });
-            </script>
-        }*@
+@section scripts
+{
+    <script type="text/javascript">
+        $(".add-cart").click(function () {
+            $('input[name="productId"]').val($(this).attr('data-id'));
+            $('input[name="quantity"]').val(1);
+            console.log($('input[name="productId"]').val());
+            console.log($('input[name="quantity"]').val());
+            $('#formAddCart').submit();
+        });
+    </script>
+}
