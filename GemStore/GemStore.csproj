@@ -2231,15 +2231,12 @@
     <Content Include="Views\Home\Shop.cshtml" />
     <Content Include="Views\Home\Shop_list.cshtml" />
     <Content Include="Views\Cart\Test.cshtml" />
-    <Content Include="Views\Cart\ProductDetails.cshtml" />
     <Content Include="Views\Home\Blog.cshtml" />
     <Content Include="Views\Home\Portfolio.cshtml" />
     <Content Include="Views\Home\ProductDetail.cshtml" />
-    <Content Include="Views\Cart\Test01.cshtml" />
-    <Content Include="Views\Cart\Test02.cshtml" />
     <Content Include="Views\Cart\Test4.cshtml" />
     <Content Include="Views\Cart\TestPaypal.cshtml" />
-    <Content Include="Views\Home\Cart.cshtml" />
+    <Content Include="Views\Cart\Cart.cshtml" />
     <Content Include="Views\Home\Checkout.cshtml" />
     <Content Include="Views\Cart\_ModalCartPartial.cshtml" />
     <Content Include="Views\Home\_ShopPartial.cshtml" />
