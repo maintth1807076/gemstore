@@ -35,7 +35,7 @@
         }
     }
 }
-@using (Ajax.BeginForm("AddCart", "Cart", null, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "cart-modal" }, new { id = "formAddCart" }))
+@using (Ajax.BeginForm("AddCart", "Cart", null, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "cart-modal", OnSuccess = "addCartSuccess()"}, new { id = "formAddCart" }))
 {
     <input type="text" name="productId" class="hidden" />
     <input type="number" name="quantity" class="hidden" />
@@ -127,6 +127,9 @@
             $('#formAddCart').submit();
         });
     });
+    function addCartSuccess() {
+        alert("add to cart success");
+    }
 </script>
 
 

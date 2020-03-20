@@ -1,8 +1,7 @@
-﻿@{
+﻿@model IEnumerable<GemStore.Models.ItemMst>
+@{
     ViewBag.Title = "Contact";
 }
-
-
 <!-- HOME SLIDER -->
 <div class="slider-wrap home-1-slider">
     <div id="mainSlider" class="nivoSlider slider-image">
@@ -20,7 +19,7 @@
                     <h2>to express personality</h2>
                 </div>
                 <div class="cap-readmore wow fadeInUpBig" data-wow-duration="1.5s" data-wow-delay="0s">
-                    <a href="#">Shop Now</a>
+                    <a href="/Home/Shop">Shop Now</a>
                 </div>
             </div>
         </div>
@@ -36,7 +35,7 @@
                     <h2>to express personality</h2>
                 </div>
                 <div class="cap-readmore wow bounceInUp" data-wow-duration="1.3s" data-wow-delay=".5s">
-                    <a href="#">Shop Now</a>
+                    <a href="/Home/Shop">Shop Now</a>
                 </div>
             </div>
         </div>
@@ -54,254 +53,40 @@
             <div class="col-sm-12">
                 <!-- Featured slider Area Start -->
                 <div class="feature-pro-slider owl-carousel">
-                    <!-- Single Product Start -->
-                    <div class="product-item fix">
-                        <div class="product-img-hover">
-                            <!-- Product image -->
-                            <a href="product-details.html" class="pro-image fix"><img src="~/Content/user/img/featured/1.jpg" alt="featured" /></a>
-                            <!-- Product action Btn -->
-                            <div class="product-action-btn">
-                                <a class="quick-view" href="#"><i class="fa fa-search"></i></a>
-                                <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
-                                <a class="add-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                    @foreach (var item in Model)
+                    {
+                        <!-- Single Product Start -->
+                        <div class="product-item fix">
+                            <div class="product-img-hover">
+                                <!-- Product image -->
+                                <a href="product-details.html" class="pro-image fix"><img src="~/Content/user/img/featured/1.jpg" alt="featured" /></a>
+                                <!-- Product action Btn -->
+                                <div class="product-action-btn">
+                                    <a class="quick-view" href="#"><i class="fa fa-search"></i></a>
+                                    <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
+                                    <a class="add-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="pro-name-price-ratting">
-                            <!-- Product Name -->
-                            <div class="pro-name">
-                                <a href="product-details.html">Product Name Demo</a>
+                            <div class="pro-name-price-ratting">
+                                <!-- Product Name -->
+                                <div class="pro-name">
+                                    <a href="product-details.html">@item.Name</a>
+                                </div>
+                                <!-- Product Ratting -->
+                                <div class="pro-ratting">
+                                    <i class="on fa fa-star"></i>
+                                    <i class="on fa fa-star"></i>
+                                    <i class="on fa fa-star"></i>
+                                    <i class="on fa fa-star"></i>
+                                    <i class="on fa fa-star-half-o"></i>
+                                </div>
+                                <!-- Product Price -->
+                                <div class="pro-price fix">
+                                    <p><span class="old">$@item.MRP</span><span class="new">$@item.SalePrice</span></p>
+                                </div>
                             </div>
-                            <!-- Product Ratting -->
-                            <div class="pro-ratting">
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star-half-o"></i>
-                            </div>
-                            <!-- Product Price -->
-                            <div class="pro-price fix">
-                                <p><span class="old">$165</span><span class="new">$150</span></p>
-                            </div>
-                        </div>
-                    </div><!-- Single Product End -->
-                    <!-- Single Product Start -->
-                    <div class="product-item fix">
-                        <div class="product-img-hover">
-                            <!-- Product image -->
-                            <a href="product-details.html" class="pro-image fix"><img src="~/Content/user/img/featured/2.jpg" alt="featured" /></a>
-                            <!-- Product action Btn -->
-                            <div class="product-action-btn">
-                                <a class="quick-view" href="#"><i class="fa fa-search"></i></a>
-                                <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
-                                <a class="add-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                            </div>
-                        </div>
-                        <div class="pro-name-price-ratting">
-                            <!-- Product Name -->
-                            <div class="pro-name">
-                                <a href="product-details.html">Product Name Demo</a>
-                            </div>
-                            <!-- Product Ratting -->
-                            <div class="pro-ratting">
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star-half-o"></i>
-                            </div>
-                            <!-- Product Price -->
-                            <div class="pro-price fix">
-                                <p><span class="old">$165</span><span class="new">$150</span></p>
-                            </div>
-                        </div>
-                    </div><!-- Single Product End -->
-                    <!-- Single Product Start -->
-                    <div class="product-item fix">
-                        <div class="product-img-hover">
-                            <!-- Product image -->
-                            <a href="product-details.html" class="pro-image fix"><img src="~/Content/user/img/featured/3.jpg" alt="featured" /></a>
-                            <!-- Product action Btn -->
-                            <div class="product-action-btn">
-                                <a class="quick-view" href="#"><i class="fa fa-search"></i></a>
-                                <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
-                                <a class="add-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                            </div>
-                        </div>
-                        <div class="pro-name-price-ratting">
-                            <!-- Product Name -->
-                            <div class="pro-name">
-                                <a href="product-details.html">Product Name Demo</a>
-                            </div>
-                            <!-- Product Ratting -->
-                            <div class="pro-ratting">
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star-half-o"></i>
-                            </div>
-                            <!-- Product Price -->
-                            <div class="pro-price fix">
-                                <p><span class="old">$165</span><span class="new">$150</span></p>
-                            </div>
-                        </div>
-                    </div><!-- Single Product End -->
-                    <!-- Single Product Start -->
-                    <div class="product-item fix">
-                        <div class="product-img-hover">
-                            <!-- Product image -->
-                            <a href="product-details.html" class="pro-image fix"><img src="~/Content/user/img/featured/4.jpg" alt="featured" /></a>
-                            <!-- Product action Btn -->
-                            <div class="product-action-btn">
-                                <a class="quick-view" href="#"><i class="fa fa-search"></i></a>
-                                <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
-                                <a class="add-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                            </div>
-                        </div>
-                        <div class="pro-name-price-ratting">
-                            <!-- Product Name -->
-                            <div class="pro-name">
-                                <a href="product-details.html">Product Name Demo</a>
-                            </div>
-                            <!-- Product Ratting -->
-                            <div class="pro-ratting">
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star-half-o"></i>
-                            </div>
-                            <!-- Product Price -->
-                            <div class="pro-price fix">
-                                <p><span class="old">$165</span><span class="new">$150</span></p>
-                            </div>
-                        </div>
-                    </div><!-- Single Product End -->
-                    <!-- Single Product Start -->
-                    <div class="product-item fix">
-                        <div class="product-img-hover">
-                            <!-- Product image -->
-                            <a href="product-details.html" class="pro-image fix"><img src="~/Content/user/img/featured/1.jpg" alt="featured" /></a>
-                            <!-- Product action Btn -->
-                            <div class="product-action-btn">
-                                <a class="quick-view" href="#"><i class="fa fa-search"></i></a>
-                                <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
-                                <a class="add-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                            </div>
-                        </div>
-                        <div class="pro-name-price-ratting">
-                            <!-- Product Name -->
-                            <div class="pro-name">
-                                <a href="product-details.html">Product Name Demo</a>
-                            </div>
-                            <!-- Product Ratting -->
-                            <div class="pro-ratting">
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star-half-o"></i>
-                            </div>
-                            <!-- Product Price -->
-                            <div class="pro-price fix">
-                                <p><span class="old">$165</span><span class="new">$150</span></p>
-                            </div>
-                        </div>
-                    </div><!-- Single Product End -->
-                    <!-- Single Product Start -->
-                    <div class="product-item fix">
-                        <div class="product-img-hover">
-                            <!-- Product image -->
-                            <a href="product-details.html" class="pro-image fix"><img src="~/Content/user/img/featured/2.jpg" alt="featured" /></a>
-                            <!-- Product action Btn -->
-                            <div class="product-action-btn">
-                                <a class="quick-view" href="#"><i class="fa fa-search"></i></a>
-                                <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
-                                <a class="add-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                            </div>
-                        </div>
-                        <div class="pro-name-price-ratting">
-                            <!-- Product Name -->
-                            <div class="pro-name">
-                                <a href="product-details.html">Product Name Demo</a>
-                            </div>
-                            <!-- Product Ratting -->
-                            <div class="pro-ratting">
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star-half-o"></i>
-                            </div>
-                            <!-- Product Price -->
-                            <div class="pro-price fix">
-                                <p><span class="old">$165</span><span class="new">$150</span></p>
-                            </div>
-                        </div>
-                    </div><!-- Single Product End -->
-                    <!-- Single Product Start -->
-                    <div class="product-item fix">
-                        <div class="product-img-hover">
-                            <!-- Product image -->
-                            <a href="product-details.html" class="pro-image fix"><img src="~/Content/user/img/featured/3.jpg" alt="featured" /></a>
-                            <!-- Product action Btn -->
-                            <div class="product-action-btn">
-                                <a class="quick-view" href="#"><i class="fa fa-search"></i></a>
-                                <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
-                                <a class="add-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                            </div>
-                        </div>
-                        <div class="pro-name-price-ratting">
-                            <!-- Product Name -->
-                            <div class="pro-name">
-                                <a href="product-details.html">Product Name Demo</a>
-                            </div>
-                            <!-- Product Ratting -->
-                            <div class="pro-ratting">
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star-half-o"></i>
-                            </div>
-                            <!-- Product Price -->
-                            <div class="pro-price fix">
-                                <p><span class="old">$165</span><span class="new">$150</span></p>
-                            </div>
-                        </div>
-                    </div><!-- Single Product End -->
-                    <!-- Single Product Start -->
-                    <div class="product-item fix">
-                        <div class="product-img-hover">
-                            <!-- Product image -->
-                            <a href="product-details.html" class="pro-image fix"><img src="~/Content/user/img/featured/4.jpg" alt="featured" /></a>
-                            <!-- Product action Btn -->
-                            <div class="product-action-btn">
-                                <a class="quick-view" href="#"><i class="fa fa-search"></i></a>
-                                <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
-                                <a class="add-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                            </div>
-                        </div>
-                        <div class="pro-name-price-ratting">
-                            <!-- Product Name -->
-                            <div class="pro-name">
-                                <a href="product-details.html">Product Name Demo</a>
-                            </div>
-                            <!-- Product Ratting -->
-                            <div class="pro-ratting">
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star"></i>
-                                <i class="on fa fa-star-half-o"></i>
-                            </div>
-                            <!-- Product Price -->
-                            <div class="pro-price fix">
-                                <p><span class="old">$165</span><span class="new">$150</span></p>
-                            </div>
-                        </div>
-                    </div><!-- Single Product End -->
+                        </div><!-- Single Product End -->
+                    }
                 </div><!-- Featured slider Area End -->
             </div>
         </div>
@@ -333,7 +118,7 @@
             <h1><span>New</span></h1>
             <h2>Arrivals</h2>
             <p>perspiciatis unde omnis iste natus error sit voluptatem accm doloremque antium</p>
-            <a href="#">Shop Now</a>
+            <a href="/Home/Shop">Shop Now</a>
         </div>
     </div>
     <div class="col-sm-2 hidden-xs sin-banner clear text-2">
@@ -341,7 +126,7 @@
         <div class="banner-text">
             <h1>Sales <span>Up to</span></h1>
             <h2><span>30%</span>off</h2>
-            <a href="#">Shop Now</a>
+            <a href="/Home/Shop">Shop Now</a>
         </div>
     </div>
     <div class="col-sm-6 sin-banner">
@@ -378,12 +163,16 @@
             <div class="tab-content">
                 <div class="tab-pane fade in active" id="new">
                     <div class="tab-pro-slider new-product owl-carousel">
+                        @for (int i = 0; i < Model.Count(); i += 2)
+                        {
                         <div class="single-product-item fix">
+                            @foreach (var item in Model.Skip(i).Take(2))
+                            {
                             <!-- Single Product Start -->
                             <div class="product-item fix">
                                 <div class="product-img-hover">
                                     <!-- Product image -->
-                                    <a href="product-details.html" class="pro-image fix"><img src="~/Content/user/img/product/1.jpg" alt="product" /></a>
+                                    <a href="product-details.html" class="pro-image fix"><img src="@item.Thumbnails.Split(',')[0]" alt="product" /></a>
                                     <!-- Product action Btn -->
                                     <div class="product-action-btn">
                                         <a class="quick-view" href="#"><i class="fa fa-search"></i></a>
@@ -394,7 +183,7 @@
                                 <div class="pro-name-price-ratting">
                                     <!-- Product Name -->
                                     <div class="pro-name">
-                                        <a href="product-details.html">Product Name Demo</a>
+                                        <a href="product-details.html">@item.Name</a>
                                     </div>
                                     <!-- Product Ratting -->
                                     <div class="pro-ratting">
@@ -406,490 +195,13 @@
                                     </div>
                                     <!-- Product Price -->
                                     <div class="pro-price fix">
-                                        <p><span class="old">$165</span><span class="new">$150</span></p>
+                                        <p><span class="old">$@item.MRP</span><span class="new">$@item.SalePrice</span></p>
                                     </div>
                                 </div>
                             </div><!-- Single Product End -->
-                            <!-- Single Product Start -->
-                            <div class="product-item fix">
-                                <div class="product-img-hover">
-                                    <!-- Product image -->
-                                    <a href="product-details.html" class="pro-image fix"><img src="~/Content/user/img/product/2.jpg" alt="product" /></a>
-                                    <!-- Product action Btn -->
-                                    <div class="product-action-btn">
-                                        <a class="quick-view" href="#"><i class="fa fa-search"></i></a>
-                                        <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
-                                        <a class="add-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="pro-name-price-ratting">
-                                    <!-- Product Name -->
-                                    <div class="pro-name">
-                                        <a href="product-details.html">Product Name Demo</a>
-                                    </div>
-                                    <!-- Product Ratting -->
-                                    <div class="pro-ratting">
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star-half-o"></i>
-                                    </div>
-                                    <!-- Product Price -->
-                                    <div class="pro-price fix">
-                                        <p><span class="old">$165</span><span class="new">$150</span></p>
-                                    </div>
-                                </div>
-                            </div><!-- Single Product End -->
+                            }
                         </div>
-                        <div class="single-product-item fix">
-                            <!-- Single Product Start -->
-                            <div class="product-item fix">
-                                <div class="product-img-hover">
-                                    <!-- Product image -->
-                                    <a href="product-details.html" class="pro-image fix"><img src="~/Content/user/img/product/2.jpg" alt="product" /></a>
-                                    <!-- Product action Btn -->
-                                    <div class="product-action-btn">
-                                        <a class="quick-view" href="#"><i class="fa fa-search"></i></a>
-                                        <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
-                                        <a class="add-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="pro-name-price-ratting">
-                                    <!-- Product Name -->
-                                    <div class="pro-name">
-                                        <a href="product-details.html">Product Name Demo</a>
-                                    </div>
-                                    <!-- Product Ratting -->
-                                    <div class="pro-ratting">
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star-half-o"></i>
-                                    </div>
-                                    <!-- Product Price -->
-                                    <div class="pro-price fix">
-                                        <p><span class="old">$165</span><span class="new">$150</span></p>
-                                    </div>
-                                </div>
-                            </div><!-- Single Product End -->
-                            <!-- Single Product Start -->
-                            <div class="product-item fix">
-                                <div class="product-img-hover">
-                                    <!-- Product image -->
-                                    <a href="product-details.html" class="pro-image fix"><img src="~/Content/user/img/product/6.jpg" alt="product" /></a>
-                                    <!-- Product action Btn -->
-                                    <div class="product-action-btn">
-                                        <a class="quick-view" href="#"><i class="fa fa-search"></i></a>
-                                        <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
-                                        <a class="add-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="pro-name-price-ratting">
-                                    <!-- Product Name -->
-                                    <div class="pro-name">
-                                        <a href="product-details.html">Product Name Demo</a>
-                                    </div>
-                                    <!-- Product Ratting -->
-                                    <div class="pro-ratting">
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star-half-o"></i>
-                                    </div>
-                                    <!-- Product Price -->
-                                    <div class="pro-price fix">
-                                        <p><span class="old">$165</span><span class="new">$150</span></p>
-                                    </div>
-                                </div>
-                            </div><!-- Single Product End -->
-                        </div>
-                        <div class="single-product-item fix">
-                            <!-- Single Product Start -->
-                            <div class="product-item fix">
-                                <div class="product-img-hover">
-                                    <!-- Product image -->
-                                    <a href="product-details.html" class="pro-image fix"><img src="~/Content/user/img/product/2.jpg" alt="product" /></a>
-                                    <!-- Product action Btn -->
-                                    <div class="product-action-btn">
-                                        <a class="quick-view" href="#"><i class="fa fa-search"></i></a>
-                                        <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
-                                        <a class="add-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="pro-name-price-ratting">
-                                    <!-- Product Name -->
-                                    <div class="pro-name">
-                                        <a href="product-details.html">Product Name Demo</a>
-                                    </div>
-                                    <!-- Product Ratting -->
-                                    <div class="pro-ratting">
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star-half-o"></i>
-                                    </div>
-                                    <!-- Product Price -->
-                                    <div class="pro-price fix">
-                                        <p><span class="old">$165</span><span class="new">$150</span></p>
-                                    </div>
-                                </div>
-                            </div><!-- Single Product End -->
-                            <!-- Single Product Start -->
-                            <div class="product-item fix">
-                                <div class="product-img-hover">
-                                    <!-- Product image -->
-                                    <a href="product-details.html" class="pro-image fix"><img src="~/Content/user/img/product/7.jpg" alt="product" /></a>
-                                    <!-- Product action Btn -->
-                                    <div class="product-action-btn">
-                                        <a class="quick-view" href="#"><i class="fa fa-search"></i></a>
-                                        <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
-                                        <a class="add-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="pro-name-price-ratting">
-                                    <!-- Product Name -->
-                                    <div class="pro-name">
-                                        <a href="product-details.html">Product Name Demo</a>
-                                    </div>
-                                    <!-- Product Ratting -->
-                                    <div class="pro-ratting">
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star-half-o"></i>
-                                    </div>
-                                    <!-- Product Price -->
-                                    <div class="pro-price fix">
-                                        <p><span class="old">$165</span><span class="new">$150</span></p>
-                                    </div>
-                                </div>
-                            </div><!-- Single Product End -->
-                        </div>
-                        <div class="single-product-item fix">
-                            <!-- Single Product Start -->
-                            <div class="product-item fix">
-                                <div class="product-img-hover">
-                                    <!-- Product image -->
-                                    <a href="product-details.html" class="pro-image fix"><img src="~/Content/user/img/product/4.jpg" alt="product" /></a>
-                                    <!-- Product action Btn -->
-                                    <div class="product-action-btn">
-                                        <a class="quick-view" href="#"><i class="fa fa-search"></i></a>
-                                        <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
-                                        <a class="add-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="pro-name-price-ratting">
-                                    <!-- Product Name -->
-                                    <div class="pro-name">
-                                        <a href="product-details.html">Product Name Demo</a>
-                                    </div>
-                                    <!-- Product Ratting -->
-                                    <div class="pro-ratting">
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star-half-o"></i>
-                                    </div>
-                                    <!-- Product Price -->
-                                    <div class="pro-price fix">
-                                        <p><span class="old">$165</span><span class="new">$150</span></p>
-                                    </div>
-                                </div>
-                            </div><!-- Single Product End -->
-                            <!-- Single Product Start -->
-                            <div class="product-item fix">
-                                <div class="product-img-hover">
-                                    <!-- Product image -->
-                                    <a href="product-details.html" class="pro-image fix"><img src="~/Content/user/img/product/2.jpg" alt="product" /></a>
-                                    <!-- Product action Btn -->
-                                    <div class="product-action-btn">
-                                        <a class="quick-view" href="#"><i class="fa fa-search"></i></a>
-                                        <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
-                                        <a class="add-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="pro-name-price-ratting">
-                                    <!-- Product Name -->
-                                    <div class="pro-name">
-                                        <a href="product-details.html">Product Name Demo</a>
-                                    </div>
-                                    <!-- Product Ratting -->
-                                    <div class="pro-ratting">
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star-half-o"></i>
-                                    </div>
-                                    <!-- Product Price -->
-                                    <div class="pro-price fix">
-                                        <p><span class="old">$165</span><span class="new">$150</span></p>
-                                    </div>
-                                </div>
-                            </div><!-- Single Product End -->
-                        </div>
-                        <div class="single-product-item fix">
-                            <!-- Single Product Start -->
-                            <div class="product-item fix">
-                                <div class="product-img-hover">
-                                    <!-- Product image -->
-                                    <a href="product-details.html" class="pro-image fix"><img src="~/Content/user/img/product/1.jpg" alt="product" /></a>
-                                    <!-- Product action Btn -->
-                                    <div class="product-action-btn">
-                                        <a class="quick-view" href="#"><i class="fa fa-search"></i></a>
-                                        <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
-                                        <a class="add-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="pro-name-price-ratting">
-                                    <!-- Product Name -->
-                                    <div class="pro-name">
-                                        <a href="product-details.html">Product Name Demo</a>
-                                    </div>
-                                    <!-- Product Ratting -->
-                                    <div class="pro-ratting">
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star-half-o"></i>
-                                    </div>
-                                    <!-- Product Price -->
-                                    <div class="pro-price fix">
-                                        <p><span class="old">$165</span><span class="new">$150</span></p>
-                                    </div>
-                                </div>
-                            </div><!-- Single Product End -->
-                            <!-- Single Product Start -->
-                            <div class="product-item fix">
-                                <div class="product-img-hover">
-                                    <!-- Product image -->
-                                    <a href="product-details.html" class="pro-image fix"><img src="~/Content/user/img/product/2.jpg" alt="product" /></a>
-                                    <!-- Product action Btn -->
-                                    <div class="product-action-btn">
-                                        <a class="quick-view" href="#"><i class="fa fa-search"></i></a>
-                                        <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
-                                        <a class="add-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="pro-name-price-ratting">
-                                    <!-- Product Name -->
-                                    <div class="pro-name">
-                                        <a href="product-details.html">Product Name Demo</a>
-                                    </div>
-                                    <!-- Product Ratting -->
-                                    <div class="pro-ratting">
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star-half-o"></i>
-                                    </div>
-                                    <!-- Product Price -->
-                                    <div class="pro-price fix">
-                                        <p><span class="old">$165</span><span class="new">$150</span></p>
-                                    </div>
-                                </div>
-                            </div><!-- Single Product End -->
-                        </div>
-                        <div class="single-product-item fix">
-                            <!-- Single Product Start -->
-                            <div class="product-item fix">
-                                <div class="product-img-hover">
-                                    <!-- Product image -->
-                                    <a href="product-details.html" class="pro-image fix"><img src="~/Content/user/img/product/2.jpg" alt="product" /></a>
-                                    <!-- Product action Btn -->
-                                    <div class="product-action-btn">
-                                        <a class="quick-view" href="#"><i class="fa fa-search"></i></a>
-                                        <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
-                                        <a class="add-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="pro-name-price-ratting">
-                                    <!-- Product Name -->
-                                    <div class="pro-name">
-                                        <a href="product-details.html">Product Name Demo</a>
-                                    </div>
-                                    <!-- Product Ratting -->
-                                    <div class="pro-ratting">
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star-half-o"></i>
-                                    </div>
-                                    <!-- Product Price -->
-                                    <div class="pro-price fix">
-                                        <p><span class="old">$165</span><span class="new">$150</span></p>
-                                    </div>
-                                </div>
-                            </div><!-- Single Product End -->
-                            <!-- Single Product Start -->
-                            <div class="product-item fix">
-                                <div class="product-img-hover">
-                                    <!-- Product image -->
-                                    <a href="product-details.html" class="pro-image fix"><img src="~/Content/user/img/product/6.jpg" alt="product" /></a>
-                                    <!-- Product action Btn -->
-                                    <div class="product-action-btn">
-                                        <a class="quick-view" href="#"><i class="fa fa-search"></i></a>
-                                        <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
-                                        <a class="add-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="pro-name-price-ratting">
-                                    <!-- Product Name -->
-                                    <div class="pro-name">
-                                        <a href="product-details.html">Product Name Demo</a>
-                                    </div>
-                                    <!-- Product Ratting -->
-                                    <div class="pro-ratting">
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star-half-o"></i>
-                                    </div>
-                                    <!-- Product Price -->
-                                    <div class="pro-price fix">
-                                        <p><span class="old">$165</span><span class="new">$150</span></p>
-                                    </div>
-                                </div>
-                            </div><!-- Single Product End -->
-                        </div>
-                        <div class="single-product-item fix">
-                            <!-- Single Product Start -->
-                            <div class="product-item fix">
-                                <div class="product-img-hover">
-                                    <!-- Product image -->
-                                    <a href="product-details.html" class="pro-image fix"><img src="~/Content/user/img/product/2.jpg" alt="product" /></a>
-                                    <!-- Product action Btn -->
-                                    <div class="product-action-btn">
-                                        <a class="quick-view" href="#"><i class="fa fa-search"></i></a>
-                                        <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
-                                        <a class="add-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="pro-name-price-ratting">
-                                    <!-- Product Name -->
-                                    <div class="pro-name">
-                                        <a href="product-details.html">Product Name Demo</a>
-                                    </div>
-                                    <!-- Product Ratting -->
-                                    <div class="pro-ratting">
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star-half-o"></i>
-                                    </div>
-                                    <!-- Product Price -->
-                                    <div class="pro-price fix">
-                                        <p><span class="old">$165</span><span class="new">$150</span></p>
-                                    </div>
-                                </div>
-                            </div><!-- Single Product End -->
-                            <!-- Single Product Start -->
-                            <div class="product-item fix">
-                                <div class="product-img-hover">
-                                    <!-- Product image -->
-                                    <a href="product-details.html" class="pro-image fix"><img src="~/Content/user/img/product/7.jpg" alt="product" /></a>
-                                    <!-- Product action Btn -->
-                                    <div class="product-action-btn">
-                                        <a class="quick-view" href="#"><i class="fa fa-search"></i></a>
-                                        <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
-                                        <a class="add-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="pro-name-price-ratting">
-                                    <!-- Product Name -->
-                                    <div class="pro-name">
-                                        <a href="product-details.html">Product Name Demo</a>
-                                    </div>
-                                    <!-- Product Ratting -->
-                                    <div class="pro-ratting">
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star-half-o"></i>
-                                    </div>
-                                    <!-- Product Price -->
-                                    <div class="pro-price fix">
-                                        <p><span class="old">$165</span><span class="new">$150</span></p>
-                                    </div>
-                                </div>
-                            </div><!-- Single Product End -->
-                        </div>
-                        <div class="single-product-item fix">
-                            <!-- Single Product Start -->
-                            <div class="product-item fix">
-                                <div class="product-img-hover">
-                                    <!-- Product image -->
-                                    <a href="product-details.html" class="pro-image fix"><img src="~/Content/user/img/product/4.jpg" alt="product" /></a>
-                                    <!-- Product action Btn -->
-                                    <div class="product-action-btn">
-                                        <a class="quick-view" href="#"><i class="fa fa-search"></i></a>
-                                        <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
-                                        <a class="add-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="pro-name-price-ratting">
-                                    <!-- Product Name -->
-                                    <div class="pro-name">
-                                        <a href="product-details.html">Product Name Demo</a>
-                                    </div>
-                                    <!-- Product Ratting -->
-                                    <div class="pro-ratting">
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star-half-o"></i>
-                                    </div>
-                                    <!-- Product Price -->
-                                    <div class="pro-price fix">
-                                        <p><span class="old">$165</span><span class="new">$150</span></p>
-                                    </div>
-                                </div>
-                            </div><!-- Single Product End -->
-                            <!-- Single Product Start -->
-                            <div class="product-item fix">
-                                <div class="product-img-hover">
-                                    <!-- Product image -->
-                                    <a href="product-details.html" class="pro-image fix"><img src="~/Content/user/img/product/2.jpg" alt="product" /></a>
-                                    <!-- Product action Btn -->
-                                    <div class="product-action-btn">
-                                        <a class="quick-view" href="#"><i class="fa fa-search"></i></a>
-                                        <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
-                                        <a class="add-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="pro-name-price-ratting">
-                                    <!-- Product Name -->
-                                    <div class="pro-name">
-                                        <a href="product-details.html">Product Name Demo</a>
-                                    </div>
-                                    <!-- Product Ratting -->
-                                    <div class="pro-ratting">
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star"></i>
-                                        <i class="on fa fa-star-half-o"></i>
-                                    </div>
-                                    <!-- Product Price -->
-                                    <div class="pro-price fix">
-                                        <p><span class="old">$165</span><span class="new">$150</span></p>
-                                    </div>
-                                </div>
-                            </div><!-- Single Product End -->
-                        </div>
+                        }
                     </div>
                 </div>
                 <div class="tab-pane fade" id="feature">
@@ -2453,7 +1765,7 @@
         <h2>Use Jewelry’s magic</h2>
         <h3>buy fine jewelry</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor</p>
-        <a href="#">Shop Now</a>
+        <a href="/Home/Shop">Shop Now</a>
     </div>
 </div><!--End Magic Area-->
 <div class="blog-area section fix">

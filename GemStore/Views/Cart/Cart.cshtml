@@ -51,7 +51,7 @@
                                             <h5>$@(cartItem.UnitPrice * cartItem.Quantity)</h5>
                                         </td>
                                         <td class="acti">
-                                            <a href="#"><i class="fa fa-trash-o"></i></a>
+                                            <a data-ajax="true" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-success="removeCartItemSuccess($(this))" data-ajax-update="#cart-modal" href="/Cart/RemoveCart?productId=@cartItem.Id"><i class="fa fa-trash-o"></i></a>
                                         </td>
                                     </tr>
                                 }
@@ -95,7 +95,6 @@
         $(".qtybutton").on("click", function() {
             var $button = $(this);
             var price = $(this).closest('tr').attr('data-price');
-            var valu = $(this).closest('tr').find('.valu h5');
             var oldValue = $button.parent().find("input").val();
             if ($button.text() == "+") {
                 if (oldValue < 4) {
@@ -113,7 +112,7 @@
             }
             $button.parent().find("input").val(newVal);
             var valu = price * newVal;
-                $(this).closest('tr').find('.valu h5').text("$" + valu);
+            $(this).closest('tr').find('.valu h5').text("$" + valu);
         });	
         $("#btn-update-cart").on("click", function () {
             var cartItems = new Object();
@@ -137,5 +136,12 @@
             $(".total h6 span").text("$" + totalPrice);
             $('#formUpdateCart').submit();
         });
+        function removeCartItemSuccess(para) {
+            var totalPrice = $(".total-price").attr('data-total');
+            para.closest('tr').remove();
+            $(".total h5 span").text("$" + totalPrice);
+            $(".total h6 span").text("$" + totalPrice);
+            alert("Remove success");
+        }
     </script>
 }

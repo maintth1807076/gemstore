@@ -1,4 +1,5 @@
 ﻿@using GemStore.Models
+@using Microsoft.AspNet.Identity
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
@@ -67,7 +68,32 @@
                 <div class="col-sm-12 col-md-4">
                     <div id="top-menu" class="float-right">
                         <ul>
-                            <li><a href="">My Account</a></li>
+                            @if (Request.IsAuthenticated)
+                            {
+                                
+                                <li>
+                                    <a href="/Manage/Index" title="Manage">@User.Identity.GetUserName().ToUpper() <i class="fa fa-angle-down"></i></a>
+                                    <ul>
+                                        <li>
+                                            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                                            {
+                                                @Html.AntiForgeryToken()
+
+                                                <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                                            }</li>
+                                    </ul>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a href="">My Account <i class="fa fa-angle-down"></i></a>
+                                    <ul>
+                                        <li>@Html.ActionLink("Register", "Register", "Account", null, null)</li>
+                                        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                                    </ul>
+                                </li>
+                            }
                             <li>
                                 <a href="">$USD <i class="fa fa-angle-down"></i></a>
                                 <ul>
@@ -93,16 +119,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4 col-lg-3">
-                    <div class="log-link">
-                        <p>Well come visitor you can</p>
-                        <h5><a href="login.html">Login</a> or <a href="login.html">Create an account</a></h5>
-                    </div>
+                    @if (!Request.IsAuthenticated)
+                    {
+                        <div class="log-link">
+                            <p>Well come visitor you can</p>
+                            <h5><a href="/Account/Login">Login</a> or <a href="/Account/Register">Create an account</a></h5>
+                        </div>
+                    }
                 </div>
                 <div class="col-sm-4 col-lg-6">
                     <div class="logo text-center">
-                        <a href="index.html">
-                            <img src="~/Content/user/img/header/logo.png" alt="" />
-
+                        <a href="/Home">
+                            <img src="~/Content/user/img/header/logo.png" alt="Yash gems & jewelleries online" />
                         </a>
                     </div>
                 </div>
@@ -151,53 +179,7 @@
                         <nav>
                             <ul>
                                 <li>
-                                    <a href="/Home/Index" class="active">Home</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="index.html">Home 1</a></li>
-                                        <li><a href="index-2.html">Home 2</a></li>
-                                        <li><a href="index-3.html">Home 3</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Pages</a>
-                                    <div class="mega-menu mega-menu-page">
-                                        <div class="column-1 column">
-                                            <ul>
-                                                <li><a href="about-us.html">About US</a></li>
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
-                                                <li><a href="blog-right-sidebar.html">Blog right sidebar</a></li>
-                                                <li><a href="blog-details.html">Blog details</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="column-2 column">
-                                            <ul>
-                                                <li><a href="cart.html">Cart</a></li>
-                                                <li><a href="checkout.html">Checkout</a></li>
-                                                <li><a href="coming-soon.html">Coming soon</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                                <li><a href="contact-2.html">Contact 2</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="column-3 column">
-                                            <ul>
-                                                <li><a href="faq.html">FAQ</a></li>
-                                                <li><a href="login.html">Login</a></li>
-                                                <li><a href="portfolio.html">Portfolio 3 column</a></li>
-                                                <li><a href="portfolio-2.html">Portfolio 4 column</a></li>
-                                                <li><a href="404.html">404</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="column-4 column">
-                                            <ul>
-                                                <li><a href="shop.html">Shop</a></li>
-                                                <li><a href="shop-list.html">Shop list</a></li>
-                                                <li><a href="shop-left-sidebar.html">Shop left sidebar</a></li>
-                                                <li><a href="shop-right-sidebar.html">Shop right sidebar</a></li>
-                                                <li><a href="product-details.html">Product details</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                    <a href="/Home" class="active">Home</a>
                                 </li>
                                 <li>
                                     <a href="/Home/Shop">Shop</a>
@@ -284,19 +266,10 @@
                                 </li>
                                 <li>
                                     <a href="/Home/Blog">Blog</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="blog.html">Blog Page</a></li>
-                                        <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
-                                        <li><a href="blog-right-sidebar.html">Blog right sidebar</a></li>
-                                    </ul>
                                 </li>
                                 <li><a href="/Home/About">About Us</a></li>
                                 <li>
                                     <a href="/Home/Contact">Contact</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="contact.html">Contact 1</a></li>
-                                        <li><a href="contact-2.html">Contact 2</a></li>
-                                    </ul>
                                 </li>
                             </ul>
                         </nav>
@@ -305,40 +278,10 @@
                         <nav>
                             <ul>
                                 <li>
-                                    <a href="index.html" class="active">Home</a>
-                                    <ul>
-                                        <li><a href="index.html">Home 1</a></li>
-                                        <li><a href="index-2.html">Home 2</a></li>
-                                        <li><a href="index-3.html">Home 3</a></li>
-                                    </ul>
+                                    <a href="/Home" class="active">Home</a>
                                 </li>
                                 <li>
-                                    <a href="#">Pages</a>
-                                    <ul>
-                                        <li><a href="about-us.html">About US</a></li>
-                                        <li><a href="blog.html">Blog</a></li>
-                                        <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
-                                        <li><a href="blog-right-sidebar.html">Blog right sidebar</a></li>
-                                        <li><a href="blog-details.html">Blog details</a></li>
-                                        <li><a href="cart.html">Cart</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="coming-soon.html">Coming soon</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                        <li><a href="contact-2.html">Contact 2</a></li>
-                                        <li><a href="faq.html">FAQ</a></li>
-                                        <li><a href="login.html">Login</a></li>
-                                        <li><a href="portfolio.html">Portfolio 3 column</a></li>
-                                        <li><a href="portfolio-2.html">Portfolio 4 column</a></li>
-                                        <li><a href="404.html">404</a></li>
-                                        <li><a href="shop.html">Shop</a></li>
-                                        <li><a href="shop-list.html">Shop list</a></li>
-                                        <li><a href="shop-left-sidebar.html">Shop left sidebar</a></li>
-                                        <li><a href="shop-right-sidebar.html">Shop right sidebar</a></li>
-                                        <li><a href="product-details.html">Product details</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="shop.html">Shop</a>
+                                    <a href="/Home/Shop">Shop</a>
                                     <ul>
                                         <li>
                                             <a href="shop-list.html">rings</a>
@@ -418,20 +361,11 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="blog.html">Blog</a>
-                                    <ul>
-                                        <li><a href="blog.html">Blog 1</a></li>
-                                        <li><a href="blog-left-sidebar.html">Blog 2</a></li>
-                                        <li><a href="blog-right-sidebar.html">Blog 3</a></li>
-                                    </ul>
+                                    <a href="/Home/Blog">Blog</a>
                                 </li>
-                                <li><a href="about-us.html">About Us</a></li>
+                                <li><a href="/Home/About">About Us</a></li>
                                 <li>
-                                    <a href="contact.html">Contact</a>
-                                    <ul>
-                                        <li><a href="contact.html">Contact 1</a></li>
-                                        <li><a href="contact-2.html">Contact 2</a></li>
-                                    </ul>
+                                    <a href="/Home/Contact">Contact</a>
                                 </li>
                             </ul>
                         </nav>
@@ -537,14 +471,14 @@
                     <div class="footer-quick-link footer-links">
                         <h2>QUICK LINK</h2>
                         <ul>
-                            <li><a href="/Home/Index">Home</a></li>
-                            <li><a href="shop.html">Shop</a></li>
-                            <li><a href="shop-left-sidebar.html">New Arrivals</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="portfolio-1.html">Portfolio</a></li>
-                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="/Home">Home</a></li>
+                            <li><a href="/Home/Shop">Shop</a></li>
+                            <li><a href="#">New Arrivals</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Portfolio</a></li>
+                            <li><a href="/Home/Blog">Blog</a></li>
                             <li><a href="#">Shortcodes</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="/Home/Contact">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -558,9 +492,9 @@
                                 <li><a href="#">Your Account</a></li>
                                 <li><a href="#">Term & Conditions</a></li>
                                 <li><a href="#">Advance Search</a></li>
-                                <li><a href="faq.html">Help & FAQs</a></li>
+                                <li><a href="#">Help & FAQs</a></li>
                                 <li><a href="#">Gift Voucher</a></li>
-                                <li><a href="contact-2.html">Contact Us</a></li>
+                                <li><a href="/Home/Contact">Contact Us</a></li>
                             </ul>
                         </div>
                         <div class="col-sm-4 footer-account footer-links">
@@ -592,7 +526,6 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="copy-right">
-
                     </div>
                 </div>
                 <div class="col-sm-6">

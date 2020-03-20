@@ -11,13 +11,13 @@
             <li>
                 <div class="image"><a href="#"><img alt="cart item" src="@cartItem.Thumbnail"></a></div>
                 <div class="content fix"><a href="#">@cartItem.Name</a><span class="price">Price: $@cartItem.UnitPrice</span><span class="quantity">Quantity: @cartItem.Quantity</span></div>
-                <i class="fa fa-trash delete"></i>
+                @*<i class="fa fa-trash delete"></i>*@
             </li>
             }
         </ul>
         <div class="header-button-price">
             <a href="/Home/Checkout"><i class="fa fa-sign-out"></i><span>Check Out</span></a>
-            <div class="total-price">
+            <div class="total-price" data-total="@Model.GetTotalPrice()">
                 <h3>Total Price : <span>$@Model.GetTotalPrice()</span></h3>
             </div>
         </div>
