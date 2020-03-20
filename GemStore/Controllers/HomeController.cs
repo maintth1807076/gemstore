@@ -16,7 +16,7 @@ namespace GemStore.Controllers
         private GemStoreContext db = new GemStoreContext();
         public ActionResult Index()
         {
-            return View();
+            return View(db.ItemMsts.ToList());
         }
 
         public ActionResult About()

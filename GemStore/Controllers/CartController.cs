@@ -77,13 +77,10 @@ namespace GemStore.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound, "Product's' not found");
             }
-            // Lấy thông tin shopping cart từ session.
             var sc = LoadShoppingCart();
-            // Thêm sản phẩm vào shopping cart.
             sc.RemoveFromCart(product.StyleCode);
-            // lưu thông tin cart vào session.
             SaveShoppingCart(sc);
-            return Redirect("/ShoppingCart/ShowCart");
+            return PartialView("_ModalCartPartial", LoadShoppingCart());
         }
 
         public ActionResult DeleteCart()
@@ -97,64 +94,25 @@ namespace GemStore.Controllers
         }
         //[HttpPost, ActionName("Create")]
         //[ValidateAntiForgeryToken]
-        public ActionResult CreateOrder(string cart)
-        {
+        //public ActionResult CreateOrder(string cart)
+        //{
             
-            var shoppingCart = JsonConvert.DeserializeObject<Dictionary<string, CartItem>>(cart, new JsonSerializerSettings
-            {
-                NullValueHandling = NullValueHandling.Ignore
-            });
+        //    var shoppingCart = JsonConvert.DeserializeObject<Dictionary<string, CartItem>>(cart, new JsonSerializerSettings
+        //    {
+        //        NullValueHandling = NullValueHandling.Ignore
+        //    });
            
 
-            // load cart trong session.
-            //var shoppingCart = LoadShoppingCart();
-            //if (shoppingCart.GetCartItems().Count <= 0)
-            //{
-            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Bad request");
-            //}
-            // chuyển thông tin shopping cart thành Order.
-            var order = new Order
-            {
-                OrderId = Guid.NewGuid().ToString().GetHashCode().ToString("x"),
-                MemberId = 1,
-                PaymentTypeId = (int)Order.PaymentType.Cod,
-                ShipName = "Xuan Hung",
-                ShipPhone = "0912345678",
-                ShipAddress = "Ton That Thuyet",
-                OrderDetails = new List<OrderDetail>()
-            };
-            //// Tạo order detail từ cart item.
-            double totalPrice = 0;
-            foreach (var cartItem in shoppingCart.Values)
-            {
-                var orderDetail = new OrderDetail()
-                {
-                    StyleCode = cartItem.Id,
-                    OrderId = order.OrderId,
-                    Quantity = cartItem.Quantity,
-                    UnitPrice = cartItem.UnitPrice
-                };
-                order.OrderDetails.Add(orderDetail);
-                totalPrice += cartItem.UnitPrice * cartItem.Quantity;
-            }
-
-            order.TotalPrice = totalPrice;
-            db.Orders.Add(order);
-            db.SaveChanges();
-            return Redirect("/Cart/Test");
-        }
-        //public ActionResult CreateOrder()
-        //{
         //    // load cart trong session.
-        //    var shoppingCart = LoadShoppingCart();
-        //    if (shoppingCart.GetCartItems().Count <= 0)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Bad request");
-        //    }
+        //    //var shoppingCart = LoadShoppingCart();
+        //    //if (shoppingCart.GetCartItems().Count <= 0)
+        //    //{
+        //    //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Bad request");
+        //    //}
         //    // chuyển thông tin shopping cart thành Order.
         //    var order = new Order
         //    {
-        //        TotalPrice = shoppingCart.GetTotalPrice(),
+        //        OrderId = Guid.NewGuid().ToString().GetHashCode().ToString("x"),
         //        MemberId = 1,
         //        PaymentTypeId = (int)Order.PaymentType.Cod,
         //        ShipName = "Xuan Hung",
@@ -162,34 +120,59 @@ namespace GemStore.Controllers
         //        ShipAddress = "Ton That Thuyet",
         //        OrderDetails = new List<OrderDetail>()
         //    };
-        //    // Tạo order detail từ cart item.
-        //    foreach (var cartItem in shoppingCart.GetCartItems())
+        //    //// Tạo order detail từ cart item.
+        //    double totalPrice = 0;
+        //    foreach (var cartItem in shoppingCart.Values)
         //    {
         //        var orderDetail = new OrderDetail()
         //        {
-        //            ProductId = cartItem.Value.ProductId,
-        //            OrderId = order.Id,
-        //            Quantity = cartItem.Value.Quantity,
-        //            UnitPrice = cartItem.Value.Price
+        //            StyleCode = cartItem.Id,
+        //            OrderId = order.OrderId,
+        //            Quantity = cartItem.Quantity,
+        //            UnitPrice = cartItem.UnitPrice
         //        };
         //        order.OrderDetails.Add(orderDetail);
+        //        totalPrice += cartItem.UnitPrice * cartItem.Quantity;
         //    }
+
+        //    order.TotalPrice = totalPrice;
         //    db.Orders.Add(order);
         //    db.SaveChanges();
-        //    ClearCart();
-        //    //// lưu vào database.
-        //    //var transaction = db.Database.BeginTransaction();
-        //    //try
-        //    //{
-
-        //    //    transaction.Commit();
-        //    //}
-        //    //catch (Exception e)
-        //    //{
-        //    //    Console.WriteLine(e);
-        //    //    transaction.Rollback();
-        //    //}
-        //    return Redirect("/Products");
+        //    return Redirect("/Cart/Test");
         //}
+        public ActionResult CreateOrder()
+        {
+            var shoppingCart = LoadShoppingCart();
+            if (shoppingCart.GetCartItems().Count <= 0)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Bad request");
+            }
+            var order = new Order
+            {
+                TotalPrice = shoppingCart.GetTotalPrice(),
+                MemberId = 1,
+                PaymentTypeId = (int)Order.PaymentType.Cod,
+                ShipName = "Xuan Hung",
+                ShipPhone = "0912345678",
+                ShipAddress = "Ton That Thuyet",
+                OrderDetails = new List<OrderDetail>()
+            };
+            // Tạo order detail từ cart item.
+            foreach (var cartItem in shoppingCart.GetCartItems())
+            {
+                var orderDetail = new OrderDetail()
+                {
+                    StyleCode = cartItem.Value.Id,
+                    OrderId = order.OrderId,
+                    Quantity = cartItem.Value.Quantity,
+                    UnitPrice = cartItem.Value.UnitPrice
+                };
+                order.OrderDetails.Add(orderDetail);
+            }
+            db.Orders.Add(order);
+            db.SaveChanges();
+            ClearCart();
+            return Redirect("/Home");
+        }
     }
 }
