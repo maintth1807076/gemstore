@@ -2230,7 +2230,6 @@
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Home\Shop.cshtml" />
     <Content Include="Views\Home\Shop_list.cshtml" />
-    <Content Include="Views\Cart\Test.cshtml" />
     <Content Include="Views\Home\Blog.cshtml" />
     <Content Include="Views\Home\Portfolio.cshtml" />
     <Content Include="Views\Home\ProductDetail.cshtml" />
@@ -2240,6 +2239,7 @@
     <Content Include="Views\Home\Checkout.cshtml" />
     <Content Include="Views\Cart\_ModalCartPartial.cshtml" />
     <Content Include="Views\Home\_ShopPartial.cshtml" />
+    <Content Include="Views\Cart\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2263,7 +2263,6 @@
       <DependentUpon>202003160926570_inintDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

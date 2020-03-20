@@ -1,4 +1,5 @@
-﻿
+﻿@using Microsoft.AspNet.Identity
+
 @{
     ViewBag.Title = "Checkout";
 }
@@ -22,34 +23,51 @@
                         </div>
                         <div id="checkout-method" class="panel-collapse collapse in">
                             <div class="panel-body">
-                                <div class="col-sm-6">
-                                    <div class="checkout-method checkout-reg fix">
-                                        <h2>CHECKOUT AS A GUEST OR REGISTER</h2>
-                                        <input type="radio" />
-                                        <p>Checkout as Guest</p>
-                                        <input type="radio" />
-                                        <p>Register</p>
-                                        <h3>REGISTER AND SAVE TIME!</h3>
-                                        <ul>
-                                            <li>Fast and easy checkout</li>
-                                            <li>Easy access to your order history and status</li>
-                                        </ul>
-                                        <a href="#">CONTINUE</a>
+                                @if (!Request.IsAuthenticated)
+                                {
+                                    <div class="col-sm-6">
+                                        <div class="checkout-method checkout-reg fix">
+                                            <h2>CHECKOUT AS A GUEST OR REGISTER</h2>
+                                            <input value="1" type="radio" />
+                                            <p>Checkout as Guest</p>
+                                            <input value="2" type="radio" />
+                                            <p>Checkout as User</p>
+                                            <h3>REGISTER AND SAVE TIME!</h3>
+                                            <ul>
+                                                <li>Fast and easy checkout</li>
+                                                <li>Easy access to your order history and status</li>
+                                            </ul>
+                                            <a class="btn-continue" href="javascript:void(0)">CONTINUE</a>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="checkout-method  checkout-login">
-                                        <h2>login</h2>
-                                        <h3>Already registered?</h3>
-                                        <h4>Please login below</h4>
-                                        <label>E-mail address*</label>
-                                        <input type="email" />
-                                        <br />
-                                        <label>Password*</label>
-                                        <input type="password" />
-                                        <a href="#">login</a>
+                                    <div class="col-sm-6">
+                                        <div class="checkout-method  checkout-login">
+                                            <h2>login</h2>
+                                            <h3>Already registered?</h3>
+                                            <h4>Please login below</h4>
+                                            <label>E-mail address*</label>
+                                            <input type="email" />
+                                            <br />
+                                            <label>Password*</label>
+                                            <input type="password" />
+                                            <a href="#">login</a>
+                                        </div>
                                     </div>
-                                </div>
+                                }
+                                else
+                                {
+                                    <div class="col-sm-6">
+                                        <div class="checkout-method checkout-reg fix">
+                                            <h2>CHECKOUT AS A GUEST OR REGISTER</h2>
+                                            <input value="1" type="radio" />
+                                            <p>Checkout as Guest</p>
+                                            <input value="2" type="radio" />
+                                            <p>Checkout as @User.Identity.GetUserName().ToUpper()</p>
+                                            <a class="btn-continue" href="javascript:void(0)">CONTINUE</a>
+                                        </div>
+                                    </div>
+                                }
+
                             </div>
                         </div>
                     </div>
@@ -75,9 +93,9 @@
                                         <input type="text" placeholder="E-mail Address*" class="half">
                                         <input type="text" placeholder="PHONE NUMBER*" class="half">
                                     </div>
-                                    <input type="checkbox" class="check">
+                                    <input type="checkbox" class="check" name="checkShipInfo">
                                     <p>Check this if the billing address is the same as Shipping address</p>
-                                    <a href="#">CONTINUE</a>
+                                    <a class="btn-continue" href="javascript:void(0)">CONTINUE</a>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +106,23 @@
                         </div>
                         <div id="shipping-info" class="panel-collapse collapse">
                             <div class="panel-body">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco aboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepte.</p>
+                                <div class="bill-info">
+                                    <div class="group">
+                                        <input type="text" placeholder="First Name*" class="half">
+                                        <input type="text" placeholder="Last Name*" class="half">
+                                    </div>
+                                    <input type="text" placeholder="STREET ADDRESS*">
+                                    <input type="text" placeholder="city">
+                                    <div class="group">
+                                        <input type="text" placeholder="POSTCODE / ZIP*" class="third">
+                                        <input type="text" placeholder="STATE / COUNTRY" class="onethird">
+                                    </div>
+                                    <div class="group">
+                                        <input type="text" placeholder="E-mail Address*" class="half">
+                                        <input type="text" placeholder="PHONE NUMBER*" class="half">
+                                    </div>
+                                    <a class="btn-continue" href="javascript:void(0)">CONTINUE</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -98,7 +132,16 @@
                         </div>
                         <div id="shipping-method" class="panel-collapse collapse">
                             <div class="panel-body">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco aboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepte.</p>
+                                <div class="col-sm-6">
+                                    <div class="checkout-method checkout-reg fix">
+                                        <h2>CHOOSE SHIP METHOD</h2>
+                                        <input value="1" type="radio" />
+                                        <p>Via post</p>
+                                        <input value="2" type="radio" />
+                                        <p>Courier</p>
+                                        <a class="btn-continue" href="javascript:void(0)">CONTINUE</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -122,7 +165,7 @@
                                         <h2>YOUR PAYPAL ACCOUNT</h2>
                                         <p>Pay via credit or debit card, Paypal transfer or even via Bank account in just a few clicks.</p>
                                         <p>This method is super easy and well protected.</p>
-                                        <a href="#">continue</a>
+                                        <a class="btn-continue" href="javascript:void(0)">continue</a>
                                     </div>
                                 </div>
                             </div>
@@ -201,3 +244,16 @@
         </div>
     </div>
 </section><!--End Checkout Area-->
+@section scripts
+{
+    <script type="text/javascript">
+        $(".btn-continue").on("click", function() {
+            $(this).closest('.panel-collapse').removeClass('in');
+            $(this).closest('.panel').next().find('.panel-collapse').addClass('in');
+        });
+        if ($("input[name='checkShipInfo']:checked"))
+        {
+            
+        }
+    </script>
+}

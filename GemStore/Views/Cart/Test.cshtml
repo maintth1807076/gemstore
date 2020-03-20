@@ -9,97 +9,37 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-@foreach (var item in Model)
-{
-    <li>@item.OrderId</li>
-    <li>@item.TotalPrice</li>
-                     foreach (var i in @item.OrderDetails)
-                     {
-        <p>@i.ItemMst.Name</p>
-        <p>@i.UnitPrice</p>
-        <p>@i.Quantity</p>
-                     }
-                     
-}
-@*<table class="table">
+<table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.BrandMst.BrandType)
+            @Html.DisplayNameFor(model => model.MemberId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CatMst.CatName)
+            @Html.DisplayNameFor(model => model.PaymentTypeId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CertifyMst.CertifyType)
+            @Html.DisplayNameFor(model => model.ShipName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DimMst.DimQltyId)
+            @Html.DisplayNameFor(model => model.ShipAddress)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GoldKrt.GoldCrt)
+            @Html.DisplayNameFor(model => model.ShipPhone)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.JewelTypeMst.JewelleryType)
+            @Html.DisplayNameFor(model => model.TotalPrice)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ProdMst.ProdType)
+            @Html.DisplayNameFor(model => model.CreatedAt)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.StoneMst.StoneQltyId)
+            @Html.DisplayNameFor(model => model.UpdatedAt)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.DeletedAt)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Pairs)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Quantity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ProdQuantity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GoldWt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StoneWt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NetGold)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.WstgPer)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TotGrossWt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GoldRate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GoldAmt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GoldMaking)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StoneMaking)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OtherMaking)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TotMaking)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MRP)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SalePrice)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Thumbnails)
+            @Html.DisplayNameFor(model => model.Status)
         </th>
         <th></th>
     </tr>
@@ -107,89 +47,41 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.BrandMst.BrandType)
+            @Html.DisplayFor(modelItem => item.MemberId)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CatMst.CatName)
+            @Html.DisplayFor(modelItem => item.PaymentTypeId)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CertifyMst.CertifyType)
+            @Html.DisplayFor(modelItem => item.ShipName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DimMst.DimQltyId)
+            @Html.DisplayFor(modelItem => item.ShipAddress)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.GoldKrt.GoldCrt)
+            @Html.DisplayFor(modelItem => item.ShipPhone)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.JewelTypeMst.JewelleryType)
+            @Html.DisplayFor(modelItem => item.TotalPrice)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ProdMst.ProdType)
+            @Html.DisplayFor(modelItem => item.CreatedAt)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.StoneMst.StoneQltyId)
+            @Html.DisplayFor(modelItem => item.UpdatedAt)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
+            @Html.DisplayFor(modelItem => item.DeletedAt)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Pairs)
+            @Html.DisplayFor(modelItem => item.Status)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Quantity)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProdQuantity)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GoldWt)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StoneWt)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NetGold)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.WstgPer)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TotGrossWt)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GoldRate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GoldAmt)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GoldMaking)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StoneMaking)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OtherMaking)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TotMaking)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MRP)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SalePrice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Thumbnails)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.StyleCode }) |
-            @Html.ActionLink("Details", "Details", new { id=item.StyleCode }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.StyleCode })
+            @Html.ActionLink("Edit", "Edit", new { id=item.OrderId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OrderId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OrderId })
         </td>
     </tr>
 }
 
-</table>*@
+</table>
