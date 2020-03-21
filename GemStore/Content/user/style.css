@@ -3203,18 +3203,19 @@ h4.heading {
   font-size: 12px;
   font-weight: 500;
 }
-.checkout-method a, .bill-info a, .pay a {
-  background: #e09e25 none repeat scroll 0 0;
-  color: #fff;
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 10px 15px;
-  text-decoration: none;
-  text-transform: uppercase;
+.checkout-method a, .bill-info a, .pay a, .ship-info a {
+    background: #e09e25 none repeat scroll 0 0;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-transform: uppercase;
 }
-.checkout-method a:hover, .bill-info a:hover, .pay a:hover {
-  background:#555555;
+
+.checkout-method a:hover, .bill-info a:hover, .pay a:hover, .ship-info a:hover {
+    background: #555555;
 }
 .checkout-login h3 {
   margin-top: 0;

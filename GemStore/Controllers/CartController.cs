@@ -172,7 +172,12 @@ namespace GemStore.Controllers
             db.Orders.Add(order);
             db.SaveChanges();
             ClearCart();
-            return Redirect("/Home");
+            return Redirect("/Cart/Test");
+        }
+
+        public ActionResult Test()
+        {
+            return View(db.Orders.ToList());
         }
     }
 }
