@@ -1,4 +1,4 @@
-﻿@using Microsoft.AspNet.Identity
+﻿@using Microsoft.AspNet.Identity;
 
 @{
     ViewBag.Title = "Checkout";
@@ -11,16 +11,125 @@
         <h2>Checkout</h2>
     </div>
 </div><!--End Title-->
+
 <section class="checkout-page page fix">
     <!--Start Checkout Area-->
+
     <div class="container">
+
         <div class="row">
             <div class="col-md-9">
+                <div id="test"></div>
+                <div id="createOrder">
+                    <form action="/Admin/Orders/Create" method="post">
+                        <input name="__RequestVerificationToken" type="hidden" value="CaDklLzJmHUjAC14wK3Q6zSsl97H-BUSeQ6flTcO2jw3LIpuRAxc_0_PVdAYnhDddg1KG7xRLf2SQG9z8i-5t67aadxteOq34K5VdP2zAVw1" />    <div class="form-horizontal">
+                            <h4>Order</h4>
+                            <hr />
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="OrderId">OrderId</label>
+                                <div class="col-md-10">
+                                    <input class="form-control text-box single-line" id="OrderId" name="OrderId" type="text" value="" />
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="OrderId" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="MemberId">MemberId</label>
+                                <div class="col-md-10">
+                                    <input class="form-control text-box single-line" data-val="true" data-val-number="The field MemberId must be a number." data-val-required="The MemberId field is required." id="MemberId" name="MemberId" type="number" value="" />
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="MemberId" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="PaymentTypeId">PaymentTypeId</label>
+                                <div class="col-md-10">
+                                    <input class="form-control text-box single-line" data-val="true" data-val-number="The field PaymentTypeId must be a number." data-val-required="The PaymentTypeId field is required." id="PaymentTypeId" name="PaymentTypeId" type="number" value="" />
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="PaymentTypeId" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="ShipName">ShipName</label>
+                                <div class="col-md-10">
+                                    <input class="form-control text-box single-line" id="ShipName" name="ShipName" type="text" value="" />
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="ShipName" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="ShipAddress">ShipAddress</label>
+                                <div class="col-md-10">
+                                    <input class="form-control text-box single-line" id="ShipAddress" name="ShipAddress" type="text" value="" />
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="ShipAddress" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="ShipPhone">ShipPhone</label>
+                                <div class="col-md-10">
+                                    <input class="form-control text-box single-line" id="ShipPhone" name="ShipPhone" type="text" value="" />
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="ShipPhone" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="TotalPrice">TotalPrice</label>
+                                <div class="col-md-10">
+                                    <input class="form-control text-box single-line" data-val="true" data-val-number="The field TotalPrice must be a number." data-val-required="The TotalPrice field is required." id="TotalPrice" name="TotalPrice" type="text" value="" />
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="TotalPrice" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="CreatedAt">CreatedAt</label>
+                                <div class="col-md-10">
+                                    <input class="form-control text-box single-line" data-val="true" data-val-number="The field CreatedAt must be a number." data-val-required="The CreatedAt field is required." id="CreatedAt" name="CreatedAt" type="number" value="" />
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="CreatedAt" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="UpdatedAt">UpdatedAt</label>
+                                <div class="col-md-10">
+                                    <input class="form-control text-box single-line" data-val="true" data-val-number="The field UpdatedAt must be a number." data-val-required="The UpdatedAt field is required." id="UpdatedAt" name="UpdatedAt" type="number" value="" />
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="UpdatedAt" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="DeletedAt">DeletedAt</label>
+                                <div class="col-md-10">
+                                    <input class="form-control text-box single-line" data-val="true" data-val-number="The field DeletedAt must be a number." data-val-required="The DeletedAt field is required." id="DeletedAt" name="DeletedAt" type="number" value="" />
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="DeletedAt" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="Status">Status</label>
+                                <div class="col-md-10">
+                                    <input class="form-control text-box single-line" data-val="true" data-val-number="The field Status must be a number." data-val-required="The Status field is required." id="Status" name="Status" type="number" value="" />
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="Status" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Create" class="btn btn-default" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
                 <div class="panel-group" id="checkout-progress">
                     <div class="panel panel-default">
+
                         <div class="panel-heading">
                             <a class="active" data-toggle="collapse" data-parent="#checkout-progress" href="#checkout-method"><span>1</span>CHECKOUT METHOD</a>
                         </div>
+
                         <div id="checkout-method" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 @if (!Request.IsAuthenticated)
@@ -154,7 +263,7 @@
                                 <div class="payment-met">
                                     <p>Choose your payment method :</p>
                                     <ul>
-                                        
+
                                         <li><a href="#"><img src="/Content/user/img/footer/paypal.jpg" alt="" /></a></li>
                                         <li><a href="#"><img src="/Content/user/img/footer/visa.jpg" alt="" /></a></li>
                                         <li><a href="#"><img src="/Content/user/img/footer/master.jpg" alt="" /></a></li>
@@ -247,13 +356,21 @@
 @section scripts
 {
     <script type="text/javascript">
-        $(".btn-continue").on("click", function() {
-            $(this).closest('.panel-collapse').removeClass('in');
-            $(this).closest('.panel').next().find('.panel-collapse').addClass('in');
-        });
-        if ($("input[name='checkShipInfo']:checked"))
-        {
-            
-        }
+        $(document).ready(function () {
+            var local = JSON.parse(localStorage.getItem('listOrder')).id;
+            console.log(local)
+            $('#OrderId').val(local);
+
+            $(".btn-continue").on("click", function () {
+                $(this).closest('.panel-collapse').removeClass('in');
+                $(this).closest('.panel').next().find('.panel-collapse').addClass('in');
+            });
+            if ($("input[name='checkShipInfo']:checked")) {
+
+            }
+        })
+
     </script>
+
 }
+

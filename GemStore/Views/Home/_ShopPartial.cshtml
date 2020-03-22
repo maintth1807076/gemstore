@@ -35,7 +35,7 @@
         }
     }
 }
-@using (Ajax.BeginForm("AddCart", "Cart", null, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "cart-modal", OnSuccess = "addCartSuccess()"}, new { id = "formAddCart" }))
+@using (Ajax.BeginForm("AddCart", "Cart", null, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "cart-modal", OnSuccess = "addCartSuccess()" }, new { id = "formAddCart" }))
 {
     <input type="text" name="productId" class="hidden" />
     <input type="number" name="quantity" class="hidden" />
@@ -102,7 +102,7 @@
                     <div class="list-actions-btn">
                         <a class="quick-view" href="@Url.Action("ProductDetail", new { id=item.StyleCode})"><i class="fa fa-search"></i></a>
                         <a class="favorite" href="#"><i class="fa fa-heart-o"></i></a>
-                        <a class="add-cart" href="javascript:void(0)" data-id="@item.StyleCode" data-price="@item.SalePrice" data-name="@item.Name" data-thumbnail="@item.Thumbnails.Split(',')[0]"><i class="fa fa-shopping-cart"></i></a>
+                        <a class="add-cart" href="javascript:void(0)" onclick={console.log(1)} data-id="@item.StyleCode" data-price="@item.SalePrice" data-name="@item.Name" data-thumbnail="@item.Thumbnails.Split(',')[0]"><i class="fa fa-shopping-cart"></i></a>
                     </div>
                 </div>
             </div>
@@ -120,7 +120,7 @@
     }))
 </div>
 <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function () {
         $(".add-cart").click(function () {
             $('input[name="productId"]').val($(this).attr('data-id'));
             $('input[name="quantity"]').val(1);

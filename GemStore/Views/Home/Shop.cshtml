@@ -47,7 +47,7 @@
 <div class="shop-product-area section fix">
     <div class="container">
         <div class="row">
-            @using (Ajax.BeginForm("FilterShop", "Home",null, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "shop-products" }, new {id = "formFilterItem"}))
+            @using (Ajax.BeginForm("FilterShop", "Home", null, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "shop-products" }, new { id = "formFilterItem" }))
             {
                 <div class="col-md-3">
                     <div class="shop-sidebar fix">
@@ -172,9 +172,7 @@
                     </div>
                     <div id="shop-products" class="shop-products">
                         @Html.Partial("_ShopPartial", Model)
-
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -183,10 +181,16 @@
 @section scripts
 {
     <script type="text/javascript">
-        $(".add-cart").on("click", function() {
-            $('input[name="productId"]').val($(this).attr('data-id'));
-            $('input[name="quantity"]').val(1);
-            $('#formAddCart').submit();
-        });
+        $(document).ready(function () {
+            $(".add-cart").on("click", function () {
+
+
+                localStorage.setItem("listOrder", JSON.stringify({ id: $(this).attr('data-id'), name: $(this).attr('data-name') }))
+                $('input[name="productId"]').val($(this).attr('data-id'));
+                $('input[name="quantity"]').val(1);
+                $('#formAddCart').submit();
+            });
+        })
+
     </script>
 }

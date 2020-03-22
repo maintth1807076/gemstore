@@ -132,6 +132,15 @@ namespace GemStore.Controllers
             }
             return View(itemMst);
         }
+
+        public ShoppingCart LoadShoppingCart()
+        {
+            if (!(Session[SHOPPING_CART_NAME] is ShoppingCart sc))
+            {
+                sc = new ShoppingCart();
+            }
+            return sc;
+        }
         public ActionResult Checkout()
         {
             ViewBag.Message = "Your  checkout  page.";

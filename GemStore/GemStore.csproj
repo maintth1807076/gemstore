@@ -183,6 +183,7 @@
     <Compile Include="Areas\Admin\Controllers\GoldKrtsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ItemMstsController.cs" />
     <Compile Include="Areas\Admin\Controllers\JewelTypeMstsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrdersController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProdMstsController.cs" />
     <Compile Include="Areas\Admin\Controllers\StoneQltyMstsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -2178,6 +2179,11 @@
     <Content Include="Areas\Admin\Views\ItemMsts\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\ItemMsts\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ItemMsts\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Orders\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Orders\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Orders\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Orders\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Orders\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
