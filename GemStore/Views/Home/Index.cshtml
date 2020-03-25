@@ -63,7 +63,12 @@
                             <div class="product-item fix">
                                 <div class="product-img-hover">
                                     <!-- Product image -->
-                                    <a href="@Url.Action("ProductDetail", new {id = item.StyleCode})" class="pro-image fix"><img src="~/Content/user/img/featured/1.jpg" alt="featured" /></a>
+                                    <a href="@Url.Action("ProductDetail", new {id = item.StyleCode})" class="pro-image fix">
+                                        <div style=" background: white; background-clip: border-box;  ">
+                                            <div style="background-image:url('@item.Thumbnails.Split(',')[0]'); height:246px; width:270px; background-repeat: no-repeat; background-size:contain;  background-position: center;">
+                                            </div>
+                                        </div>
+                                    </a>
                                     <!-- Product action Btn -->
                                     <div class="product-action-btn">
                                         <a class="quick-view" href="@Url.Action("ProductDetail", new {id = item.StyleCode})"><i class="fa fa-search"></i></a>
@@ -73,7 +78,7 @@
                                 </div>
                                 <div class="pro-name-price-ratting">
                                     <!-- Product Name -->
-                                    <div class="pro-name">
+                                    <div class="pro-name" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 270px;  ">
                                         <a href="product-details.html">@item.Name</a>
                                     </div>
                                     <!-- Product Ratting -->
@@ -176,7 +181,15 @@
                                         <div class="product-item fix">
                                             <div class="product-img-hover">
                                                 <!-- Product image -->
-                                                <a href="@Url.Action("ProductDetail", new {id = item.StyleCode})" class="pro-image fix"><img src="@item.Thumbnails.Split(',')[0]" alt="product" /></a>
+                                                
+                                                <a href="@Url.Action("ProductDetail", new {id = item.StyleCode})" class="pro-image fix">
+                                                    <div style=" background: white; background-clip: border-box;  ">
+                                                    <div style="background-image:url('@item.Thumbnails.Split(',')[0]'); height:246px; width:270px; background-repeat: no-repeat; background-size:contain;  background-position: center;">
+                                                        </div>
+                                                    </div>
+                                                        
+                                                       
+                                                </a>
                                                 <!-- Product action Btn -->
                                                 <div class="product-action-btn">
                                                     <a class="quick-view" href="@Url.Action("ProductDetail", new {id = item.StyleCode})"><i class="fa fa-search"></i></a>
@@ -186,7 +199,7 @@
                                             </div>
                                             <div class="pro-name-price-ratting">
                                                 <!-- Product Name -->
-                                                <div class="pro-name">
+                                                <div class="pro-name" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 270px;  ">
                                                     <a href="product-details.html">@item.Name</a>
                                                 </div>
                                                 <!-- Product Ratting -->
