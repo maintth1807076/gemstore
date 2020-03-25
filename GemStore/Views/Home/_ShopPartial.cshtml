@@ -48,7 +48,10 @@
                     <div class="product-img-hover">
                         <!-- Product image -->
                         <a href="@Url.Action("ProductDetail", new {id = item.StyleCode})" class="pro-image fix">
-                            <div style="background-image: url(@item.Thumbnails.Split(',')[0]); width: 270px; height: 246px; background-size: contain; background-position: center"></div>
+                            <div style=" background: white; background-clip: border-box;  ">
+                                <div style="background-image:url('@item.Thumbnails.Split(',')[0]'); height:246px; width:270px; background-repeat: no-repeat; background-size:contain;  background-position: center;">
+                                </div>
+                            </div>
                         </a>
                         <!-- Product action Btn -->
                         <div class="product-action-btn">
@@ -59,7 +62,7 @@
                     </div>
                     <div class="pro-name-price-ratting">
                         <!-- Product Name -->
-                        <div class="pro-name">
+                        <div class="pro-name" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 270px;  ">
                             <a href="product-details.html">@item.Name</a>
                         </div>
                         <!-- Product Ratting -->
@@ -85,11 +88,14 @@
             <div class="single-list-product col-sm-12">
                 <div class="list-pro-image">
                     <a href="@Url.Action("ProductDetail", new { id=item.StyleCode})">
-                        <img src="@item.Thumbnails.Split(',')[0]" alt="" />
+                        <div style=" background: white; background-clip: border-box;  ">
+                            <div style="background-image:url('@item.Thumbnails.Split(',')[0]'); height:246px; width:270px; background-repeat: no-repeat; background-size:contain;  background-position: center;">
+                            </div>
+                        </div>
                     </a>
                 </div>
                 <div class="list-pro-des fix">
-                    <a class="pro-name" href="@Url.Action("ProductDetail", new { id=item.StyleCode})">@item.Name</a>
+                    <a class="pro-name" href="@Url.Action("ProductDetail", new { id=item.StyleCode})" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 270px;  ">@item.Name</a>
                     <div class="pro-ratting">
                         <i class="fa fa-star on"></i>
                         <i class="fa fa-star on"></i>
