@@ -198,5 +198,10 @@ namespace GemStore.Controllers
             db.SaveChanges();
             return RedirectToAction("Test");
         }
+        public ActionResult Checkout()
+        {
+            ViewBag.Message = "Your  checkout  page.";
+            return View(LoadShoppingCart());
+        }
     }
 }

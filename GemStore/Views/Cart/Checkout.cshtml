@@ -1,5 +1,5 @@
 ﻿@using Microsoft.AspNet.Identity
-
+@model GemStore.Models.ShoppingCart
 @{
     ViewBag.Title = "Checkout";
 }
@@ -15,7 +15,7 @@
     <!--Start Checkout Area-->
     <div class="container">
         <div class="row">
-            @using (Ajax.BeginForm("CreateOrder", "Cart", null,new AjaxOptions { HttpMethod = "POST"}, new{id = "formCreateOrder"}))
+            @using (Ajax.BeginForm("CreateOrder", "Cart", null,new AjaxOptions { HttpMethod = "POST", OnSuccess = "createOrderSuccess()"}, new{id = "formCreateOrder"}))
             {
                 <div class="col-md-9">
                     <div class="panel-group" id="checkout-progress">
@@ -215,12 +215,14 @@
                                             <div class="order-list">
                                                 <h1>PRODUCTS</h1>
                                                 <h2>Total</h2>
-                                                <h3>PRODUCT NAME DEMO x 1 <span>$210</span></h3>
-                                                <h3>PRODUCT NAME DEMO x 2 <span>$300</span></h3>
+                                                @foreach (var cartItem in Model.GetCartItems().Values)
+                                                {
+                                                    <h3>@cartItem.Name x @cartItem.Quantity <span>$@(cartItem.UnitPrice * cartItem.Quantity)</span></h3>
+                                                }
                                             </div>
                                             <div class="final-total">
-                                                <h4>Sub Total <span>$420</span></h4>
-                                                <h5>Grand Total <span>$420</span></h5>
+                                                <h4>Sub Total <span>$@Model.GetTotalPrice()</span></h4>
+                                                <h5>Grand Total <span>$@Model.GetTotalPrice()</span></h5>
                                                 <a id="btn-create-order" href="javascript:void(0)">Place Order</a>
                                             </div>
                                         </div>
@@ -262,6 +264,10 @@
         $("#btn-create-order").on("click", function() {
             $("#formCreateOrder").submit();
         });
-        
+
+        function createOrderSuccess () {
+            alertify.set('notifier','position', 'top-right');
+            alertify.success('Your order saved success!');
+        }
     </script>
 }

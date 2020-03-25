@@ -128,7 +128,8 @@
         });
     });
     function addCartSuccess() {
-        alert("add to cart success");
+        alertify.set('notifier','position', 'top-right');
+        alertify.success('Add to cart success!');
     }
 </script>
 
