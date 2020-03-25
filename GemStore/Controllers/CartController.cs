@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using GemStore.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Newtonsoft.Json;
 
 namespace GemStore.Controllers
@@ -140,7 +142,7 @@ namespace GemStore.Controllers
         //    db.SaveChanges();
         //    return Redirect("/Cart/Test");
         //}
-        public ActionResult CreateOrder()
+        public ActionResult CreateOrder(string shipFirstName, string shipLastName, string shipPhone, string shipAddress)
         {
             var shoppingCart = LoadShoppingCart();
             if (shoppingCart.GetCartItems().Count <= 0)
@@ -149,15 +151,15 @@ namespace GemStore.Controllers
             }
             var order = new Order
             {
+                OrderId = Guid.NewGuid().ToString().GetHashCode().ToString("x"),
                 TotalPrice = shoppingCart.GetTotalPrice(),
-                MemberId = 1,
+                MemberId = User.Identity.GetUserId(),
                 PaymentTypeId = (int)Order.PaymentType.Cod,
-                ShipName = "Xuan Hung",
-                ShipPhone = "0912345678",
-                ShipAddress = "Ton That Thuyet",
+                ShipName = shipFirstName + " " + shipLastName,
+                ShipPhone = shipPhone,
+                ShipAddress = shipAddress,
                 OrderDetails = new List<OrderDetail>()
             };
-            // Tạo order detail từ cart item.
             foreach (var cartItem in shoppingCart.GetCartItems())
             {
                 var orderDetail = new OrderDetail()
@@ -177,7 +179,24 @@ namespace GemStore.Controllers
 
         public ActionResult Test()
         {
-            return View(db.Orders.ToList());
+            return View(db.Orders.Where(o => o.Status != (int)Order.OrderStatus.Deleted).ToList());
+        }
+        public async Task<ActionResult> ChangeStatus(string id, int status)
+        {
+            var order = db.Orders.Find(id);
+            if (order == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.NotFound, "Order's' not found");
+            }
+
+            if (status == (int) Order.OrderStatus.Confirmed)
+            {
+                var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                await userManager.SendEmailAsync(order.MemberId, "Confirm your order", "Please confirm your order");
+            }
+            order.Status = status;
+            db.SaveChanges();
+            return RedirectToAction("Test");
         }
     }
 }

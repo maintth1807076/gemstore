@@ -10,12 +10,11 @@ namespace GemStore.Models
     {
         [Key]
         public string OrderId { get; set; }
-        public int MemberId { get; set; }
+        public string MemberId { get; set; }
         public int PaymentTypeId { get; set; }
         public string ShipName { get; set; }
         public string ShipAddress { get; set; }
         public string ShipPhone { get; set; }
-
         public double TotalPrice { get; set; }
         public long CreatedAt { get; set; }
         public long UpdatedAt { get; set; }
