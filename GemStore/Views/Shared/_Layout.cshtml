@@ -33,6 +33,7 @@
     <link rel="stylesheet" type="text/css" href="~/Content/user/css/magnific-popup.css" />
     <!-- Nivo Slider CSS -->
     <link rel="stylesheet" type="text/css" href="~/Content/user/css/nivo-slider.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/alertify.min.css" />
     <!-- Stylesheet CSS -->
     <link rel="stylesheet" type="text/css" href="~/Content/user/style.css" />
     <!-- Responsive Stylesheet -->
@@ -571,25 +572,21 @@
     <script>
         new WOW().init();
     </script>
-<script>
-    //var dropdown = document.getElementsByClassName("dropdown-btn");
-    //var i;
-
-    //for (i = 0; i < dropdown.length; i++) {
-    //    dropdown[i].addEventListener("click", function () {
-    //        this.classList.toggle("active");
-    //        var dropdownContent = this.nextElementSibling;
-    //        if (dropdownContent.style.display === "block") {
-    //            dropdownContent.style.display = "none";
-    //        } else {
-    //            dropdownContent.style.display = "block";
-    //        }
-    //    });
-    //}
-</script>
+<script type="text/javascript" src="~/Content/alertify.min.js"></script>
 <!-- Main JS -->
     <script type="text/javascript" src="~/Content/user/js/main.js"></script>
-    <script type="text/javascript" src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script type="text/javascript">
+    $(".add-cart").on("click", function () {
+        $('input[name="productId"]').val($(this).attr('data-id'));
+        $('input[name="quantity"]').val(1);
+        $('#formAddCart').submit();
+    });
+    function addCartSuccess() {
+        alertify.set('notifier','position', 'top-right');
+        alertify.success('Add to cart success!');
+    }
+</script>
     @RenderSection("scripts", false)
 </body>
 

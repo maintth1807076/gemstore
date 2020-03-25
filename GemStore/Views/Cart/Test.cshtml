@@ -1,7 +1,9 @@
-﻿@model IEnumerable<GemStore.Models.Order>
+﻿@using GemStore.Models
+@model IEnumerable<GemStore.Models.Order>
 
 @{
     ViewBag.Title = "Test";
+    //var order = new Order();
 }
 
 <h2>Test</h2>
@@ -44,44 +46,88 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MemberId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PaymentTypeId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ShipName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ShipAddress)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ShipPhone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TotalPrice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedAt)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UpdatedAt)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DeletedAt)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.OrderId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.OrderId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.OrderId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentTypeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeletedAt)
+            </td>
+            <td>
+                @switch (item.Status)
+                {
+                    case (int)Order.OrderStatus.Pending:
+                        <a id="link-pending" href="javascript:void(0)">Pending <i class="fa fa-angle-down"></i></a>
+                        <ul>
+                            <li><a data-ajax="true" data-ajax-method="POST" data-ajax-mode="" data-ajax-success="confirmOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=@item.OrderId&status=4">Confirmed</a></li>
+                            <li><a data-ajax="true" data-ajax-method="POST" data-ajax-mode="" data-ajax-success="cancelOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=@item.OrderId&status=0">Cancel</a></li>
+                        </ul>
+                        break;
+                    case (int)Order.OrderStatus.Confirmed:
+                        <a data-ajax="true" data-ajax-method="POST" data-ajax-mode="" data-ajax-success="shippingOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=@item.OrderId&status=3">Confirmed</a>
+                        break;
+                    case (int)Order.OrderStatus.Shipping:
+                        <a data-ajax="true" data-ajax-method="POST" data-ajax-mode="" data-ajax-success="doneOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=@item.OrderId&status=1">Shipping</a>
+                        break;
+                    case (int)Order.OrderStatus.Done:
+                        <a href="javascript:void(0)">Done</a>
+                        break;
+                    case (int)Order.OrderStatus.Cancel:
+                        <a href="javascript:void(0)">Cancel</a>
+                        break;
+                    default: break;
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.OrderId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.OrderId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.OrderId })
+            </td>
+        </tr>
+    }
 
 </table>
+@section Scripts{
+    <script type="text/javascript">
+        function confirmOrder(para) {
+            $('#link-pending').text("Confirmed");
+            para.closest('ul').remove();
+            para.href = "javascript:void(0)";
+        }
+        function cancelOrder(para) {
+            $('#link-pending').text("Cancel");
+            para.closest('ul').remove();
+            para.href = "javascript:void(0)";
+        }
+        function shippingOrder(para) {
+            para.text("Shipping");
+            para.href = "javascript:void(0)";
+        }
+        function doneOrder(para) {
+            para.text("Done");
+            para.href = "javascript:void(0)";
+        }
+    </script>
+}

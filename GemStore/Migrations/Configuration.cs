@@ -59,6 +59,18 @@ namespace GemStore.Migrations
                 userManager.Create(user, "password");
                 userManager.AddToRole(user.Id, "Admin");
             }
+            if (!context.Users.Any(u => u.UserName == "user1"))
+            {
+                var user = new ApplicationUser
+                {
+                    UserName = "user1",
+                    Email = "maintth1807076@fpt.edu.vn"
+                    //SecurityStamp = Guid.NewGuid().ToString("D"),
+                    //PasswordHash = userManager.PasswordHasher.HashPassword("secret"),
+                };
+                userManager.Create(user, "password");
+                userManager.AddToRole(user.Id, "User");
+            }
             context.BrandMsts.AddOrUpdate(x => x.BrandId,
                 new BrandMst() { BrandId = "1", BrandType = "Graff", },
                 new BrandMst() { BrandId = "2", BrandType = "Buccellatib", },
