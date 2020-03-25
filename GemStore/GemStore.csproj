@@ -2234,7 +2234,7 @@
     <Content Include="Views\Cart\Test4.cshtml" />
     <Content Include="Views\Cart\TestPaypal.cshtml" />
     <Content Include="Views\Cart\Cart.cshtml" />
-    <Content Include="Views\Home\Checkout.cshtml" />
+    <Content Include="Views\Cart\Checkout.cshtml" />
     <Content Include="Views\Cart\_ModalCartPartial.cshtml" />
     <Content Include="Views\Home\_ShopPartial.cshtml" />
     <Content Include="Views\Cart\Test.cshtml" />

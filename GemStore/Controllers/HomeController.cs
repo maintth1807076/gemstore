@@ -132,13 +132,5 @@ namespace GemStore.Controllers
             }
             return View(itemMst);
         }
-        public ActionResult Checkout()
-        {
-            ViewBag.Message = "Your  checkout  page.";
-
-            return View();
-        }
-
-
     }
 }
