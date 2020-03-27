@@ -7,7 +7,14 @@
 }
 
 <h2>Test</h2>
-
+<form action="https://www.paypal.com/us/cgi-bin/webscr" method="post">
+    <input type="hidden" name="cmd" value="_xclick">
+    <input type="hidden" name="business" value="sb-snt5l1304458@business.example.com">
+    <input type="hidden" name="item_name" value="Order">
+    <input type="hidden" name="currency_code" value="USD">
+    <input type="hidden" name="amount" value="150.00">
+    <input type="image" src="http://www.paypal.com/en_US/i/btn/x-click-but01.gif" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+</form>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -46,7 +53,8 @@
         <th></th>
     </tr>
 
-    @foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.MemberId)
