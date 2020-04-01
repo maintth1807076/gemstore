@@ -16,7 +16,7 @@ namespace GemStore.Models
         public string ShipAddress { get; set; }
         public string ShipPhone { get; set; }
         public double TotalPrice { get; set; }
-        public long CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; }
         public long UpdatedAt { get; set; }
         public long DeletedAt { get; set; }
         public int Status { get; set; }
@@ -27,7 +27,7 @@ namespace GemStore.Models
 
         public Order()
         {
-            CreatedAt = DateTime.Now.Millisecond;
+            CreatedAt = DateTime.Now;
             UpdatedAt = DateTime.Now.Millisecond;
             Status = (int)OrderStatus.Pending;
         }

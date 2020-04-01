@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using GemStore.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -241,6 +242,79 @@ namespace GemStore.Migrations
             //    new StoneMst() { StyleCode = "MGC358", StoneQltyId = "5", StonePcs = 1, StoneCrt = 9, StoneRate = 2507 },
             //    new StoneMst() { StyleCode = "FO085", StoneQltyId = "6", StonePcs = 1, StoneCrt = 5, StoneRate = 102 }
             //);
+            var listOrders = new List<Order>()
+            {
+                new Order(){TotalPrice = 150, CreatedAt = DateTime.Now},
+                new Order(){TotalPrice = 480, CreatedAt = DateTime.Now.AddDays(-5)},
+                new Order(){TotalPrice = 400, CreatedAt = DateTime.Now.AddDays(-3)},
+                new Order(){TotalPrice = 120, CreatedAt = DateTime.Now.AddDays(-1)},
+                new Order(){TotalPrice = 130, CreatedAt = DateTime.Now.AddDays(-2)},
+                new Order(){TotalPrice = 450, CreatedAt = DateTime.Now.AddDays(-3)},
+                new Order(){TotalPrice = 360, CreatedAt = DateTime.Now.AddDays(-4)},
+                new Order(){TotalPrice = 780, CreatedAt = DateTime.Now.AddDays(-5)},
+                new Order(){TotalPrice = 234, CreatedAt = DateTime.Now.AddDays(-6)},
+                new Order(){TotalPrice = 213, CreatedAt = DateTime.Now.AddDays(-7)},
+                new Order(){TotalPrice = 654, CreatedAt = DateTime.Now.AddDays(-8)},
+                new Order(){TotalPrice = 809, CreatedAt = DateTime.Now.AddDays(-9)},
+                new Order(){TotalPrice = 345, CreatedAt = DateTime.Now.AddDays(-10)},
+                new Order(){TotalPrice = 789, CreatedAt = DateTime.Now.AddDays(-10).AddMonths(-1)},
+                new Order(){TotalPrice = 300, CreatedAt = DateTime.Now.AddDays(-9).AddMonths(-2)},
+                new Order(){TotalPrice = 400, CreatedAt = DateTime.Now.AddDays(-8).AddMonths(-3)},
+                new Order(){TotalPrice = 356, CreatedAt = DateTime.Now.AddDays(-7).AddMonths(-4)},
+                new Order(){TotalPrice = 250, CreatedAt = DateTime.Now.AddDays(-6).AddMonths(-5)},
+                new Order(){TotalPrice = 632, CreatedAt = DateTime.Now.AddDays(-5).AddMonths(-6)},
+                new Order(){TotalPrice = 342, CreatedAt = DateTime.Now.AddDays(-4).AddMonths(-7)},
+                new Order(){TotalPrice = 180, CreatedAt = DateTime.Now.AddDays(-3).AddMonths(-8)},
+                new Order(){TotalPrice = 573, CreatedAt = DateTime.Now.AddDays(-2).AddMonths(-9)},
+                new Order(){TotalPrice = 289, CreatedAt = DateTime.Now.AddDays(-1).AddMonths(-10)},
+                new Order(){TotalPrice = 163, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-10).AddMonths(-1)},
+                new Order(){TotalPrice = 367, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-11).AddMonths(-2)},
+                new Order(){TotalPrice = 934, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-12).AddMonths(-3)},
+                new Order(){TotalPrice = 278, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-13).AddMonths(-4)},
+                new Order(){TotalPrice = 421, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-14).AddMonths(-5)},
+                new Order(){TotalPrice = 690, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-15).AddMonths(-6)},
+                new Order(){TotalPrice = 631, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-16).AddMonths(-7)},
+                new Order(){TotalPrice = 643, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-17).AddMonths(-8)},
+                new Order(){TotalPrice = 712, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-18).AddMonths(-9)},
+                new Order(){TotalPrice = 521, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-19).AddMonths(-10)},
+                new Order(){TotalPrice = 644, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-30).AddMonths(-1)},
+                new Order(){TotalPrice = 222, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-29).AddMonths(-3)},
+                new Order(){TotalPrice = 777, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-28).AddMonths(-5)},
+                new Order(){TotalPrice = 900, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-27).AddMonths(-7)},
+                new Order(){TotalPrice = 451, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-26).AddMonths(-9)},
+                new Order(){TotalPrice = 361, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-25).AddMonths(-2)},
+                new Order(){TotalPrice = 401, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-24).AddMonths(-4)},
+                new Order(){TotalPrice = 562, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-23).AddMonths(-6)},
+                new Order(){TotalPrice = 309, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-22).AddMonths(-8)},
+                new Order(){TotalPrice = 432, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-21).AddMonths(-10)},
+                new Order(){TotalPrice = 866, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-1).AddMonths(-1)},
+                new Order(){TotalPrice = 667, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-9).AddMonths(-4)},
+                new Order(){TotalPrice = 433, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-2).AddMonths(-2)},
+                new Order(){TotalPrice = 221, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-8).AddMonths(-2)},
+                new Order(){TotalPrice = 779, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-3).AddMonths(-3)},
+                new Order(){TotalPrice = 422, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-7).AddMonths(-4)},
+                new Order(){TotalPrice = 445, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-4).AddMonths(-5)},
+                new Order(){TotalPrice = 480, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-6).AddMonths(-1)},
+                new Order(){TotalPrice = 331, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-5).AddMonths(-3)},
+                new Order(){TotalPrice = 505, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-10).AddMonths(-2)},
+                new Order(){TotalPrice = 607, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-44)},
+                new Order(){TotalPrice = 540, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-22)},
+                new Order(){TotalPrice = 650, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-33)},
+                new Order(){TotalPrice = 190, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-11)},
+                new Order(){TotalPrice = 672, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-55)},
+                new Order(){TotalPrice = 308, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-66)},
+                new Order(){TotalPrice = 468, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-77)},
+                new Order(){TotalPrice = 537, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-88)},
+                new Order(){TotalPrice = 246, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-99)},
+                new Order(){TotalPrice = 579, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-31)},
+                new Order(){TotalPrice = 540, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-37)},
+            };
+            foreach (var order in listOrders)
+            {
+                order.OrderId = Guid.NewGuid().ToString().GetHashCode().ToString("x");
+                context.Orders.Add(order);
+                context.SaveChanges();
+            }
         }   
     }
 }
