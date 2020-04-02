@@ -164,12 +164,12 @@ namespace GemStore.Migrations
 
 
                 ////Trending Shop
-                new ItemMst() { StyleCode = "24", Name = "10k Yellow Gold Faith Script 18 inch Necklace", MRP = 99, SalePrice = 89, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-AU501C-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-AU501C-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-AU501C-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "7", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 }
-                //new ItemMst() { StyleCode = "25", Name = "10K Yellow Gold Wide Diamond Cut Textured Ring", MRP = 198, SalePrice = 134, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-AU430-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-AU430-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-AU430-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "3", CatId = "1", ProdId = "2", GoldTypeId = "4", JewelleryId = "7", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "26", Name = "White Cultured Japanese Akoya Pearl Rhodium Over Sterling Silver Diamond Cut Bracelet", MRP = 268, SalePrice = 144, Thumbnails = "https://images.jtv.com/jewelry/pearls/JTV-CPL713-1-medium.jpg, ", Pairs = 1, Quantity = 4, BrandId = "4", CatId = "1", ProdId = "2", GoldTypeId = "5", JewelleryId = "7", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "27", Name = "18K Yellow Gold Over Sterling Silver Byzantine and Cuban Link Adjustable Set of 2 Bracelet 4", MRP = 70, SalePrice = 59, Thumbnails = "https://images.jtv.com/jewelry/silver/JTV-AG121B-1-medium.jpg, https://images.jtv.com/jewelry/silver/JTV-AG121B-2-medium.jpg, https://images.jtv.com/jewelry/silver/JTV-AG121B-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "5", CatId = "1", ProdId = "2", GoldTypeId = "1", JewelleryId = "7", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "28", Name = "Moda Al Massimo® 18K Yellow Gold Over Bronze Diamond Cut Bangle Bracelet 8 Inch", MRP = 146, SalePrice = 107, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-MA109-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-MA109-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-MA109-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "1", CatId = "1", ProdId = "2", GoldTypeId = "2", JewelleryId = "7", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "29", Name = "Blue Diamond Rhodium Over Sterling Silver Ring 0.23ctw", MRP = 99, SalePrice = 49, Thumbnails = "https://images.jtv.com/jewelry/JTV-BDK012-1-medium.jpg, https://images.jtv.com/jewelry/JTV-BDK012-2-medium.jpg, https://images.jtv.com/jewelry/JTV-BDK012-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "7", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 }
+                new ItemMst() { StyleCode = "24", Name = "10k Yellow Gold Faith Script 18 inch Necklace", MRP = 99, SalePrice = 89, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-AU501C-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-AU501C-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-AU501C-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "7", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "25", Name = "10K Yellow Gold Wide Diamond Cut Textured Ring", MRP = 198, SalePrice = 134, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-AU430-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-AU430-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-AU430-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "3", CatId = "1", ProdId = "2", GoldTypeId = "4", JewelleryId = "7", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "26", Name = "White Cultured Japanese Akoya Pearl Rhodium Over Sterling Silver Diamond Cut Bracelet", MRP = 268, SalePrice = 144, Thumbnails = "https://images.jtv.com/jewelry/pearls/JTV-CPL713-1-medium.jpg, ", Pairs = 1, Quantity = 4, BrandId = "4", CatId = "1", ProdId = "2", GoldTypeId = "5", JewelleryId = "7", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "27", Name = "18K Yellow Gold Over Sterling Silver Byzantine and Cuban Link Adjustable Set of 2 Bracelet 4", MRP = 70, SalePrice = 59, Thumbnails = "https://images.jtv.com/jewelry/silver/JTV-AG121B-1-medium.jpg, https://images.jtv.com/jewelry/silver/JTV-AG121B-2-medium.jpg, https://images.jtv.com/jewelry/silver/JTV-AG121B-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "4", CatId = "1", ProdId = "2", GoldTypeId = "1", JewelleryId = "7", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "28", Name = "Moda Al Massimo® 18K Yellow Gold Over Bronze Diamond Cut Bangle Bracelet 8 Inch", MRP = 146, SalePrice = 107, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-MA109-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-MA109-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-MA109-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "1", CatId = "1", ProdId = "2", GoldTypeId = "2", JewelleryId = "7", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "29", Name = "Blue Diamond Rhodium Over Sterling Silver Ring 0.23ctw", MRP = 99, SalePrice = 49, Thumbnails = "https://images.jtv.com/jewelry/JTV-BDK012-1-medium.jpg, https://images.jtv.com/jewelry/JTV-BDK012-2-medium.jpg, https://images.jtv.com/jewelry/JTV-BDK012-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "7", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 }
 
                 //new ItemMst() { StyleCode = "30", Name = "Red Sponge Coral Rhodium Over Silver Eagle Pendant With Chain", MRP = 222, SalePrice = 139, Thumbnails = "https://images.jtv.com/jewelry/JTV-SWE2167-1-medium.jpg, https://images.jtv.com/jewelry/JTV-SWE2167-2-medium.jpg, https://images.jtv.com/jewelry/JTV-SWE2167-3-medium.jpg", Pairs = 1, Quantity = 6, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "4", JewelleryId = "8", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
                 //new ItemMst() { StyleCode = "31", Name = "White And Green Crystal Black Enamel Gold Tone Jaguar Ring", MRP = 30, SalePrice = 27, Thumbnails = "https://images.jtv.com/jewelry/JTV-OPC258R-1-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC258R-2-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC258R-3-medium.jpg", Pairs = 1, Quantity = 6, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "5", JewelleryId = "8", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
@@ -308,11 +308,27 @@ namespace GemStore.Migrations
                 new Order(){TotalPrice = 246, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-99)},
                 new Order(){TotalPrice = 579, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-31)},
                 new Order(){TotalPrice = 540, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-37)},
-            };
+                new Order()
+                {
+                    OrderId = "1", MemberId = "1", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "1", UnitPrice = 75, Quantity = 2},
+                        new OrderDetail(){StyleCode = "2", UnitPrice = 80, Quantity = 1},
+                    }
+                }
+        };
+            var totalPrice = 0.0;
             foreach (var order in listOrders)
             {
+                
                 order.OrderId = Guid.NewGuid().ToString().GetHashCode().ToString("x");
                 order.Status = (int)Order.OrderStatus.Pending;
+                foreach (var orderDetail in order.OrderDetails)
+                {
+                    totalPrice += orderDetail.Quantity * orderDetail.UnitPrice;
+                }
+                order.TotalPrice = totalPrice;
                 context.Orders.Add(order);
                 context.SaveChanges();
             }

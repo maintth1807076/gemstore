@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -179,6 +180,15 @@ namespace GemStore.Controllers
 
         public ActionResult Test()
         {
+            new Order()
+            {
+                OrderId = "1", MemberId = "1", TotalPrice = 300, CreatedAt = DateTime.Now, 
+                OrderDetails = new List<OrderDetail>()
+                {
+                    new OrderDetail(){StyleCode = "1", UnitPrice = 75, Quantity = 2},
+                    new OrderDetail(){StyleCode = "2", UnitPrice = 80, Quantity = 1},
+                }
+            };
             return View(db.Orders.Where(o => o.Status != (int)Order.OrderStatus.Deleted).ToList());
         }
         public async Task<ActionResult> ChangeStatus(string id, int status)
