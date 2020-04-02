@@ -5,110 +5,106 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-warning" })
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.MemberId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PaymentTypeId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ShipName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ShipAddress)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ShipPhone)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TotalPrice)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedAt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UpdatedAt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DeletedAt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
-        <th></th>
-    </tr>
+<div class="container-fluid">
 
-    @foreach (var item in Model)
-    {
-        <tr id="@item.OrderId">
-            <td>
-                @Html.DisplayFor(modelItem => item.MemberId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PaymentTypeId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ShipName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ShipAddress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ShipPhone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedAt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UpdatedAt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DeletedAt)
-            </td>
-            <td>
-                @switch (item.Status)
-                {
-                    case (int)Order.OrderStatus.Pending:
-                        <a href="javascript:void(0)">Pending <i class="fa fa-angle-down"></i></a>
-                        <ul>
-                            <li><a data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang confirm nhé?" data-ajax-success="confirmOrder($(this))" data-ajax-update="" href="/Admin/Orders/ChangeStatus?id=@item.OrderId&status=4">Confirmed</a></li>
-                            <li><a data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Cancel khong?" data-ajax-mode="" data-ajax-complete="cancelOrder($(this))" data-ajax-update="" href="/Admin/Orders/ChangeStatus?id=@item.OrderId&status=0">Cancel</a></li>
-                        </ul>
-                        break;
-                    case (int)Order.OrderStatus.Confirmed:
-                        <a data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang shipping nhé?" data-ajax-success="shippingOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=@item.OrderId&status=3">Confirmed</a>
-                        break;
-                    case (int)Order.OrderStatus.Shipping:
-                        <a data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang done nhé?" data-ajax-success="doneOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=@item.OrderId&status=1">Shipping</a>
-                        break;
-                    case (int)Order.OrderStatus.Done:
-                        <a href="javascript:void(0)">Done</a>
-                        break;
-                    case (int)Order.OrderStatus.Cancel:
-                        <a href="javascript:void(0)">Cancel</a>
-                        break;
-                    default: break;
-                }
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.OrderId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.OrderId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.OrderId })
-            </td>
-        </tr>
-    }
+    <!-- Page Heading -->
 
-</table>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MemberId)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ShipName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ShipAddress)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ShipPhone)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TotalPrice)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CreatedAt)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Status)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                <tr id="@item.OrderId">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MemberId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ShipName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ShipAddress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ShipPhone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedAt)
+                    </td>
+                    <td>
+                        @switch (item.Status)
+                        {
+                            case (int)Order.OrderStatus.Pending:
+                                <a href="javascript:void(0)">Pending <i class="fa fa-angle-down"></i></a>
+                                <ul>
+                                    <li><a data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang confirm nhé?" data-ajax-success="confirmOrder($(this))" data-ajax-update="" href="/Admin/Orders/ChangeStatus?id=@item.OrderId&status=4">Confirmed</a></li>
+                                    <li><a data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Cancel khong?" data-ajax-mode="" data-ajax-complete="cancelOrder($(this))" data-ajax-update="" href="/Admin/Orders/ChangeStatus?id=@item.OrderId&status=0">Cancel</a></li>
+                                </ul>
+                                break;
+                            case (int)Order.OrderStatus.Confirmed:
+                                <a data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang shipping nhé?" data-ajax-success="shippingOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=@item.OrderId&status=3">Confirmed</a>
+                                break;
+                            case (int)Order.OrderStatus.Shipping:
+                                <a data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang done nhé?" data-ajax-success="doneOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=@item.OrderId&status=1">Shipping</a>
+                                break;
+                            case (int)Order.OrderStatus.Done:
+                                <a href="javascript:void(0)">Done</a>
+                                break;
+                            case (int)Order.OrderStatus.Cancel:
+                                <a href="javascript:void(0)">Cancel</a>
+                                break;
+                            default: break;
+                        }
+                    </td>
+                    <td>
+                        <a href="/Admin/Orders/Edit/@item.OrderId"><i class="fas fa-pen-fancy"></i></a> |
+                        <a href="/Admin/Orders/Details/@item.OrderId"><i class="fas fa-search-plus"></i></a> |
+                        <a href="/Admin/Orders/Delete/@item.OrderId"><i class="fas fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
 @section Scripts{
     <script type="text/javascript">
         function confirmOrder(para) {
@@ -140,7 +136,7 @@
             //    },
             //    function(isConfirm){
             //        if (isConfirm) {
-                        
+
             //        }
             //    }
             //);
