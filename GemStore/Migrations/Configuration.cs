@@ -312,6 +312,7 @@ namespace GemStore.Migrations
             foreach (var order in listOrders)
             {
                 order.OrderId = Guid.NewGuid().ToString().GetHashCode().ToString("x");
+                order.Status = (int)Order.OrderStatus.Pending;
                 context.Orders.Add(order);
                 context.SaveChanges();
             }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Diagnostics;
 using System.Linq;
 using System.Web;
@@ -18,8 +19,7 @@ namespace GemStore.Areas.Admin.Controllers
         }
         public ActionResult GetLineChartData(DateTime? startDate, DateTime? endDate)
         {
-            //var data = db.Orders.Where(o => o.CreatedAt >= startDate && o.CreatedAt <= endDate).OrderByDescending(o => o.CreatedAt).GroupBy(o => o.CreatedAt, (day, orders) => new{Key = day.ToString("YYYY-MM-DD"), Total = orders.Sum(o => o.TotalPrice)}).ToList();
-            var data = db.Orders.Where(o => o.CreatedAt >= startDate && o.CreatedAt <= endDate).OrderByDescending(o => o.CreatedAt).GroupBy(x => x.CreatedAt,
+            var data = db.Orders.Where(o => o.CreatedAt >= startDate && o.CreatedAt <= endDate).OrderByDescending(o => o.CreatedAt).GroupBy(x => DbFunctions.TruncateTime(x.CreatedAt),
                 (key, values) => new {
                     Day = key,
                     Total = values.Sum(x => x.TotalPrice)
@@ -32,12 +32,13 @@ namespace GemStore.Areas.Admin.Controllers
         }
         public ActionResult GetPieChartData(DateTime? startDate, DateTime? endDate)
         {
-            //var data = db.Orders.Where(o => o.CreatedAt >= startDate && o.CreatedAt <= endDate).OrderByDescending(o => o.CreatedAt).GroupBy(o => o.CreatedAt, (day, orders) => new{Key = day.ToString("YYYY-MM-DD"), Total = orders.Sum(o => o.TotalPrice)}).ToList();
-            var data = db.Orders.Where(o => o.CreatedAt >= startDate && o.CreatedAt <= endDate).OrderByDescending(o => o.CreatedAt).GroupBy(x => x.CreatedAt,
-                (key, values) => new {
-                    Day = key,
-                    Total = values.Sum(x => x.TotalPrice)
-                }).ToList();
+            var data = db.OrderDetails.Where(o => o.Order.CreatedAt >= startDate && o.Order.CreatedAt <= endDate).GroupBy(x => x.ItemMst)
+                .Select(x => new
+                {
+                    Total = x.Sum(g => g.Quantity),
+                    Item = x.Key.Name,
+                    StyleCode = x.Key.StyleCode
+                }).OrderByDescending(f => f.Total).ToList();
             return new JsonResult()
             {
                 Data = data,

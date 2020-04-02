@@ -218,53 +218,57 @@
                 method: 'GET',
                 success: function (resp) {
                     if (resp.length == 0) {
-                        //swal('No data exists for line chart', 'Please choose another time range.', 'warning');
+                        swal('No data exists for line chart', 'Please choose another time range.', 'warning');
                         return;
                     }
-                    ;
+                    console.log(resp);
+                    for (var i = 0; i < resp.length; i++) {
+                        console.log(new Date(parseInt(resp[i].Day.replace(/\D/g, ''))));
+                        console.log(resp[i].Total);
+                    }
                     drawLineChart(resp);
-                    //var totalRevenue = 0;
-                    //var lastRevenue = parseInt(resp[0].revenue);
-                    //var last = resp.length;
-                    //var firstRevenue = parseInt(resp[resp.length - 1].revenue);
-                    //var difference = lastRevenue - firstRevenue;
-                    //if (difference < 0) {
-                    //    if (-difference > 1500000) {
-                    //        $('.advice-content').text('Going down considerably => You should check out 5 best-sellers below to have an effective marketing strategy');
-                    //    } else {
-                    //        $('.advice-content').text('Going down but unconsiderably => You shouldn\'t be worried too much , keep working on the social media');
-                    //    }
-                    //}
-                    //if (difference > 0) {
-                    //    if (difference > 2000000) {
-                    //        $('.advice-content').text('Raising up considerably => You are having an effective marketing strategy! Keep going');
-                    //    } else {
-                    //        $('.advice-content').text('Raising up but unconsiderably => You shouldn\'t be worried too much , keep working on the social media');
-                    //    }
-                    //}
-                    //for (var i = 0; i < resp.length; i++) {
-                    //    totalRevenue += parseInt(resp[i].revenue);
-                    //}
-                    //;
-                    //$('.total-revenue').text(totalRevenue);
-                    //$('.total-revenue').formatNumber();
+                    var totalRevenue = 0;
+                    var lastRevenue = parseInt(resp[0].Total);
+                    var last = resp.length;
+                    var firstRevenue = parseInt(resp[resp.length - 1].Total);
+                    var difference = lastRevenue - firstRevenue;
+                    if (difference < 0) {
+                        if (-difference > 1500000) {
+                            $('.advice-content').text('Going down considerably => You should check out 5 best-sellers below to have an effective marketing strategy');
+                        } else {
+                            $('.advice-content').text('Going down but unconsiderably => You shouldn\'t be worried too much , keep working on the social media');
+                        }
+                    }
+                    if (difference > 0) {
+                        if (difference > 2000000) {
+                            $('.advice-content').text('Raising up considerably => You are having an effective marketing strategy! Keep going');
+                        } else {
+                            $('.advice-content').text('Raising up but unconsiderably => You shouldn\'t be worried too much , keep working on the social media');
+                        }
+                    }
+                    for (var i = 0; i < resp.length; i++) {
+                        totalRevenue += parseInt(resp[i].Total);
+                    }
+                    ;
+                    $('.total-revenue').text(totalRevenue);
+                    $('.total-revenue').formatNumber();
                 },
                 error: function () {
-                    //swal('Something is wrong', 'Cannot retrieve data from API', 'error');
+                    swal('Something is wrong', 'Cannot retrieve data from API', 'error');
                 }
             });
         });
         function drawLineChart(chart_data) {
             var data = new google.visualization.DataTable();
-            data.addColumn('date', 'Ngày');
-            data.addColumn('number', 'Thu nhập');
+            data.addColumn('date', 'Date');
+            data.addColumn('number', 'Revenue');
             for (var i = 0; i < chart_data.length; i++) {
                 data.addRow([new Date(parseInt(chart_data[i].Day.replace(/\D/g, ''))), Number(chart_data[i].Total)]);
             }
             var options = {
                 chart: {
-                    title: 'Biểu đồ thu nhập theo thời gian',
-                    subtitle: 'Tiền tệ(VND)'
+                    title: 'Graph of revenue over time',
+                    subtitle: 'Currency (USD)'
                 },
                 height: 500,
                 hAxis: {
@@ -298,51 +302,51 @@
         ;
         google.charts.load('current', { 'packages': ['corechart'] });
         google.charts.setOnLoadCallback(function () {
-            var start = moment().subtract(29, 'days');
-            var end = moment();
-            //$.ajax({
-            //    url: '/admin/get-pie-chart-data?startDate=' + start.format('YYYY-MM-DD') + '&endDate=' + end.format('YYYY-MM-DD'),
-            //    method: 'GET',
-            //    success: function (resp) {
-            //        if (resp.length == 0) {
-            //            //swal('No data exists for pie chart', 'Please choose another time range.', 'warning');
-            //            return;
-            //        }
-            //        ;
-            //        drawPieChart(resp);
-            //    },
-            //    error: function (r) {
-            //        //swal('Something is wrong', 'Cannot retrieve data from API', 'error');
-            //    }
-            //});
+            var start = moment().subtract(29, 'days').set({ "hour": 00, "minute": 00, "second": 00 });
+            var end = moment().set({ "hour": 23, "minute": 59, "second": 59 });
+            $.ajax({
+                url: '/Admin/Dashbroad/GetLineChartData?startDate=' + start.format('YYYY-MM-DD HH:mm:ss') + '&endDate=' + end.format('YYYY-MM-DD HH:mm:ss'),
+                method: 'GET',
+                success: function (resp) {
+                    if (resp.length == 0) {
+                        swal('No data exists for pie chart', 'Please choose another time range.', 'warning');
+                        return;
+                    }
+                    ;
+                    drawPieChart(resp);
+                },
+                error: function (r) {
+                    swal('Something is wrong', 'Cannot retrieve data from API', 'error');
+                }
+            });
         });
         function drawPieChart(chart_data) {
             var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Sản phẩm');
-            data.addColumn('number', 'Số lượng');
+            data.addColumn('string', 'Item');
+            data.addColumn('number', 'Quantity');
             for (var i = 0; i < 5; i++) {
-                data.addRow([chart_data[i].product.name, Number(chart_data[i].total_quantity)]);
+                data.addRow([chart_data[i].Item, Number(chart_data[i].Total)]);
             }
             ;
             var rest = 0;
             for (var i = 5; i < chart_data.length; i++) {
-                rest += Number(chart_data[i].total);
+                rest += Number(chart_data[i].Total);
             };
             var all = 0;
             for (var i = 0; i < chart_data.length; i++) {
-                all += Number(chart_data[i].total_quantity);
+                all += Number(chart_data[i].Total);
             };
-            var percentage1 = (chart_data[0].total_quantity / all) * 100;
+            var percentage1 = (chart_data[0].Total / all) * 100;
             if (percentage1 <= 20) {
-                $('.advice-content-best-seller').html('<span>The <a href="' + '/admin/orders?product_id=' + chart_data[0].product_id + '">' + chart_data[0].product.name + '</a> is doing great but compared with all its percentage overall is not too big</span>');
+                $('.advice-content-best-seller').html('<span>The <a href="' + '/Admin/Orders?stylecode=' + chart_data[0].StyleCode + '">' + chart_data[0].Item + '</a> is doing great but compared with all its percentage overall is not too big</span>');
             } else if (percentage1 < 50 && percentage1 > 20) {
-                $('.advice-content-best-seller').html('<span>The <a href="' + '/admin/orders?product_id=' + chart_data[0].product_id + '">' + chart_data[0].product.name + '</a> is doing so great this time that you should think of importing more of it</span>');
+                $('.advice-content-best-seller').html('<span>The <a href="' + '/Admin/Orders?stylecode=' + chart_data[0].StyleCode + '">' + chart_data[0].Item + '</a> is doing so great this time that you should think of importing more of it</span>');
             } else if (percentage1 <= 50) {
-                $('.advice-content-best-seller').html('<span>The <a href="' + '/admin/orders?product_id=' + chart_data[0].product_id + '">' + chart_data[0].product.name + '</a> takes more than half of your sales, you should not only import more of it but also promoting other products too. Such as <a href="' + '/admin/order?product_id=' + chart_data[1].product_id + '">' + chart_data[1].product.name + '</span>');
+                $('.advice-content-best-seller').html('<span>The <a href="' + '/Admin/Orders?stylecode=' + chart_data[0].StyleCode + '">' + chart_data[0].Item + '</a> takes more than half of your sales, you should not only import more of it but also promoting other products too. Such as <a href="' + '/admin/order?product_id=' + chart_data[1].product_id + '">' + chart_data[1].product.name + '</span>');
             }
-            data.addRow(['Sản phẩm khác', rest]);
+            data.addRow(['Others', rest]);
             var options = {
-                title: '5 sản phẩm bán chạy'
+                title: 'Top five best seller item'
             };
             var chart = new google.visualization.PieChart(document.getElementById('piechart'));
             chart.draw(data, options);
@@ -350,7 +354,7 @@
             function selectHandler(e) {
                 for (var i = 0; i < chart.getSelection().length; i++) {
                     var item = chart.getSelection()[i];
-                    window.location.href = '/admin/orders?product_id=' + chart_data[item.row].product_id;
+                    window.location.href = '/Admin/Orders?stylecode=' + chart_data[item.row].StyleCode;
                 }
             }
         }
@@ -376,7 +380,6 @@
                 $('#reportrange').val('');
             });
             $('#reportrange').on('apply.daterangepicker', function (ev, picker) {
-                alert(1)
                 var startDate = picker.startDate.format('YYYY-MM-DD HH:mm:ss');
                 var endDate = picker.endDate.format('YYYY-MM-DD HH:mm:ss');
                 $.ajax({
@@ -384,72 +387,55 @@
                     method: 'GET',
                     success: function (resp) {
                         if (resp.length == 0) {
+                            swal('No data exists for line chart', 'Please choose another time range.', 'warning');
+                            return;
+                        }
+                        drawLineChart(resp);
+                        var totalRevenue = 0;
+                        var lastRevenue = parseInt(resp[0].Total);
+                        var last = resp.length;
+                        var firstRevenue = parseInt(resp[resp.length - 1].Total);
+                        var difference = lastRevenue - firstRevenue;
+                        if (difference < 0) {
+                            if (-difference > 1500000) {
+                                $('.advice-content').text('Going down considerably => You should check out 5 best-sellers below to have an effective marketing strategy');
+                            } else {
+                                $('.advice-content').text('Going down but unconsiderably => You shouldn\'t be worried too much , keep working on the social media');
+                            }
+                        }
+                        if (difference > 0) {
+                            if (difference > 2000000) {
+                                $('.advice-content').text('Raising up considerably => You are having an effective marketing strategy! Keep going');
+                            } else {
+                                $('.advice-content').text('Raising up but unconsiderably => You shouldn\'t be worried too much , keep working on the social media');
+                            }
+                        }
+                        for (var i = 0; i < resp.length; i++) {
+                            totalRevenue += parseInt(resp[i].Total);
+                        }
+                        ;
+                        $('.total-revenue').text(totalRevenue);
+                        $('.total-revenue').formatNumber();
+                    },
+                    error: function (r) {
+                        swal('Something is wrong', 'Cannot retrieve data from API', 'error');
+                    }
+                });
+                $.ajax({
+                    url: '/Admin/Dashbroad/GetPieChartData?startDate=' + startDate + '&endDate=' + endDate,
+                    method: 'GET',
+                    success: function (resp) {
+                        if (resp.length == 0) {
                             swal('No data exists for pie chart', 'Please choose another time range.', 'warning');
                             return;
                         }
-                        console.log(resp)
-                        drawLineChart(resp);
+                        ;
+                        drawPieChart(resp);
                     },
                     error: function (r) {
-                        //swal('Something is wrong', 'Cannot retrieve data from API', 'error');
+                        swal('Something is wrong', 'Cannot retrieve data from API', 'error');
                     }
                 });
-                //$.ajax({
-                //    url: '/Admin/Dashbroad/GetLineChartData?startDate=' + start.format('YYYY-MM-DD HH:mm:ss') + '&endDate=' + end.format('YYYY-MM-DD HH:mm:ss'),
-                //    method: 'GET',
-                //    success: function (resp) {
-                //        if (resp.length == 0) {
-                //            swal('No data exists for pie chart', 'Please choose another time range.', 'warning');
-                //            return;
-                //        }
-                //        ;
-                //        drawPieChart(resp);
-                //    },
-                //    error: function (r) {
-                //        //swal('Something is wrong', 'Cannot retrieve data from API', 'error');
-                //    }
-                //});
-                //$.ajax({
-                //    url: '/admin/get-chart-data?startDate=' + startDate + '&endDate=' + endDate,
-                //    method: 'GET',
-                //    success: function (resp) {
-                //        if (resp.length == 0) {
-                //            swal('No data exists for line chart', 'Please choose another time range.', 'warning');
-                //            return;
-                //        }
-                //        ;
-                //        drawChart(resp);
-                //        var totalRevenue = 0;
-                //        var totalRevenue = 0;
-                //        var lastRevenue = parseInt(resp[0].revenue);
-                //        var last = resp.length;
-                //        var firstRevenue = parseInt(resp[resp.length - 1].revenue);
-                //        var difference = lastRevenue - firstRevenue;
-                //        if (difference < 0) {
-                //            if (-difference > 1500000) {
-                //                $('.advice-content').text('Going down considerably => You should check out 5 best-sellers below to have an effective marketing strategy');
-                //            } else {
-                //                $('.advice-content').text('Going down but unconsiderably => You shouldn\'t be worried too much , keep working on the social media');
-                //            }
-                //        }
-                //        if (difference > 0) {
-                //            if (difference > 2000000) {
-                //                $('.advice-content').text('Raising up considerably => You are having an effective marketing strategy! Keep going');
-                //            } else {
-                //                $('.advice-content').text('Raising up but unconsiderably => You shouldn\'t be worried too much , keep working on the social media');
-                //            }
-                //        }
-                //        for (var i = 0; i < resp.length; i++) {
-                //            totalRevenue += parseInt(resp[i].revenue);
-                //        }
-                //        ;
-                //        $('.total-revenue').text(totalRevenue);
-                //        $('.total-revenue').formatNumber();
-                //    },
-                //    error: function () {
-                //        //swal('Action failed', 'Cannot retrieve data from API', 'error');
-                //    }
-                //});
             });
         });
     </script>

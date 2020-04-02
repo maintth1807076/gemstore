@@ -119,25 +119,4 @@
     }
 
 </table>
-@section Scripts{
-    <script type="text/javascript">
-        function confirmOrder(para) {
-            $('#link-pending').text("Confirmed");
-            para.closest('ul').remove();
-            para.href = "javascript:void(0)";
-        }
-        function cancelOrder(para) {
-            $('#link-pending').text("Cancel");
-            para.closest('ul').remove();
-            para.href = "javascript:void(0)";
-        }
-        function shippingOrder(para) {
-            para.text("Shipping");
-            para.href = "javascript:void(0)";
-        }
-        function doneOrder(para) {
-            para.text("Done");
-            para.href = "javascript:void(0)";
-        }
-    </script>
-}
+
