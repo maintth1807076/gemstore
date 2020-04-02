@@ -238,6 +238,8 @@
     <Content Include="Content\main.css" />
     <Content Include="Content\moment.min.js" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\sweetalert.min.js" />
+    <Content Include="Content\sweetalert2.js" />
     <Content Include="Content\user\css\animate.min.css" />
     <Content Include="Content\user\css\bootstrap.min.css" />
     <Content Include="Content\user\css\font-awesome.min.css" />

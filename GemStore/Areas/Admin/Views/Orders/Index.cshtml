@@ -47,7 +47,7 @@
 
     @foreach (var item in Model)
     {
-        <tr>
+        <tr id="@item.OrderId">
             <td>
                 @Html.DisplayFor(modelItem => item.MemberId)
             </td>
@@ -79,17 +79,17 @@
                 @switch (item.Status)
                 {
                     case (int)Order.OrderStatus.Pending:
-                        <a id="link-pending" href="javascript:void(0)">Pending <i class="fa fa-angle-down"></i></a>
+                        <a href="javascript:void(0)">Pending <i class="fa fa-angle-down"></i></a>
                         <ul>
-                            <li><a data-ajax="true" data-ajax-method="POST" data-ajax-mode="" data-ajax-success="confirmOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=@item.OrderId&status=4">Confirmed</a></li>
-                            <li><a data-ajax="true" data-ajax-method="POST" data-ajax-mode="" data-ajax-success="cancelOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=@item.OrderId&status=0">Cancel</a></li>
+                            <li><a data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang confirm nhé?" data-ajax-success="confirmOrder($(this))" data-ajax-update="" href="/Admin/Orders/ChangeStatus?id=@item.OrderId&status=4">Confirmed</a></li>
+                            <li><a data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Cancel khong?" data-ajax-mode="" data-ajax-complete="cancelOrder($(this))" data-ajax-update="" href="/Admin/Orders/ChangeStatus?id=@item.OrderId&status=0">Cancel</a></li>
                         </ul>
                         break;
                     case (int)Order.OrderStatus.Confirmed:
-                        <a data-ajax="true" data-ajax-method="POST" data-ajax-mode="" data-ajax-success="shippingOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=@item.OrderId&status=3">Confirmed</a>
+                        <a data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang shipping nhé?" data-ajax-success="shippingOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=@item.OrderId&status=3">Confirmed</a>
                         break;
                     case (int)Order.OrderStatus.Shipping:
-                        <a data-ajax="true" data-ajax-method="POST" data-ajax-mode="" data-ajax-success="doneOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=@item.OrderId&status=1">Shipping</a>
+                        <a data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang done nhé?" data-ajax-success="doneOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=@item.OrderId&status=1">Shipping</a>
                         break;
                     case (int)Order.OrderStatus.Done:
                         <a href="javascript:void(0)">Done</a>
@@ -112,22 +112,38 @@
 @section Scripts{
     <script type="text/javascript">
         function confirmOrder(para) {
-            $('#link-pending').text("Confirmed");
-            para.closest('ul').remove();
-            para.href = "javascript:void(0)";
+            var id = para.closest('tr').attr('id');
+            para.closest('td').html('<a data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang shipping nhé?" data-ajax-success="shippingOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=' + id + '&status=3">Confirmed</a>');
         }
         function cancelOrder(para) {
-            $('#link-pending').text("Cancel");
-            para.closest('ul').remove();
-            para.href = "javascript:void(0)";
+            para.closest('td').html('<a href="javascript:void(0)">Cancel</a>');
         }
         function shippingOrder(para) {
-            para.text("Shipping");
-            para.href = "javascript:void(0)";
+            var id = para.closest('tr').attr('id');
+            para.closest('td').html('<a data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang done nhé?" data-ajax-success="doneOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=' + id + '&status=1">Shipping</a>');
         }
         function doneOrder(para) {
-            para.text("Done");
-            para.href = "javascript:void(0)";
+            para.closest('td').html('<a href="javascript:void(0)">Done</a>');
+        }
+        function confirmAction() {
+            alert(1)
+            //swal({
+            //        title: "Are You Sure?",
+            //        text: "Are you sure to go ahead with this change?",
+            //        type: "warning",
+            //        showCancelButton: true,
+            //        confirmButtonColor: "#DD6B55",
+            //        confirmButtonText: "Yes",
+            //        cancelButtonText: "No",
+            //        closeOnConfirm: true,
+            //        closeOnCancel: true,
+            //    },
+            //    function(isConfirm){
+            //        if (isConfirm) {
+                        
+            //        }
+            //    }
+            //);
         }
     </script>
 }

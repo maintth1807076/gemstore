@@ -24,11 +24,11 @@ namespace GemStore.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound, "Order's' not found");
             }
 
-            if (status == (int)Order.OrderStatus.Confirmed)
-            {
-                var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                await userManager.SendEmailAsync(order.MemberId, "Confirm your order", "Please confirm your order");
-            }
+            //if (status == (int)Order.OrderStatus.Confirmed)
+            //{
+            //    var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            //    await userManager.SendEmailAsync(order.MemberId, "Confirm your order", "Please confirm your order");
+            //}
             order.Status = status;
             db.SaveChanges();
             return RedirectToAction("");
@@ -36,8 +36,7 @@ namespace GemStore.Areas.Admin.Controllers
         // GET: Admin/Orders
         public ActionResult Index(DateTime? createdAt)
         {
-            //var listOrder = db.Orders.Where(o => o.Status != (int)Order.OrderStatus.Deleted);
-            var listOrder = db.Orders.Where(o => o.CreatedAt == createdAt);
+            var listOrder = db.Orders.Where(o => o.Status != (int)Order.OrderStatus.Deleted);
             Debug.WriteLine(createdAt);
             if (createdAt != null)
             {
