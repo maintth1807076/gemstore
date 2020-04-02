@@ -70,11 +70,15 @@
                         @switch (item.Status)
                         {
                             case (int)Order.OrderStatus.Pending:
-                                <a href="javascript:void(0)">Pending <i class="fa fa-angle-down"></i></a>
-                                <ul>
-                                    <li><a data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang confirm nhé?" data-ajax-success="confirmOrder($(this))" data-ajax-update="" href="/Admin/Orders/ChangeStatus?id=@item.OrderId&status=4">Confirmed</a></li>
-                                    <li><a data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Cancel khong?" data-ajax-mode="" data-ajax-complete="cancelOrder($(this))" data-ajax-update="" href="/Admin/Orders/ChangeStatus?id=@item.OrderId&status=0">Cancel</a></li>
-                                </ul>
+                        <div class="dropdown">
+                            <div class=" dropdown-toggle" data-toggle="dropdown"> 
+                            <a href="javascript:void(0)">Pending @*<i class="fa fa-angle-down"></i>*@</a>
+                            </div>
+                            <div class="dropdown-menu">
+                                <a class=" dropdown-item" data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang confirm nhé?" data-ajax-success="confirmOrder($(this))" data-ajax-update="" href="/Admin/Orders/ChangeStatus?id=@item.OrderId&status=4">Confirmed</a>
+                                <a class=" dropdown-item" data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Cancel khong?" data-ajax-mode="" data-ajax-complete="cancelOrder($(this))" data-ajax-update="" href="/Admin/Orders/ChangeStatus?id=@item.OrderId&status=0">Cancel</a>
+                            </div>
+                        </div>
                                 break;
                             case (int)Order.OrderStatus.Confirmed:
                                 <a data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang shipping nhé?" data-ajax-success="shippingOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=@item.OrderId&status=3">Confirmed</a>
