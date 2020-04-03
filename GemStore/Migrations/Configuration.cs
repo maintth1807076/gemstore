@@ -310,25 +310,20 @@ namespace GemStore.Migrations
                 new Order(){TotalPrice = 540, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-37)},
                 new Order()
                 {
-                    OrderId = "1", MemberId = "1", CreatedAt = DateTime.Now,
+                    OrderId = "1", MemberId = "1", TotalPrice = 300, CreatedAt = DateTime.Now,
                     OrderDetails = new List<OrderDetail>()
                     {
                         new OrderDetail(){StyleCode = "1", UnitPrice = 75, Quantity = 2},
                         new OrderDetail(){StyleCode = "2", UnitPrice = 80, Quantity = 1},
                     }
-                }
+                },
+
         };
-            var totalPrice = 0.0;
+            
             foreach (var order in listOrders)
             {
-                
                 order.OrderId = Guid.NewGuid().ToString().GetHashCode().ToString("x");
                 order.Status = (int)Order.OrderStatus.Pending;
-                foreach (var orderDetail in order.OrderDetails)
-                {
-                    totalPrice += orderDetail.Quantity * orderDetail.UnitPrice;
-                }
-                order.TotalPrice = totalPrice;
                 context.Orders.Add(order);
                 context.SaveChanges();
             }

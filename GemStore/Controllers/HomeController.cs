@@ -42,8 +42,10 @@ namespace GemStore.Controllers
 
             
         }
-        public ActionResult FilterShop(string[] BrandIds, string[] CatIds, string[] ProdIds, string[] JewelIds, int? pageSize, int? page)
+        public ActionResult FilterShop(string keyWord, int? rangePrice, string[] BrandIds, string[] CatIds, string[] ProdIds, string[] JewelIds, int? pageSize, int? page)
         {
+            Debug.WriteLine(rangePrice);
+            ViewBag.CurrentRangePrice = rangePrice;
             ViewBag.CurrentBrandIds = BrandIds;
             ViewBag.CurrentCatIds = CatIds;
             ViewBag.CurrentProdIds = ProdIds;
@@ -90,7 +92,28 @@ namespace GemStore.Controllers
                 itemMsts = itemMsts.Intersect(itemsTemp).ToList();
                 itemsTemp.Clear();
             }
-
+            if (rangePrice != null)
+            {
+                switch (rangePrice)
+                {
+                    case 1:
+                        itemMsts = itemMsts.Where(i => i.SalePrice < 50).ToList();
+                        break;
+                    case 2:
+                        itemMsts = itemMsts.Where(i => i.SalePrice >= 50 && i.SalePrice < 100).ToList();
+                        break;
+                    case 3:
+                        itemMsts = itemMsts.Where(i => i.SalePrice >= 100 && i.SalePrice < 200).ToList();
+                        break;
+                    case 4:
+                        itemMsts = itemMsts.Where(i => i.SalePrice >= 200 && i.SalePrice < 500).ToList();
+                        break;
+                    case 5:
+                        itemMsts = itemMsts.Where(i => i.SalePrice >= 500).ToList();
+                        break;
+                    default: break;
+                }
+            }
             if (page == null)
             {
                 page = 1;
