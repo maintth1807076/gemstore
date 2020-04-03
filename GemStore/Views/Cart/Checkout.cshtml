@@ -3,8 +3,6 @@
 @{
     ViewBag.Title = "Checkout";
 }
-
-
 <div class="page-title fix">
     <!--Start Title-->
     <div class="overlay section">
@@ -15,93 +13,63 @@
     <!--Start Checkout Area-->
     <div class="container">
         <div class="row">
-            @using (Ajax.BeginForm("CreateOrder", "Cart", null,new AjaxOptions { HttpMethod = "POST", OnSuccess = "createOrderSuccess()"}, new{id = "formCreateOrder"}))
-            {
-                <div class="col-md-9">
-                    <div class="panel-group" id="checkout-progress">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <a class="active" data-toggle="collapse" data-parent="#checkout-progress" href="#checkout-method"><span>1</span>CHECKOUT METHOD</a>
-                            </div>
-                            <div id="checkout-method" class="panel-collapse collapse in">
-                                <div class="panel-body">
-                                    @if (!Request.IsAuthenticated)
-                                    {
-                                        <div class="col-sm-6">
-                                            <div class="checkout-method checkout-reg fix">
-                                                <h2>CHECKOUT AS A GUEST OR REGISTER</h2>
-                                                <input value="1" type="radio" />
-                                                <p>Checkout as Guest</p>
-                                                <input value="2" type="radio" />
-                                                <p>Checkout as User</p>
-                                                <h3>REGISTER AND SAVE TIME!</h3>
-                                                <ul>
-                                                    <li>Fast and easy checkout</li>
-                                                    <li>Easy access to your order history and status</li>
-                                                </ul>
-                                                <a class="btn-continue" href="javascript:void(0)">CONTINUE</a>
-                                            </div>
+            <div class="col-md-9">
+                <div class="panel-group" id="checkout-progress">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a class="active" data-toggle="collapse" data-parent="#checkout-progress" href="#checkout-method"><span>1</span>CHECKOUT METHOD</a>
+                        </div>
+                        <div id="checkout-method" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                @if (!Request.IsAuthenticated)
+                                {
+                                    <div class="col-sm-6">
+                                        <div class="checkout-method checkout-reg fix">
+                                            <h2>PLEASE LOGIN BEFORE CHECKOUT</h2>
+                                            <button style="" title="Click to register" data-toggle="modal" data-target="#modalRegister">Already registered?</button>
+                                            <h3>REGISTER AND SAVE TIME!</h3>
+                                            <ul>
+                                                <li>Fast and easy checkout</li>
+                                                <li>Easy access to your order history and status</li>
+                                            </ul>
+                                            <a class="btn-continue" href="javascript:void(0)">CONTINUE</a>
                                         </div>
-                                        <div class="col-sm-6">
-                                            <div class="checkout-method  checkout-login">
-                                                <h2>login</h2>
-                                                <h3>Already registered?</h3>
-                                                <h4>Please login below</h4>
-                                                <label>E-mail address*</label>
-                                                <input type="email" />
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="checkout-method  checkout-login">
+                                            <h2>login</h2>
+                                            <h4>Please login below</h4>
+                                            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = Url.Action("Checkout", "Cart") }, FormMethod.Post, new { id = "formLogin" }))
+                                            {
+                                                @Html.AntiForgeryToken()
+                                                <label>Username</label>
+                                                <input data-val="true" data-val-required="The Username field is required." id="Username" name="Username" type="text" value="">
+                                                <span class="field-validation-valid text-danger" data-valmsg-for="Username" data-valmsg-replace="true"></span>
                                                 <br />
                                                 <label>Password*</label>
-                                                <input type="password" />
-                                                <a href="#">login</a>
-                                            </div>
-                                        </div>
-                                    }
-                                    else
-                                    {
-                                        <div class="col-sm-6">
-                                            <div class="checkout-method checkout-reg fix">
-                                                <h2>CHECKOUT AS A GUEST OR REGISTER</h2>
-                                                <input value="1" type="radio" />
-                                                <p>Checkout as Guest</p>
-                                                <input value="2" type="radio" />
-                                                <p>Checkout as @User.Identity.GetUserName().ToUpper()</p>
-                                                <a class="btn-continue" href="javascript:void(0)">CONTINUE</a>
-                                            </div>
-                                        </div>
-                                    }
+                                                <input data-val="true" data-val-required="The Password field is required." id="Password" name="Password" type="password">
+                                                <span class="field-validation-valid text-danger" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                                                <input name="RememberMe" type="hidden" value="false">
+                                                <a href="javascript:void(0)" onclick="$('#formLogin').submit();">login</a>
+                                            }
 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <a class="collapsed" data-toggle="collapse" data-parent="#checkout-progress" href="#bill-info"><span>2</span>BILLING INFORMATION</a>
-                            </div>
-                            <div id="bill-info" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <div class="bill-info">
-                                        <div class="group">
-                                            <input type="text" placeholder="First Name*" class="half">
-                                            <input type="text" placeholder="Last Name*" class="half">
                                         </div>
-                                        <input type="text" placeholder="COMPANY NAME (OPTIONAL)">
-                                        <input type="text" placeholder="STREET ADDRESS*">
-                                        <input type="text" placeholder="city">
-                                        <div class="group">
-                                            <input type="text" placeholder="POSTCODE / ZIP*" class="third">
-                                            <input type="text" placeholder="STATE / COUNTRY" class="onethird">
-                                        </div>
-                                        <div class="group">
-                                            <input type="text" placeholder="E-mail Address*" class="half">
-                                            <input type="text" placeholder="PHONE NUMBER*" class="half">
-                                        </div>
-                                        <input type="checkbox" class="check" name="checkShipInfo">
-                                        <p>Check this if the billing address is the same as Shipping address</p>
-                                        <a class="btn-continue" href="javascript:void(0)">CONTINUE</a>
                                     </div>
-                                </div>
+                                }
+                                else
+                                {
+                                    <div class="col-sm-6">
+                                        <div class="checkout-method checkout-reg fix">
+                                            <h2>CHECKOUT AS @User.Identity.GetUserName().ToUpper()</h2>
+                                            <a class="btn-continue" href="javascript:void(0)">CONTINUE</a>
+                                        </div>
+                                    </div>
+                                }
                             </div>
                         </div>
+                    </div>
+                    @using (Ajax.BeginForm("CreateOrder", "Cart", null, new AjaxOptions { HttpMethod = "POST", OnSuccess = "createOrderSuccess(resp)" }, new { id = "formCreateOrder" }))
+                    {
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <a class="collapsed" data-toggle="collapse" data-parent="#checkout-progress" href="#shipping-info"><span>3</span>SHIPPING INFORMATION</a>
@@ -114,11 +82,6 @@
                                             <input name="shipLastName" type="text" placeholder="Last Name*" class="half">
                                         </div>
                                         <input name="shipAddress" type="text" placeholder="STREET ADDRESS*">
-                                        @*<input type="text" placeholder="city">*@
-                                        @*<div class="group">
-                                        <input type="text" placeholder="POSTCODE / ZIP*" class="third">
-                                        <input type="text" placeholder="STATE / COUNTRY" class="onethird">
-                                    </div>*@
                                         <div class="group">
                                             <input name="shipEmail" type="text" placeholder="E-mail Address*" class="half">
                                             <input name="shipPhone" type="text" placeholder="PHONE NUMBER*" class="half">
@@ -153,22 +116,18 @@
                             </div>
                             <div id="payment-met" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    <div class="payment-met">
+                                    <div class="checkout-method checkout-reg fix">
                                         <p>Choose your payment method :</p>
-                                        <ul>
-
-                                            <li><a href="#"><img src="/Content/user/img/footer/paypal.jpg" alt="" /></a></li>
-                                            <li><a href="#"><img src="/Content/user/img/footer/visa.jpg" alt="" /></a></li>
-                                            <li><a href="#"><img src="/Content/user/img/footer/master.jpg" alt="" /></a></li>
-                                            <li><a href="#"><img src="/Content/user/img/footer/cards.jpg" alt="" /></a></li>
-                                            <li><a href="#"><img src="/Content/user/img/footer/discover.jpg" alt="" /></a></li>
-                                        </ul>
-                                        <div class="pay">
-                                            <h2>YOUR PAYPAL ACCOUNT</h2>
-                                            <p>Pay via credit or debit card, Paypal transfer or even via Bank account in just a few clicks.</p>
-                                            <p>This method is super easy and well protected.</p>
-                                            <a class="btn-continue" href="javascript:void(0)">continue</a>
-                                        </div>
+                                        <input value="1" type="radio" name="PaymentTypeId" />
+                                        <p>Cod</p>
+                                        <input value="2" type="radio" name="PaymentTypeId" />
+                                        <p>Payment online</p>
+                                        <input value="3" type="radio" name="PaymentTypeId" />
+                                        <p>DirectTransfer</p>
+                                        <h2>YOUR PAYPAL ACCOUNT</h2>
+                                        <p>Pay via credit or debit card, Paypal transfer or even via Bank account in just a few clicks.</p>
+                                        <p>This method is super easy and well protected.</p>
+                                        <a class="btn-continue" href="javascript:void(0)">continue</a>
                                     </div>
                                 </div>
                             </div>
@@ -179,19 +138,7 @@
                             </div>
                             <div id="order-review" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    <div class="col-sm-4">
-                                        <div class="information">
-                                            <h3>BILLING INFORMATION</h3>
-                                            <h4>Thomas Albert</h4>
-                                            <h5>Lorem Street 2178</h5>
-                                            <p>12358 New Yourk</p>
-                                            <h5>Phone : 123 456 789</h5>
-                                            <p>E-mail: email@you,com</p>
-                                            <a href="#">MODIFY</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-8">
                                         <div class="information">
                                             <h3>SHIPPING INFORMATION</h3>
                                             <h4>Thomas Albert</h4>
@@ -230,16 +177,22 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    }
                 </div>
-            }
-
+                <form id="paypalForm" name="_xclick" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+                    <input type="hidden" name="cmd" value="_xclick">
+                    <input type="hidden" name="business" value="admin0123456789@gmail.com">
+                    <input type="hidden" name="currency_code" value="USD">
+                    <input type="hidden" name="item_name" value="">
+                    <input type="hidden" name="amount" value="">
+                    <input type="hidden" name="return" value="https://localhost:44362/Manage/ShowOrder">
+                </form>
+            </div>
             <div class="col-md-3">
                 <div class="checkout-right">
                     <h2>CHECKOUT PROGRESS</h2>
                     <ul>
                         <li><a href="#">Checkout Method</a></li>
-                        <li><a href="#">Billing Information</a></li>
                         <li><a href="#">Shipping Information</a></li>
                         <li><a href="#">Shipping Method</a></li>
                         <li><a href="#">Payment Information</a></li>
@@ -259,15 +212,56 @@
         //});
         //if ($("input[name='checkShipInfo']:checked"))
         //{
-            
+
         //}
-        $("#btn-create-order").on("click", function() {
-            $("#formCreateOrder").submit();
+        $("#btn-create-order").on("click", function () {
+            var paymentMethod = $("input[name='PaymentTypeId']:checked").val();
+            if (paymentMethod == 2) {
+                $.when($.ajax({
+                    type: "POST",
+                    url: "/Cart/CreateOrder",
+                    data: {
+                        //StyleCode : $(this).val()
+                    },
+                    success: function (resp) {
+                        alertify.set('notifier', 'position', 'top-right');
+                        alertify.success('Your order saved success!');
+                        console.log(resp.OrderId);
+                        console.log(resp.Amount);
+                        $("input[name='item_name']").val(resp.OrderId);
+                        $("input[name='amount']").val(resp.Amount);
+                    }
+                })).then(function () {
+
+                    $("#paypalForm").submit();
+
+                });
+
+            } else {
+                $.ajax({
+                    type: "POST",
+                    url: "/Cart/CreateOrder",
+                    data: {
+                        //StyleCode : $(this).val()
+                    
+                    },
+                    success: function(resp) {
+                        alertify.set('notifier', 'position', 'top-right');
+                        alertify.success('Your order saved success!');
+                        window.location.href = `${url}/Manage/ShowOrder`;
+                    }
+                });
+            }
         });
 
-        function createOrderSuccess () {
-            alertify.set('notifier','position', 'top-right');
+        function createOrderSuccess(resp) {
+            alertify.set('notifier', 'position', 'top-right');
             alertify.success('Your order saved success!');
+            console.log(resp)
+            var paymentMethod = $("input[name='PaymentTypeId']:checked").val();
+            if (paymentMethod != 2) {
+                
+            }
         }
     </script>
 }

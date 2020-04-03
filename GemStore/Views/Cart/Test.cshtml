@@ -4,119 +4,39 @@
 @{
     ViewBag.Title = "Test";
     //var order = new Order();
-}sa
+}
 
-<h2>Test</h2>
-
-<form action="https://www.paypal.com/us/cgi-bin/webscr" method="post">
-    <input type="hidden" name="cmd" value="_xclick">
-    <input type="hidden" name="business" value="sb-snt5l1304458@business.example.com">
-    <input type="hidden" name="item_name" value="Order">
-    <input type="hidden" name="currency_code" value="USD">
-    <input type="hidden" name="amount" value="150.00">
-    <input type="hidden" name="return" value="https://localhost:44362/Home/Index">
-    <input type="image" src="http://www.paypal.com/en_US/i/btn/x-click-but01.gif" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
-</form>
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.MemberId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PaymentTypeId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ShipName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ShipAddress)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ShipPhone)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TotalPrice)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedAt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UpdatedAt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DeletedAt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
+@using (Html.BeginForm("ValidateCommand", "PayPal"))
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.MemberId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PaymentTypeId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ShipName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ShipAddress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ShipPhone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedAt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UpdatedAt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DeletedAt)
-            </td>
-            <td>
-                @switch (item.Status)
-                {
-                    case (int)Order.OrderStatus.Pending:
-                        <a id="link-pending" href="javascript:void(0)">Pending <i class="fa fa-angle-down"></i></a>
-                        <ul>
-                            <li><a data-ajax="true" data-ajax-method="POST" data-ajax-mode="" data-ajax-success="confirmOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=@item.OrderId&status=4">Confirmed</a></li>
-                            <li><a data-ajax="true" data-ajax-method="POST" data-ajax-mode="" data-ajax-success="cancelOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=@item.OrderId&status=0">Cancel</a></li>
-                        </ul>
-                        break;
-                    case (int)Order.OrderStatus.Confirmed:
-                        <a data-ajax="true" data-ajax-method="POST" data-ajax-mode="" data-ajax-success="shippingOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=@item.OrderId&status=3">Confirmed</a>
-                        break;
-                    case (int)Order.OrderStatus.Shipping:
-                        <a data-ajax="true" data-ajax-method="POST" data-ajax-mode="" data-ajax-success="doneOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=@item.OrderId&status=1">Shipping</a>
-                        break;
-                    case (int)Order.OrderStatus.Done:
-                        <a href="javascript:void(0)">Done</a>
-                        break;
-                    case (int)Order.OrderStatus.Cancel:
-                        <a href="javascript:void(0)">Cancel</a>
-                        break;
-                    default: break;
-                }
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.OrderId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.OrderId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.OrderId })
-            </td>
-        </tr>
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        product Name:
+                    </td>
+                    <td>
+                        <input type="text" name="product" value="Visual Studio 2013" readonly />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Total Price:
+                    </td>
+                    <td>
+                        $<input type="text" name="totalPrice" value="140" readonly />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        <input type="submit" name="btnConfirm" value="Check Out with Paypal" />
+                    </td>
+                </tr>
+            </table>
+        </div>
     }
 
-</table>
+
+
 

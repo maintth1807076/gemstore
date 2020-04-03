@@ -145,14 +145,18 @@
                         <!-- single-sidebar end -->
                     </div>
                 </div>
-                <div class="col-md-9">
-                    <div class="row">
-                        <!-- Shop Tool Bar -->
-                        <div class="shop-tool-bar col-sm-12 fix">
-                            <div class="view-mode">
-                                <a id="grid" class="active" href="javascript:void(0)" onclick="$('#grid-view').show();$('#list-view').hide();$('#list').removeClass('active'); $(this).addClass('active');"><i class="fa fa-th"></i></a>
-                                <a id="list" href="javascript:void(0)" onclick="$('#grid-view').hide(); $('#list-view').show();$('#grid').removeClass('active'); $(this).addClass('active');"><i class="fa fa-th-list"></i></a>
-                            </div>
+            }
+
+            <div class="col-md-9">
+                <div class="row">
+                    <!-- Shop Tool Bar -->
+                    <div class="shop-tool-bar col-sm-12 fix">
+                        <div class="view-mode">
+                            <a id="grid" class="active" href="javascript:void(0)" onclick="$('#grid-view').show();$('#list-view').hide();$('#list').removeClass('active'); $(this).addClass('active');"><i class="fa fa-th"></i></a>
+                            <a id="list" href="javascript:void(0)" onclick="$('#grid-view').hide(); $('#list-view').show();$('#grid').removeClass('active'); $(this).addClass('active');"><i class="fa fa-th-list"></i></a>
+                        </div>
+                        @using (Ajax.BeginForm("FilterShop", "Home", null, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "shop-products" }, new { id = "formFilterItem" }))
+                        {
                             <div class="sort-by">
                                 <span>Sort By</span>
                                 <select name="sortBy" onchange="$(this.form).submit();">
@@ -174,22 +178,20 @@
                             <div class="pro-Showing">
                                 <span></span>
                             </div>
-                        </div>
-                        <div id="shop-products" class="shop-products">
-                            @Html.Partial("_ShopPartial", Model)
-
-                        </div>
-
+                        }
+                    </div>
+                    <div id="shop-products" class="shop-products">
+                        @Html.Partial("_ShopPartial", Model)
                     </div>
                 </div>
-            }
+            </div>
         </div>
     </div>
 </div><!-- Shop Product Area End -->
 @section scripts
 {
     <script type="text/javascript">
-        $( "input[name='rangePrice']" ).change(function() {
+        $("input[name='rangePrice']").change(function () {
             $(this.form).submit();
         });
     </script>
