@@ -155,7 +155,7 @@ namespace GemStore.Migrations
                 new ItemMst() { StyleCode = "17", Name = "Burgi™ Crystals From Swarovski™ and Leather Band Watch", MRP = 465, SalePrice = 76, Thumbnails = "https://images.jtv.com/jewelry/watches/JTV-BUR003C-1-medium.jpg, https://images.jtv.com/jewelry/watches/JTV-BUR003C-2-medium.jpg", Pairs = 1, Quantity = 9, BrandId = "4", CatId = "1", ProdId = "1", GoldTypeId = "1", JewelleryId = "5", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
                 new ItemMst() { StyleCode = "18", Name = "15.66ctw Amethyst And Sky Blue Topaz Mother of Pearl Dial Sterling Silver Watch", MRP = 249, SalePrice = 212, Thumbnails = "https://images.jtv.com/jewelry/JTV-FTW011-1-medium.jpg, https://images.jtv.com/jewelry/JTV-FTW011-2-medium.jpg", Pairs = 1, Quantity = 9, BrandId = "1", CatId = "1", ProdId = "1", GoldTypeId = "2", JewelleryId = "5", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
 
-             new ItemMst() { StyleCode = "19", Name = "Moissanite Platineve Ring .64ctw D.E.W", MRP = 219, SalePrice = 149, Thumbnails = "https://images.jtv.com/jewelry/JTV-MOS730-1-medium.jpg, https://images.jtv.com/jewelry/JTV-MOS730-2-medium.jpg, https://images.jtv.com/jewelry/JTV-MOS730-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "2", CatId = "1", ProdId = "1", GoldTypeId = "3", JewelleryId = "6", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "19", Name = "Moissanite Platineve Ring .64ctw D.E.W", MRP = 219, SalePrice = 149, Thumbnails = "https://images.jtv.com/jewelry/JTV-MOS730-1-medium.jpg, https://images.jtv.com/jewelry/JTV-MOS730-2-medium.jpg, https://images.jtv.com/jewelry/JTV-MOS730-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "2", CatId = "1", ProdId = "1", GoldTypeId = "3", JewelleryId = "6", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
                 new ItemMst() { StyleCode = "20", Name = "Cubic Zirconia 18k Rose Gold Over Silver Ring 5.53ctw", MRP = 89, SalePrice = 50, Thumbnails = "https://images.jtv.com/jewelry/JTV-BLD260R-1-medium.jpg, https://images.jtv.com/jewelry/JTV-BLD260R-2-medium.jpg, https://images.jtv.com/jewelry/JTV-BLD260R-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "3", CatId = "1", ProdId = "1", GoldTypeId = "4", JewelleryId = "6", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
                 new ItemMst() { StyleCode = "21", Name = "White Cubic Zirconia Platinenve Ring 3.70ctw", MRP = 131, SalePrice = 76, Thumbnails = "https://images.jtv.com/jewelry/JTV-VKB832-1-medium.jpg, https://images.jtv.com/jewelry/JTV-VKB832-2-medium.jpg, https://images.jtv.com/jewelry/JTV-VKB832-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "4", CatId = "1", ProdId = "1", GoldTypeId = "5", JewelleryId = "6", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
                 new ItemMst() { StyleCode = "22", Name = "London Blue Topaz rhodium over sterling silver solitaire ring 5.50ctw", MRP = 210, SalePrice = 88, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOCW364-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCW364-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCW364-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "1", CatId = "1", ProdId = "1", GoldTypeId = "1", JewelleryId = "6", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
@@ -311,7 +311,7 @@ namespace GemStore.Migrations
                 new Order(){TotalPrice = 540, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-37)},
                 new Order()
                 {
-                    OrderId = "1", MemberId = "1", CreatedAt = DateTime.Now,
+                    OrderId = "1", MemberId = "1", TotalPrice = 300, CreatedAt = DateTime.Now,
                     OrderDetails = new List<OrderDetail>()
                     {
                         new OrderDetail(){StyleCode = "1", UnitPrice = 254, Quantity = 1,},
@@ -686,19 +686,22 @@ namespace GemStore.Migrations
                         new OrderDetail(){StyleCode = "80", UnitPrice = 125, Quantity = 3},
                     }
                 }
-
-        };
-            var totalPrice = 0.0;
+            };
+            
             foreach (var order in listOrders)
             {
-                
+                var totalPrice = 0.0;
                 order.OrderId = Guid.NewGuid().ToString().GetHashCode().ToString("x");
                 order.Status = (int)Order.OrderStatus.Pending;
-                foreach (var orderDetail in order.OrderDetails)
+                var orderDetail = order.OrderDetails as List<OrderDetail>;
+                if (orderDetail != null)
                 {
-                    totalPrice += orderDetail.Quantity * orderDetail.UnitPrice;
+                    foreach (var o in orderDetail)
+                    {
+                        totalPrice += o.UnitPrice * o.Quantity;
+                    }
+                    order.TotalPrice = totalPrice;
                 }
-                order.TotalPrice = totalPrice;
                 context.Orders.Add(order);
                 context.SaveChanges();
             }
