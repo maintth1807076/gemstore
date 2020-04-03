@@ -44,5 +44,6 @@ namespace GemStore.Models
         public virtual DimMst DimMst { get; set; }
         public virtual StoneMst StoneMst { get; set; }
         public virtual JewelTypeMst JewelTypeMst { get; set; }
+        public DateTime? CreatedAt { get; set; }
     }
 }

@@ -34,8 +34,17 @@
             parameters.Add($"JewelIds[{i}]", ViewBag.CurrentJewelIds[i]);
         }
     }
+    parameters.Add("pageSize", ViewBag.CurrentPageSize);
+    if (ViewBag.CurrentRangePrice != null)
+    {
+        parameters.Add("rangePrice", ViewBag.CurrentRangePrice);
+    }
+    if (ViewBag.CurrentSortBy != null)
+    {
+        parameters.Add("sortBy", ViewBag.CurrentSortBy);
+    }
 }
-@using (Ajax.BeginForm("AddCart", "Cart", null, new AjaxOptions { HttpMethod = "POST", OnBegin = "return confirmDone()", UpdateTargetId = "cart-modal", OnSuccess = "addCartSuccess()"}, new { id = "formAddCart" }))
+@using (Ajax.BeginForm("AddCart", "Cart", null, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "cart-modal", OnSuccess = "addCartSuccess()"}, new { id = "formAddCart" }))
 {
     <input type="text" name="productId" class="hidden" />
     <input type="number" name="quantity" class="hidden" />
