@@ -100,16 +100,16 @@ namespace GemStore.Controllers
                         itemMsts = itemMsts.Where(i => i.SalePrice < 50).ToList();
                         break;
                     case 2:
-                        itemMsts = itemMsts.Where(i => i.SalePrice >= 50 && i.SalePrice < 100).ToList();
+                        itemMsts = itemMsts.Where(i => i.SalePrice >= 50 && i.SalePrice <= 100).ToList();
                         break;
                     case 3:
-                        itemMsts = itemMsts.Where(i => i.SalePrice >= 100 && i.SalePrice < 200).ToList();
+                        itemMsts = itemMsts.Where(i => i.SalePrice >= 100 && i.SalePrice <= 200).ToList();
                         break;
                     case 4:
-                        itemMsts = itemMsts.Where(i => i.SalePrice >= 200 && i.SalePrice < 500).ToList();
+                        itemMsts = itemMsts.Where(i => i.SalePrice >= 200 && i.SalePrice <= 500).ToList();
                         break;
                     case 5:
-                        itemMsts = itemMsts.Where(i => i.SalePrice >= 500).ToList();
+                        itemMsts = itemMsts.Where(i => i.SalePrice > 500).ToList();
                         break;
                     default: break;
                 }

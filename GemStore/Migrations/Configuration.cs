@@ -155,83 +155,84 @@ namespace GemStore.Migrations
                 new ItemMst() { StyleCode = "17", Name = "Burgi™ Crystals From Swarovski™ and Leather Band Watch", MRP = 465, SalePrice = 76, Thumbnails = "https://images.jtv.com/jewelry/watches/JTV-BUR003C-1-medium.jpg, https://images.jtv.com/jewelry/watches/JTV-BUR003C-2-medium.jpg", Pairs = 1, Quantity = 9, BrandId = "4", CatId = "1", ProdId = "1", GoldTypeId = "1", JewelleryId = "5", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
                 new ItemMst() { StyleCode = "18", Name = "15.66ctw Amethyst And Sky Blue Topaz Mother of Pearl Dial Sterling Silver Watch", MRP = 249, SalePrice = 212, Thumbnails = "https://images.jtv.com/jewelry/JTV-FTW011-1-medium.jpg, https://images.jtv.com/jewelry/JTV-FTW011-2-medium.jpg", Pairs = 1, Quantity = 9, BrandId = "1", CatId = "1", ProdId = "1", GoldTypeId = "2", JewelleryId = "5", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
 
-                //new ItemMst() { StyleCode = "18", Name = "Moissanite Platineve Ring .64ctw D.E.W", MRP = 219, SalePrice = 149, Thumbnails = "https://images.jtv.com/jewelry/JTV-MOS730-1-medium.jpg, https://images.jtv.com/jewelry/JTV-MOS730-2-medium.jpg, https://images.jtv.com/jewelry/JTV-MOS730-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "2", CatId = "1", ProdId = "1", GoldTypeId = "3", JewelleryId = "6", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "19", Name = "Cubic Zirconia 18k Rose Gold Over Silver Ring 5.53ctw", MRP = 89, SalePrice = 50, Thumbnails = "https://images.jtv.com/jewelry/JTV-BLD260R-1-medium.jpg, https://images.jtv.com/jewelry/JTV-BLD260R-2-medium.jpg, https://images.jtv.com/jewelry/JTV-BLD260R-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "3", CatId = "1", ProdId = "1", GoldTypeId = "4", JewelleryId = "6", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "20", Name = "White Cubic Zirconia Platinenve Ring 3.70ctw", MRP = 131, SalePrice = 76, Thumbnails = "https://images.jtv.com/jewelry/JTV-VKB832-1-medium.jpg, https://images.jtv.com/jewelry/JTV-VKB832-2-medium.jpg, https://images.jtv.com/jewelry/JTV-VKB832-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "4", CatId = "1", ProdId = "1", GoldTypeId = "5", JewelleryId = "6", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "21", Name = "London Blue Topaz rhodium over sterling silver solitaire ring 5.50ctw", MRP = 210, SalePrice = 88, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOCW364-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCW364-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCW364-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "1", CatId = "1", ProdId = "1", GoldTypeId = "1", JewelleryId = "6", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "22", Name = "Sky Blue Topaz Rhodium Over Sterling Silver Ring 3.80ctw", MRP = 224, SalePrice = 79, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOK210-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOK210-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOK210-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "2", CatId = "1", ProdId = "1", GoldTypeId = "2", JewelleryId = "6", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "23", Name = "White Cubic Zirconia Platineve Ring 4.28CTW", MRP = 93, SalePrice = 68, Thumbnails = "https://images.jtv.com/jewelry/JTV-VKB823-1-medium.jpg, https://images.jtv.com/jewelry/JTV-VKB823-2-medium.jpg, https://images.jtv.com/jewelry/JTV-VKB823-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "3", CatId = "1", ProdId = "1", GoldTypeId = "3", JewelleryId = "6", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "19", Name = "Moissanite Platineve Ring .64ctw D.E.W", MRP = 219, SalePrice = 149, Thumbnails = "https://images.jtv.com/jewelry/JTV-MOS730-1-medium.jpg, https://images.jtv.com/jewelry/JTV-MOS730-2-medium.jpg, https://images.jtv.com/jewelry/JTV-MOS730-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "2", CatId = "1", ProdId = "1", GoldTypeId = "3", JewelleryId = "6", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "20", Name = "Cubic Zirconia 18k Rose Gold Over Silver Ring 5.53ctw", MRP = 89, SalePrice = 50, Thumbnails = "https://images.jtv.com/jewelry/JTV-BLD260R-1-medium.jpg, https://images.jtv.com/jewelry/JTV-BLD260R-2-medium.jpg, https://images.jtv.com/jewelry/JTV-BLD260R-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "3", CatId = "1", ProdId = "1", GoldTypeId = "4", JewelleryId = "6", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "21", Name = "White Cubic Zirconia Platinenve Ring 3.70ctw", MRP = 131, SalePrice = 76, Thumbnails = "https://images.jtv.com/jewelry/JTV-VKB832-1-medium.jpg, https://images.jtv.com/jewelry/JTV-VKB832-2-medium.jpg, https://images.jtv.com/jewelry/JTV-VKB832-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "4", CatId = "1", ProdId = "1", GoldTypeId = "5", JewelleryId = "6", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "22", Name = "London Blue Topaz rhodium over sterling silver solitaire ring 5.50ctw", MRP = 210, SalePrice = 88, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOCW364-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCW364-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCW364-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "1", CatId = "1", ProdId = "1", GoldTypeId = "1", JewelleryId = "6", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "23", Name = "Sky Blue Topaz Rhodium Over Sterling Silver Ring 3.80ctw", MRP = 224, SalePrice = 79, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOK210-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOK210-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOK210-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "2", CatId = "1", ProdId = "1", GoldTypeId = "2", JewelleryId = "6", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "24", Name = "White Cubic Zirconia Platineve Ring 4.28CTW", MRP = 93, SalePrice = 68, Thumbnails = "https://images.jtv.com/jewelry/JTV-VKB823-1-medium.jpg, https://images.jtv.com/jewelry/JTV-VKB823-2-medium.jpg, https://images.jtv.com/jewelry/JTV-VKB823-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "3", CatId = "1", ProdId = "1", GoldTypeId = "3", JewelleryId = "6", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
 
 
                 ////Trending Shop
-                new ItemMst() { StyleCode = "24", Name = "10k Yellow Gold Faith Script 18 inch Necklace", MRP = 99, SalePrice = 89, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-AU501C-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-AU501C-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-AU501C-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "7", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                new ItemMst() { StyleCode = "25", Name = "10K Yellow Gold Wide Diamond Cut Textured Ring", MRP = 198, SalePrice = 134, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-AU430-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-AU430-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-AU430-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "3", CatId = "1", ProdId = "2", GoldTypeId = "4", JewelleryId = "7", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                new ItemMst() { StyleCode = "26", Name = "White Cultured Japanese Akoya Pearl Rhodium Over Sterling Silver Diamond Cut Bracelet", MRP = 268, SalePrice = 144, Thumbnails = "https://images.jtv.com/jewelry/pearls/JTV-CPL713-1-medium.jpg, ", Pairs = 1, Quantity = 4, BrandId = "4", CatId = "1", ProdId = "2", GoldTypeId = "5", JewelleryId = "7", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                new ItemMst() { StyleCode = "27", Name = "18K Yellow Gold Over Sterling Silver Byzantine and Cuban Link Adjustable Set of 2 Bracelet 4", MRP = 70, SalePrice = 59, Thumbnails = "https://images.jtv.com/jewelry/silver/JTV-AG121B-1-medium.jpg, https://images.jtv.com/jewelry/silver/JTV-AG121B-2-medium.jpg, https://images.jtv.com/jewelry/silver/JTV-AG121B-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "4", CatId = "1", ProdId = "2", GoldTypeId = "1", JewelleryId = "7", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                new ItemMst() { StyleCode = "28", Name = "Moda Al Massimo® 18K Yellow Gold Over Bronze Diamond Cut Bangle Bracelet 8 Inch", MRP = 146, SalePrice = 107, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-MA109-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-MA109-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-MA109-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "1", CatId = "1", ProdId = "2", GoldTypeId = "2", JewelleryId = "7", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                new ItemMst() { StyleCode = "29", Name = "Blue Diamond Rhodium Over Sterling Silver Ring 0.23ctw", MRP = 99, SalePrice = 49, Thumbnails = "https://images.jtv.com/jewelry/JTV-BDK012-1-medium.jpg, https://images.jtv.com/jewelry/JTV-BDK012-2-medium.jpg, https://images.jtv.com/jewelry/JTV-BDK012-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "7", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 }
+                new ItemMst() { StyleCode = "25", Name = "10k Yellow Gold Faith Script 18 inch Necklace", MRP = 99, SalePrice = 89, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-AU501C-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-AU501C-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-AU501C-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "7", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "26", Name = "10K Yellow Gold Wide Diamond Cut Textured Ring", MRP = 198, SalePrice = 134, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-AU430-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-AU430-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-AU430-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "3", CatId = "1", ProdId = "2", GoldTypeId = "4", JewelleryId = "7", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "27", Name = "White Cultured Japanese Akoya Pearl Rhodium Over Sterling Silver Diamond Cut Bracelet", MRP = 268, SalePrice = 144, Thumbnails = "https://images.jtv.com/jewelry/pearls/JTV-CPL713-1-medium.jpg, ", Pairs = 1, Quantity = 4, BrandId = "4", CatId = "1", ProdId = "2", GoldTypeId = "5", JewelleryId = "7", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "28", Name = "18K Yellow Gold Over Sterling Silver Byzantine and Cuban Link Adjustable Set of 2 Bracelet 4", MRP = 70, SalePrice = 59, Thumbnails = "https://images.jtv.com/jewelry/silver/JTV-AG121B-1-medium.jpg, https://images.jtv.com/jewelry/silver/JTV-AG121B-2-medium.jpg, https://images.jtv.com/jewelry/silver/JTV-AG121B-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "4", CatId = "1", ProdId = "2", GoldTypeId = "1", JewelleryId = "7", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "29", Name = "Moda Al Massimo® 18K Yellow Gold Over Bronze Diamond Cut Bangle Bracelet 8 Inch", MRP = 146, SalePrice = 107, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-MA109-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-MA109-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-MA109-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "1", CatId = "1", ProdId = "2", GoldTypeId = "2", JewelleryId = "7", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "30", Name = "Blue Diamond Rhodium Over Sterling Silver Ring 0.23ctw", MRP = 99, SalePrice = 49, Thumbnails = "https://images.jtv.com/jewelry/JTV-BDK012-1-medium.jpg, https://images.jtv.com/jewelry/JTV-BDK012-2-medium.jpg, https://images.jtv.com/jewelry/JTV-BDK012-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "7", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
 
-                //new ItemMst() { StyleCode = "30", Name = "Red Sponge Coral Rhodium Over Silver Eagle Pendant With Chain", MRP = 222, SalePrice = 139, Thumbnails = "https://images.jtv.com/jewelry/JTV-SWE2167-1-medium.jpg, https://images.jtv.com/jewelry/JTV-SWE2167-2-medium.jpg, https://images.jtv.com/jewelry/JTV-SWE2167-3-medium.jpg", Pairs = 1, Quantity = 6, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "4", JewelleryId = "8", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "31", Name = "White And Green Crystal Black Enamel Gold Tone Jaguar Ring", MRP = 30, SalePrice = 27, Thumbnails = "https://images.jtv.com/jewelry/JTV-OPC258R-1-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC258R-2-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC258R-3-medium.jpg", Pairs = 1, Quantity = 6, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "5", JewelleryId = "8", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "32", Name = "Red Sponge Coral Rhodium Over Sterling Silver Butterfly Earrings", MRP = 365, SalePrice = 164, Thumbnails = "https://images.jtv.com/jewelry/JTV-SWE2119-1-medium.jpg, https://images.jtv.com/jewelry/JTV-SWE2119-2-medium.jpg, https://images.jtv.com/jewelry/JTV-SWE2119-3-medium.jpg", Pairs = 1, Quantity = 6, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "1", JewelleryId = "8", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "33", Name = "Multicolor Crystal Gold Tone Giraffe Ring", MRP = 29, SalePrice = 26, Thumbnails = "https://images.jtv.com/jewelry/JTV-OPC205R-1-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC205R-2-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC205R-3-medium.jpg", Pairs = 1, Quantity = 6, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "2", JewelleryId = "8", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "34", Name = "Black spinel 18k gold over sterling silver pendant with chain 1.17ctw", MRP = 59, SalePrice = 50, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOCW580Y-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCW580Y-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCW580Y-3-medium.jpg", Pairs = 1, Quantity = 6, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "8", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "35", Name = "White Diamond 14K Yellow Gold Over Sterling Silver Ring 0.20ctw", MRP = 112, SalePrice = 89, Thumbnails = "https://images.jtv.com/jewelry/JTV-ENG151-1-medium.jpg, https://images.jtv.com/jewelry/JTV-ENG151-2-medium.jpg, https://images.jtv.com/jewelry/JTV-ENG151-3-medium.jpg", Pairs = 1, Quantity = 6, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "4", JewelleryId = "8", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "31", Name = "Red Sponge Coral Rhodium Over Silver Eagle Pendant With Chain", MRP = 222, SalePrice = 139, Thumbnails = "https://images.jtv.com/jewelry/JTV-SWE2167-1-medium.jpg, https://images.jtv.com/jewelry/JTV-SWE2167-2-medium.jpg, https://images.jtv.com/jewelry/JTV-SWE2167-3-medium.jpg", Pairs = 1, Quantity = 6, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "4", JewelleryId = "8", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "32", Name = "White And Green Crystal Black Enamel Gold Tone Jaguar Ring", MRP = 30, SalePrice = 27, Thumbnails = "https://images.jtv.com/jewelry/JTV-OPC258R-1-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC258R-2-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC258R-3-medium.jpg", Pairs = 1, Quantity = 6, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "5", JewelleryId = "8", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "33", Name = "Red Sponge Coral Rhodium Over Sterling Silver Butterfly Earrings", MRP = 365, SalePrice = 164, Thumbnails = "https://images.jtv.com/jewelry/JTV-SWE2119-1-medium.jpg, https://images.jtv.com/jewelry/JTV-SWE2119-2-medium.jpg, https://images.jtv.com/jewelry/JTV-SWE2119-3-medium.jpg", Pairs = 1, Quantity = 6, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "1", JewelleryId = "8", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "34", Name = "Multicolor Crystal Gold Tone Giraffe Ring", MRP = 29, SalePrice = 26, Thumbnails = "https://images.jtv.com/jewelry/JTV-OPC205R-1-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC205R-2-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC205R-3-medium.jpg", Pairs = 1, Quantity = 6, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "2", JewelleryId = "8", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "35", Name = "Black spinel 18k gold over sterling silver pendant with chain 1.17ctw", MRP = 59, SalePrice = 50, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOCW580Y-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCW580Y-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCW580Y-3-medium.jpg", Pairs = 1, Quantity = 6, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "8", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "36", Name = "White Diamond 14K Yellow Gold Over Sterling Silver Ring 0.20ctw", MRP = 112, SalePrice = 89, Thumbnails = "https://images.jtv.com/jewelry/JTV-ENG151-1-medium.jpg, https://images.jtv.com/jewelry/JTV-ENG151-2-medium.jpg, https://images.jtv.com/jewelry/JTV-ENG151-3-medium.jpg", Pairs = 1, Quantity = 6, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "4", JewelleryId = "8", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
 
-                //new ItemMst() { StyleCode = "36", Name = "18k Yellow Gold Over Bronze Soft Rope Link Chain Necklace 24 inches", MRP = 105, SalePrice = 69, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-BEC181-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC181-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC181-3-medium.jpg", Pairs = 1, Quantity = 8, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "1", JewelleryId = "9", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "37", Name = "10k Yellow Gold 3.2mm Figaro 20 inch Chain Necklace", MRP = 247, SalePrice = 159, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-AU316-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-AU316-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-AU316-3-medium.jpg", Pairs = 1, Quantity = 8, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "1", JewelleryId = "9", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "38", Name = "14k Yellow Gold 4.1mm Semi-Solid Anchor Chain", MRP = 467, SalePrice = 743, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-VG019A-1-medium.jpg", Pairs = 1, Quantity = 8, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "1", JewelleryId = "9", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "39", Name = "Copper Flat Chain", MRP = 69, SalePrice = 59, Thumbnails = "https://images.jtv.com/jewelry/JTV-COP818-1-medium.jpg, https://images.jtv.com/jewelry/JTV-COP818-2-medium.jpg, https://images.jtv.com/jewelry/JTV-COP818-3-medium.jpg", Pairs = 1, Quantity = 8, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "1", JewelleryId = "9", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "40", Name = "White Crystal Gold Tone Double Rolo Chain Necklace", MRP = 39, SalePrice = 35, Thumbnails = "https://images.jtv.com/jewelry/JTV-OPC712-1-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC712-2-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC712-3-medium.jpg", Pairs = 1, Quantity = 8, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "1", JewelleryId = "9", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "41", Name = "18k Yellow Gold Over Bronze Singapore Link Chain Necklace Set Of 2 20/24 inch", MRP = 104, SalePrice = 59, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-BEC814-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC814-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC814-3-medium.jpg", Pairs = 1, Quantity = 8, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "1", JewelleryId = "9", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "37", Name = "18k Yellow Gold Over Bronze Soft Rope Link Chain Necklace 24 inches", MRP = 105, SalePrice = 69, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-BEC181-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC181-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC181-3-medium.jpg", Pairs = 1, Quantity = 8, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "1", JewelleryId = "9", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "38", Name = "10k Yellow Gold 3.2mm Figaro 20 inch Chain Necklace", MRP = 247, SalePrice = 159, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-AU316-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-AU316-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-AU316-3-medium.jpg", Pairs = 1, Quantity = 8, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "1", JewelleryId = "9", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "39", Name = "14k Yellow Gold 4.1mm Semi-Solid Anchor Chain", MRP = 467, SalePrice = 743, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-VG019A-1-medium.jpg", Pairs = 1, Quantity = 8, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "1", JewelleryId = "9", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "40", Name = "Copper Flat Chain", MRP = 69, SalePrice = 59, Thumbnails = "https://images.jtv.com/jewelry/JTV-COP818-1-medium.jpg, https://images.jtv.com/jewelry/JTV-COP818-2-medium.jpg, https://images.jtv.com/jewelry/JTV-COP818-3-medium.jpg", Pairs = 1, Quantity = 8, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "1", JewelleryId = "9", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "41", Name = "White Crystal Gold Tone Double Rolo Chain Necklace", MRP = 39, SalePrice = 35, Thumbnails = "https://images.jtv.com/jewelry/JTV-OPC712-1-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC712-2-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC712-3-medium.jpg", Pairs = 1, Quantity = 8, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "1", JewelleryId = "9", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "42", Name = "18k Yellow Gold Over Bronze Singapore Link Chain Necklace Set Of 2 20/24 inch", MRP = 104, SalePrice = 59, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-BEC814-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC814-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC814-3-medium.jpg", Pairs = 1, Quantity = 8, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "1", JewelleryId = "9", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
 
-                //new ItemMst() { StyleCode = "42", Name = "White Cubic Zirconia Rhodium Over Sterling Silver Stud Earrings", MRP = 79, SalePrice = 54, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOCGW1-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCGW1-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCGW1-2-medium.jpg", Pairs = 1, Quantity = 11, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "2", JewelleryId = "10", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "43", Name = "White Diamond 10k Yellow Gold Ring 1.33ctw", MRP = 1020, SalePrice = 606, Thumbnails = "https://images.jtv.com/jewelry/JTV-CDG366-1-medium.jpg, https://images.jtv.com/jewelry/JTV-CDG366-2-medium.jpg, https://images.jtv.com/jewelry/JTV-CDG366-3-medium.jpg", Pairs = 1, Quantity = 11, BrandId = "3", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "10", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "44", Name = "White Diamond Accent Rhodium Over Sterling Silver Heart Necklace", MRP = 39, SalePrice = 19, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOD133-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOD133-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOD133-3-medium.jpg", Pairs = 1, Quantity = 11, BrandId = "4", CatId = "1", ProdId = "2", GoldTypeId = "4", JewelleryId = "10", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "45", Name = "Red, White, And Blue Cubic Zirconia Rhodium Over Sterling Silver Heart Flag Earrings 3.13ctw", MRP = 134, SalePrice = 42, Thumbnails = "https://images.jtv.com/jewelry/JTV-BCB608-1-medium.jpg, https://images.jtv.com/jewelry/JTV-BCB608-2-medium.jpg, https://images.jtv.com/jewelry/JTV-BCB608-3-medium.jpg", Pairs = 1, Quantity = 11, BrandId = "1", CatId = "1", ProdId = "2", GoldTypeId = "5", JewelleryId = "10", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "46", Name = "White Diamond Rhodium And 14K Rose Gold Over Sterling Silver Heart Pendant With Chain 0.25ctw", MRP = 87, SalePrice = 44, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOD187-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOD187-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOD187-3-medium.jpg", Pairs = 1, Quantity = 11, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "1", JewelleryId = "10", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "47", Name = "White Cubic Zirconia Rhodium Over Sterling Silver Heart Rings 3.65ctw", MRP = 88, SalePrice = 30, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOCMB22-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCMB22-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCMB22-3-medium.jpg", Pairs = 1, Quantity = 11, BrandId = "3", CatId = "1", ProdId = "2", GoldTypeId = "2", JewelleryId = "10", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 }
+                new ItemMst() { StyleCode = "43", Name = "White Cubic Zirconia Rhodium Over Sterling Silver Stud Earrings", MRP = 79, SalePrice = 54, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOCGW1-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCGW1-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCGW1-2-medium.jpg", Pairs = 1, Quantity = 11, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "2", JewelleryId = "10", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "44", Name = "White Diamond 10k Yellow Gold Ring 1.33ctw", MRP = 1020, SalePrice = 606, Thumbnails = "https://images.jtv.com/jewelry/JTV-CDG366-1-medium.jpg, https://images.jtv.com/jewelry/JTV-CDG366-2-medium.jpg, https://images.jtv.com/jewelry/JTV-CDG366-3-medium.jpg", Pairs = 1, Quantity = 11, BrandId = "3", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "10", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "45", Name = "White Diamond Accent Rhodium Over Sterling Silver Heart Necklace", MRP = 39, SalePrice = 19, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOD133-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOD133-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOD133-3-medium.jpg", Pairs = 1, Quantity = 11, BrandId = "4", CatId = "1", ProdId = "2", GoldTypeId = "4", JewelleryId = "10", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "46", Name = "Red, White, And Blue Cubic Zirconia Rhodium Over Sterling Silver Heart Flag Earrings 3.13ctw", MRP = 134, SalePrice = 42, Thumbnails = "https://images.jtv.com/jewelry/JTV-BCB608-1-medium.jpg, https://images.jtv.com/jewelry/JTV-BCB608-2-medium.jpg, https://images.jtv.com/jewelry/JTV-BCB608-3-medium.jpg", Pairs = 1, Quantity = 11, BrandId = "1", CatId = "1", ProdId = "2", GoldTypeId = "5", JewelleryId = "10", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "47", Name = "White Diamond Rhodium And 14K Rose Gold Over Sterling Silver Heart Pendant With Chain 0.25ctw", MRP = 87, SalePrice = 44, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOD187-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOD187-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOD187-3-medium.jpg", Pairs = 1, Quantity = 11, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "1", JewelleryId = "10", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "48", Name = "White Cubic Zirconia Rhodium Over Sterling Silver Heart Rings 3.65ctw", MRP = 88, SalePrice = 30, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOCMB22-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCMB22-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCMB22-3-medium.jpg", Pairs = 1, Quantity = 11, BrandId = "3", CatId = "1", ProdId = "2", GoldTypeId = "2", JewelleryId = "10", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
 
-                //new ItemMst() { StyleCode = "48", Name = "18k Yellow Gold Over Bronze Hoop Earrings", MRP = 79, SalePrice = 59, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-BEC749-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC749-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC749-2-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "11", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "49", Name = "Blue and White Cubic Zirconia 18k Yellow Gold Over Sterling Silver Earrings 3.05ctw", MRP = 67, SalePrice = 39, Thumbnails = "https://images.jtv.com/jewelry/JTV-BLN939-1-medium.jpg, https://images.jtv.com/jewelry/JTV-BLN939-2-medium.jpg, https://images.jtv.com/jewelry/JTV-BLN939-3-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "11", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "50", Name = "White Cubic Zirconia Rhodium Over Sterling Silver Earrings Set of 3 9.78ctw", MRP = 103, SalePrice = 43, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOCGY8-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCGY8-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCGY8-3-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "11", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "51", Name = "Blue kyanite rhodium over silver inside/outside hoop earrings 4.75ctw", MRP = 315, SalePrice = 152, Thumbnails = "https://images.jtv.com/jewelry/JTV-NNH338-1-medium.jpg, https://images.jtv.com/jewelry/JTV-NNH338-2-medium.jpg, https://images.jtv.com/jewelry/JTV-NNH338-3-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "11", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "52", Name = "White Cubic Zirconia 18k Yellow Gold Over Sterling Silver Earrings 12.80ctw", MRP = 121, SalePrice = 85, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOCK256Y-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCK256Y-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCK256Y-3-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "11", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "53", Name = "Multi-color gemstone rhodium over silver earrings 10.98ctw", MRP = 113, SalePrice = 69, Thumbnails = "https://images.jtv.com/jewelry/JTV-HNC003-1-medium.jpg, https://images.jtv.com/jewelry/JTV-HNC003-2-medium.jpg, https://images.jtv.com/jewelry/JTV-HNC003-3-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "11", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "49", Name = "18k Yellow Gold Over Bronze Hoop Earrings", MRP = 79, SalePrice = 59, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-BEC749-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC749-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC749-2-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "11", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "50", Name = "Blue and White Cubic Zirconia 18k Yellow Gold Over Sterling Silver Earrings 3.05ctw", MRP = 67, SalePrice = 39, Thumbnails = "https://images.jtv.com/jewelry/JTV-BLN939-1-medium.jpg, https://images.jtv.com/jewelry/JTV-BLN939-2-medium.jpg, https://images.jtv.com/jewelry/JTV-BLN939-3-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "11", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "51", Name = "White Cubic Zirconia Rhodium Over Sterling Silver Earrings Set of 3 9.78ctw", MRP = 103, SalePrice = 43, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOCGY8-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCGY8-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCGY8-3-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "11", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "52", Name = "Blue kyanite rhodium over silver inside/outside hoop earrings 4.75ctw", MRP = 315, SalePrice = 152, Thumbnails = "https://images.jtv.com/jewelry/JTV-NNH338-1-medium.jpg, https://images.jtv.com/jewelry/JTV-NNH338-2-medium.jpg, https://images.jtv.com/jewelry/JTV-NNH338-3-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "11", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "53", Name = "White Cubic Zirconia 18k Yellow Gold Over Sterling Silver Earrings 12.80ctw", MRP = 121, SalePrice = 85, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOCK256Y-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCK256Y-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCK256Y-3-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "11", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "54", Name = "Multi-color gemstone rhodium over silver earrings 10.98ctw", MRP = 113, SalePrice = 69, Thumbnails = "https://images.jtv.com/jewelry/JTV-HNC003-1-medium.jpg, https://images.jtv.com/jewelry/JTV-HNC003-2-medium.jpg, https://images.jtv.com/jewelry/JTV-HNC003-3-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "11", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
 
-                //new ItemMst() { StyleCode = "54", Name = "Pink Cultured Mabe Pearl Silver Floral Dangle Earrings", MRP = 259, SalePrice = 137, Thumbnails = "https://images.jtv.com/jewelry/JTV-SRA2953-1-medium.jpg, https://images.jtv.com/jewelry/JTV-SRA2953-2-medium.jpg, https://images.jtv.com/jewelry/JTV-SRA2953-3-medium.jpg", Pairs = 1, Quantity = 12, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "4", JewelleryId = "12", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "55", Name = "Black Mother Of Pearl Sterling Silver Earrings", MRP = 285, SalePrice = 139, Thumbnails = "https://images.jtv.com/jewelry/JTV-SRA2099-1-medium.jpg, https://images.jtv.com/jewelry/JTV-SRA2099-2-medium.jpg, https://images.jtv.com/jewelry/JTV-SRA2099-3-medium.jpg", Pairs = 1, Quantity = 12, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "4", JewelleryId = "12", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "56", Name = "Green onyx sterling silver pendant with chain", MRP = 119, SalePrice = 67, Thumbnails = "https://images.jtv.com/jewelry/JTV-JUH130-1-medium.jpg, https://images.jtv.com/jewelry/JTV-JUH130-2-medium.jpg, https://images.jtv.com/jewelry/JTV-JUH130-3-medium.jpg", Pairs = 1, Quantity = 12, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "4", JewelleryId = "12", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "57", Name = "Red Garnet & Green Chrome Diopside Rhodium Over Sterling Silver Ring 6.28ctw", MRP = 196, SalePrice = 110, Thumbnails = "https://images.jtv.com/jewelry/JTV-JQH105-1-medium.jpg, https://images.jtv.com/jewelry/JTV-JQH105-2-medium.jpg, https://images.jtv.com/jewelry/JTV-JQH105-3-medium.jpg", Pairs = 1, Quantity = 12, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "4", JewelleryId = "12", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "58", Name = "10k Yellow Gold Shamrock Charm", MRP = 41, SalePrice = 31, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-BGV579-1-medium.jpg", Pairs = 1, Quantity = 12, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "4", JewelleryId = "12", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "59", Name = "Red Lab Created Ruby Rhodium Over Sterling Silver Ring 7.22ctw", MRP = 84, SalePrice = 50, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOH123-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOH123-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOH123-3-medium.jpg", Pairs = 1, Quantity = 12, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "4", JewelleryId = "12", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 }
+                new ItemMst() { StyleCode = "55", Name = "Pink Cultured Mabe Pearl Silver Floral Dangle Earrings", MRP = 259, SalePrice = 137, Thumbnails = "https://images.jtv.com/jewelry/JTV-SRA2953-1-medium.jpg, https://images.jtv.com/jewelry/JTV-SRA2953-2-medium.jpg, https://images.jtv.com/jewelry/JTV-SRA2953-3-medium.jpg", Pairs = 1, Quantity = 12, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "4", JewelleryId = "12", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "56", Name = "Black Mother Of Pearl Sterling Silver Earrings", MRP = 285, SalePrice = 139, Thumbnails = "https://images.jtv.com/jewelry/JTV-SRA2099-1-medium.jpg, https://images.jtv.com/jewelry/JTV-SRA2099-2-medium.jpg, https://images.jtv.com/jewelry/JTV-SRA2099-3-medium.jpg", Pairs = 1, Quantity = 12, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "4", JewelleryId = "12", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "57", Name = "Green onyx sterling silver pendant with chain", MRP = 119, SalePrice = 67, Thumbnails = "https://images.jtv.com/jewelry/JTV-JUH130-1-medium.jpg, https://images.jtv.com/jewelry/JTV-JUH130-2-medium.jpg, https://images.jtv.com/jewelry/JTV-JUH130-3-medium.jpg", Pairs = 1, Quantity = 12, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "4", JewelleryId = "12", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "58", Name = "Red Garnet & Green Chrome Diopside Rhodium Over Sterling Silver Ring 6.28ctw", MRP = 196, SalePrice = 110, Thumbnails = "https://images.jtv.com/jewelry/JTV-JQH105-1-medium.jpg, https://images.jtv.com/jewelry/JTV-JQH105-2-medium.jpg, https://images.jtv.com/jewelry/JTV-JQH105-3-medium.jpg", Pairs = 1, Quantity = 12, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "4", JewelleryId = "12", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "59", Name = "10k Yellow Gold Shamrock Charm", MRP = 41, SalePrice = 31, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-BGV579-1-medium.jpg", Pairs = 1, Quantity = 12, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "4", JewelleryId = "12", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "60", Name = "Red Lab Created Ruby Rhodium Over Sterling Silver Ring 7.22ctw", MRP = 84, SalePrice = 50, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOH123-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOH123-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOH123-3-medium.jpg", Pairs = 1, Quantity = 12, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "4", JewelleryId = "12", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+
 
 
                 //Feature Shop
-                //new ItemMst() { StyleCode = "61", Name = "14k White Gold 6.25mm Beveled Curb Chain", MRP = 140, SalePrice = 89, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-VG333A-1-medium.jpg ", Pairs = 1, Quantity = 4, BrandId = "2", CatId = "1", ProdId = "3", GoldTypeId = "4", JewelleryId = "13", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "62", Name = "Sterling Silver Turtle Dangle Earrings", MRP = 135, SalePrice = 69, Thumbnails = "https://images.jtv.com/jewelry/JTV-SRA3510-1-medium.jpg, https://images.jtv.com/jewelry/JTV-SRA3510-2-medium.jpg, https://images.jtv.com/jewelry/JTV-SRA3510-3-medium.jpg ", Pairs = 1, Quantity = 4, BrandId = "1", CatId = "1", ProdId = "3", GoldTypeId = "5", JewelleryId = "13", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "63", Name = "Fabulite Strontium Titanate and white zircon rhodium over sterling silver ring 5.06ctw.", MRP = 453, SalePrice = 279, Thumbnails = "https://images.jtv.com/jewelry/JTV-STS164-1-medium.jpg, https://images.jtv.com/jewelry/JTV-STS164-2-medium.jpg, https://images.jtv.com/jewelry/JTV-STS164-3-medium.jpg  ", Pairs = 1, Quantity = 8, BrandId = "2", CatId = "1", ProdId = "3", GoldTypeId = "1", JewelleryId = "13", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "64", Name = "Black And White Diamond Rhodium Over Sterling Silver Earrings and Pendant Jewelry Set 0.48ctw", MRP = 237, SalePrice = 86, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOD192-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOD192-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOD192-3-medium.jpg ", Pairs = 1, Quantity = 7, BrandId = "3", CatId = "1", ProdId = "3", GoldTypeId = "2", JewelleryId = "13", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "65", Name = "Rainbow Moonstone Sterling Silver Dangle Earrings", MRP = 214, SalePrice = 89, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOK359-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOK359-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOK359-3-medium.jpg ", Pairs = 1, Quantity = 2, BrandId = "4", CatId = "1", ProdId = "3", GoldTypeId = "3", JewelleryId = "13", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "66", Name = "White Diamond Rhodium Over Sterling Silver Dancing Diamond Pendant With Box Chain 0.20ctw", MRP = 133, SalePrice = 69, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOD128-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOD128-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOD128-3-medium.jpg ", Pairs = 1, Quantity = 5, BrandId = "1", CatId = "1", ProdId = "3", GoldTypeId = "4", JewelleryId = "13", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "67", Name = "18k Yellow Gold Over Bronze Hoop Earrings", MRP = 70, SalePrice = 47, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-BEC749-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC749-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC749-3-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "2", CatId = "1", ProdId = "3", GoldTypeId = "1", JewelleryId = "14", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "68", Name = "18k Yellow Gold Over Bronze Dangle Earrings", MRP = 125, SalePrice = 99, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-BEC608-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC608-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC608-3-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "2", CatId = "1", ProdId = "3", GoldTypeId = "1", JewelleryId = "14", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "69", Name = "Multi Color Crystal Gold Tone Candy Corn Dangle Earrings", MRP = 29, SalePrice = 26, Thumbnails = "https://images.jtv.com/jewelry/JTV-OPC430-1-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC430-2-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC430-3-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "3", CatId = "1", ProdId = "3", GoldTypeId = "2", JewelleryId = "14", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "70", Name = "Crystal Gold Tone Football Earrings", MRP = 36, SalePrice = 29, Thumbnails = "https://images.jtv.com/jewelry/JTV-OPC728-1-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC728-2-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC728-3-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "4", CatId = "1", ProdId = "3", GoldTypeId = "3", JewelleryId = "14", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "71", Name = "Moda Al Massimo™ 18k Yellow Gold Polished Rosetta Link 8.25 inch Bracelet", MRP = 120, SalePrice = 89, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-MA155-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-MA155-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-MA155-3-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "1", CatId = "1", ProdId = "3", GoldTypeId = "4", JewelleryId = "14", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "72", Name = "Crystal Gold Tone 3- Band Ring", MRP = 39, SalePrice = 35, Thumbnails = "https://images.jtv.com/jewelry/JTV-OPC843-1-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC843-2-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC843-3-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "2", CatId = "1", ProdId = "3", GoldTypeId = "5", JewelleryId = "14", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "73", Name = "Green Kingman Turquoise 18k Yellow Gold Over Sterling Silver Ring", MRP = 128, SalePrice = 85, Thumbnails = "https://images.jtv.com/jewelry/JTV-TRQ506-1-medium.jpg, https://images.jtv.com/jewelry/JTV-TRQ506-1-medium.jpg, https://images.jtv.com/jewelry/JTV-TRQ506-3-medium.jpg", Pairs = 1, Quantity = 7, BrandId = "2", CatId = "1", ProdId = "3", GoldTypeId = "2", JewelleryId = "15", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "74", Name = "18k Yellow Gold Over Bronze Leaf Ring", MRP = 67, SalePrice = 44, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-BEC716-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC716-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC716-3-medium.jpg", Pairs = 1, Quantity = 7, BrandId = "2", CatId = "1", ProdId = "3", GoldTypeId = "2", JewelleryId = "15", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "75", Name = "Multicolor Crystal Gold Tone Angelfish Necklace", MRP = 73, SalePrice = 62, Thumbnails = "https://images.jtv.com/jewelry/JTV-OPC614-1-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC614-2-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC614-3-medium.jpg", Pairs = 1, Quantity = 1, BrandId = "3", CatId = "1", ProdId = "3", GoldTypeId = "3", JewelleryId = "15", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "76", Name = "Multicolor Crystal Gold Tone Floral Statement Necklace", MRP = 59, SalePrice = 53, Thumbnails = "https://images.jtv.com/jewelry/JTV-OPC202N-1-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC202N-2-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC202N-3-medium.jpg", Pairs = 1, Quantity = 5, BrandId = "4", CatId = "1", ProdId = "3", GoldTypeId = "4", JewelleryId = "15", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "77", Name = "Blue Larimar Silver Pendant With Chain .51ctw", MRP = 185, SalePrice = 118, Thumbnails = "https://images.jtv.com/jewelry/JTV-MMH372-1-medium.jpg, https://images.jtv.com/jewelry/JTV-MMH372-2-medium.jpg, https://images.jtv.com/jewelry/JTV-MMH372-3-medium.jpg", Pairs = 1, Quantity = 3, BrandId = "1", CatId = "1", ProdId = "3", GoldTypeId = "5", JewelleryId = "15", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "78", Name = "Multicolor Crystal Rose Tone Seahorse Ring", MRP = 39, SalePrice = 22, Thumbnails = "https://images.jtv.com/jewelry/JTV-OPC553-1-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC553-2-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC553-3-medium.jpg", Pairs = 1, Quantity = 8, BrandId = "4", CatId = "1", ProdId = "3", GoldTypeId = "1", JewelleryId = "15", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "79", Name = "18k yellow gold over bronze earrings.", MRP = 48, SalePrice = 37, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-MA175-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-MA175-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-MA175-1-medium.jpg", Pairs = 1, Quantity = 5, BrandId = "2", CatId = "1", ProdId = "3", GoldTypeId = "3", JewelleryId = "16", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "80", Name = "14k Tri-Color Gold Textured Love Knot Earrings", MRP = 139, SalePrice = 125, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-BGV463-1-medium.jpg", Pairs = 1, Quantity = 5, BrandId = "2", CatId = "1", ProdId = "3", GoldTypeId = "3", JewelleryId = "16", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "81", Name = "18k yellow gold over bronze earrings.", MRP = 47, SalePrice = 39, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-MA175-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-MA175-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-MA175-3-medium.jpg", Pairs = 1, Quantity = 5, BrandId = "3", CatId = "1", ProdId = "3", GoldTypeId = "4", JewelleryId = "16", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "82", Name = "18k Yellow Gold Over Bronze Dangle Earrings", MRP = 124, SalePrice = 69, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-BEC608-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC608-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC608-3-medium.jpg", Pairs = 1, Quantity = 5, BrandId = "4", CatId = "1", ProdId = "3", GoldTypeId = "5", JewelleryId = "16", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "83", Name = "14k Tri-Tone Love Knot Pendant With Chain 18 inch", MRP = 261, SalePrice = 224, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-BGW763-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BGW763-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BGW763-3-medium.jpg", Pairs = 1, Quantity = 5, BrandId = "1", CatId = "1", ProdId = "3", GoldTypeId = "1", JewelleryId = "16", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                //new ItemMst() { StyleCode = "84", Name = "Leopard Print Fabric Gold Tone Earrings", MRP = 43, SalePrice = 35, Thumbnails = "https://images.jtv.com/jewelry/JTV-OPW070-1-medium.jpg, https://images.jtv.com/jewelry/JTV-OPW070-2-medium.jpg", Pairs = 1, Quantity = 5, BrandId = "2", CatId = "1", ProdId = "3", GoldTypeId = "2", JewelleryId = "16", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 }
+                new ItemMst() { StyleCode = "61", Name = "14k White Gold 6.25mm Beveled Curb Chain", MRP = 140, SalePrice = 89, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-VG333A-1-medium.jpg ", Pairs = 1, Quantity = 4, BrandId = "2", CatId = "1", ProdId = "3", GoldTypeId = "4", JewelleryId = "13", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "62", Name = "Sterling Silver Turtle Dangle Earrings", MRP = 135, SalePrice = 69, Thumbnails = "https://images.jtv.com/jewelry/JTV-SRA3510-1-medium.jpg, https://images.jtv.com/jewelry/JTV-SRA3510-2-medium.jpg, https://images.jtv.com/jewelry/JTV-SRA3510-3-medium.jpg ", Pairs = 1, Quantity = 4, BrandId = "1", CatId = "1", ProdId = "3", GoldTypeId = "5", JewelleryId = "13", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "63", Name = "Fabulite Strontium Titanate and white zircon rhodium over sterling silver ring 5.06ctw.", MRP = 453, SalePrice = 279, Thumbnails = "https://images.jtv.com/jewelry/JTV-STS164-1-medium.jpg, https://images.jtv.com/jewelry/JTV-STS164-2-medium.jpg, https://images.jtv.com/jewelry/JTV-STS164-3-medium.jpg  ", Pairs = 1, Quantity = 8, BrandId = "2", CatId = "1", ProdId = "3", GoldTypeId = "1", JewelleryId = "13", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "64", Name = "Black And White Diamond Rhodium Over Sterling Silver Earrings and Pendant Jewelry Set 0.48ctw", MRP = 237, SalePrice = 86, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOD192-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOD192-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOD192-3-medium.jpg ", Pairs = 1, Quantity = 7, BrandId = "3", CatId = "1", ProdId = "3", GoldTypeId = "2", JewelleryId = "13", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "65", Name = "Rainbow Moonstone Sterling Silver Dangle Earrings", MRP = 214, SalePrice = 89, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOK359-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOK359-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOK359-3-medium.jpg ", Pairs = 1, Quantity = 2, BrandId = "4", CatId = "1", ProdId = "3", GoldTypeId = "3", JewelleryId = "13", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "66", Name = "White Diamond Rhodium Over Sterling Silver Dancing Diamond Pendant With Box Chain 0.20ctw", MRP = 133, SalePrice = 69, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOD128-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOD128-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOD128-3-medium.jpg ", Pairs = 1, Quantity = 5, BrandId = "1", CatId = "1", ProdId = "3", GoldTypeId = "4", JewelleryId = "13", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "67", Name = "18k Yellow Gold Over Bronze Hoop Earrings", MRP = 70, SalePrice = 47, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-BEC749-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC749-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC749-3-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "2", CatId = "1", ProdId = "3", GoldTypeId = "1", JewelleryId = "14", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "68", Name = "18k Yellow Gold Over Bronze Dangle Earrings", MRP = 125, SalePrice = 99, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-BEC608-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC608-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC608-3-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "2", CatId = "1", ProdId = "3", GoldTypeId = "1", JewelleryId = "14", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "69", Name = "Multi Color Crystal Gold Tone Candy Corn Dangle Earrings", MRP = 29, SalePrice = 26, Thumbnails = "https://images.jtv.com/jewelry/JTV-OPC430-1-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC430-2-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC430-3-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "3", CatId = "1", ProdId = "3", GoldTypeId = "2", JewelleryId = "14", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "70", Name = "Crystal Gold Tone Football Earrings", MRP = 36, SalePrice = 29, Thumbnails = "https://images.jtv.com/jewelry/JTV-OPC728-1-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC728-2-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC728-3-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "4", CatId = "1", ProdId = "3", GoldTypeId = "3", JewelleryId = "14", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "71", Name = "Moda Al Massimo™ 18k Yellow Gold Polished Rosetta Link 8.25 inch Bracelet", MRP = 120, SalePrice = 89, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-MA155-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-MA155-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-MA155-3-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "1", CatId = "1", ProdId = "3", GoldTypeId = "4", JewelleryId = "14", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "72", Name = "Crystal Gold Tone 3- Band Ring", MRP = 39, SalePrice = 35, Thumbnails = "https://images.jtv.com/jewelry/JTV-OPC843-1-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC843-2-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC843-3-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "2", CatId = "1", ProdId = "3", GoldTypeId = "5", JewelleryId = "14", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "73", Name = "Green Kingman Turquoise 18k Yellow Gold Over Sterling Silver Ring", MRP = 128, SalePrice = 85, Thumbnails = "https://images.jtv.com/jewelry/JTV-TRQ506-1-medium.jpg, https://images.jtv.com/jewelry/JTV-TRQ506-1-medium.jpg, https://images.jtv.com/jewelry/JTV-TRQ506-3-medium.jpg", Pairs = 1, Quantity = 7, BrandId = "2", CatId = "1", ProdId = "3", GoldTypeId = "2", JewelleryId = "15", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "74", Name = "18k Yellow Gold Over Bronze Leaf Ring", MRP = 67, SalePrice = 44, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-BEC716-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC716-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC716-3-medium.jpg", Pairs = 1, Quantity = 7, BrandId = "2", CatId = "1", ProdId = "3", GoldTypeId = "2", JewelleryId = "15", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "75", Name = "Multicolor Crystal Gold Tone Angelfish Necklace", MRP = 73, SalePrice = 62, Thumbnails = "https://images.jtv.com/jewelry/JTV-OPC614-1-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC614-2-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC614-3-medium.jpg", Pairs = 1, Quantity = 1, BrandId = "3", CatId = "1", ProdId = "3", GoldTypeId = "3", JewelleryId = "15", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "76", Name = "Multicolor Crystal Gold Tone Floral Statement Necklace", MRP = 59, SalePrice = 53, Thumbnails = "https://images.jtv.com/jewelry/JTV-OPC202N-1-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC202N-2-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC202N-3-medium.jpg", Pairs = 1, Quantity = 5, BrandId = "4", CatId = "1", ProdId = "3", GoldTypeId = "4", JewelleryId = "15", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "77", Name = "Blue Larimar Silver Pendant With Chain .51ctw", MRP = 185, SalePrice = 118, Thumbnails = "https://images.jtv.com/jewelry/JTV-MMH372-1-medium.jpg, https://images.jtv.com/jewelry/JTV-MMH372-2-medium.jpg, https://images.jtv.com/jewelry/JTV-MMH372-3-medium.jpg", Pairs = 1, Quantity = 3, BrandId = "1", CatId = "1", ProdId = "3", GoldTypeId = "5", JewelleryId = "15", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "78", Name = "Multicolor Crystal Rose Tone Seahorse Ring", MRP = 39, SalePrice = 22, Thumbnails = "https://images.jtv.com/jewelry/JTV-OPC553-1-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC553-2-medium.jpg, https://images.jtv.com/jewelry/JTV-OPC553-3-medium.jpg", Pairs = 1, Quantity = 8, BrandId = "4", CatId = "1", ProdId = "3", GoldTypeId = "1", JewelleryId = "15", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "79", Name = "18k yellow gold over bronze earrings.", MRP = 48, SalePrice = 37, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-MA175-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-MA175-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-MA175-1-medium.jpg", Pairs = 1, Quantity = 5, BrandId = "2", CatId = "1", ProdId = "3", GoldTypeId = "3", JewelleryId = "16", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "80", Name = "14k Tri-Color Gold Textured Love Knot Earrings", MRP = 139, SalePrice = 125, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-BGV463-1-medium.jpg", Pairs = 1, Quantity = 5, BrandId = "2", CatId = "1", ProdId = "3", GoldTypeId = "3", JewelleryId = "16", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "81", Name = "18k yellow gold over bronze earrings.", MRP = 47, SalePrice = 39, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-MA175-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-MA175-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-MA175-3-medium.jpg", Pairs = 1, Quantity = 5, BrandId = "3", CatId = "1", ProdId = "3", GoldTypeId = "4", JewelleryId = "16", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "82", Name = "18k Yellow Gold Over Bronze Dangle Earrings", MRP = 124, SalePrice = 69, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-BEC608-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC608-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC608-3-medium.jpg", Pairs = 1, Quantity = 5, BrandId = "4", CatId = "1", ProdId = "3", GoldTypeId = "5", JewelleryId = "16", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "83", Name = "14k Tri-Tone Love Knot Pendant With Chain 18 inch", MRP = 261, SalePrice = 224, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-BGW763-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BGW763-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BGW763-3-medium.jpg", Pairs = 1, Quantity = 5, BrandId = "1", CatId = "1", ProdId = "3", GoldTypeId = "1", JewelleryId = "16", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                new ItemMst() { StyleCode = "84", Name = "Leopard Print Fabric Gold Tone Earrings", MRP = 43, SalePrice = 35, Thumbnails = "https://images.jtv.com/jewelry/JTV-OPW070-1-medium.jpg, https://images.jtv.com/jewelry/JTV-OPW070-2-medium.jpg", Pairs = 1, Quantity = 5, BrandId = "2", CatId = "1", ProdId = "3", GoldTypeId = "2", JewelleryId = "16", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 }
 
                 );
             //context.StoneMsts.AddOrUpdate(x => x.StyleCode,
@@ -313,17 +314,394 @@ namespace GemStore.Migrations
                     OrderId = "1", MemberId = "1", TotalPrice = 300, CreatedAt = DateTime.Now,
                     OrderDetails = new List<OrderDetail>()
                     {
-                        new OrderDetail(){StyleCode = "1", UnitPrice = 75, Quantity = 2},
-                        new OrderDetail(){StyleCode = "2", UnitPrice = 80, Quantity = 1},
+                        new OrderDetail(){StyleCode = "1", UnitPrice = 254, Quantity = 1,},
+                        new OrderDetail(){StyleCode = "3", UnitPrice = 50, Quantity = 2,},
+                        new OrderDetail(){StyleCode = "5", UnitPrice = 224, Quantity = 3},
                     }
                 },
+                 new Order()
+                {
+                    OrderId = "2", MemberId = "2", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "7", UnitPrice = 159, Quantity = 1,},
+                        new OrderDetail(){StyleCode = "9", UnitPrice = 89, Quantity = 1,},
+                        new OrderDetail(){StyleCode = "11", UnitPrice = 79, Quantity = 2},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "3", MemberId = "3", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "13", UnitPrice = 212, Quantity = 2,},
+                        new OrderDetail(){StyleCode = "15", UnitPrice = 138, Quantity = 1},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "4", MemberId = "4", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "17", UnitPrice = 76, Quantity = 2,},
+                        new OrderDetail(){StyleCode = "19", UnitPrice = 149, Quantity = 1,},
+                        new OrderDetail(){StyleCode = "21", UnitPrice = 76, Quantity = 1},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "5", MemberId = "5", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "2", UnitPrice = 79, Quantity = 2},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "6", MemberId = "6", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "25", UnitPrice = 89, Quantity = 1,},
+                        new OrderDetail(){StyleCode = "27", UnitPrice = 144, Quantity = 2,},
+                        new OrderDetail(){StyleCode = "29", UnitPrice = 107, Quantity = 1},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "7", MemberId = "7", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "31", UnitPrice = 139, Quantity = 2,},
+                        new OrderDetail(){StyleCode = "35", UnitPrice = 50, Quantity = 2},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "8", MemberId = "8", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "37", UnitPrice = 69, Quantity = 1,},
+                        new OrderDetail(){StyleCode = "39", UnitPrice = 743, Quantity = 3},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "9", MemberId = "9", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "2", UnitPrice = 85, Quantity = 3},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "10", MemberId = "10", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "4", UnitPrice = 93, Quantity = 2,},
+                        new OrderDetail(){StyleCode = "6", UnitPrice = 115, Quantity = 1,},
+                        new OrderDetail(){StyleCode = "8", UnitPrice = 39, Quantity = 3},
+                    }
+                },
+                 new Order()
+                {
+                    OrderId = "11", MemberId = "1", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "10", UnitPrice = 84, Quantity = 1,},
+                        new OrderDetail(){StyleCode = "12", UnitPrice = 220, Quantity = 1,},
+                        new OrderDetail(){StyleCode = "14", UnitPrice = 76, Quantity = 1},
+                    }
+                },
+                 new Order()
+                {
+                    OrderId = "12", MemberId = "2", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "16", UnitPrice = 69, Quantity = 3,},
+                        new OrderDetail(){StyleCode = "18", UnitPrice = 212, Quantity = 1,},
+                        new OrderDetail(){StyleCode = "20", UnitPrice = 50, Quantity = 1},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "13", MemberId = "3", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "22", UnitPrice = 88, Quantity = 1,},
+                        new OrderDetail(){StyleCode = "24", UnitPrice = 68, Quantity = 1},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "14", MemberId = "4", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "26", UnitPrice = 134, Quantity = 3,},
+                        new OrderDetail(){StyleCode = "28", UnitPrice = 59, Quantity = 1,},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "15", MemberId = "5", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "30", UnitPrice = 49, Quantity = 1},
+                        new OrderDetail(){StyleCode = "32", UnitPrice = 27, Quantity = 1},
+                        new OrderDetail(){StyleCode = "34", UnitPrice = 26, Quantity = 3},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "16", MemberId = "6", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "25", UnitPrice = 89, Quantity = 1,},
+                        new OrderDetail(){StyleCode = "27", UnitPrice = 144, Quantity = 2,},
+                        new OrderDetail(){StyleCode = "29", UnitPrice = 107, Quantity = 1},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "17", MemberId = "7", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "36", UnitPrice = 89, Quantity = 2,},
+                        new OrderDetail(){StyleCode = "38", UnitPrice = 159, Quantity = 1},
+                        new OrderDetail(){StyleCode = "40", UnitPrice = 59, Quantity = 1},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "18", MemberId = "8", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "1", UnitPrice = 254, Quantity = 1,},
+                        new OrderDetail(){StyleCode = "82", UnitPrice = 69, Quantity = 2},
+                        new OrderDetail(){StyleCode = "83", UnitPrice = 224, Quantity = 1},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "19", MemberId = "9", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "84", UnitPrice = 35, Quantity = 2},
+                        new OrderDetail(){StyleCode = "5", UnitPrice = 224, Quantity = 1},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "20", MemberId = "10", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "6", UnitPrice = 115, Quantity = 2,},
+                        new OrderDetail(){StyleCode = "7", UnitPrice = 159, Quantity = 2,},
+                        new OrderDetail(){StyleCode = "81", UnitPrice = 39, Quantity = 2},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "21", MemberId = "1", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "9", UnitPrice = 89, Quantity = 1,},
+                        new OrderDetail(){StyleCode = "10", UnitPrice = 84, Quantity = 1,},
 
-        };
+                    }
+                },
+                 new Order()
+                {
+                    OrderId = "22", MemberId = "2", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "11", UnitPrice = 79, Quantity = 1,},
+                        new OrderDetail(){StyleCode = "12", UnitPrice = 220, Quantity = 1,},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "23", MemberId = "3", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "13", UnitPrice = 212, Quantity = 2,},
+                        new OrderDetail(){StyleCode = "14", UnitPrice = 76, Quantity = 1,},
+                        new OrderDetail(){StyleCode = "15", UnitPrice = 138, Quantity = 1},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "24", MemberId = "4", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "41", UnitPrice = 35, Quantity = 1,},
+                        new OrderDetail(){StyleCode = "43", UnitPrice = 54, Quantity = 1,},
+                        new OrderDetail(){StyleCode = "45", UnitPrice = 19, Quantity = 1},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "25", MemberId = "5", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "47", UnitPrice = 44, Quantity = 1},
+                        new OrderDetail(){StyleCode = "49", UnitPrice = 59, Quantity = 2},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "26", MemberId = "6", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "51", UnitPrice = 43, Quantity = 1,},
+                        new OrderDetail(){StyleCode = "53", UnitPrice = 85, Quantity = 1,},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "27", MemberId = "7", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "55", UnitPrice = 137, Quantity = 1,},
+                        new OrderDetail(){StyleCode = "57", UnitPrice = 67, Quantity = 2},
+                        new OrderDetail(){StyleCode = "61", UnitPrice = 89, Quantity = 2},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "28", MemberId = "8", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "63", UnitPrice = 279, Quantity = 1,},
+                        new OrderDetail(){StyleCode = "65", UnitPrice = 89, Quantity = 3},
+                        new OrderDetail(){StyleCode = "67", UnitPrice = 47, Quantity = 2},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "29", MemberId = "9", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "69", UnitPrice = 26, Quantity = 3},
+                        new OrderDetail(){StyleCode = "71", UnitPrice = 89, Quantity = 2},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "30", MemberId = "10", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "73", UnitPrice = 85, Quantity = 2,},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "31", MemberId = "1", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "75", UnitPrice = 62, Quantity = 1,},
+                        new OrderDetail(){StyleCode = "77", UnitPrice = 118, Quantity = 2,},
+                    }
+                },
+                 new Order()
+                {
+                    OrderId = "32", MemberId = "2", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "79", UnitPrice = 37, Quantity = 3,},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "33", MemberId = "3", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "42", UnitPrice = 59, Quantity = 2,},
+                        new OrderDetail(){StyleCode = "44", UnitPrice = 606, Quantity = 1},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "34", MemberId = "4", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "46", UnitPrice = 42, Quantity = 2,},
+                        new OrderDetail(){StyleCode = "48", UnitPrice = 30, Quantity = 1,},
+                        new OrderDetail(){StyleCode = "50", UnitPrice = 39, Quantity = 1},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "35", MemberId = "5", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "58", UnitPrice = 110, Quantity = 2},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "36", MemberId = "6", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "52", UnitPrice = 152, Quantity = 1,},
+                        new OrderDetail(){StyleCode = "54", UnitPrice = 69, Quantity = 2,},
+                        new OrderDetail(){StyleCode = "56", UnitPrice = 139, Quantity = 1},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "37", MemberId = "7", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "60", UnitPrice = 50, Quantity = 2,},
+                        new OrderDetail(){StyleCode = "62", UnitPrice = 69, Quantity = 2},
+                        new OrderDetail(){StyleCode = "64", UnitPrice = 86, Quantity = 2},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "38", MemberId = "8", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "66", UnitPrice = 69, Quantity = 1,},
+                        new OrderDetail(){StyleCode = "68", UnitPrice = 99, Quantity = 3},
+                        new OrderDetail(){StyleCode = "70", UnitPrice = 29, Quantity = 3},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "39", MemberId = "9", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "72", UnitPrice = 38, Quantity = 3},
+                        new OrderDetail(){StyleCode = "74", UnitPrice = 44, Quantity = 3},
+                    }
+                },
+                new Order()
+                {
+                    OrderId = "40", MemberId = "10", CreatedAt = DateTime.Now,
+                    OrderDetails = new List<OrderDetail>()
+                    {
+                        new OrderDetail(){StyleCode = "76", UnitPrice = 53, Quantity = 2,},
+                        new OrderDetail(){StyleCode = "78", UnitPrice = 22, Quantity = 1,},
+                        new OrderDetail(){StyleCode = "80", UnitPrice = 125, Quantity = 3},
+                    }
+                }
+            };
             
             foreach (var order in listOrders)
             {
+                var totalPrice = 0.0;
                 order.OrderId = Guid.NewGuid().ToString().GetHashCode().ToString("x");
                 order.Status = (int)Order.OrderStatus.Pending;
+                var orderDetail = order.OrderDetails as List<OrderDetail>;
+                if (orderDetail != null)
+                {
+                    foreach (var o in orderDetail)
+                    {
+                        totalPrice += o.UnitPrice * o.Quantity;
+                    }
+                    order.TotalPrice = totalPrice;
+                }
                 context.Orders.Add(order);
                 context.SaveChanges();
             }
