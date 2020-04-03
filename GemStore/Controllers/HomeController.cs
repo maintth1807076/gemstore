@@ -32,20 +32,24 @@ namespace GemStore.Controllers
 
             return View();
         }
-        public ActionResult Shop()
+        public ActionResult Shop(string keyWord)
         {
             ViewBag.BrandMsts = db.BrandMsts.ToList();
             ViewBag.CatMsts = db.CatMsts.ToList();
             ViewBag.ProdMsts = db.ProdMsts.ToList();
             ViewBag.JewelTypeMsts = db.JewelTypeMsts.ToList();
-            return View(db.ItemMsts.ToList().ToPagedList(1, 3));
+            var itemMsts = db.ItemMsts.ToList();
+            if (!String.IsNullOrEmpty(keyWord))
+            {
+                ViewBag.CurrentKeyWord = keyWord;
+                itemMsts = itemMsts.Where(i => i.Name.IndexOf(keyWord, StringComparison.OrdinalIgnoreCase) != -1 || i.BrandMst.BrandType.Contains(keyWord)).ToList();
+            }
+            return View(itemMsts.ToPagedList(1, 6));
 
             
         }
-        public ActionResult FilterShop(string keyWord, int? rangePrice, string[] BrandIds, string[] CatIds, string[] ProdIds, string[] JewelIds, int? pageSize, int? page)
+        public ActionResult FilterShop(int? sortBy, int? rangePrice, string[] BrandIds, string[] CatIds, string[] ProdIds, string[] JewelIds, int? pageSize, int? page)
         {
-            Debug.WriteLine(rangePrice);
-            ViewBag.CurrentRangePrice = rangePrice;
             ViewBag.CurrentBrandIds = BrandIds;
             ViewBag.CurrentCatIds = CatIds;
             ViewBag.CurrentProdIds = ProdIds;
@@ -94,6 +98,7 @@ namespace GemStore.Controllers
             }
             if (rangePrice != null)
             {
+                ViewBag.CurrentRangePrice = rangePrice;
                 switch (rangePrice)
                 {
                     case 1:
@@ -114,14 +119,32 @@ namespace GemStore.Controllers
                     default: break;
                 }
             }
+            if (sortBy != null)
+            {
+                ViewBag.CurrentSortBy = sortBy;
+                switch (sortBy)
+                {
+                    case 1:
+                        itemMsts = itemMsts.OrderBy(i=>i.CreatedAt).ToList();
+                        break;
+                    case 2:
+                        itemMsts = itemMsts.OrderBy(i => i.SalePrice).ToList();
+                        break;
+                    case 3:
+                        itemMsts = itemMsts.OrderByDescending(i=>i.SalePrice).ToList();
+                        break;
+                    default: break;
+                }
+            }
             if (page == null)
             {
                 page = 1;
             }
             if (pageSize == null)
             {
-                pageSize = 3;
+                pageSize = 6;
             }
+            ViewBag.CurrentPageSize = pageSize;
             return PartialView("_ShopPartial", itemMsts.ToPagedList((int)page, (int)pageSize));
         }
         public ActionResult Shop_list()

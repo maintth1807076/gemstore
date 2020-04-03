@@ -19,7 +19,7 @@ namespace GemStore.Areas.Admin.Controllers
         }
         public ActionResult GetLineChartData(DateTime? startDate, DateTime? endDate)
         {
-            var data = db.Orders.Where(o => o.CreatedAt >= startDate && o.CreatedAt <= endDate).OrderByDescending(o => o.CreatedAt).GroupBy(x => DbFunctions.TruncateTime(x.CreatedAt),
+            var data = db.Orders.Where(o => o.CreatedAt >= startDate && o.CreatedAt <= endDate).OrderBy(o => o.CreatedAt).GroupBy(x => DbFunctions.TruncateTime(x.CreatedAt),
                 (key, values) => new {
                     Day = key,
                     Total = values.Sum(x => x.TotalPrice)

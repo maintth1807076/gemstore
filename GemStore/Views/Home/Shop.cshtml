@@ -2,39 +2,39 @@
 @using PagedList.Mvc;
 @{
     ViewBag.Title = "Shop";
-    var parameters = new RouteValueDictionary();
-    if (ViewBag.CurrentBrandIds != null)
-    {
+    //var parameters = new RouteValueDictionary();
+    //if (ViewBag.CurrentBrandIds != null)
+    //{
 
-        for (var i = 0; i < ViewBag.CurrentBrandIds.Length; ++i)
-        {
-            parameters.Add($"BrandIds[{i}]", ViewBag.CurrentBrandIds[i]);
-        }
-    }
-    if (ViewBag.CurrentCatIds != null)
-    {
+    //    for (var i = 0; i < ViewBag.CurrentBrandIds.Length; ++i)
+    //    {
+    //        parameters.Add($"BrandIds[{i}]", ViewBag.CurrentBrandIds[i]);
+    //    }
+    //}
+    //if (ViewBag.CurrentCatIds != null)
+    //{
 
-        for (var i = 0; i < ViewBag.CurrentCatIds.Length; ++i)
-        {
-            parameters.Add($"CatIds[{i}]", ViewBag.CurrentCatIds[i]);
-        }
-    }
-    if (ViewBag.CurrentProdIds != null)
-    {
+    //    for (var i = 0; i < ViewBag.CurrentCatIds.Length; ++i)
+    //    {
+    //        parameters.Add($"CatIds[{i}]", ViewBag.CurrentCatIds[i]);
+    //    }
+    //}
+    //if (ViewBag.CurrentProdIds != null)
+    //{
 
-        for (var i = 0; i < ViewBag.CurrentProdIds.Length; ++i)
-        {
-            parameters.Add($"ProdIds[{i}]", ViewBag.CurrentProdIds[i]);
-        }
-    }
-    if (ViewBag.CurrentJewelIds != null)
-    {
+    //    for (var i = 0; i < ViewBag.CurrentProdIds.Length; ++i)
+    //    {
+    //        parameters.Add($"ProdIds[{i}]", ViewBag.CurrentProdIds[i]);
+    //    }
+    //}
+    //if (ViewBag.CurrentJewelIds != null)
+    //{
 
-        for (var i = 0; i < ViewBag.CurrentJewelIds.Length; ++i)
-        {
-            parameters.Add($"JewelIds[{i}]", ViewBag.CurrentJewelIds[i]);
-        }
-    }
+    //    for (var i = 0; i < ViewBag.CurrentJewelIds.Length; ++i)
+    //    {
+    //        parameters.Add($"JewelIds[{i}]", ViewBag.CurrentJewelIds[i]);
+    //    }
+    //}
 }
 
 <div class="page-title fix">
@@ -47,7 +47,7 @@
 <div class="shop-product-area section fix">
     <div class="container">
         <div class="row">
-            @using (Ajax.BeginForm("FilterShop", "Home",null, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "shop-products" }, new {id = "formFilterItem"}))
+            @using (Ajax.BeginForm("FilterShop", "Home", null, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "shop-products" }, new { id = "formFilterItem" }))
             {
                 <div class="col-md-3">
                     <div class="shop-sidebar fix">
@@ -116,16 +116,16 @@
                                 </div>
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <a class="collapsed" data-toggle="collapse" data-parent="#checkout-progress" href="#payment-met" aria-expanded="false"><span>5</span>PAYMENT INFORMATION</a>
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#checkout-progress" href="#payment-met" aria-expanded="false">Range Price</a>
                                     </div>
                                     <div id="payment-met" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                                         <div class="panel-body">
                                             <ul>
-                                                <li><a href="javascript:void(0)"><input type="radio" value="1" name="rangePrice"/>&lt; $50</a></li>
-                                                <li><a href="javascript:void(0)"><input type="radio" value="2" name="rangePrice"/>$50 - $100</a></li>
-                                                <li><a href="javascript:void(0)"><input type="radio" value="3" name="rangePrice"/>$100 - $200</a></li>
-                                                <li><a href="javascript:void(0)"><input type="radio" value="4" name="rangePrice"/>$200 - $500</a></li>
-                                                <li><a href="javascript:void(0)"><input type="radio" value="5" name="rangePrice"/>&gt; $500</a></li>
+                                                <li><a href="javascript:void(0)"><input type="radio" value="1" name="rangePrice" />&lt; $50</a></li>
+                                                <li><a href="javascript:void(0)"><input type="radio" value="2" name="rangePrice" />$50 - $100</a></li>
+                                                <li><a href="javascript:void(0)"><input type="radio" value="3" name="rangePrice" />$100 - $200</a></li>
+                                                <li><a href="javascript:void(0)"><input type="radio" value="4" name="rangePrice" />$200 - $500</a></li>
+                                                <li><a href="javascript:void(0)"><input type="radio" value="5" name="rangePrice" />&gt; $500</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -145,44 +145,44 @@
                         <!-- single-sidebar end -->
                     </div>
                 </div>
-            }
-            <div class="col-md-9">
-                <div class="row">
-                    <!-- Shop Tool Bar -->
-                    <div class="shop-tool-bar col-sm-12 fix">
-                        <div class="view-mode">
-                            <a id="grid" class="active" href="javascript:void(0)" onclick="$('#grid-view').show();$('#list-view').hide();$('#list').removeClass('active'); $(this).addClass('active');"><i class="fa fa-th"></i></a>
-                            <a id="list" href="javascript:void(0)" onclick="$('#grid-view').hide(); $('#list-view').show();$('#grid').removeClass('active'); $(this).addClass('active');"><i class="fa fa-th-list"></i></a>
+                <div class="col-md-9">
+                    <div class="row">
+                        <!-- Shop Tool Bar -->
+                        <div class="shop-tool-bar col-sm-12 fix">
+                            <div class="view-mode">
+                                <a id="grid" class="active" href="javascript:void(0)" onclick="$('#grid-view').show();$('#list-view').hide();$('#list').removeClass('active'); $(this).addClass('active');"><i class="fa fa-th"></i></a>
+                                <a id="list" href="javascript:void(0)" onclick="$('#grid-view').hide(); $('#list-view').show();$('#grid').removeClass('active'); $(this).addClass('active');"><i class="fa fa-th-list"></i></a>
+                            </div>
+                            <div class="sort-by">
+                                <span>Sort By</span>
+                                <select name="sortBy" onchange="$(this.form).submit();">
+                                    <option selected="selected" value="1">latest product</option>
+                                    <option value="2">price(low &gt; high)</option>
+                                    <option value="3">price(high &gt; low)</option>
+                                    @*<option value="4">rating(highest)</option>*@
+                                </select>
+                            </div>
+                            <div class="show-product">
+                                <span>Show</span>
+                                <select name="pageSize" onchange="$(this.form).submit();">
+                                    <option selected="selected" value="6">6</option>
+                                    <option value="12">12</option>
+                                    <option value="18">18</option>
+                                </select>
+                                <span>Per Page</span>
+                            </div>
+                            <div class="pro-Showing">
+                                <span></span>
+                            </div>
                         </div>
-                        <div class="sort-by">
-                            <span>Sort By</span>
-                            <select name="sort-by">
-                                <option selected="selected" value="mercede">price: Lower</option>
-                                <option value="saab">price(low&gt;high)</option>
-                                <option value="mercedes">price(high &gt; low)</option>
-                                <option value="audi">rating(highest)</option>
-                            </select>
+                        <div id="shop-products" class="shop-products">
+                            @Html.Partial("_ShopPartial", Model)
+
                         </div>
-                        <div class="show-product">
-                            <span>Show</span>
-                            <select name="sort-by">
-                                <option selected="selected" value="mercede">16</option>
-                                <option value="saab">20</option>
-                                <option value="mercedes">24</option>
-                            </select>
-                            <span>Per Page</span>
-                        </div>
-                        <div class="pro-Showing">
-                            <span>Showing 1 - 12 of 16 items</span>
-                        </div>
-                    </div>
-                    <div id="shop-products" class="shop-products">
-                        @Html.Partial("_ShopPartial", Model)
 
                     </div>
-                    
                 </div>
-            </div>
+            }
         </div>
     </div>
 </div><!-- Shop Product Area End -->
