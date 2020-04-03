@@ -542,7 +542,105 @@
                 </div>
             </div>
         </div>
-    </div><!--End Footer Area-->
+</div><!--End Footer Area-->
+<!--Modal Login Register-->
+    <div class="modal fade" id="modalRegister" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Create A new Account</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    <div class="modal-body">
+                        <div>
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary("", new { @class = "text-danger" })
+                            <div class="row">
+                                <div class="form-group col-md-12 " style="margin-bottom:0;">
+                                    <label>User name<span>*</span></label>
+                                    <input class="form-control" id="Username" name="Username" type="text" value="">
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="Username" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6" style="margin-right:3px;margin-bottom:0;">
+                                    <label>Fisrt name<span>*</span></label>
+                                    <input class="form-control text-box single-line" id="UserFName" name="UserFName" type="text" value="">
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="UserFName" data-valmsg-replace="true"></span>
+                                </div>
+                                <div class="form-group col-md-6" style="margin-left:3px; margin-bottom:0;">
+                                    <label>Last name<span>*</span></label>
+                                    <input class="form-control text-box single-line" id="UserLName" name="UserLName" type="text" value="">
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="UserLName" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6" style="margin-right:3px;margin-bottom:0;">
+                                    <label>Password<span>*</span></label>
+                                    <input class="form-control" data-val="true" data-val-length="The Password must be at least 6 characters long." data-val-length-max="100" data-val-length-min="6" data-val-required="The Password field is required." id="Password" name="Password" type="password">
+                                </div>
+                                <div class="form-group col-md-6" style="margin-left:3px;margin-bottom:0;">
+                                    <label>Confirm Password<span>*</span></label>
+                                    <input class="form-control" data-val="true" data-val-equalto="The password and confirmation password do not match." data-val-equalto-other="*.Password" id="ConfirmPassword" name="ConfirmPassword" type="password">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12 " style="margin-bottom:0;">
+                                    <label>Address<span>*</span></label>
+                                    <input class="form-control text-box single-line" id="Address" name="Address" type="text" value="">
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="Address" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6" style="margin-right:3px;margin-bottom:0;">
+                                    <label>City<span>*</span></label>
+                                    <input class="form-control text-box single-line" id="City" name="City" type="text" value="">
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="City" data-valmsg-replace="true"></span>
+                                </div>
+                                <div class="form-group col-md-6" style="margin-left:3px; margin-bottom:0;">
+                                    <label>State<span>*</span></label>
+                                    <input class="form-control text-box single-line" id="State" name="State" type="text" value="">
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="State" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6" style="margin-right:3px;margin-bottom:0;">
+                                    <label>Email<span>*</span></label>
+                                    <input class="form-control" data-val="true" data-val-email="The Email field is not a valid e-mail address." data-val-required="The Email field is required." id="Email" name="Email" type="text" value="">
+                                </div>
+                                <div class="form-group col-md-6" style="margin-left:3px;margin-bottom:0;">
+                                    <label>Phone number<span>*</span></label>
+                                    <input class="form-control text-box single-line" id="MobileNumber" name="MobileNumber" type="text" value="">
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="MobileNumber" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6" style="margin-right:3px;margin-bottom:0;">
+                                    <label>Dob<span>*</span></label>
+                                    <input class="form-control text-box single-line" id="Dob" name="Dob" type="text" value="">
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="Dob" data-valmsg-replace="true"></span>
+                                </div>
+                                <div class="form-group col-md-6" style="margin-left:3px;margin-bottom:0;">
+                                    <label>Curren Date<span>*</span></label>
+                                    <input class="form-control text-box single-line" id="CurrentDate" name="CurrentDate" type="text" value="">
+                                    <span class="field-validation-valid text-danger" data-valmsg-for="CurrentDate" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-warning" value="Register" />
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+<!--End Modal Login Register-->
     <!-- jQuery 2.1.4 -->
     <script type="text/javascript" src="~/Content/user/js/jquery-2.1.4.min.js"></script>
     <!-- Bootstrap JS -->

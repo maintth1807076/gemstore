@@ -175,7 +175,15 @@ namespace GemStore.Controllers
             db.Orders.Add(order);
             db.SaveChanges();
             ClearCart();
-            return Redirect("/Cart/Test");
+            return new JsonResult()
+            {
+                Data = new
+                {
+                    OrderId = order.OrderId,
+                    Amount = order.TotalPrice
+                },
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet,
+            };
         }
 
         public ActionResult Test()

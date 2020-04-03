@@ -50,6 +50,10 @@ namespace GemStore.Controllers
             }
         }
 
+        public ActionResult ShowOrder()
+        {
+            return View();
+        }
         //
         // GET: /Manage/Index
         public async Task<ActionResult> Index(ManageMessageId? message)
