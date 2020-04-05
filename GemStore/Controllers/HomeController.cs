@@ -159,6 +159,12 @@ namespace GemStore.Controllers
 
             return View();
         }
+        public ActionResult BlogDetails()
+        {
+            ViewBag.Message = "Your blog details page.";
+
+            return View();
+        }
         public ActionResult Portfolio()
         {
             ViewBag.Message = "Your portfolio page.";
