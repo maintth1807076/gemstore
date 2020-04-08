@@ -13,6 +13,7 @@ namespace GemStore.Controllers
     [Authorize]
     public class ManageController : Controller
     {
+        private GemStoreContext db = new GemStoreContext();
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -49,10 +50,20 @@ namespace GemStore.Controllers
                 _userManager = value;
             }
         }
-
-        public ActionResult ShowOrder()
+        public ActionResult ShowOrder(string orderId, int? status)
         {
-            return View();
+            var memId = User.Identity.GetUserId();
+            if (String.IsNullOrEmpty(orderId))
+            {
+                return View("Error");
+            }
+            var order = db.Orders.Find(orderId);
+            if (status != null & status == 2)
+            {
+                order.Status = 2;
+                db.SaveChanges();
+            }
+            return View(order);
         }
         //
         // GET: /Manage/Index

@@ -1,6 +1,6 @@
 ﻿@model GemStore.Models.ShoppingCart
 <div class="cart-info float-right">
-    <a href="/Cart">
+    <a href="/Cart" title="Click to view cart">
         <h5>My cart <span>@Model.GetCartItems().Count</span> items - <span>$@Model.GetTotalPrice()</span></h5>
         <i class="fa fa-shopping-cart"></i>
     </a>

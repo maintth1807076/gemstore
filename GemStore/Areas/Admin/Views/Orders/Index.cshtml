@@ -1,46 +1,76 @@
 ﻿@using GemStore.Models
-@model IEnumerable<GemStore.Models.Order>
+@using PagedList.Mvc
+@model PagedList.IPagedList<GemStore.Models.Order>
 
 @{
     ViewBag.Title = "Index";
 }
-
-
 <p>
     @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-warning" })
 </p>
-<div class="container-fluid">
+<div class="container-fluid pb-3">
+    <div class="row">
+        <div class="col-4">
+            Total price: $@ViewBag.Total 
+        </div>
+        <div class="col-4">
+            <div class="dropdown">
+                <div class=" dropdown-toggle" data-toggle="dropdown">
+                    Choose Status
+                </div>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" value="-2" href="@Url.Action("Index", new { page = ViewBag.CurrentPage, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter, startDate = ViewBag.CurrentStartDate, endDate = ViewBag.CurrentEndDate, statusOrder = -2 })">All</a>
 
-    <!-- Page Heading -->
+                    @foreach (var item in ViewBag.StatusOrder)
+                    {
+                        <a class="dropdown-item" value="@item.Id" href="@Url.Action("Index", new { page = ViewBag.CurrentPage, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter, startDate = ViewBag.CurrentStartDate, endDate = ViewBag.CurrentEndDate, statusOrder = item.Id })">@item.Name</a>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="float-right col-3">
+            <input type="hidden" name="start" value="@ViewBag.CurrentStartDate" />
+            <input type="hidden" name="end" value="@ViewBag.CurrentEndDate" />
+            <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; width: 100%">
+                <i class="fa fa-calendar"></i>&nbsp;
+                <span></span> <i class="fa fa-caret-down"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
 
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+            <h6 class="m-0 font-weight-bold text-primary">DataTables Orders</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <tr>
                         <th>
-                            @Html.DisplayNameFor(model => model.MemberId)
+                            Order Id
+                        </th>
+                        <th class="col-1">
+                            Member Id
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.ShipName)
+                            ShipName
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.ShipAddress)
+                            ShipAddress
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.ShipPhone)
+                            ShipPhone
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.TotalPrice)
+                            TotalPrice
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.CreatedAt)
+                            CreatedAt
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.Status)
+                            Status
                         </th>
                         <th></th>
                     </tr>
@@ -48,6 +78,9 @@
                     @foreach (var item in Model)
                     {
                 <tr id="@item.OrderId">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderId)
+                    </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.MemberId)
                     </td>
@@ -70,21 +103,24 @@
                         @switch (item.Status)
                         {
                             case (int)Order.OrderStatus.Pending:
-                        <div class="dropdown">
-                            <div class=" dropdown-toggle" data-toggle="dropdown"> 
-                            <a href="javascript:void(0)">Pending @*<i class="fa fa-angle-down"></i>*@</a>
-                            </div>
-                            <div class="dropdown-menu">
-                                <a class=" dropdown-item" data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang confirm nhé?" data-ajax-success="confirmOrder($(this))" data-ajax-update="" href="/Admin/Orders/ChangeStatus?id=@item.OrderId&status=4">Confirmed</a>
-                                <a class=" dropdown-item" data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Cancel khong?" data-ajax-mode="" data-ajax-complete="cancelOrder($(this))" data-ajax-update="" href="/Admin/Orders/ChangeStatus?id=@item.OrderId&status=0">Cancel</a>
-                            </div>
-                        </div>
+                                <div class="dropdown">
+                                    <div class=" dropdown-toggle" data-toggle="dropdown">
+                                        <a href="javascript:void(0)">Pending</a>
+                                    </div>
+                                    <div class="dropdown-menu">
+                                        <a title="Click to change status confirm" class=" dropdown-item" data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang confirm nhé?" data-ajax-success="confirmOrder($(this))" data-ajax-update="" href="/Admin/Orders/ChangeStatus?id=@item.OrderId&status=4">Confirmed</a>
+                                        <a title="Click to cancel order" class=" dropdown-item" data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Cancel khong?" data-ajax-mode="" data-ajax-complete="cancelOrder($(this))" data-ajax-update="" href="/Admin/Orders/ChangeStatus?id=@item.OrderId&status=0">Cancel</a>
+                                    </div>
+                                </div>
+                                break;
+                            case (int)Order.OrderStatus.Paid:
+                                <a title="Click to change status confirm" data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang confirm nhé?" data-ajax-success="confirmOrder($(this))" data-ajax-update="" href="/Admin/Orders/ChangeStatus?id=@item.OrderId&status=4">Paid</a>
                                 break;
                             case (int)Order.OrderStatus.Confirmed:
-                                <a data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang shipping nhé?" data-ajax-success="shippingOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=@item.OrderId&status=3">Confirmed</a>
+                                <a title="Click to change status ship" data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang shipping nhé?" data-ajax-success="shippingOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=@item.OrderId&status=3">Confirmed</a>
                                 break;
                             case (int)Order.OrderStatus.Shipping:
-                                <a data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang done nhé?" data-ajax-success="doneOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=@item.OrderId&status=1">Shipping</a>
+                                <a title="Click to change status done" data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang done nhé?" data-ajax-success="doneOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=@item.OrderId&status=1">Shipping</a>
                                 break;
                             case (int)Order.OrderStatus.Done:
                                 <a href="javascript:void(0)">Done</a>
@@ -92,7 +128,8 @@
                             case (int)Order.OrderStatus.Cancel:
                                 <a href="javascript:void(0)">Cancel</a>
                                 break;
-                            default: break;
+                            default:
+                                break;
                         }
                     </td>
                     <td>
@@ -107,24 +144,41 @@
             </div>
         </div>
     </div>
-
 </div>
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter, startDate = ViewBag.CurrentStartDate, endDate = ViewBag.CurrentEndDate, statusOrder = ViewBag.CurrentStatus}))
 @section Scripts{
+    <script type="text/javascript" src="~/Content/loader.js"></script>
+    <script type="text/javascript" src="~/Content/moment.min.js"></script>
+    <script type="text/javascript" src="~/Content/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/Content/daterangepicker.css"/>
     <script type="text/javascript">
         function confirmOrder(para) {
             var id = para.closest('tr').attr('id');
-            para.closest('td').html('<a data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang shipping nhé?" data-ajax-success="shippingOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=' + id + '&status=3">Confirmed</a>');
+            para.closest('td')
+                .html(
+                    '<a title="Click to change status ship" data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang shipping nhé?" data-ajax-success="shippingOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=' +
+                    id +
+                    '&status=3">Confirmed</a>');
         }
+
         function cancelOrder(para) {
             para.closest('td').html('<a href="javascript:void(0)">Cancel</a>');
         }
+
         function shippingOrder(para) {
             var id = para.closest('tr').attr('id');
-            para.closest('td').html('<a data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang done nhé?" data-ajax-success="doneOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=' + id + '&status=1">Shipping</a>');
+            para.closest('td')
+                .html(
+                    '<a title="Click to change status done" data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang done nhé?" data-ajax-success="doneOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=' +
+                    id +
+                    '&status=1">Shipping</a>');
         }
+
         function doneOrder(para) {
             para.closest('td').html('<a href="javascript:void(0)">Done</a>');
         }
+
         function confirmAction() {
             alert(1)
             //swal({
@@ -145,5 +199,47 @@
             //    }
             //);
         }
+
+        $(function() {
+            //var start = moment().subtract(29, 'days');
+            //var end = moment();
+            var start, end;
+            if ($('input[name="start"]').val() == null || $('input[name="start"]').val().length == 0) {
+                start = moment().subtract(29, 'days');
+                end = moment();
+            } else {
+                start = moment(new Date($('input[name="start"]').val()));
+                end = moment(new Date($('input[name="end"]').val()));
+            }
+            function cb(start, end) {
+                $('#reportrange span').html(start.format('YYYY-MM-DD') + ' - ' + end.format('YYYY-MM-DD'));
+            }
+
+            $('#reportrange').daterangepicker({
+                    startDate: start,
+                    endDate: end,
+                    ranges: {
+                        'Last week': [moment().subtract(6, 'days'), moment()],
+                        'Last 30 days': [moment().subtract(29, 'days'), moment()],
+                        'This month': [moment().startOf('month'), moment().endOf('month')],
+                        'Last month': [
+                            moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')
+                        ]
+                    },
+                    "firstDay": 1
+                },
+                cb);
+            cb(start, end);
+            $('#reportrange').on('cancel.daterangepicker',
+                function(ev, picker) {
+                    $('#reportrange').val('');
+                });
+            $('#reportrange').on('apply.daterangepicker',
+                function(ev, picker) {
+                    var startDate = picker.startDate.format('YYYY-MM-DD HH:mm:ss');
+                    var endDate = picker.endDate.format('YYYY-MM-DD HH:mm:ss');
+                    window.location.href = `${url}/Admin/Orders/Index?startDate=${startDate}&endDate=${endDate}`;
+                });
+        });
     </script>
 }

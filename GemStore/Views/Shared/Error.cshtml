@@ -1,13 +1,14 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Error</title>
-</head>
-<body>
-    <hgroup>
-        <h1>Error.</h1>
-        <h2>An error occurred while processing your request.</h2>
-    </hgroup>
-</body>
-</html>
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="not-found-text text-center">
+            <h2>404</h2>
+            <h3>OPS! PAGE NOT FOUND</h3>
+            <h5>Sorry, but the page you looking for is not found</h5>
+            <p>make sure that you have typed the currect URL</p>
+            <a href="/Home">BACK TO HOME PAGE</a>
+        </div>
+    </div>
+</div>

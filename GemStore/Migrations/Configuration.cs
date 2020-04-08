@@ -21,18 +21,6 @@ namespace GemStore.Migrations
 
         protected override void Seed(GemStoreContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
             var userManager = new UserManager<ApplicationUser>(
                 new UserStore<ApplicationUser>(context));
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
@@ -76,7 +64,9 @@ namespace GemStore.Migrations
                 new BrandMst() { BrandId = "1", BrandType = "Graff", },
                 new BrandMst() { BrandId = "2", BrandType = "Buccellatib", },
                 new BrandMst() { BrandId = "3", BrandType = "Chopard", },
-                new BrandMst() { BrandId = "4", BrandType = "Buccellatib1", }
+                new BrandMst() { BrandId = "4", BrandType = "Royal Asscher", },
+                new BrandMst() { BrandId = "5", BrandType = "Royel", },
+                new BrandMst() { BrandId = "6", BrandType = "Rambo", }
             );
             context.CatMsts.AddOrUpdate(x => x.CatId,
                 new CatMst() { CatId = "1", CatName = "Jewelry", },
@@ -153,7 +143,7 @@ namespace GemStore.Migrations
                 new ItemMst() { StyleCode = "15", Name = "Adee Kaye™ White Crystal Gold Tone Rhodium Over Base Metal Mother of Pearl Dial Watch", MRP = 495, SalePrice = 138, Thumbnails = "https://images.jtv.com/jewelry/watches/JTV-ADK013B-1-medium.jpg, https://images.jtv.com/jewelry/watches/JTV-ADK013B-2-medium.jpg, https://images.jtv.com/jewelry/watches/JTV-ADK013B-3-medium.jpg", Pairs = 1, Quantity = 9, BrandId = "1", CatId = "1", ProdId = "1", GoldTypeId = "4", JewelleryId = "5", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
                 new ItemMst() { StyleCode = "16", Name = "Adee Kaye™ Gold Tone Stainless Steel and Black Leather Band Gent's Watch", MRP = 245, SalePrice = 69, Thumbnails = "https://images.jtv.com/jewelry/watches/JTV-ADK012E-1-medium.jpg, https://images.jtv.com/jewelry/watches/JTV-ADK012E-2-medium.jpg, https://images.jtv.com/jewelry/watches/JTV-ADK012E-3-medium.jpg", Pairs = 1, Quantity = 9, BrandId = "2", CatId = "1", ProdId = "1", GoldTypeId = "5", JewelleryId = "5", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
                 new ItemMst() { StyleCode = "17", Name = "Burgi™ Crystals From Swarovski™ and Leather Band Watch", MRP = 465, SalePrice = 76, Thumbnails = "https://images.jtv.com/jewelry/watches/JTV-BUR003C-1-medium.jpg, https://images.jtv.com/jewelry/watches/JTV-BUR003C-2-medium.jpg", Pairs = 1, Quantity = 9, BrandId = "4", CatId = "1", ProdId = "1", GoldTypeId = "1", JewelleryId = "5", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                new ItemMst() { StyleCode = "18", Name = "15.66ctw Amethyst And Sky Blue Topaz Mother of Pearl Dial Sterling Silver Watch", MRP = 249, SalePrice = 212, Thumbnails = "https://images.jtv.com/jewelry/JTV-FTW011-1-medium.jpg, https://images.jtv.com/jewelry/JTV-FTW011-2-medium.jpg", Pairs = 1, Quantity = 9, BrandId = "1", CatId = "1", ProdId = "1", GoldTypeId = "2", JewelleryId = "5", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                //new ItemMst() { StyleCode = "18", Name = "15.66ctw Amethyst And Sky Blue Topaz Mother of Pearl Dial Sterling Silver Watch", MRP = 249, SalePrice = 212, Thumbnails = "https://images.jtv.com/jewelry/JTV-FTW011-1-medium.jpg, https://images.jtv.com/jewelry/JTV-FTW011-2-medium.jpg", Pairs = 1, Quantity = 9, BrandId = "1", CatId = "1", ProdId = "1", GoldTypeId = "2", JewelleryId = "5", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
 
                 new ItemMst() { StyleCode = "19", Name = "Moissanite Platineve Ring .64ctw D.E.W", MRP = 219, SalePrice = 149, Thumbnails = "https://images.jtv.com/jewelry/JTV-MOS730-1-medium.jpg, https://images.jtv.com/jewelry/JTV-MOS730-2-medium.jpg, https://images.jtv.com/jewelry/JTV-MOS730-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "2", CatId = "1", ProdId = "1", GoldTypeId = "3", JewelleryId = "6", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
                 new ItemMst() { StyleCode = "20", Name = "Cubic Zirconia 18k Rose Gold Over Silver Ring 5.53ctw", MRP = 89, SalePrice = 50, Thumbnails = "https://images.jtv.com/jewelry/JTV-BLD260R-1-medium.jpg, https://images.jtv.com/jewelry/JTV-BLD260R-2-medium.jpg, https://images.jtv.com/jewelry/JTV-BLD260R-3-medium.jpg", Pairs = 1, Quantity = 4, BrandId = "3", CatId = "1", ProdId = "1", GoldTypeId = "4", JewelleryId = "6", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
@@ -192,7 +182,7 @@ namespace GemStore.Migrations
                 new ItemMst() { StyleCode = "47", Name = "White Diamond Rhodium And 14K Rose Gold Over Sterling Silver Heart Pendant With Chain 0.25ctw", MRP = 87, SalePrice = 44, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOD187-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOD187-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOD187-3-medium.jpg", Pairs = 1, Quantity = 11, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "1", JewelleryId = "10", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
                 new ItemMst() { StyleCode = "48", Name = "White Cubic Zirconia Rhodium Over Sterling Silver Heart Rings 3.65ctw", MRP = 88, SalePrice = 30, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOCMB22-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCMB22-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCMB22-3-medium.jpg", Pairs = 1, Quantity = 11, BrandId = "3", CatId = "1", ProdId = "2", GoldTypeId = "2", JewelleryId = "10", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
 
-                new ItemMst() { StyleCode = "49", Name = "18k Yellow Gold Over Bronze Hoop Earrings", MRP = 79, SalePrice = 59, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-BEC749-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC749-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC749-2-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "11", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                //new ItemMst() { StyleCode = "49", Name = "18k Yellow Gold Over Bronze Hoop Earrings", MRP = 79, SalePrice = 59, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-BEC749-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC749-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC749-2-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "11", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
                 new ItemMst() { StyleCode = "50", Name = "Blue and White Cubic Zirconia 18k Yellow Gold Over Sterling Silver Earrings 3.05ctw", MRP = 67, SalePrice = 39, Thumbnails = "https://images.jtv.com/jewelry/JTV-BLN939-1-medium.jpg, https://images.jtv.com/jewelry/JTV-BLN939-2-medium.jpg, https://images.jtv.com/jewelry/JTV-BLN939-3-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "11", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
                 new ItemMst() { StyleCode = "51", Name = "White Cubic Zirconia Rhodium Over Sterling Silver Earrings Set of 3 9.78ctw", MRP = 103, SalePrice = 43, Thumbnails = "https://images.jtv.com/jewelry/JTV-DOCGY8-1-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCGY8-2-medium.jpg, https://images.jtv.com/jewelry/JTV-DOCGY8-3-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "11", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
                 new ItemMst() { StyleCode = "52", Name = "Blue kyanite rhodium over silver inside/outside hoop earrings 4.75ctw", MRP = 315, SalePrice = 152, Thumbnails = "https://images.jtv.com/jewelry/JTV-NNH338-1-medium.jpg, https://images.jtv.com/jewelry/JTV-NNH338-2-medium.jpg, https://images.jtv.com/jewelry/JTV-NNH338-3-medium.jpg", Pairs = 1, Quantity = 2, BrandId = "2", CatId = "1", ProdId = "2", GoldTypeId = "3", JewelleryId = "11", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
@@ -231,7 +221,7 @@ namespace GemStore.Migrations
                 new ItemMst() { StyleCode = "80", Name = "14k Tri-Color Gold Textured Love Knot Earrings", MRP = 139, SalePrice = 125, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-BGV463-1-medium.jpg", Pairs = 1, Quantity = 5, BrandId = "2", CatId = "1", ProdId = "3", GoldTypeId = "3", JewelleryId = "16", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
                 new ItemMst() { StyleCode = "81", Name = "18k yellow gold over bronze earrings.", MRP = 47, SalePrice = 39, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-MA175-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-MA175-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-MA175-3-medium.jpg", Pairs = 1, Quantity = 5, BrandId = "3", CatId = "1", ProdId = "3", GoldTypeId = "4", JewelleryId = "16", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
                 new ItemMst() { StyleCode = "82", Name = "18k Yellow Gold Over Bronze Dangle Earrings", MRP = 124, SalePrice = 69, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-BEC608-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC608-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BEC608-3-medium.jpg", Pairs = 1, Quantity = 5, BrandId = "4", CatId = "1", ProdId = "3", GoldTypeId = "5", JewelleryId = "16", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
-                new ItemMst() { StyleCode = "83", Name = "14k Tri-Tone Love Knot Pendant With Chain 18 inch", MRP = 261, SalePrice = 224, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-BGW763-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BGW763-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BGW763-3-medium.jpg", Pairs = 1, Quantity = 5, BrandId = "1", CatId = "1", ProdId = "3", GoldTypeId = "1", JewelleryId = "16", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
+                //new ItemMst() { StyleCode = "83", Name = "14k Tri-Tone Love Knot Pendant With Chain 18 inch", MRP = 261, SalePrice = 224, Thumbnails = "https://images.jtv.com/jewelry/gold/JTV-BGW763-1-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BGW763-2-medium.jpg, https://images.jtv.com/jewelry/gold/JTV-BGW763-3-medium.jpg", Pairs = 1, Quantity = 5, BrandId = "1", CatId = "1", ProdId = "3", GoldTypeId = "1", JewelleryId = "16", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 },
                 new ItemMst() { StyleCode = "84", Name = "Leopard Print Fabric Gold Tone Earrings", MRP = 43, SalePrice = 35, Thumbnails = "https://images.jtv.com/jewelry/JTV-OPW070-1-medium.jpg, https://images.jtv.com/jewelry/JTV-OPW070-2-medium.jpg", Pairs = 1, Quantity = 5, BrandId = "2", CatId = "1", ProdId = "3", GoldTypeId = "2", JewelleryId = "16", NetGold = 10.2, GoldWt = 2.9, StoneWt = 1.9, GoldMaking = 10.3, StoneMaking = 15.2, OtherMaking = 20.2 }
 
                 );
@@ -246,16 +236,16 @@ namespace GemStore.Migrations
             var listOrders = new List<Order>()
             {
                 new Order(){TotalPrice = 150, CreatedAt = DateTime.Now},
-                new Order(){TotalPrice = 480, CreatedAt = DateTime.Now.AddDays(-5)},
-                new Order(){TotalPrice = 400, CreatedAt = DateTime.Now.AddDays(-3)},
-                new Order(){TotalPrice = 120, CreatedAt = DateTime.Now.AddDays(-1)},
-                new Order(){TotalPrice = 130, CreatedAt = DateTime.Now.AddDays(-2)},
-                new Order(){TotalPrice = 450, CreatedAt = DateTime.Now.AddDays(-3)},
-                new Order(){TotalPrice = 360, CreatedAt = DateTime.Now.AddDays(-4)},
-                new Order(){TotalPrice = 780, CreatedAt = DateTime.Now.AddDays(-5)},
-                new Order(){TotalPrice = 234, CreatedAt = DateTime.Now.AddDays(-6)},
-                new Order(){TotalPrice = 213, CreatedAt = DateTime.Now.AddDays(-7)},
-                new Order(){TotalPrice = 654, CreatedAt = DateTime.Now.AddDays(-8)},
+                new Order(){TotalPrice = 480, CreatedAt = DateTime.Now.AddDays(-5), Status = 1},
+                new Order(){TotalPrice = 400, CreatedAt = DateTime.Now.AddDays(-3), Status = 1},
+                new Order(){TotalPrice = 120, CreatedAt = DateTime.Now.AddDays(-1), Status = 1},
+                new Order(){TotalPrice = 130, CreatedAt = DateTime.Now.AddDays(-2), Status = 1},
+                new Order(){TotalPrice = 450, CreatedAt = DateTime.Now.AddDays(-3), Status = 1},
+                new Order(){TotalPrice = 360, CreatedAt = DateTime.Now.AddDays(-4), Status = 1},
+                new Order(){TotalPrice = 780, CreatedAt = DateTime.Now.AddDays(-5), Status = 1},
+                new Order(){TotalPrice = 234, CreatedAt = DateTime.Now.AddDays(-6), Status = 1},
+                new Order(){TotalPrice = 213, CreatedAt = DateTime.Now.AddDays(-7), Status = 1},
+                new Order(){TotalPrice = 654, CreatedAt = DateTime.Now.AddDays(-8), Status = 1},
                 new Order(){TotalPrice = 809, CreatedAt = DateTime.Now.AddDays(-9)},
                 new Order(){TotalPrice = 345, CreatedAt = DateTime.Now.AddDays(-10)},
                 new Order(){TotalPrice = 789, CreatedAt = DateTime.Now.AddDays(-10).AddMonths(-1)},
@@ -264,10 +254,10 @@ namespace GemStore.Migrations
                 new Order(){TotalPrice = 356, CreatedAt = DateTime.Now.AddDays(-7).AddMonths(-4)},
                 new Order(){TotalPrice = 250, CreatedAt = DateTime.Now.AddDays(-6).AddMonths(-5)},
                 new Order(){TotalPrice = 632, CreatedAt = DateTime.Now.AddDays(-5).AddMonths(-6)},
-                new Order(){TotalPrice = 342, CreatedAt = DateTime.Now.AddDays(-4).AddMonths(-7)},
-                new Order(){TotalPrice = 180, CreatedAt = DateTime.Now.AddDays(-3).AddMonths(-8)},
-                new Order(){TotalPrice = 573, CreatedAt = DateTime.Now.AddDays(-2).AddMonths(-9)},
-                new Order(){TotalPrice = 289, CreatedAt = DateTime.Now.AddDays(-1).AddMonths(-10)},
+                new Order(){TotalPrice = 342, CreatedAt = DateTime.Now.AddDays(-4).AddMonths(-7), Status = 1},
+                new Order(){TotalPrice = 180, CreatedAt = DateTime.Now.AddDays(-3).AddMonths(-8), Status = 1},
+                new Order(){TotalPrice = 573, CreatedAt = DateTime.Now.AddDays(-2).AddMonths(-9), Status = 1},
+                new Order(){TotalPrice = 289, CreatedAt = DateTime.Now.AddDays(-1).AddMonths(-10), Status = 1},
                 new Order(){TotalPrice = 163, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-10).AddMonths(-1)},
                 new Order(){TotalPrice = 367, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-11).AddMonths(-2)},
                 new Order(){TotalPrice = 934, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-12).AddMonths(-3)},
@@ -279,15 +269,15 @@ namespace GemStore.Migrations
                 new Order(){TotalPrice = 712, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-18).AddMonths(-9)},
                 new Order(){TotalPrice = 521, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-19).AddMonths(-10)},
                 new Order(){TotalPrice = 644, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-30).AddMonths(-1)},
-                new Order(){TotalPrice = 222, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-29).AddMonths(-3)},
-                new Order(){TotalPrice = 777, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-28).AddMonths(-5)},
-                new Order(){TotalPrice = 900, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-27).AddMonths(-7)},
-                new Order(){TotalPrice = 451, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-26).AddMonths(-9)},
+                new Order(){TotalPrice = 222, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-29).AddMonths(-3), Status = 1},
+                new Order(){TotalPrice = 777, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-28).AddMonths(-5), Status = 1},
+                new Order(){TotalPrice = 900, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-27).AddMonths(-7), Status = 1},
+                new Order(){TotalPrice = 451, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-26).AddMonths(-9), Status = 1},
                 new Order(){TotalPrice = 361, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-25).AddMonths(-2)},
                 new Order(){TotalPrice = 401, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-24).AddMonths(-4)},
                 new Order(){TotalPrice = 562, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-23).AddMonths(-6)},
-                new Order(){TotalPrice = 309, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-22).AddMonths(-8)},
-                new Order(){TotalPrice = 432, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-21).AddMonths(-10)},
+                new Order(){TotalPrice = 309, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-22).AddMonths(-8), Status = 1},
+                new Order(){TotalPrice = 432, CreatedAt = DateTime.Now.AddYears(-2).AddDays(-21).AddMonths(-10), Status = 1},
                 new Order(){TotalPrice = 866, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-1).AddMonths(-1)},
                 new Order(){TotalPrice = 667, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-9).AddMonths(-4)},
                 new Order(){TotalPrice = 433, CreatedAt = DateTime.Now.AddYears(-1).AddDays(-2).AddMonths(-2)},
@@ -340,7 +330,7 @@ namespace GemStore.Migrations
                 },
                 new Order()
                 {
-                    OrderId = "4", MemberId = "4", CreatedAt = DateTime.Now,
+                    OrderId = "4", MemberId = "4", CreatedAt = DateTime.Now, Status = 1,
                     OrderDetails = new List<OrderDetail>()
                     {
                         new OrderDetail(){StyleCode = "17", UnitPrice = 76, Quantity = 2,},
@@ -350,7 +340,7 @@ namespace GemStore.Migrations
                 },
                 new Order()
                 {
-                    OrderId = "5", MemberId = "5", CreatedAt = DateTime.Now,
+                    OrderId = "5", MemberId = "5", CreatedAt = DateTime.Now, Status = 1,
                     OrderDetails = new List<OrderDetail>()
                     {
                         new OrderDetail(){StyleCode = "2", UnitPrice = 79, Quantity = 2},
@@ -358,7 +348,7 @@ namespace GemStore.Migrations
                 },
                 new Order()
                 {
-                    OrderId = "6", MemberId = "6", CreatedAt = DateTime.Now,
+                    OrderId = "6", MemberId = "6", CreatedAt = DateTime.Now, Status = 1,
                     OrderDetails = new List<OrderDetail>()
                     {
                         new OrderDetail(){StyleCode = "25", UnitPrice = 89, Quantity = 1,},
@@ -368,7 +358,7 @@ namespace GemStore.Migrations
                 },
                 new Order()
                 {
-                    OrderId = "7", MemberId = "7", CreatedAt = DateTime.Now,
+                    OrderId = "7", MemberId = "7", CreatedAt = DateTime.Now, Status = 1,
                     OrderDetails = new List<OrderDetail>()
                     {
                         new OrderDetail(){StyleCode = "31", UnitPrice = 139, Quantity = 2,},
@@ -377,7 +367,7 @@ namespace GemStore.Migrations
                 },
                 new Order()
                 {
-                    OrderId = "8", MemberId = "8", CreatedAt = DateTime.Now,
+                    OrderId = "8", MemberId = "8", CreatedAt = DateTime.Now, Status = 3,
                     OrderDetails = new List<OrderDetail>()
                     {
                         new OrderDetail(){StyleCode = "37", UnitPrice = 69, Quantity = 1,},
@@ -386,7 +376,7 @@ namespace GemStore.Migrations
                 },
                 new Order()
                 {
-                    OrderId = "9", MemberId = "9", CreatedAt = DateTime.Now,
+                    OrderId = "9", MemberId = "9", CreatedAt = DateTime.Now, Status = 3,
                     OrderDetails = new List<OrderDetail>()
                     {
                         new OrderDetail(){StyleCode = "2", UnitPrice = 85, Quantity = 3},
@@ -394,7 +384,7 @@ namespace GemStore.Migrations
                 },
                 new Order()
                 {
-                    OrderId = "10", MemberId = "10", CreatedAt = DateTime.Now,
+                    OrderId = "10", MemberId = "10", CreatedAt = DateTime.Now, Status = 0,
                     OrderDetails = new List<OrderDetail>()
                     {
                         new OrderDetail(){StyleCode = "4", UnitPrice = 93, Quantity = 2,},
@@ -687,12 +677,16 @@ namespace GemStore.Migrations
                     }
                 }
             };
-            
+            int i = 0;
             foreach (var order in listOrders)
             {
+                i++;
                 var totalPrice = 0.0;
+                order.MemberId = Guid.NewGuid().ToString().GetHashCode().ToString("x");
+                order.ShipName = "Name Is" + i;
+                order.ShipAddress = "Address Is" + i;
+                order.ShipPhone = "013245521" + i;
                 order.OrderId = Guid.NewGuid().ToString().GetHashCode().ToString("x");
-                order.Status = (int)Order.OrderStatus.Pending;
                 var orderDetail = order.OrderDetails as List<OrderDetail>;
                 if (orderDetail != null)
                 {
@@ -705,6 +699,6 @@ namespace GemStore.Migrations
                 context.Orders.Add(order);
                 context.SaveChanges();
             }
-        }   
+        }
     }
 }

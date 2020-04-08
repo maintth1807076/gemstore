@@ -4,5 +4,60 @@
     ViewBag.Title = "ShowOrder";
 }
 
-<h2>Order của bạn day</h2>
-
+<div class="page-title fix">
+    <!--Start Title-->
+    <div class="overlay section">
+        <h2>My order</h2>
+    </div>
+</div><!--End Title-->
+<section class="cart-page page fix">
+    <!--Start Cart Area-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="table-responsive">
+                    <table class="table cart-table" id="cart-table">
+                        <thead class="table-title">
+                            <tr>
+                                <th class="produ">PRODUCT</th>
+                                <th class="namedes">PRODUCT NAME &amp; DESCRIPTION</th>
+                                <th class="unit">UNIT PRICE</th>
+                                <th class="quantity">QUANTITY</th>
+                                <th class="valu">VALUE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var cartItem in Model.OrderDetails)
+                            {
+                                <tr class="table-info">
+                                    <td class="produ">
+                                        <a href="#"><img alt="" src="@cartItem.ItemMst.Thumbnails.Split(',')[0]"></a>
+                                    </td>
+                                    <td class="namedes">
+                                        <h2 style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 188px;  "><a href="#">@cartItem.ItemMst.Name</a></h2>
+                                    </td>
+                                    <td class="unit">
+                                        <h5>$@cartItem.UnitPrice</h5>
+                                    </td>
+                                    <td class="quantity">
+                                        <div class="cart-plus-minus">
+                                            <input type="text" value="@cartItem.Quantity" name="quantity" class="cart-plus-minus-box">
+                                        </div>
+                                    </td>
+                                    <td class="valu">
+                                        <h5>$@(cartItem.UnitPrice * cartItem.Quantity)</h5>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-7">
+                <div class="total">
+                    <h5>Total <span>$@Model.TotalPrice</span></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--End Cart Area-->
