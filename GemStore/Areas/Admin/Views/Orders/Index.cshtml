@@ -97,7 +97,7 @@
                                 @Html.DisplayFor(modelItem => item.ShipPhone)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.TotalPrice)
+                                @Html.DisplayFor(modelItem => item.TotalPrice) ($)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.CreatedAt)
@@ -120,10 +120,10 @@
                                         <a title="Click to change status confirm" data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang confirm nhé?" data-ajax-success="confirmOrder($(this))" data-ajax-update="" href="/Admin/Orders/ChangeStatus?id=@item.OrderId&status=4">Paid</a>
                                         break;
                                     case (int)Order.OrderStatus.Confirmed:
-                                        <a title="Click to change status ship" data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang shipping nhé?" data-ajax-success="shippingOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=@item.OrderId&status=3">Confirmed</a>
+                                        <a title="Click to change status ship" data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang shipping nhé?" data-ajax-success="shippingOrder($(this))" data-ajax-update="" href="/Admin/Orders/ChangeStatus?id=@item.OrderId&status=3">Confirmed</a>
                                         break;
                                     case (int)Order.OrderStatus.Shipping:
-                                        <a title="Click to change status done" data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang done nhé?" data-ajax-success="doneOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=@item.OrderId&status=1">Shipping</a>
+                                        <a title="Click to change status done" data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang done nhé?" data-ajax-success="doneOrder($(this))" data-ajax-update="" href="/Admin/Orders/ChangeStatus?id=@item.OrderId&status=1">Shipping</a>
                                         break;
                                     case (int)Order.OrderStatus.Done:
                                         <a href="javascript:void(0)">Done</a>
@@ -136,9 +136,9 @@
                                 }
                             </td>
                             <td>
-                                <a href="/Admin/Orders/Edit/@item.OrderId"><i class="fas fa-pen-fancy"></i></a> |
-                                <a href="/Admin/Orders/Details/@item.OrderId"><i class="fas fa-search-plus"></i></a> |
-                                <a href="/Admin/Orders/Delete/@item.OrderId"><i class="fas fa-trash-alt"></i></a>
+                               
+                                <a href="/Admin/Orders/Details/@item.OrderId"><i class="fas fa-search-plus"></i></a>
+                                
                             </td>
                         </tr>
                     }
@@ -194,7 +194,7 @@
             var id = para.closest('tr').attr('id');
             para.closest('td')
                 .html(
-                    '<a title="Click to change status ship" data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang shipping nhé?" data-ajax-success="shippingOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=' +
+                    '<a title="Click to change status ship" data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang shipping nhé?" data-ajax-success="shippingOrder($(this))" data-ajax-update="" href="/Admin/Orders/ChangeStatus?id=' +
                     id +
                     '&status=3">Confirmed</a>');
         }
@@ -207,7 +207,7 @@
             var id = para.closest('tr').attr('id');
             para.closest('td')
                 .html(
-                    '<a title="Click to change status done" data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang done nhé?" data-ajax-success="doneOrder($(this))" data-ajax-update="" href="/Cart/ChangeStatus?id=' +
+                    '<a title="Click to change status done" data-ajax="true" data-ajax-method="POST" data-ajax-confirm="Chuyen sang done nhé?" data-ajax-success="doneOrder($(this))" data-ajax-update="" href="/Admin/Orders/ChangeStatus?id=' +
                     id +
                     '&status=1">Shipping</a>');
         }
