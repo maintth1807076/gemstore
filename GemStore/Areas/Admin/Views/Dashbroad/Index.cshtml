@@ -60,11 +60,6 @@
                         swal('No data exists for line chart', 'Please choose another time range.', 'warning');
                         return;
                     }
-                    console.log(resp);
-                    for (var i = 0; i < resp.length; i++) {
-                        console.log(new Date(parseInt(resp[i].Day.replace(/\D/g, ''))));
-                        console.log(resp[i].Total);
-                    }
                     drawLineChart(resp);
                     var totalRevenue = 0;
                     var lastRevenue = parseInt(resp[0].Total);
@@ -90,7 +85,6 @@
                     }
                     ;
                     $('.total-revenue').text(totalRevenue);
-                    $('.total-revenue').formatNumber();
                 },
                 error: function () {
                     swal('Something is wrong', 'Cannot retrieve data from API', 'error');
@@ -254,7 +248,6 @@
                         }
                         ;
                         $('.total-revenue').text(totalRevenue);
-                        $('.total-revenue').formatNumber();
                     },
                     error: function (r) {
                         swal('Something is wrong', 'Cannot retrieve data from API', 'error');
