@@ -59,18 +59,6 @@ namespace GemStore.Controllers
             sc.SetCartItems(CartItems);
             sc.SetTotalPrice(totalPrice);
             SaveShoppingCart(sc);
-            //if (quantity <= 0)
-            //{
-            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Invalid Quantity");
-            //}
-            //var product = db.ItemMsts.Find(productId);
-            //if (product == null)
-            //{
-            //    return new HttpStatusCodeResult(HttpStatusCode.NotFound, "Product's' not found");
-            //}
-            //var sc = LoadShoppingCart();
-            //sc.UpdateCart(product, quantity);
-            //SaveShoppingCart(sc);
             return PartialView("_ModalCartPartial", LoadShoppingCart());
         }
         public ActionResult RemoveCart(string productId)
@@ -112,6 +100,7 @@ namespace GemStore.Controllers
                 ShipName = shipFirstName + " " + shipLastName,
                 ShipPhone = shipPhone,
                 ShipAddress = shipAddress,
+                CreatedAt = DateTime.Now,
                 OrderDetails = new List<OrderDetail>()
             };
             foreach (var cartItem in shoppingCart.GetCartItems())

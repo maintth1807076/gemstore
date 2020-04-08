@@ -207,6 +207,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderDetail.cs" />
+    <Compile Include="Models\ShipOrder.cs" />
     <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Models\StatusOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -241,6 +242,7 @@
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\sweetalert.min.js" />
     <Content Include="Content\sweetalert2.js" />
+    <Content Include="Content\typehead.js" />
     <Content Include="Content\user\css\animate.min.css" />
     <Content Include="Content\user\css\bootstrap.min.css" />
     <Content Include="Content\user\css\font-awesome.min.css" />

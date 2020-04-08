@@ -17,6 +17,19 @@ namespace GemStore.Areas.Admin.Controllers
     public class OrdersController : Controller
     {
         private GemStoreContext db = new GemStoreContext();
+        public ActionResult GetListShipName()
+        {
+            var data = db.Orders.Select(t => new ShipOrder()
+            {
+                Id = t.OrderId,
+                ShipName = t.ShipName,
+            }).ToList();
+            return new JsonResult()
+            {
+                Data = data,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
         public async Task<ActionResult> ChangeStatus(string id, int status)
         {
             var order = db.Orders.Find(id);
@@ -67,7 +80,7 @@ namespace GemStore.Areas.Admin.Controllers
             return View(listOrder.ToPagedList((int)page, 30));
         }
         // GET: Admin/Orders
-        public ActionResult Index(DateTime? createdAt, DateTime? startDate, DateTime? endDate, int? statusOrder,int? page)
+        public ActionResult Index(DateTime? createdAt, DateTime? startDate, DateTime? endDate, int? statusOrder, string orderId,int? page)
         {
             var total1 = 0.0;
             var list = db.Orders.Where(o => o.Status == 1).ToList();
@@ -119,6 +132,10 @@ namespace GemStore.Areas.Admin.Controllers
                     ViewBag.Total = total;
                 }
                 
+            }
+            if (!String.IsNullOrEmpty(orderId))
+            {
+                listOrder = listOrder.Where(o => o.OrderId == orderId).ToList();
             }
             if (page == null)
             {
