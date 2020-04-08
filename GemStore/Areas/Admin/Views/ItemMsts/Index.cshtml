@@ -7,7 +7,7 @@
 
 
 <p>
-    @Html.ActionLink("Create new", "Create",null, new { @class = "btn btn-warning" })
+    @Html.ActionLink("Create new", "Create", null, new { @class = "btn btn-warning" })
 </p>
 
 <div class="card shadow mb-4">
@@ -37,44 +37,44 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Name)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.MRP)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.SalePrice)
-                        </td>
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MRP)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SalePrice)
+                            </td>
 
-                        <td style="width:400px">
-                            @{
-                                if (item.Thumbnails == null)
-                                {
-                                    <div>
-                                        @item.Thumbnails
-                                    </div>
-                                }
-                                else
-                                {
-                                    string actionList = item.Thumbnails;
-                                    string[] aListItems = actionList.Split(',');
-                                    foreach (string abcd in aListItems)
+                            <td style="width:400px">
+                                @{
+                                    if (item.Thumbnails == null)
                                     {
-                                        <span style="border-radius:50px;margin:5px">
-                                            <img style="border-radius:20px" src="@abcd" width="100px" />
-                                        </span>
+                                        <div>
+                                            @item.Thumbnails
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        string actionList = item.Thumbnails;
+                                        string[] aListItems = actionList.Split(',');
+                                        foreach (string abcd in aListItems)
+                                        {
+                                            <span style="border-radius:50px;margin:5px">
+                                                <img style="border-radius:20px" src="@abcd" width="100px" />
+                                            </span>
+                                        }
                                     }
                                 }
-                            }
-                        </td>
-                        <td>
-                            <a href="/Admin/ItemMsts/Edit/@item.StyleCode"><i class="fas fa-pen-fancy"></i></a> |
-                            <a href="/Admin/ItemMsts/Details/@item.StyleCode"><i class="fas fa-search-plus"></i></a> |
-                            <a href="/Admin/ItemMsts/Delete/@item.StyleCode"><i class="fas fa-trash-alt"></i></a>
-                        </td>
-                    </tr>
+                            </td>
+                            <td>
+                                <a href="/Admin/ItemMsts/Edit/@item.StyleCode"><i class="fas fa-pen-fancy"></i></a> |
+                                <a href="/Admin/ItemMsts/Details/@item.StyleCode"><i class="fas fa-search-plus"></i></a> |
+                                <a href="/Admin/ItemMsts/Delete/@item.StyleCode"><i class="fas fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
                     }
                 </tbody>
             </table>

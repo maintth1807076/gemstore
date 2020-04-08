@@ -1,152 +1,4 @@
-﻿@*@{
-        ViewBag.Title = "Index";
-    }
-
-    <h2>Index</h2>
-    <form action="/Admin/Dashbroad/Index" data-ajax="true" data-ajax-method="POST" id="formReportRange" method="post">
-        <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
-            <i class="fa fa-calendar"></i>&nbsp;
-            <span>01/03/2020 - 31/03/2020</span> <i class="fa fa-caret-down"></i>
-        </div>
-        <input type="hidden" class="hidden" name="startDate">
-        <input type="hidden" class="hidden" name="endDate">
-    </form>
-    <div id="line_chart" style="width: 900px; height: 500px"></div>
-    @section scripts
-    {
-        <script type="text/javascript" src="~/Content/moment.min.js"></script>
-        <script type="text/javascript" src="~/Content/daterangepicker.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="~/Content/daterangepicker.css" />
-        <script type="text/javascript">
-            $(function () {
-
-                var start = moment().subtract(29, 'days');
-                var end = moment();
-
-                function cb(start, end) {
-                    $('#reportrange span').html(start.format('DD/MM/YYYY') + ' - ' + end.format('DD/MM/YYYY'));
-                    $("input[name='startDate']").val(start.format('YYYY-MM-DD HH:mm:ss'));
-                    $("input[name='endDate']").val(end.format('YYYY-MM-DD HH:mm:ss'));
-                    $("#formReportRange").submit();
-                }
-
-                $('#reportrange').daterangepicker({
-                    startDate: start,
-                    endDate: end,
-                    ranges: {
-                        'Today': [moment(), moment()],
-                        'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                        'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                        'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                        'This Month': [moment().startOf('month'), moment().endOf('month')],
-                        'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-                    }
-                }, cb);
-                //cb(start, end);
-                //$('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
-                //    $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
-                //});
-                //$('#reportrange').on('apply.daterangepicker', function (ev, picker) {
-                //    //$('#reportrange span').html(picker.startDate.format('MMMM D, YYYY') + ' - ' + picker.endDate.format('MMMM D, YYYY'));
-                //    cb(picker.startDate, picker.endDate);
-                //    alert(startDate);
-                //    $("input[name='startDate']").val(picker.startDate);
-                //    $("input[name='endDate']").val(picker.endDate);
-                //    //$("#formReportRange").submit();
-                //    window.location.href =
-                //        "https://github.com/maintth1807076/bt-datepicker/blob/master/daterangepickermvc/Views/DaterangePicker/Index.cshtml";
-                //});
-            });
-        </script>
-        <script type="text/javascript" src="~/Content/loader.js"></script>
-        <script type="text/javascript">
-            google.charts.load('current', { 'packages': ['line'] });
-            google.charts.setOnLoadCallback(function() {
-                var start = moment().subtract(29, 'days');
-                var end = moment();
-                $.ajax({
-                    url: '/Admin/Dashbroad/Index?startDate=' + start.format('YYYY-MM-DD HH:mm:ss') + '&endDate=' + end.format('YYYY-MM-DD HH:mm:ss'),
-                    method: 'GET',
-                    success: function (resp) {
-                        if (resp.length == 0) {
-                            swal('No data exists for line chart', 'Please choose another time range.', 'warning');
-                            return;
-                        }
-                        ;
-                        drawChart(resp);
-                        var totalRevenue = 0;
-                        var lastRevenue = parseInt(resp[0].revenue);
-                        var last = resp.length;
-                        var firstRevenue = parseInt(resp[resp.length - 1].revenue);
-                        var difference = lastRevenue - firstRevenue;
-                        if (difference < 0) {
-                            if (-difference > 1500000) {
-                                $('.advice-content').text('Going down considerably => You should check out 5 best-sellers below to have an effective marketing strategy');
-                            } else {
-                                $('.advice-content').text('Going down but unconsiderably => You shouldn\'t be worried too much , keep working on the social media');
-                            }
-                        }
-                        if (difference > 0) {
-                            if (difference > 2000000) {
-                                $('.advice-content').text('Raising up considerably => You are having an effective marketing strategy! Keep going');
-                            } else {
-                                $('.advice-content').text('Raising up but unconsiderably => You shouldn\'t be worried too much , keep working on the social media');
-                            }
-                        }
-                        for (var i = 0; i < resp.length; i++) {
-                            totalRevenue += parseInt(resp[i].revenue);
-                        }
-                        ;
-                        $('.total-revenue').text(totalRevenue);
-                        $('.total-revenue').formatNumber();
-                    },
-                    error: function () {
-                        swal('Something is wrong', 'Cannot retrieve data from API', 'error');
-                    }
-                });
-            });
-
-            function drawChart(chart_data) {
-                var data = new google.visualization.DataTable();
-                data.addColumn('number', 'Day');
-                data.addColumn('number', 'Guardians of the Galaxy');
-                data.addColumn('number', 'The Avengers');
-                data.addColumn('number', 'Transformers: Age of Extinction');
-
-                data.addRows([
-                    [1,  37.8, 80.8, 41.8],
-                    [2,  30.9, 69.5, 32.4],
-                    [3,  25.4,   57, 25.7],
-                    [4,  11.7, 18.8, 10.5],
-                    [5,  11.9, 17.6, 10.4],
-                    [6,   8.8, 13.6,  7.7],
-                    [7,   7.6, 12.3,  9.6],
-                    [8,  12.3, 29.2, 10.6],
-                    [9,  16.9, 42.9, 14.8],
-                    [10, 12.8, 30.9, 11.6],
-                    [11,  5.3,  7.9,  4.7],
-                    [12,  6.6,  8.4,  5.2],
-                    [13,  4.8,  6.3,  3.6],
-                    [14,  4.2,  6.2,  3.4]
-                ]);
-
-                var options = {
-                    chart: {
-                        title: 'Box Office Earnings in First Two Weeks of Opening',
-                        subtitle: 'in millions of dollars (USD)'
-                    },
-                    width: 900,
-                    height: 500
-                };
-
-                var chart = new google.charts.Line(document.getElementById('line_chart'));
-
-                chart.draw(data, google.charts.Line.convertOptions(options));
-            }
-        </script>
-    }*@
-
-<style>
+﻿<style>
     #piechart g:hover {
         cursor: pointer;
     }
@@ -159,7 +11,7 @@
     <section class="wrapper">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Thống kê
+                Business statistics
             </div>
             <div class="float-right mt-3">
                 <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; width: 100%">
@@ -168,34 +20,21 @@
                 </div>
             </div>
             <div class="font-weight-bold ml-4 mt-3 text-uppercase">
-                Tổng thu nhập : <span class="total-revenue"></span> (VND)
+                Revenue : <span class="total-revenue"></span> (USD)
             </div>
             <div class="advice ml-5">
-                <div class="text-danger"><strong>Tình hình kinh doanh:</strong></div>
+                <div class="text-danger"><strong>Business status :</strong></div>
                 <div class="advice-content" style="font-style: italic;"></div>
             </div>
             <div id="linechart" style="margin: 30px;"></div>
             <div class="advice ml-5 m-b-50">
-                <div class="text-danger"><strong>Sản phẩm bán chạy :</strong></div>
+                <div class="text-danger"><strong>Best seller product :</strong></div>
                 <div class="advice-content-best-seller" style="font-style: italic;"></div>
             </div>
             <div id="piechart" style="width: 600px; height: 500px;"></div>
-            <!-- <div id="curve_chart" style="width: 900px; height: 500px"></div> -->
-            @*@if (Session::has('message'))
-                    <div class="alert {{ Session::get('message-class') }}">{{ Session::get('message') }}</div>
-                @endif*@
         </div>
     </section>
 </section>
-
-@*<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.min.js"></script>
-    <script type='text/javascript' src='//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js'></script>*@
-
 @section scripts
 {
     <script type="text/javascript" src="~/Content/loader.js"></script>
@@ -338,11 +177,11 @@
             };
             var percentage1 = (chart_data[0].Total / all) * 100;
             if (percentage1 <= 20) {
-                $('.advice-content-best-seller').html('<span>The <a href="' + '/Admin/Orders?stylecode=' + chart_data[0].StyleCode + '">' + chart_data[0].Item + '</a> is doing great but compared with all its percentage overall is not too big</span>');
+                $('.advice-content-best-seller').html('<span>The <a href="' + '/Admin/Orders/GetOrderDetail?stylecode=' + chart_data[0].StyleCode + '">' + chart_data[0].Item + '</a> is doing great but compared with all its percentage overall is not too big</span>');
             } else if (percentage1 < 50 && percentage1 > 20) {
-                $('.advice-content-best-seller').html('<span>The <a href="' + '/Admin/Orders?stylecode=' + chart_data[0].StyleCode + '">' + chart_data[0].Item + '</a> is doing so great this time that you should think of importing more of it</span>');
+                $('.advice-content-best-seller').html('<span>The <a href="' + '/Admin/Orders/GetOrderDetail?stylecode=' + chart_data[0].StyleCode + '">' + chart_data[0].Item + '</a> is doing so great this time that you should think of importing more of it</span>');
             } else if (percentage1 <= 50) {
-                $('.advice-content-best-seller').html('<span>The <a href="' + '/Admin/Orders?stylecode=' + chart_data[0].StyleCode + '">' + chart_data[0].Item + '</a> takes more than half of your sales, you should not only import more of it but also promoting other products too. Such as <a href="' + '/admin/order?product_id=' + chart_data[1].product_id + '">' + chart_data[1].product.name + '</span>');
+                $('.advice-content-best-seller').html('<span>The <a href="' + '/Admin/Orders/GetOrderDetail?stylecode=' + chart_data[0].StyleCode + '">' + chart_data[0].Item + '</a> takes more than half of your sales, you should not only import more of it but also promoting other products too. Such as <a href="' + '/admin/order?product_id=' + chart_data[1].product_id + '">' + chart_data[1].product.name + '</span>');
             }
             data.addRow(['Others', rest]);
             var options = {
@@ -354,7 +193,7 @@
             function selectHandler(e) {
                 for (var i = 0; i < chart.getSelection().length; i++) {
                     var item = chart.getSelection()[i];
-                    window.location.href = '/Admin/Orders?stylecode=' + chart_data[item.row].StyleCode;
+                    window.location.href = '/Admin/Orders/GetOrderDetail?stylecode=' + chart_data[item.row].StyleCode;
                 }
             }
         }

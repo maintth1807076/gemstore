@@ -32,7 +32,7 @@ namespace GemStore.Controllers
 
             return View();
         }
-        public ActionResult Shop(string keyWord)
+        public ActionResult Shop(string keyWord, string JewelleryId, string BrandId, string CatId, string ProdId)
         {
             ViewBag.BrandMsts = db.BrandMsts.ToList();
             ViewBag.CatMsts = db.CatMsts.ToList();
@@ -43,6 +43,24 @@ namespace GemStore.Controllers
             {
                 ViewBag.CurrentKeyWord = keyWord;
                 itemMsts = itemMsts.Where(i => i.Name.IndexOf(keyWord, StringComparison.OrdinalIgnoreCase) != -1 || i.BrandMst.BrandType.Contains(keyWord)).ToList();
+            }
+            if (!String.IsNullOrEmpty(JewelleryId))
+            {
+                ViewBag.CurrentJewelleryId = JewelleryId;
+                itemMsts = itemMsts.Where(i => i.JewelleryId == JewelleryId).ToList();
+            }
+            if (!String.IsNullOrEmpty(CatId))
+            {
+                ViewBag.CurrentCatId = CatId;
+                itemMsts = itemMsts.Where(i => i.CatId == CatId).ToList();
+            }
+            if (!String.IsNullOrEmpty(ProdId))
+            {
+                itemMsts = itemMsts.Where(i => i.ProdId == ProdId).ToList();
+            }
+            if (!String.IsNullOrEmpty(BrandId))
+            {
+                itemMsts = itemMsts.Where(i => i.BrandId == BrandId).ToList();
             }
             return View(itemMsts.ToPagedList(1, 6));
 
@@ -147,10 +165,8 @@ namespace GemStore.Controllers
             ViewBag.CurrentPageSize = pageSize;
             return PartialView("_ShopPartial", itemMsts.ToPagedList((int)page, (int)pageSize));
         }
-        public ActionResult Shop_list()
+        public ActionResult BlogDetails()
         {
-            ViewBag.Message = "Your shop list page.";
-
             return View();
         }
         public ActionResult Blog()
@@ -169,13 +185,15 @@ namespace GemStore.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return View("Error");
             }
             ItemMst itemMst = db.ItemMsts.Find(id);
             if (itemMst == null)
             {
-                return HttpNotFound();
+                return View("Error");
             }
+
+            ViewBag.RelationItems = db.ItemMsts.Where(i => i.SalePrice >= (itemMst.SalePrice - 50.0) && i.SalePrice <= (itemMst.SalePrice + 100.0)).ToList();
             return View(itemMst);
         }
     }

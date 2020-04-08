@@ -67,7 +67,7 @@
          
             <div class="row" style="margin-top:7%">
                 <div class=" form-group col-md-4">
-                    @Html.LabelFor(model => model.BrandId, "BrandId", htmlAttributes: new { @class = "control-label col-md-12 " })
+                    <label class="control-label col-md-12 " for="BrandId">BrandId <a href="/Admin/BrandMsts/Create"><i class="fas fa-plus"></i></a></label>
                     <div class="col-md-12">
                         @Html.DropDownList("BrandId", null, htmlAttributes: new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.BrandId, "", new { @class = "text-danger" })
@@ -75,7 +75,7 @@
                 </div>
 
                 <div class="form-group col-md-4">
-                    @Html.LabelFor(model => model.CertifyId, "CertifyId", htmlAttributes: new { @class = "control-label col-md-12 " })
+                    <label class="control-label col-md-12 " for="CertifyId">CertifyId <a href="/Admin/CertifyMsts/Create"><i class="fas fa-plus"></i></a></label>
                     <div>
                         @Html.DropDownList("CertifyId", null, htmlAttributes: new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.CertifyId, "", new { @class = "text-danger" })
@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="form-group col-md-4">
-                    @Html.LabelFor(model => model.CatId, "CatId", htmlAttributes: new { @class = "control-label col-md-12" })
+                    <label class="control-label col-md-12 " for="CatId">CatId <a href="/Admin/CatMsts/Create"><i class="fas fa-plus"></i></a></label>
                     <div class="col-md-12">
                         @Html.DropDownList("CatId", null, htmlAttributes: new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.CatId, "", new { @class = "text-danger" })
@@ -92,7 +92,7 @@
             </div>
             <div class="row" style="margin-top:7%">
                 <div class="form-group col-md-4">
-                    @Html.LabelFor(model => model.JewelleryId, "JewelleryId", htmlAttributes: new { @class = "control-label col-md-12" })
+                    <label class="control-label col-md-12 " for="JewelleryId">JewelleryId <a href="/Admin/JewelTypeMsts/Create"><i class="fas fa-plus"></i></a></label>
                     <div class="col-md-12">
                         @Html.DropDownList("JewelleryId", null, htmlAttributes: new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.JewelleryId, "", new { @class = "text-danger" })
@@ -100,14 +100,14 @@
                 </div>
 
                 <div class="form-group col-md-4">
-                    @Html.LabelFor(model => model.ProdId, "ProdId", htmlAttributes: new { @class = "control-label col-md-12" })
+                    <label class="control-label col-md-12 " for="ProdId">ProdId <a href="/Admin/ProMsts/Create"><i class="fas fa-plus"></i></a></label>
                     <div class="col-md-12">
                         @Html.DropDownList("ProdId", null, htmlAttributes: new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.ProdId, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <div class="form-group col-md-4">
-                    @Html.LabelFor(model => model.GoldTypeId, "GoldTypeId", htmlAttributes: new { @class = "control-label col-md-12" })
+                    <label class="control-label col-md-12 " for="GoldTypeId">GoldTypeId <a href="/Admin/GoldKrts/Create"><i class="fas fa-plus"></i></a></label>
                     <div class="col-md-12">
                         @Html.DropDownList("GoldTypeId", null, htmlAttributes: new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.GoldTypeId, "", new { @class = "text-danger" })
@@ -116,7 +116,7 @@
             </div>
             <div class="row" style="margin-top:7%">
                 <div class="form-group col-md-3">
-                    @Html.LabelFor(model => model.ProdQuantity, htmlAttributes: new { @class = "control-label col-md-12" })
+                    <label class="control-label col-md-12 " for="ProdQuantity">ProdQuantity <a href="/Admin/GoldKrts/Create"><i class="fas fa-plus"></i></a></label>
                     <div class="col-md-12">
                         @Html.EditorFor(model => model.ProdQuantity, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.ProdQuantity, "", new { @class = "text-danger" })

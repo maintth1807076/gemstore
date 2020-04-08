@@ -19,7 +19,7 @@
                         <thead class="table-title">
                             <tr>
                                 <th class="produ">PRODUCT</th>
-                                <th class="namedes">PRODUCT NAME &amp; DESCRIPTION</th>
+                                <th class="namedes">PRODUCT NAME</th>
                                 <th class="unit">UNIT PRICE</th>
                                 <th class="quantity">QUANTITY</th>
                                 <th class="valu">VALUE</th>
@@ -27,34 +27,30 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @using (Ajax.BeginForm("UpdateCart", "Cart", null, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "show-cart" }, null))
+                            @foreach (var cartItem in Model.GetCartItems().Values)
                             {
-                                foreach (var cartItem in Model.GetCartItems().Values)
-                                {
-                                    <tr class="table-info" data-id="@cartItem.Id" data-price="@cartItem.UnitPrice" data-name="@cartItem.Name" data-thumbnail="@cartItem.Thumbnail">
-                                        <td class="produ">
-                                            <a href="#"><img alt="" src="@cartItem.Thumbnail"></a>
-                                        </td>
-                                        <td class="namedes">
-                                            <h2 style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 188px;  "><a href="#">@cartItem.Name</a></h2>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                        </td>
-                                        <td class="unit">
-                                            <h5>$@cartItem.UnitPrice</h5>
-                                        </td>
-                                        <td class="quantity">
-                                            <div class="cart-plus-minus">
-                                                <input type="text" value="@cartItem.Quantity" name="quantity" class="cart-plus-minus-box">
-                                            </div>
-                                        </td>
-                                        <td class="valu">
-                                            <h5>$@(cartItem.UnitPrice * cartItem.Quantity)</h5>
-                                        </td>
-                                        <td class="acti">
-                                            <a data-ajax="true" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-success="removeCartItemSuccess($(this))" data-ajax-update="#cart-modal" href="/Cart/RemoveCart?productId=@cartItem.Id"><i class="fa fa-trash-o"></i></a>
-                                        </td>
-                                    </tr>
-                                }
+                            <tr class="table-info" data-id="@cartItem.Id" data-price="@cartItem.UnitPrice" data-name="@cartItem.Name" data-thumbnail="@cartItem.Thumbnail">
+                                <td class="produ">
+                                    <a href="#"><img alt="" src="@cartItem.Thumbnail"></a>
+                                </td>
+                                <td class="namedes">
+                                    <h2 style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 188px;  "><a href="#">@cartItem.Name</a></h2>
+                                     </td>
+                                <td class="unit">
+                                    <h5>$@cartItem.UnitPrice</h5>
+                                </td>
+                                <td class="quantity">
+                                    <div class="cart-plus-minus">
+                                        <input type="text" value="@cartItem.Quantity" name="quantity" class="cart-plus-minus-box">
+                                    </div>
+                                </td>
+                                <td class="valu">
+                                    <h5>$@(cartItem.UnitPrice * cartItem.Quantity)</h5>
+                                </td>
+                                <td class="acti">
+                                    <a data-ajax="true" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-success="removeCartItemSuccess($(this))" data-ajax-update="#cart-modal" href="/Cart/RemoveCart?productId=@cartItem.Id"><i class="fa fa-trash-o"></i></a>
+                                </td>
+                            </tr>
                             }
                         </tbody>
                     </table>
@@ -72,7 +68,7 @@
             <div class="col-sm-6 col-md-5">
                 <div class="proceed fix">
                     <a href="/Cart/DeleteCart">CLEAR SHOPPING CART</a>
-                    @using (Ajax.BeginForm("UpdateCart", "Cart", null, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "cart-modal" }, new { id = "formUpdateCart" }))
+                    @using (Ajax.BeginForm("UpdateCart", "Cart", null, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "cart-modal", OnSuccess = "updateCartSuccess()" }, new { id = "formUpdateCart" }))
                     {
                         <input type="text" name="cartItems" class="hidden" />
                         <input type="number" name="totalPrice" class="hidden" />
@@ -132,8 +128,6 @@
             });
             $('input[name="cartItems"]').val(JSON.stringify(cartItems));
             $('input[name="totalPrice"]').val(totalPrice);
-            $(".total h5 span").text("$" + totalPrice);
-            $(".total h6 span").text("$" + totalPrice);
             $('#formUpdateCart').submit();
         });
         function removeCartItemSuccess(para) {
@@ -141,7 +135,15 @@
             para.closest('tr').remove();
             $(".total h5 span").text("$" + totalPrice);
             $(".total h6 span").text("$" + totalPrice);
-            alert("Remove success");
+            alertify.set('notifier','position', 'top-right');
+            alertify.success('Remove success!');
+        }
+        function updateCartSuccess() {
+            var totalPrice = $(".total-price").attr('data-total');
+            $(".total h5 span").text("$" + totalPrice);
+            $(".total h6 span").text("$" + totalPrice);
+            alertify.set('notifier','position', 'top-right');
+            alertify.success('Update cart success!');
         }
     </script>
 }

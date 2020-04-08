@@ -59,18 +59,6 @@ namespace GemStore.Controllers
             sc.SetCartItems(CartItems);
             sc.SetTotalPrice(totalPrice);
             SaveShoppingCart(sc);
-            //if (quantity <= 0)
-            //{
-            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Invalid Quantity");
-            //}
-            //var product = db.ItemMsts.Find(productId);
-            //if (product == null)
-            //{
-            //    return new HttpStatusCodeResult(HttpStatusCode.NotFound, "Product's' not found");
-            //}
-            //var sc = LoadShoppingCart();
-            //sc.UpdateCart(product, quantity);
-            //SaveShoppingCart(sc);
             return PartialView("_ModalCartPartial", LoadShoppingCart());
         }
         public ActionResult RemoveCart(string productId)
@@ -95,55 +83,8 @@ namespace GemStore.Controllers
         {
             return View("Cart", LoadShoppingCart());
         }
-        //[HttpPost, ActionName("Create")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult CreateOrder(string cart)
-        //{
-            
-        //    var shoppingCart = JsonConvert.DeserializeObject<Dictionary<string, CartItem>>(cart, new JsonSerializerSettings
-        //    {
-        //        NullValueHandling = NullValueHandling.Ignore
-        //    });
-           
-
-        //    // load cart trong session.
-        //    //var shoppingCart = LoadShoppingCart();
-        //    //if (shoppingCart.GetCartItems().Count <= 0)
-        //    //{
-        //    //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Bad request");
-        //    //}
-        //    // chuyển thông tin shopping cart thành Order.
-        //    var order = new Order
-        //    {
-        //        OrderId = Guid.NewGuid().ToString().GetHashCode().ToString("x"),
-        //        MemberId = 1,
-        //        PaymentTypeId = (int)Order.PaymentType.Cod,
-        //        ShipName = "Xuan Hung",
-        //        ShipPhone = "0912345678",
-        //        ShipAddress = "Ton That Thuyet",
-        //        OrderDetails = new List<OrderDetail>()
-        //    };
-        //    //// Tạo order detail từ cart item.
-        //    double totalPrice = 0;
-        //    foreach (var cartItem in shoppingCart.Values)
-        //    {
-        //        var orderDetail = new OrderDetail()
-        //        {
-        //            StyleCode = cartItem.Id,
-        //            OrderId = order.OrderId,
-        //            Quantity = cartItem.Quantity,
-        //            UnitPrice = cartItem.UnitPrice
-        //        };
-        //        order.OrderDetails.Add(orderDetail);
-        //        totalPrice += cartItem.UnitPrice * cartItem.Quantity;
-        //    }
-
-        //    order.TotalPrice = totalPrice;
-        //    db.Orders.Add(order);
-        //    db.SaveChanges();
-        //    return Redirect("/Cart/Test");
-        //}
-        public ActionResult CreateOrder(string shipFirstName, string shipLastName, string shipPhone, string shipAddress)
+        [Authorize]
+        public async Task<ActionResult> CreateOrder(string shipFirstName, string shipLastName, string shipPhone, string shipAddress)
         {
             var shoppingCart = LoadShoppingCart();
             if (shoppingCart.GetCartItems().Count <= 0)
@@ -159,6 +100,7 @@ namespace GemStore.Controllers
                 ShipName = shipFirstName + " " + shipLastName,
                 ShipPhone = shipPhone,
                 ShipAddress = shipAddress,
+                CreatedAt = DateTime.Now,
                 OrderDetails = new List<OrderDetail>()
             };
             foreach (var cartItem in shoppingCart.GetCartItems())
@@ -175,6 +117,8 @@ namespace GemStore.Controllers
             db.Orders.Add(order);
             db.SaveChanges();
             ClearCart();
+            var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            await userManager.SendEmailAsync(order.MemberId, "Your order saved", "My staff will call the order confirmation immediately. Please wait for the call.");
             return new JsonResult()
             {
                 Data = new
@@ -184,37 +128,6 @@ namespace GemStore.Controllers
                 },
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet,
             };
-        }
-
-        public ActionResult Test()
-        {
-            new Order()
-            {
-                OrderId = "1", MemberId = "1", TotalPrice = 300, CreatedAt = DateTime.Now, 
-                OrderDetails = new List<OrderDetail>()
-                {
-                    new OrderDetail(){StyleCode = "1", UnitPrice = 75, Quantity = 2},
-                    new OrderDetail(){StyleCode = "2", UnitPrice = 80, Quantity = 1},
-                }
-            };
-            return View(db.Orders.Where(o => o.Status != (int)Order.OrderStatus.Deleted).ToList());
-        }
-        public async Task<ActionResult> ChangeStatus(string id, int status)
-        {
-            var order = db.Orders.Find(id);
-            if (order == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.NotFound, "Order's' not found");
-            }
-
-            if (status == (int) Order.OrderStatus.Confirmed)
-            {
-                var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                await userManager.SendEmailAsync(order.MemberId, "Confirm your order", "Please confirm your order");
-            }
-            order.Status = status;
-            db.SaveChanges();
-            return RedirectToAction("Test");
         }
         public ActionResult Checkout()
         {

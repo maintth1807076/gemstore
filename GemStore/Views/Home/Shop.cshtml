@@ -47,7 +47,7 @@
 <div class="shop-product-area section fix">
     <div class="container">
         <div class="row">
-            @using (Ajax.BeginForm("FilterShop", "Home", null, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "shop-products" }, new { id = "formFilterItem" }))
+            @using (Ajax.BeginForm("FilterShop", "Home", null, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "shop-products" }, new { id = "formFilterItem1" }))
             {
                 <div class="col-md-3">
                     <div class="shop-sidebar fix">
@@ -130,16 +130,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <a class="collapsed" data-toggle="collapse" data-parent="#checkout-progress" href="#order-review" aria-expanded="false"><span>6</span>ORDER REVIEW</a>
-                                    </div>
-                                    <div id="order-review" class="panel-collapse collapse" aria-expanded="false" style="">
-                                        <div class="panel-body">
-
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <!-- single-sidebar end -->
@@ -155,7 +145,7 @@
                             <a id="grid" class="active" href="javascript:void(0)" onclick="$('#grid-view').show();$('#list-view').hide();$('#list').removeClass('active'); $(this).addClass('active');"><i class="fa fa-th"></i></a>
                             <a id="list" href="javascript:void(0)" onclick="$('#grid-view').hide(); $('#list-view').show();$('#grid').removeClass('active'); $(this).addClass('active');"><i class="fa fa-th-list"></i></a>
                         </div>
-                        @using (Ajax.BeginForm("FilterShop", "Home", null, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "shop-products" }, new { id = "formFilterItem" }))
+                        @using (Ajax.BeginForm("FilterShop", "Home", null, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "shop-products" }, new { id = "formFilterItem2" }))
                         {
                             <div class="sort-by">
                                 <span>Sort By</span>
